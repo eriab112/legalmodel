@@ -18,6 +18,20 @@ DATA_DIR = BASE_DIR / "Data" / "processed"
 LABELED_PATH = DATA_DIR / "labeled_dataset.json"
 CLEANED_PATH = DATA_DIR / "cleaned_court_texts.json"
 LINKAGE_PATH = DATA_DIR / "linkage_table.json"
+LEGISLATION_PATH = DATA_DIR / "lagtiftning_texts.json"
+APPLICATION_PATH = DATA_DIR / "ansokan_texts.json"
+
+
+@dataclass
+class DocumentRecord:
+    """A document chunk-ready record for the unified search index."""
+    doc_id: str
+    doc_type: str  # "decision", "legislation", "application"
+    filename: str
+    title: str  # human-readable title
+    text: str  # full text content for chunking
+    metadata: Dict  # type-specific metadata
+    label: Optional[str] = None  # only for decisions
 
 
 @dataclass
@@ -170,3 +184,144 @@ class DataLoader:
 @st.cache_data
 def load_data() -> DataLoader:
     return DataLoader()
+
+
+class KnowledgeBase:
+    """Loads all document types (decisions, legislation, applications) for the RAG system."""
+
+    def __init__(self):
+        self._documents: List[DocumentRecord] = []
+        self._by_id: Dict[str, DocumentRecord] = {}
+        self._load_all()
+
+    def _doc_id_from_filename(self, filename: str) -> str:
+        """Derive doc_id from filename: strip extension, replace spaces with underscores, lowercase."""
+        stem = Path(filename).stem
+        return stem.replace(" ", "_").lower()
+
+    def _load_all(self):
+        # Build label lookup from labeled_dataset.json
+        label_by_id: Dict[str, str] = {}
+        if LABELED_PATH.exists():
+            with open(LABELED_PATH, "r", encoding="utf-8") as f:
+                labeled_data = json.load(f)
+            for split_name in ["train", "val", "test"]:
+                for item in labeled_data.get("splits", {}).get(split_name, []):
+                    if item.get("label"):
+                        label_by_id[item["id"]] = item["label"]
+
+        # Court decisions from cleaned_court_texts.json
+        if CLEANED_PATH.exists():
+            with open(CLEANED_PATH, "r", encoding="utf-8") as f:
+                cleaned_data = json.load(f)
+            for d in cleaned_data.get("decisions", []):
+                doc_id = d.get("id", "")
+                meta = d.get("metadata", {})
+                case_number = meta.get("case_number", doc_id)
+                court = meta.get("court", "")
+                date = meta.get("date", "")
+                parts = [case_number]
+                if court:
+                    parts.append(court)
+                if date:
+                    parts.append(f"({date})")
+                title = " — ".join(parts) if parts else doc_id
+                record = DocumentRecord(
+                    doc_id=doc_id,
+                    doc_type="decision",
+                    filename=d.get("filename", ""),
+                    title=title,
+                    text=d.get("text_full", ""),
+                    metadata={
+                        "court": meta.get("court"),
+                        "date": meta.get("date"),
+                        "case_number": meta.get("case_number"),
+                    },
+                    label=label_by_id.get(doc_id),
+                )
+                self._documents.append(record)
+                self._by_id[doc_id] = record
+
+        n_decisions = len([r for r in self._documents if r.doc_type == "decision"])
+
+        # Legislation from lagtiftning_texts.json
+        if LEGISLATION_PATH.exists():
+            with open(LEGISLATION_PATH, "r", encoding="utf-8") as f:
+                legislation_data = json.load(f)
+            seen_doc_ids = set(self._by_id.keys())
+            for entry in legislation_data:
+                filename = entry.get("filename", "")
+                if filename == "CIS_Guidance_Article_4_7_FINAL (1).pdf":
+                    continue
+                text = entry.get("text", "")
+                if len(text) <= 500:
+                    continue
+                doc_id = self._doc_id_from_filename(filename)
+                if doc_id in seen_doc_ids:
+                    continue
+                seen_doc_ids.add(doc_id)
+                title = Path(filename).stem
+                record = DocumentRecord(
+                    doc_id=doc_id,
+                    doc_type="legislation",
+                    filename=filename,
+                    title=title,
+                    text=text,
+                    metadata={"source": "legislation", "filename": filename},
+                )
+                self._documents.append(record)
+                self._by_id[doc_id] = record
+
+        n_legislation = len([r for r in self._documents if r.doc_type == "legislation"])
+
+        # Applications from ansokan_texts.json
+        if APPLICATION_PATH.exists():
+            with open(APPLICATION_PATH, "r", encoding="utf-8") as f:
+                application_data = json.load(f)
+            for entry in application_data:
+                filename = entry.get("filename", "")
+                text = entry.get("text", "")
+                if len(text) <= 500:
+                    continue
+                doc_id = self._doc_id_from_filename(filename)
+                if doc_id in self._by_id:
+                    continue
+                title = Path(filename).stem
+                record = DocumentRecord(
+                    doc_id=doc_id,
+                    doc_type="application",
+                    filename=filename,
+                    title=title,
+                    text=text,
+                    metadata={"source": "application", "filename": filename},
+                )
+                self._documents.append(record)
+                self._by_id[doc_id] = record
+
+        n_applications = len([r for r in self._documents if r.doc_type == "application"])
+        total = len(self._documents)
+        print(
+            f"KnowledgeBase loaded: {n_decisions} decisions, {n_legislation} legislation, "
+            f"{n_applications} applications ({total} total)"
+        )
+
+    def get_all_documents(self) -> List[DocumentRecord]:
+        return list(self._documents)
+
+    def get_documents_by_type(self, doc_type: str) -> List[DocumentRecord]:
+        return [d for d in self._documents if d.doc_type == doc_type]
+
+    def get_document(self, doc_id: str) -> Optional[DocumentRecord]:
+        return self._by_id.get(doc_id)
+
+    def get_corpus_stats(self) -> Dict:
+        counts = {}
+        for d in self._documents:
+            counts[d.doc_type] = counts.get(d.doc_type, 0) + 1
+        counts["total"] = len(self._documents)
+        return counts
+
+
+@st.cache_data
+def load_knowledge_base() -> KnowledgeBase:
+    return KnowledgeBase()

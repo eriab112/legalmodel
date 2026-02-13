@@ -1,6 +1,6 @@
 # NAP Legal Model
 
-**Stöd för rådgivning kring Nationella planen för moderna miljövillkor (NAP)** – vattenkraft, miljödomstolar och svensk miljörätt. Detta repo innehåller datapipeline, tränade modeller och **NAP Legal AI Advisor** (Streamlit-app) för semantisk sökning och riskindikation (HIGH/MEDIUM/LOW) i miljödomstolsbeslut.
+**Stöd för rådgivning kring Nationella planen för moderna miljövillkor (NAP)** – vattenkraft, miljödomstolar och svensk miljörätt. Detta repo innehåller datapipeline, tränade modeller och **NAP Legal AI Advisor** (Streamlit-app) med semantisk sökning, riskindikation (HIGH/MEDIUM/LOW) och Gemini-baserad RAG över domstolsbeslut, lagstiftning och ansökningar.
 
 ---
 
@@ -8,14 +8,15 @@
 
 | Del | Beskrivning |
 |-----|-------------|
-| **nap-legal-ai-advisor/** | Streamlit-app: **Chat** (frågor/svar) och **Sök** (semantisk sökning över domar). Riskprediktion med LegalBERT (HIGH/MEDIUM/LOW). ~1 800 rader Python. |
+| **nap-legal-ai-advisor/** | Streamlit-app: **Chat** (Gemini RAG) och **Sök** (semantisk sökning över domar, lagstiftning och ansökningar). Riskprediktion med LegalBERT (HIGH/MEDIUM/LOW). KnowledgeBase med tre dokumenttyper. |
 | **scripts/** | Pipeline: rensning av domtexter → etiketter → träning → utvärdering. Plus Sundin-feature-extraktion, weak labels, DAPT-korpus, PDF-extraktion m.m. 13 script, ~3 800 rader. |
 | **tests/** | 94 enhetstester (pytest) för backend, integration och utils. Mockar Streamlit och modeller — kräver varken GPU eller datafiler. |
 | **Data/** | Rådata (Domar, Ansökningar, Lagstiftningdiverse) och **Data/processed/** med JSON som appen och scripten använder. |
 | **models/** | Fine-tunad KB-BERT (5-fold CV), DAPT-checkpoints och fine-tuned-efter-DAPT. Appen använder **fold_4**. |
-| **run_dapt.py / run_finetune.py / run_evaluate.py** | Phase A-script för DAPT pre-training, omträning med weak labels och utvärdering. |
+| **run_dapt.py / run_finetune.py / run_evaluate.py** | Phase A-script för DAPT pre-training, fine-tuning med weighted loss + class weights, och utvärdering. |
+| **evaluation_reports/** | Utvärderingsrapporter: överfittning-analys, slutresultat, iterationslogg. |
 
-Appen läser **endast** från `Data/processed/` (cleaned_court_texts, labeled_dataset, linkage_table) och från `models/nap_legalbert_cv/`.
+Appen läser från `Data/processed/` (cleaned_court_texts, labeled_dataset, linkage_table, lagtiftning_texts, ansokan_texts) och från `models/`.
 
 ---
 
@@ -52,6 +53,10 @@ För PDF-extraktion (t.ex. Sundin-script eller `extract_pdf_text.py`):
 **Kör alltid från repo root** (appen använder relativa sökvägar mot root):
 
 ```bash
+# Kopiera och konfigurera miljövariabler
+copy .env.example .env
+# Redigera .env: sätt GEMINI_API_KEY för RAG-chat (valfritt), MODEL_PATH vid behov
+
 streamlit run nap-legal-ai-advisor/app.py
 ```
 
@@ -75,10 +80,10 @@ python scripts/06_evaluate_basic.py
 legalmodel/
 ├── README.md                    # Denna fil
 ├── nap-legal-ai-advisor/       # Streamlit-app (Chat + Sök, riskprediktion)
-│   ├── backend/                # risk_predictor, search_engine, rag_system
+│   ├── backend/                # risk_predictor, search_engine, rag_system, llm_engine
 │   ├── integration/            # chat_handler, search_handler, shared_context
 │   ├── ui/                     # chat_interface, search_interface, styles
-│   └── utils/                  # data_loader, ssl_fix
+│   └── utils/                  # data_loader (DataLoader + KnowledgeBase), ssl_fix
 ├── scripts/                     # Pipeline och hjälpscript (02–06 + Sundin, DAPT, m.m.)
 ├── tests/                       # 94 enhetstester (pytest)
 ├── Data/
@@ -88,13 +93,14 @@ legalmodel/
 │   └── processed/                              # cleaned_court_texts.json, labeled_dataset.json, m.m.
 ├── models/
 │   ├── nap_legalbert_cv/       # 5-fold LegalBERT (fold_4 används i appen)
-│   ├── nap_dapt/               # DAPT pre-training checkpoints
-│   └── nap_final/              # Fine-tuned efter DAPT
+│   ├── nap_dapt/               # DAPT pre-training checkpoints + final
+│   └── nap_final/              # Fine-tuned efter DAPT (3 epoker, class weights)
+├── evaluation_reports/          # Utvärderingsresultat och diagnostik
 ├── run_dapt.py                  # DAPT pre-training (Phase A, steg 6)
 ├── run_finetune.py              # Fine-tuning efter DAPT (Phase A, steg 7)
 ├── run_evaluate.py              # Utvärdering på testset
 ├── pyproject.toml               # Projektconfig, pytest, black, flake8
-├── .env.example                 # Miljövariabler template
+├── .env.example                 # Miljövariabler: MODEL_PATH, GEMINI_API_KEY, GEMINI_MODEL
 └── [dokumentation .md]          # STRATEGY_AND_PHASE_A, CONTEXT_HANDOVER, m.m.
 ```
 
@@ -121,6 +127,8 @@ legalmodel/
 
 ## Modellprestanda
 
+### Baseline: 5-fold CV (fold_4 används i appen)
+
 **Bas:** KB/bert-base-swedish-cased (110M parametrar), 5-fold CV, sliding window 512/256.
 
 | Metrik | Medel | Std |
@@ -135,6 +143,21 @@ legalmodel/
 | LOW_RISK | 0.13 | 0.20 | 0.16 |
 
 Stark MEDIUM_RISK-bias. Modellen ska användas som **indikator**, inte beslutsunderlag.
+
+### Phase A: DAPT + Fine-tuning
+
+**DAPT:** MLM pre-training på 96 juridiska dokument (1.42M ord). Eval loss: 1.604 → 1.353.
+
+**Fine-tuning:** 3 epoker, inverse-frequency class weights, gradient checkpointing (4GB VRAM). 30 dokument + 12 weak labels.
+
+| Metrik | DAPT-modell | Baseline |
+|--------|------------|----------|
+| Test accuracy (7 dok) | 57.1% | 65.0% (5-fold avg) |
+| F1 macro | 0.46 | 0.42 |
+| LOW_RISK F1 | **0.80** | 0.16 |
+| HIGH_RISK F1 | 0.00 | 0.33 |
+
+DAPT-modellen slog inte baseline på accuracy men förbättrade LOW_RISK-detektion kraftigt (F1: 0.16 → 0.80). Testsettet (7 dokument) är för litet för tillförlitliga slutsatser — varje dokument = 14.3% accuracy. Se `evaluation_reports/final_report.json` för fullständig analys.
 
 ---
 
@@ -188,7 +211,7 @@ Alla script körs från **repo root**, t.ex. `python scripts/02_clean_court_text
 
 - **Modell:** ~65 % genomsnittlig accuracy (5-fold); stark MEDIUM_RISK-bias. Endast **fold_4** används i appen (ingen ensemble).
 - **Data:** 44 märkta beslut är litet för 110M-parametrar; generalisering osäker. MEDIUM_RISK överrepresenterad (59 %).
-- **App:** Keyword-baserad intent i chatten; ingen LLM; ingen auth, rate limit eller strukturerad logging.
+- **App:** Gemini LLM-engine integrerad (RAG med källhänvisning), men inte ännu kopplad till chatt-UI. Sök indexerar nu beslut + lagstiftning + ansökningar. Ingen auth, rate limit eller strukturerad logging.
 - **Säkerhet:** SSL-workaround i `utils/ssl_fix.py` och i 05 – inte lämpligt för produktion utan korrekt proxy/CA.
 
 Mer detaljer: **SYSTEM_REVIEW.md**.
@@ -197,11 +220,11 @@ Mer detaljer: **SYSTEM_REVIEW.md**.
 
 ## Nästa steg
 
-Phase A steg 1–5 är genomförda (50 cleaned, 44 labeled, Sundin-features, weak labels, DAPT-korpus). Kvarvarande:
+Phase A (DAPT + fine-tuning) är genomförd. Kvarvarande:
 
-1. **DAPT (A6):** Kör `run_dapt.py` med `dapt_corpus.json` (96 dok, 1.42M ord). Spara till `models/nap_dapt/final`.
-2. **Omträning (A7):** Kör `run_finetune.py` — fine-tune med 44 starka + 12 weak labels. Val/test **enbart** på starka. Sliding window (512/256).
-3. **Utvärdera:** Kör `run_evaluate.py` — jämför med baseline (65 % accuracy).
+1. **Koppla Gemini till chatt-UI:** `llm_engine.py` är redo — integrera `GeminiEngine` i `chat_handler.py` för RAG-baserad fråga/svar.
+2. **Fler märkta dokument:** Mer data är den viktigaste förbättringen för modellprestanda (44 → 100+ rekommenderas).
+3. **5-fold CV för DAPT-modell:** Rättvis jämförelse med baseline som också använder 5-fold CV.
 4. **Phase B:** Multi-task (aux-heads från Sundin), RF(Sundin) + BERT-ensemble.
 
 Full ordning och implementationregler: **STRATEGY_AND_PHASE_A.md** och **CONTEXT_HANDOVER_FOR_STRATEGY.md**.
@@ -245,12 +268,16 @@ pip install pytest pytest-cov  # utvecklingsverktyg
 
 ### Projektstruktur
 
-Konfiguration finns i `pyproject.toml` (pytest, black, flake8). Miljövariabler kan sättas i `.env` (se `.env.example`).
+Konfiguration finns i `pyproject.toml` (pytest, black, flake8). Miljövariabler sätts i `.env` (se `.env.example`):
+
+- `MODEL_PATH` – Sökväg till riskmodellen (default: `models/nap_legalbert_cv/fold_4/best_model`)
+- `GEMINI_API_KEY` – API-nyckel för Gemini LLM (valfritt, krävs för RAG-chat)
+- `GEMINI_MODEL` – Gemini-modell (default: `gemini-2.5-flash`)
 
 ---
 
 ## Licens och referenser
 
 - Domar och lagstiftning: enligt gällande offentlighetsprincip och källor.
-- Modellbas: **KB/bert-base-swedish-cased** (Hugging Face).
+- **Modellbas:** KB/bert-base-swedish-cased (Hugging Face), Google Gemini (RAG).
 - Akademisk referens för features och etiketteringsram: **Sundin et al. (2026)**. *Insights from a nation-wide environmental relicensing of hydropower facilities in Sweden: a review of court verdicts from a biological perspective.* Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6. https://doi.org/10.1051/kmae/2025034

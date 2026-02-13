@@ -7,6 +7,7 @@ Sliding window inference matches scripts/05_finetune_legalbert.py exactly:
 - Aggregate by averaging logits across chunks, then argmax
 """
 
+import os
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -16,7 +17,9 @@ import streamlit as st
 import torch
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-MODEL_DIR = BASE_DIR / "models" / "nap_legalbert_cv" / "fold_4" / "best_model"
+_default_model = BASE_DIR / "models" / "nap_legalbert_cv" / "fold_4" / "best_model"
+_env_model = os.getenv("MODEL_PATH")
+MODEL_DIR = Path(_env_model) if _env_model and Path(_env_model).is_absolute() else (BASE_DIR / _env_model if _env_model else _default_model)
 
 LABEL_MAP = {"HIGH_RISK": 0, "MEDIUM_RISK": 1, "LOW_RISK": 2}
 ID2LABEL = {v: k for k, v in LABEL_MAP.items()}
@@ -59,6 +62,7 @@ class LegalBERTPredictor:
 
         self._model.to(self._device)
         self._model.eval()
+        print(f"LegalBERT loaded from: {MODEL_DIR}")
 
     @property
     def model(self):

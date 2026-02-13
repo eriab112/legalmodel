@@ -34,6 +34,10 @@ class NAPDataset(TorchDataset):
 
     def __init__(self, samples=None, tokenizer=None, max_len=512, stride=256):
         self.samples = []
+        if tokenizer is not None:
+            self.cls_id = tokenizer.cls_token_id
+            self.sep_id = tokenizer.sep_token_id
+            self.pad_id = tokenizer.pad_token_id
         if samples is None:
             return
         label_map = {"HIGH_RISK": 0, "MEDIUM_RISK": 1, "LOW_RISK": 2}
@@ -75,14 +79,11 @@ class NAPDataset(TorchDataset):
 
     def __getitem__(self, idx):
         s = self.samples[idx]
-        cls_id = 2  # [CLS] for KB-BERT
-        sep_id = 3  # [SEP] for KB-BERT
-        pad_id = 0  # [PAD] for KB-BERT
-        input_ids = [cls_id] + s["tokens"] + [sep_id]
+        input_ids = [self.cls_id] + s["tokens"] + [self.sep_id]
         input_ids = input_ids[:512]
         pad_len = 512 - len(input_ids)
         attention_mask = [1] * len(input_ids) + [0] * pad_len
-        input_ids = input_ids + [pad_id] * pad_len
+        input_ids = input_ids + [self.pad_id] * pad_len
         return {
             "input_ids": torch.tensor(input_ids),
             "attention_mask": torch.tensor(attention_mask),
@@ -93,7 +94,11 @@ class NAPDataset(TorchDataset):
 
 
 class WeightedTrainer(Trainer):
-    """Custom trainer that handles per-sample weights."""
+    """Custom trainer with per-sample weights and class weights."""
+
+    def __init__(self, class_weights=None, **kwargs):
+        super().__init__(**kwargs)
+        self.class_weights = class_weights
 
     def compute_loss(self, model, inputs, return_outputs=False, **kwargs):
         labels = inputs.pop("labels")
@@ -104,6 +109,13 @@ class WeightedTrainer(Trainer):
         logits = outputs.logits
 
         loss = F.cross_entropy(logits.view(-1, 3), labels.view(-1), reduction="none")
+
+        # Apply class weights to counteract MEDIUM_RISK dominance
+        if self.class_weights is not None:
+            cw = self.class_weights.to(loss.device)
+            class_w = cw[labels.view(-1)]
+            loss = loss * class_w
+
         weighted_loss = (loss * weights.view(-1)).mean()
 
         return (weighted_loss, outputs) if return_outputs else weighted_loss
@@ -168,7 +180,19 @@ train_all = train_strong + weak_samples
 train_ds = NAPDataset(train_all, tokenizer)
 val_ds = NAPDataset(val_samples, tokenizer)
 
+# Compute class weights from training chunk distribution
+from collections import Counter
+label_counts = Counter(s["label"] for s in train_ds.samples)
+total = sum(label_counts.values())
+n_classes = 3
+class_weights = torch.tensor([
+    total / (n_classes * label_counts.get(i, 1)) for i in range(n_classes)
+], dtype=torch.float)
 print(f"Loaded: {len(train_ds)} train chunks, {len(val_ds)} val chunks")
+print(f"Train label distribution: HIGH_RISK={label_counts.get(0,0)}, "
+      f"MEDIUM_RISK={label_counts.get(1,0)}, LOW_RISK={label_counts.get(2,0)}")
+print(f"Class weights: HIGH_RISK={class_weights[0]:.2f}, "
+      f"MEDIUM_RISK={class_weights[1]:.2f}, LOW_RISK={class_weights[2]:.2f}")
 
 # Create output directories
 os.makedirs("models/nap_final", exist_ok=True)
@@ -182,7 +206,7 @@ gc.collect()
 # NO eval or checkpoint saving during training to prevent OOM crash
 args = TrainingArguments(
     output_dir="models/nap_final",
-    num_train_epochs=5,
+    num_train_epochs=3,
     per_device_train_batch_size=1,
     per_device_eval_batch_size=1,
     gradient_accumulation_steps=8,  # effective batch = 8
@@ -200,18 +224,20 @@ args = TrainingArguments(
 )
 
 print(f"\nTraining Configuration:")
-print(f"  Epochs: 5")
+print(f"  Epochs: 3 (middle ground: 2=underfit, 5=overfit)")
 print(f"  Batch size: 1 (per device)")
 print(f"  Gradient accumulation: 8 steps")
 print(f"  Effective batch size: 8")
 print(f"  Learning rate: 2e-5")
-print(f"  Weighted loss: Yes (strong=1.0, weak=confidence)")
+print(f"  Weighted loss: Yes (per-sample + class weights)")
+print(f"  Class weights: counteract MEDIUM_RISK dominance")
 print(f"  FP16: {torch.cuda.is_available()}")
 print(f"  Gradient checkpointing: True")
 print(f"  Eval during training: DISABLED (saves memory)")
 print(f"  Checkpoint saving: DISABLED (saves memory)")
 
 trainer = WeightedTrainer(
+    class_weights=class_weights,
     model=model,
     args=args,
     train_dataset=train_ds,

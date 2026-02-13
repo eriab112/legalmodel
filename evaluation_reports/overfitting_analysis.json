@@ -1,0 +1,52 @@
+{
+  "issue": "Training iteration log: overfitting, underfitting, and class imbalance",
+  "date": "2025-02-13",
+
+  "iteration_1_five_epochs": {
+    "model": "models/nap_final/best (5-epoch, no class weights)",
+    "result": "OVERFIT - memorized training data",
+    "train_accuracy": "30/30 = 100.0%",
+    "val_accuracy": "4/7 = 57.1%",
+    "test_accuracy": "3/7 = 42.9%",
+    "prediction_diversity": "Used all 3 classes, but wrong on test",
+    "training_time": "~90 minutes"
+  },
+
+  "iteration_2_two_epochs": {
+    "model": "models/nap_final/best (2-epoch, no class weights)",
+    "result": "UNDERFIT - majority class predictor",
+    "train_accuracy": "21/30 = 70.0%",
+    "train_predictions": {"MEDIUM_RISK": 27, "HIGH_RISK": 1, "LOW_RISK": 2},
+    "val_accuracy": "4/7 = 57.1%",
+    "val_predictions": {"MEDIUM_RISK": 7},
+    "test_accuracy": "4/7 = 57.1%",
+    "test_predictions": {"MEDIUM_RISK": 7},
+    "diagnosis": "Model learned to predict MEDIUM_RISK for everything. Slightly better than random on accuracy but zero discrimination ability."
+  },
+
+  "root_causes": {
+    "1_class_imbalance": "Training data is ~69% MEDIUM_RISK (18 strong + 11 weak = 29 out of 42 samples). Without class weights, the optimal lazy strategy is to always predict MEDIUM_RISK.",
+    "2_epoch_sensitivity": "2 epochs = underfit (majority class), 5 epochs = overfit (memorized). The sweet spot is narrow.",
+    "3_no_early_stopping": "Eval disabled during training to prevent OOM on 4GB GPU. No early stopping possible.",
+    "4_small_dataset": "Only 30 training documents (6 HIGH + 18 MEDIUM + 6 LOW). 759 chunks are overlapping windows, not independent samples.",
+    "5_weak_labels_reinforce_bias": "12 weak labels are 11 MEDIUM + 1 HIGH + 0 LOW, making imbalance worse."
+  },
+
+  "iteration_3_fix": {
+    "changes": [
+      "Epochs: 2 -> 3 (middle ground between underfit and overfit)",
+      "Added inverse-frequency class weights to loss function",
+      "Class weights computed from training chunk distribution: penalizes MEDIUM_RISK, rewards HIGH/LOW_RISK correct predictions",
+      "Per-sample weights (strong=1.0, weak=confidence) still applied on top of class weights"
+    ],
+    "rationale": "Class weights force the model to pay equal attention to minority classes. 3 epochs gives enough training to learn patterns without memorizing."
+  },
+
+  "recommendations_for_future": {
+    "1": "Use 5-fold cross-validation for more reliable accuracy estimates with small datasets",
+    "2": "If eval can be re-enabled (more VRAM or CPU eval), use early stopping with patience=2",
+    "3": "More labeled data would be the most impactful improvement",
+    "4": "The 7-document test set is too small for reliable conclusions - each document = 14.3% accuracy",
+    "5": "Consider dropout increase (0.2 -> 0.3) for additional regularization"
+  }
+}

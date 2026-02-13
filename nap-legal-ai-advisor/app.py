@@ -36,7 +36,7 @@ from integration.shared_context import SharedContext
 from ui.chat_interface import render_chat_mode
 from ui.search_interface import render_search_mode
 from ui.styles import CUSTOM_CSS, metric_card_html
-from utils.data_loader import load_data
+from utils.data_loader import load_data, load_knowledge_base
 
 
 def init_backend():
@@ -49,6 +49,11 @@ def init_backend():
 
             # Build search index
             search.build_index(data.get_all_decisions())
+
+            # Build expanded search index with all document types
+            kb = load_knowledge_base()
+            search.build_full_index(kb.get_all_documents())
+            st.session_state.knowledge_base = kb
 
             # Store in session state
             st.session_state.data_loader = data
@@ -80,16 +85,27 @@ def render_sidebar(data_loader):
         search_engine = st.session_state.get("search_engine")
         n_chunks = search_engine.total_chunks if search_engine else 0
 
+        kb = st.session_state.get("knowledge_base")
+        stats = kb.get_corpus_stats() if kb else {}
+        total_docs = stats.get("total", total_all) if kb else total_all
+
         col1, col2 = st.columns(2)
         with col1:
             st.markdown(
-                metric_card_html(total_all, "Beslut"),
+                metric_card_html(total_docs, "Dokument"),
                 unsafe_allow_html=True,
             )
         with col2:
             st.markdown(
                 metric_card_html(n_chunks, "Chunks"),
                 unsafe_allow_html=True,
+            )
+
+        if kb:
+            st.caption(
+                f"Beslut: {stats.get('decision', 0)} | "
+                f"Lagstiftning: {stats.get('legislation', 0)} | "
+                f"Ansökningar: {stats.get('application', 0)}"
             )
 
         st.markdown("")

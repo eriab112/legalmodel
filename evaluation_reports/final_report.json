@@ -1,0 +1,173 @@
+{
+  "title": "NAP Legal AI - Final Training & Evaluation Report",
+  "date": "2025-02-13",
+  "objective": "Fine-tune KB/bert-base-swedish-cased with DAPT on Swedish court decisions for 3-class risk classification (HIGH_RISK, MEDIUM_RISK, LOW_RISK). Target: beat baseline 65% accuracy (5-fold CV avg).",
+
+  "pipeline_summary": {
+    "step_1_data_preparation": {
+      "labeled_documents": 44,
+      "split": {"train": 30, "val": 7, "test": 7},
+      "train_distribution": {"HIGH_RISK": 6, "MEDIUM_RISK": 18, "LOW_RISK": 6},
+      "weak_labels": {"total": 12, "HIGH_RISK": 1, "MEDIUM_RISK": 11, "LOW_RISK": 0},
+      "dapt_corpus": {"train_docs": 91, "val_docs": 5},
+      "sliding_window": {"window": 512, "stride": 256, "train_chunks": 759, "val_chunks": 204}
+    },
+    "step_2_dapt": {
+      "base_model": "KB/bert-base-swedish-cased",
+      "parameters": "124.7M",
+      "task": "Masked Language Modeling on legal corpus",
+      "result": "eval loss 1.604 -> 1.353",
+      "output": "models/nap_dapt/final/"
+    },
+    "step_3_fine_tuning": {
+      "final_config": {
+        "epochs": 3,
+        "batch_size": 1,
+        "gradient_accumulation": 8,
+        "effective_batch_size": 8,
+        "learning_rate": "2e-5",
+        "weight_decay": 0.01,
+        "fp16": true,
+        "gradient_checkpointing": true,
+        "class_weights": "inverse-frequency (computed from chunk distribution)",
+        "per_sample_weights": "strong=1.0, weak=confidence",
+        "eval_during_training": "disabled (OOM prevention)",
+        "checkpoint_saving": "disabled (OOM prevention)"
+      },
+      "hardware": "NVIDIA T500 (4GB VRAM)",
+      "output": "models/nap_final/best/"
+    },
+    "step_4_evaluation": {
+      "method": "Document-level logit averaging over sliding window chunks",
+      "test_set": "7 held-out documents"
+    }
+  },
+
+  "training_iterations": {
+    "iteration_1": {
+      "config": "5 epochs, no class weights",
+      "train_accuracy": "30/30 = 100.0%",
+      "val_accuracy": "4/7 = 57.1%",
+      "test_accuracy": "3/7 = 42.9%",
+      "diagnosis": "SEVERE OVERFITTING - memorized training data, used all 3 classes but wrong on test",
+      "training_time": "~90 minutes"
+    },
+    "iteration_2": {
+      "config": "2 epochs, no class weights",
+      "train_accuracy": "21/30 = 70.0%",
+      "train_predictions": {"MEDIUM_RISK": 27, "HIGH_RISK": 1, "LOW_RISK": 2},
+      "val_accuracy": "4/7 = 57.1% (all MEDIUM_RISK)",
+      "test_accuracy": "4/7 = 57.1% (all MEDIUM_RISK)",
+      "diagnosis": "UNDERFITTING - majority class predictor, no discrimination ability",
+      "training_time": "~36 minutes"
+    },
+    "iteration_3_final": {
+      "config": "3 epochs, inverse-frequency class weights",
+      "train_accuracy": "28/30 = 93.3%",
+      "train_predictions": {"MEDIUM_RISK": 16, "HIGH_RISK": 6, "LOW_RISK": 8},
+      "val_accuracy": "4/7 = 57.1%",
+      "test_accuracy": "4/7 = 57.1%",
+      "test_predictions": {"MEDIUM_RISK": 3, "HIGH_RISK": 1, "LOW_RISK": 3},
+      "diagnosis": "Best balance - uses all 3 classes, strong LOW_RISK detection, but still below baseline overall"
+    }
+  },
+
+  "final_results": {
+    "overall": {
+      "accuracy": "57.1% (4/7)",
+      "f1_weighted": 0.555,
+      "f1_macro": 0.457,
+      "baseline_accuracy_5fold_avg": "65.0%",
+      "baseline_accuracy_best_fold": "75.0%",
+      "improvement_vs_baseline": "-7.9 percentage points",
+      "verdict": "DID NOT BEAT BASELINE"
+    },
+    "per_class": {
+      "HIGH_RISK": {
+        "f1": 0.00,
+        "baseline_f1": 0.33,
+        "note": "Only 1 HIGH_RISK doc in test set; predicted as MEDIUM_RISK"
+      },
+      "MEDIUM_RISK": {
+        "f1": 0.57,
+        "baseline_f1": 0.76,
+        "note": "Recall dropped from 0.95 to 0.50 as class weights spread predictions"
+      },
+      "LOW_RISK": {
+        "f1": 0.80,
+        "baseline_f1": 0.16,
+        "note": "MAJOR IMPROVEMENT - perfect recall, strong precision. Class weights helped significantly."
+      }
+    },
+    "confusion_matrix": {
+      "headers": ["Pred_HIGH", "Pred_MEDIUM", "Pred_LOW"],
+      "True_HIGH":   [0, 1, 0],
+      "True_MEDIUM": [1, 2, 1],
+      "True_LOW":    [0, 0, 2]
+    },
+    "test_predictions": [
+      {"case": "m13999-24", "predicted": "LOW_RISK", "true": "MEDIUM_RISK", "confidence": 0.797, "correct": false},
+      {"case": "m2614-23", "predicted": "MEDIUM_RISK", "true": "MEDIUM_RISK", "confidence": 0.596, "correct": true},
+      {"case": "m5221-21", "predicted": "HIGH_RISK", "true": "MEDIUM_RISK", "confidence": 0.381, "correct": false},
+      {"case": "m4962-23", "predicted": "LOW_RISK", "true": "LOW_RISK", "confidence": 0.809, "correct": true},
+      {"case": "m10202-23", "predicted": "MEDIUM_RISK", "true": "HIGH_RISK", "confidence": 0.451, "correct": false},
+      {"case": "m12894-23", "predicted": "LOW_RISK", "true": "LOW_RISK", "confidence": 0.772, "correct": true},
+      {"case": "m506-22", "predicted": "MEDIUM_RISK", "true": "MEDIUM_RISK", "confidence": 0.883, "correct": true}
+    ]
+  },
+
+  "technical_challenges": {
+    "oom_crashes": {
+      "problem": "Training crashed the computer (NVIDIA T500, 4GB VRAM) due to simultaneous eval + checkpoint saving at epoch boundaries",
+      "fix": "Disabled eval and checkpoint saving during training, enabled gradient checkpointing, added gc.collect() + torch.cuda.empty_cache()"
+    },
+    "overfitting": {
+      "problem": "5 epochs produced 100% train / 42.9% test (memorization)",
+      "root_cause": "759 training chunks are overlapping sliding windows over only 30 documents - not independent samples. 5 passes memorized the content.",
+      "fix": "Reduced to 3 epochs"
+    },
+    "class_imbalance": {
+      "problem": "2-epoch model predicted MEDIUM_RISK for everything (69% of training data is MEDIUM_RISK)",
+      "fix": "Added inverse-frequency class weights to loss function"
+    },
+    "layernorm_naming": {
+      "problem": "KB-BERT uses gamma/beta parameter names vs HuggingFace weight/bias convention",
+      "impact": "Warnings only, no functional issue"
+    }
+  },
+
+  "limitations": {
+    "1_tiny_dataset": "Only 44 labeled documents (30 train, 7 val, 7 test). Each test document represents 14.3% of accuracy - one wrong prediction swings results by 14 points.",
+    "2_unfair_comparison": "Baseline used 5-fold cross-validation over all 44 docs (each fold uses ~35 for training). Our model trains on 30 and tests on a fixed 7. The baseline sees more training data and averages over 5 folds.",
+    "3_class_imbalance": "Training data is ~69% MEDIUM_RISK (18 strong + 11 weak out of 42). Even with class weights, the minority classes (6 HIGH, 6 LOW) have very few examples.",
+    "4_hardware_constraints": "4GB VRAM forced disabling eval during training (no early stopping), limiting ability to find optimal checkpoint.",
+    "5_weak_labels_quality": "12 weak labels have low confidence (0.2-0.3) and are almost all MEDIUM_RISK, reinforcing bias without helping minority classes.",
+    "6_test_set_composition": "Test set has 1 HIGH_RISK, 4 MEDIUM_RISK, 2 LOW_RISK - a single HIGH_RISK miss costs 14.3% accuracy."
+  },
+
+  "what_worked": {
+    "dapt": "Domain-adaptive pre-training reduced MLM eval loss from 1.604 to 1.353, showing the model learned legal Swedish language patterns.",
+    "class_weights": "Fixed the majority-class prediction problem. LOW_RISK F1 improved from 0.16 (baseline) to 0.80.",
+    "gradient_checkpointing": "Enabled training on 4GB VRAM without needing to reduce model size.",
+    "sliding_window_with_logit_averaging": "Document-level evaluation via chunk logit averaging is sound and handles variable-length legal documents."
+  },
+
+  "recommendations_for_improvement": [
+    "More labeled data: The single most impactful improvement. 100+ labeled documents would enable reliable training and evaluation.",
+    "5-fold cross-validation: Would provide fair comparison with baseline and more reliable accuracy estimates.",
+    "Better weak labels: Current weak labels are almost all MEDIUM_RISK with low confidence. Weak labels for HIGH_RISK and LOW_RISK would help minority classes.",
+    "Early stopping: With more VRAM or CPU-based eval, early stopping could find the optimal checkpoint between underfitting and overfitting.",
+    "Stratified sampling: Ensure train/val/test splits have balanced class representation."
+  ],
+
+  "files": {
+    "training_script": "run_finetune.py",
+    "evaluation_script": "run_evaluate.py",
+    "final_model": "models/nap_final/best/",
+    "dapt_model": "models/nap_dapt/final/",
+    "evaluation_results": "evaluation_reports/final_results.json",
+    "training_log": "evaluation_reports/overfitting_analysis.json",
+    "labeled_data": "Data/processed/labeled_dataset.json",
+    "weak_labels": "Data/processed/weakly_labeled_applications.json"
+  }
+}

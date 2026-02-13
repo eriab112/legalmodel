@@ -1,12 +1,13 @@
 """
 Evaluation script for NAP Legal AI.
 Evaluates the fine-tuned model on the held-out test set.
-Uses document-level majority voting (same as baseline).
+Uses document-level logit averaging (same as baseline).
 """
 import json
 import os
-from collections import Counter, defaultdict
+from collections import defaultdict
 
+import numpy as np
 import torch
 from sklearn.metrics import (
     accuracy_score,
@@ -15,6 +16,12 @@ from sklearn.metrics import (
     precision_recall_fscore_support,
 )
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
+
+
+def _softmax(x):
+    e = np.exp(x - np.max(x))
+    return e / e.sum()
+
 
 print("=" * 60)
 print("STEP 4: EVALUATION ON TEST SET")
@@ -38,9 +45,10 @@ id2label = {0: "HIGH_RISK", 1: "MEDIUM_RISK", 2: "LOW_RISK"}
 test_docs = labeled["splits"]["test"]
 print(f"Test documents: {len(test_docs)}")
 
-# Evaluate at document level using sliding window + majority vote
+# Evaluate at document level using sliding window + logit averaging
 # (same approach as baseline for fair comparison)
 doc_preds = {}
+doc_confidences = {}
 doc_true = {}
 
 for doc in test_docs:
@@ -50,7 +58,7 @@ for doc in test_docs:
 
     # Sliding window
     tokens = tokenizer.encode(text, add_special_tokens=False)
-    chunk_preds = []
+    chunk_logits = []
 
     stride = 256
     max_len = 510  # leave room for CLS/SEP
@@ -78,20 +86,24 @@ for doc in test_docs:
 
         with torch.no_grad():
             outputs = model(**inputs)
-            pred = torch.argmax(outputs.logits, dim=1).item()
-            chunk_preds.append(pred)
+            logits = outputs.logits[0].cpu().numpy()
+            chunk_logits.append(logits)
 
-    # Majority vote
-    if chunk_preds:
-        vote = Counter(chunk_preds).most_common(1)[0][0]
-        doc_preds[doc_id] = vote
+    # Logit averaging
+    if chunk_logits:
+        avg_logits = np.mean(chunk_logits, axis=0)
+        probs = _softmax(avg_logits)
+        doc_preds[doc_id] = int(np.argmax(probs))
+        doc_confidences[doc_id] = float(np.max(probs))
     else:
         doc_preds[doc_id] = 1  # fallback to MEDIUM_RISK
+        doc_confidences[doc_id] = 0.0
 
     print(
-        f"  {doc_id}: {len(chunk_preds)} chunks, "
+        f"  {doc_id}: {len(chunk_logits)} chunks, "
         f"pred={id2label[doc_preds[doc_id]]}, "
         f"true={id2label[doc_true[doc_id]]}, "
+        f"conf={doc_confidences[doc_id]:.3f}, "
         f"{'OK' if doc_preds[doc_id] == doc_true[doc_id] else 'WRONG'}"
     )
 
@@ -207,6 +219,7 @@ results = {
             "predicted": id2label[doc_preds[doc_id]],
             "true": id2label[doc_true[doc_id]],
             "correct": doc_preds[doc_id] == doc_true[doc_id],
+            "confidence": doc_confidences[doc_id],
         }
         for doc_id in doc_preds
     },

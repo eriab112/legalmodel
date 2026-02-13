@@ -16,19 +16,22 @@ import streamlit as st
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / ".cache"
 EMBEDDINGS_CACHE = CACHE_DIR / "embeddings.pkl"
+FULL_EMBEDDINGS_CACHE = CACHE_DIR / "full_embeddings.pkl"
 
 MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 
 
 @dataclass
 class SearchResult:
-    decision_id: str
+    decision_id: str  # keep this name for backward compat (it's really doc_id now)
     chunk_text: str
     chunk_index: int
     similarity: float
     filename: str
     label: Optional[str]
     metadata: Dict
+    doc_type: str = "decision"  # "decision", "legislation", "application"
+    title: str = ""  # human-readable document title
 
 
 class SemanticSearchEngine:
@@ -130,11 +133,55 @@ class SemanticSearchEngine:
         # Save cache
         self._save_cache()
 
+    def build_full_index(self, documents):
+        """Build search index from DocumentRecord list (all doc types).
+
+        Chunks the text field for each document and computes embeddings.
+        Uses cache if data hasn't changed.
+        """
+        # Compute data hash from all documents
+        hash_input = "".join(f"{d.doc_id}:{len(d.text)}" for d in documents)
+        data_hash = hashlib.md5(hash_input.encode()).hexdigest()
+
+        # Try loading from full cache
+        if self._try_load_cache_file(FULL_EMBEDDINGS_CACHE, data_hash):
+            return
+
+        # Build chunks from DocumentRecord list
+        self._chunks = []
+        for doc in documents:
+            chunks = self.chunk_text(doc.text)
+            for i, chunk_text in enumerate(chunks):
+                self._chunks.append({
+                    "text": chunk_text,
+                    "chunk_index": i,
+                    "decision_id": doc.doc_id,
+                    "filename": doc.filename,
+                    "label": doc.label,
+                    "metadata": doc.metadata,
+                    "doc_type": doc.doc_type,
+                    "title": doc.title,
+                })
+
+        # Encode all chunks
+        texts = [c["text"] for c in self._chunks]
+        self._embeddings = self.model.encode(
+            texts,
+            show_progress_bar=True,
+            batch_size=32,
+            normalize_embeddings=True,
+        )
+        self._data_hash = data_hash
+        self._save_cache_file(FULL_EMBEDDINGS_CACHE)
+
     def _try_load_cache(self, data_hash: str) -> bool:
-        if not EMBEDDINGS_CACHE.exists():
+        return self._try_load_cache_file(EMBEDDINGS_CACHE, data_hash)
+
+    def _try_load_cache_file(self, cache_path: Path, data_hash: str) -> bool:
+        if not cache_path.exists():
             return False
         try:
-            with open(EMBEDDINGS_CACHE, "rb") as f:
+            with open(cache_path, "rb") as f:
                 cache = pickle.load(f)
             if cache.get("data_hash") == data_hash:
                 self._chunks = cache["chunks"]
@@ -146,8 +193,11 @@ class SemanticSearchEngine:
         return False
 
     def _save_cache(self):
+        self._save_cache_file(EMBEDDINGS_CACHE)
+
+    def _save_cache_file(self, cache_path: Path):
         CACHE_DIR.mkdir(parents=True, exist_ok=True)
-        with open(EMBEDDINGS_CACHE, "wb") as f:
+        with open(cache_path, "wb") as f:
             pickle.dump({
                 "data_hash": self._data_hash,
                 "chunks": self._chunks,
@@ -162,6 +212,7 @@ class SemanticSearchEngine:
         court_filter: Optional[str] = None,
         date_from: Optional[str] = None,
         date_to: Optional[str] = None,
+        doc_type_filter: Optional[str] = None,
     ) -> List[SearchResult]:
         """Search for relevant chunks using cosine similarity."""
         if self._embeddings is None or len(self._chunks) == 0:
@@ -186,10 +237,12 @@ class SemanticSearchEngine:
                 mask[i] = False
             if date_to and chunk["metadata"].get("date", "") > date_to:
                 mask[i] = False
+            if doc_type_filter and chunk.get("doc_type", "decision") != doc_type_filter:
+                mask[i] = False
 
         similarities[~mask] = -1
 
-        # Get top-k, deduplicate by decision_id
+        # Get top-k, deduplicate by decision_id (doc_id)
         sorted_indices = np.argsort(similarities)[::-1]
         results = []
         seen_decisions = set()
@@ -212,6 +265,8 @@ class SemanticSearchEngine:
                 filename=chunk["filename"],
                 label=chunk["label"],
                 metadata=chunk["metadata"],
+                doc_type=chunk.get("doc_type", "decision"),
+                title=chunk.get("title", ""),
             ))
 
             if len(results) >= n_results:
@@ -259,6 +314,8 @@ class SemanticSearchEngine:
                 filename=chunk["filename"],
                 label=chunk["label"],
                 metadata=chunk["metadata"],
+                doc_type=chunk.get("doc_type", "decision"),
+                title=chunk.get("title", ""),
             ))
 
             if len(results) >= n_results:
