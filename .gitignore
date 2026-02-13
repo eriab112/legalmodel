@@ -7,6 +7,11 @@ Data/Domar/
 Data/Ansökningar/
 Data/Lagstiftningdiverse/
 
+# Processed binary datasets (too large; JSON files are tracked)
+Data/processed/*.pt
+Data/processed/dapt_train/
+Data/processed/dapt_val/
+
 # Separate project data
 nap_model-main/
 
@@ -28,16 +33,33 @@ build/
 .env
 .venv/
 venv/
+env/
 
 # OS
 .DS_Store
 Thumbs.db
+Desktop.ini
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
+
+# Logs and training artifacts
+logs/
+*.log
+wandb/
+runs/
+
+# Pytest
+.pytest_cache/
+htmlcov/
+.coverage
 
 # PDF source (tracked as TXT in processed)
 kmae250140.pdf
+
+# Jupyter
+.ipynb_checkpoints/

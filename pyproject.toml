@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "nap-legal-ai"
+version = "0.1.0"
+description = "NAP Legal AI Advisor — riskindikation och semantisk sökning i svenska miljödomstolsbeslut"
+requires-python = ">=3.10"
+license = {text = "Proprietary"}
+
+dependencies = [
+    "streamlit>=1.28.0",
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "sentence-transformers>=2.2.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "plotly>=5.17.0",
+    "scikit-learn>=1.3.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "black>=24.0",
+    "flake8>=7.0",
+]
+pipeline = [
+    "pymupdf>=1.23.0",
+    "datasets>=2.14.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["nap-legal-ai-advisor"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.flake8]
+max-line-length = 100
+exclude = ["__pycache__", ".venv", "models", "Data"]

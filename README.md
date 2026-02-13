@@ -9,10 +9,11 @@
 | Del | Beskrivning |
 |-----|-------------|
 | **nap-legal-ai-advisor/** | Streamlit-app: **Chat** (frågor/svar) och **Sök** (semantisk sökning över domar). Riskprediktion med LegalBERT (HIGH/MEDIUM/LOW). ~1 800 rader Python. |
-| **scripts/** | Pipeline: rensning av domtexter → etiketter → träning → utvärdering. Plus Sundin-feature-extraktion, weak labels, DAPT-korpus, PDF-extraktion m.m. |
+| **scripts/** | Pipeline: rensning av domtexter → etiketter → träning → utvärdering. Plus Sundin-feature-extraktion, weak labels, DAPT-korpus, PDF-extraktion m.m. 13 script, ~3 800 rader. |
+| **tests/** | 94 enhetstester (pytest) för backend, integration och utils. Mockar Streamlit och modeller — kräver varken GPU eller datafiler. |
 | **Data/** | Rådata (Domar, Ansökningar, Lagstiftningdiverse) och **Data/processed/** med JSON som appen och scripten använder. |
-| **models/** | Fine-tunad KB-BERT (5-fold CV). Appen använder **fold_4**. |
-| **nap_model-main/** | Separat NAP Decision Support-system (KPIs, VISS, kostnadsmodell, dashboard). Delad data används i `04_link_to_viss.py`; appen är oberoende. |
+| **models/** | Fine-tunad KB-BERT (5-fold CV), DAPT-checkpoints och fine-tuned-efter-DAPT. Appen använder **fold_4**. |
+| **run_dapt.py / run_finetune.py / run_evaluate.py** | Phase A-script för DAPT pre-training, omträning med weak labels och utvärdering. |
 
 Appen läser **endast** från `Data/processed/` (cleaned_court_texts, labeled_dataset, linkage_table) och från `models/nap_legalbert_cv/`.
 
@@ -38,9 +39,12 @@ python -m venv .venv
 
 # Beroenden för appen (och för de flesta script)
 pip install -r nap-legal-ai-advisor/requirements.txt
+
+# Utvecklingsverktyg (valfritt)
+pip install pytest pytest-cov black flake8
 ```
 
-För PDF-extraktion (t.ex. Sundin-script eller `extract_pdf_text.py`):  
+För PDF-extraktion (t.ex. Sundin-script eller `extract_pdf_text.py`):
 `pip install pymupdf`
 
 ### Starta appen
@@ -71,20 +75,41 @@ python scripts/06_evaluate_basic.py
 legalmodel/
 ├── README.md                    # Denna fil
 ├── nap-legal-ai-advisor/       # Streamlit-app (Chat + Sök, riskprediktion)
-├── scripts/                     # Pipeline och hjälpscript
+│   ├── backend/                # risk_predictor, search_engine, rag_system
+│   ├── integration/            # chat_handler, search_handler, shared_context
+│   ├── ui/                     # chat_interface, search_interface, styles
+│   └── utils/                  # data_loader, ssl_fix
+├── scripts/                     # Pipeline och hjälpscript (02–06 + Sundin, DAPT, m.m.)
+├── tests/                       # 94 enhetstester (pytest)
 ├── Data/
 │   ├── Domar/data/processed/court_decisions/   # Rå TXT (domar)
 │   ├── Ansökningar/                            # PDF (ansökningar + några domar)
 │   ├── Lagstiftningdiverse/                    # Lagstiftning, riktlinjer
 │   └── processed/                              # cleaned_court_texts.json, labeled_dataset.json, m.m.
-├── models/nap_legalbert_cv/    # 5-fold LegalBERT (fold_4 används i appen)
-├── nap_model-main/             # Separat NAP Decision Support (VISS, kostnadsmodell)
-└── [dokumentation .md]         # SYSTEM_REVIEW, COMPLETE_DATA_INVENTORY, CONTEXT_HANDOVER, m.m.
+├── models/
+│   ├── nap_legalbert_cv/       # 5-fold LegalBERT (fold_4 används i appen)
+│   ├── nap_dapt/               # DAPT pre-training checkpoints
+│   └── nap_final/              # Fine-tuned efter DAPT
+├── run_dapt.py                  # DAPT pre-training (Phase A, steg 6)
+├── run_finetune.py              # Fine-tuning efter DAPT (Phase A, steg 7)
+├── run_evaluate.py              # Utvärdering på testset
+├── pyproject.toml               # Projektconfig, pytest, black, flake8
+├── .env.example                 # Miljövariabler template
+└── [dokumentation .md]          # STRATEGY_AND_PHASE_A, CONTEXT_HANDOVER, m.m.
 ```
 
 ---
 
-## Data och pipeline
+## Nuvarande datatillstånd
+
+| Datamängd | Antal | Detaljer |
+|-----------|-------|----------|
+| **cleaned_court_texts.json** | **50 beslut** | Alla med `text_full`, `key_text`, `sections`, `metadata` |
+| **labeled_dataset.json** | **44 märkta** | Train: 30, Val: 7, Test: 7 |
+| **Etikettfördelning** | | HIGH_RISK: 8 (18%), MEDIUM_RISK: 26 (59%), LOW_RISK: 10 (23%) |
+| **Exkluderade** | 6 | Ej vattenkraft (m8024-05, m7708-22, m899-23, m3273-22, m2479-22, m2024-01) |
+
+### Datahantering
 
 - **Rå domar:** TXT-filer i `Data/Domar/data/processed/court_decisions/`. Nya domar läggs här; därefter körs **02** så att `cleaned_court_texts.json` uppdateras.
 - **Etiketter:** Nya/ändrade etiketter läggs i **`Data/processed/label_overrides.json`** (`{ "decision_id": "HIGH_RISK" }`). **Redigera inte** `labeled_dataset.json` manuellt – kör **03** så byggs train/val/test om.
@@ -92,11 +117,28 @@ legalmodel/
   - `cleaned_court_texts.json` → `decisions[]` med `id`, `text_full`, `key_text`, `sections`, `metadata`.
   - `labeled_dataset.json` → `splits.train`, `splits.val`, `splits.test` (inga toppnivå-`decisions`).
 
-Nuvarande tillstånd: **46 beslut** i cleaned, **40 märkta** i labeled. **4 extra domar** finns som TXT (tillagda via `add_4_new_domar.py`) men 02/03 har inte körts för att nå 50/44.
+---
+
+## Modellprestanda
+
+**Bas:** KB/bert-base-swedish-cased (110M parametrar), 5-fold CV, sliding window 512/256.
+
+| Metrik | Medel | Std |
+|--------|-------|-----|
+| Doc accuracy | 0.65 | 0.094 |
+| Doc F1 macro | 0.42 | 0.215 |
+
+| Klass | Precision | Recall | F1 |
+|-------|-----------|--------|----|
+| HIGH_RISK | 0.40 | 0.30 | 0.33 |
+| MEDIUM_RISK | 0.64 | 0.95 | 0.76 |
+| LOW_RISK | 0.13 | 0.20 | 0.16 |
+
+Stark MEDIUM_RISK-bias. Modellen ska användas som **indikator**, inte beslutsunderlag.
 
 ---
 
-## Script (urval)
+## Script
 
 | Script | Syfte |
 |--------|--------|
@@ -107,11 +149,14 @@ Nuvarande tillstånd: **46 beslut** i cleaned, **40 märkta** i labeled. **4 ext
 | **06_evaluate_basic.py** | Sammanfatta träningsresultat, confusion, rapporter |
 | **sundin_feature_extraction.py** | Extrahera Sundin-features (passage, flöde, övervakning, kostnad) → `decision_features_sundin2026.json` |
 | **sundin_validation.py** | RF feature importance (5-fold) + KMeans-klustring som diagnostik |
-| **add_4_new_domar.py** | Hitta 4 dom-PDF i Ansökningar, kopiera och extrahera till TXT |
 | **weak_labels_applications.py** | Weak labels för ansökningar → `weakly_labeled_applications.json` |
 | **build_dapt_corpus.py** | Bygg DAPT-korpus (lagstiftning + ansökningar + domar) → `dapt_corpus.json` |
-| **extract_pdf_text.py** | Extrahera text från en PDF till .txt (PyMuPDF). Exempel: `python scripts/extract_pdf_text.py kmae250140.pdf` |
-| **extract_all_pdfs.py** | Extrahera text från PDF i Ansökningar + Lagstiftningdiverse → JSON i `Data/processed/` |
+| **add_4_new_domar.py** | Hitta 4 dom-PDF i Ansökningar, kopiera och extrahera till TXT |
+| **extract_pdf_text.py** | Extrahera text från en PDF till .txt (PyMuPDF) |
+| **extract_all_pdfs.py** | Extrahera text från PDF i Ansökningar + Lagstiftningdiverse → JSON |
+| **run_dapt.py** *(root)* | DAPT pre-training med `dapt_corpus.json` (Phase A, steg 6) |
+| **run_finetune.py** *(root)* | Fine-tuning efter DAPT med starka + weak labels (Phase A, steg 7) |
+| **run_evaluate.py** *(root)* | Utvärdering på testset efter omträning |
 
 Alla script körs från **repo root**, t.ex. `python scripts/02_clean_court_texts.py`.
 
@@ -119,28 +164,30 @@ Alla script körs från **repo root**, t.ex. `python scripts/02_clean_court_text
 
 ## Strategi och akademisk grund
 
-- **Etiketter:** HIGH_RISK / MEDIUM_RISK / LOW_RISK, satta utifrån domslut, kostnader och åtgärder (inte enbart “tillstånd/avslag”).
-- **Sundin et al. 2026** (kmae250140) används som **feature-taxonomi**: vad som ska extraheras (nedströms/uppströms passage, flöde, övervakning). **Vikter och trösklar** lärs från de märkta besluten (hybrid: “Sundin säger vad vi tittar på, datan säger hur vi viktar det”).
-- **Phase A:** +4 domar, Sundin-features, weak labels för ansökningar (endast i träning), DAPT-korpus, omträning. Detaljer och implementationregler finns i dokumentationen nedan.
+- **Etiketter:** HIGH_RISK / MEDIUM_RISK / LOW_RISK, satta utifrån domslut, kostnader och åtgärder (inte enbart "tillstånd/avslag").
+- **Sundin et al. 2026** (kmae250140) används som **feature-taxonomi**: vad som ska extraheras (nedströms/uppströms passage, flöde, övervakning). **Vikter och trösklar** lärs från de märkta besluten (hybrid: "Sundin säger vad vi tittar på, datan säger hur vi viktar det").
+- **Phase A:** +4 domar, Sundin-features, weak labels för ansökningar (endast i träning), DAPT-korpus, omträning. Detaljer och implementationregler i dokumentationen nedan.
 
 ---
 
-## Dokumentation (viktiga filer)
+## Dokumentation
 
 | Dokument | Innehåll |
 |----------|----------|
-| **CONTEXT_HANDOVER_FOR_STRATEGY.md** | Full kontexthandover: vad som gjorts, vad som inte ändrats, nästa steg, sökvägar, regler. **Bör läsas** tillsammans med övriga docs. |
-| **SYSTEM_REVIEW.md** | Arkitektur för NAP Legal AI Advisor, kända begränsningar, förbättringsförslag (ensemble, binär klass, kalibrering, UI, säkerhet). |
-| **COMPLETE_DATA_INVENTORY.md** | Datakällor (Domar, Ansökningar, Lagstiftningdiverse), fynd (4 domar i Ansökningar, duplicat, DAPT-möjligheter). |
-| **STRATEGY_AND_PHASE_A.md** | Samlad strategi (hybrid: Sundin + datadriven viktning) och Phase A: kritiska fix, ordning, risker. Ersätter PHASE_A_PLAN_REVIEW och HYBRID_APPROACH_REVIEW. |
-| **BESLUTSTODSBEDOMNING.md** | Bedömning: förutsättningar för bra beslutstöd, begränsningar idag, vad “bra” bör innefatta. |
+| **SYSTEM_HANDOVER_COMPLETE.md** | Komplett systemöversikt med alla detaljer — data, modell, tester, config, JSON-strukturer, nästa steg. **Bäst för handover till ny utvecklare/Claude.** |
+| **STRATEGY_AND_PHASE_A.md** | Samlad strategi (hybrid: Sundin + datadriven viktning) och Phase A: kritiska fix, ordning, risker. |
+| **CONTEXT_HANDOVER_FOR_STRATEGY.md** | Full kontexthandover: vad som gjorts, vad som inte ändrats, sökvägar, regler. |
+| **PIPELINE_INTEGRATION_RESULTS.md** | Resultat efter integration av 4 nya domar: 50/44, Sundin-features, RF importance. |
+| **SYSTEM_REVIEW.md** | Arkitektur, kända begränsningar, förbättringsförslag (ensemble, binär klass, kalibrering, UI, säkerhet). |
+| **COMPLETE_DATA_INVENTORY.md** | Datakällor (Domar, Ansökningar, Lagstiftningdiverse), fynd, DAPT-möjligheter. |
+| **USER_GUIDE.md** | Användarguide för Streamlit-appen (chat, sök, felsökning). |
 
 ---
 
 ## Kända begränsningar
 
 - **Modell:** ~65 % genomsnittlig accuracy (5-fold); stark MEDIUM_RISK-bias. Endast **fold_4** används i appen (ingen ensemble).
-- **Data:** 40 märkta beslut är litet för 110M-parametrar; generalisering osäker.
+- **Data:** 44 märkta beslut är litet för 110M-parametrar; generalisering osäker. MEDIUM_RISK överrepresenterad (59 %).
 - **App:** Keyword-baserad intent i chatten; ingen LLM; ingen auth, rate limit eller strukturerad logging.
 - **Säkerhet:** SSL-workaround i `utils/ssl_fix.py` och i 05 – inte lämpligt för produktion utan korrekt proxy/CA.
 
@@ -148,13 +195,57 @@ Mer detaljer: **SYSTEM_REVIEW.md**.
 
 ---
 
-## Nästa steg (kort)
+## Nästa steg
 
-1. Ta med de 4 nya domarna: kör **02** → lägg etiketter i **label_overrides.json** → kör **03** (→ 44 märkta).
-2. Kör **sundin_feature_extraction.py** och **sundin_validation.py** på 44 beslut.
-3. DAPT (A6) med **dapt_corpus.json**; omträning (A7) med starka + weak, sliding window, val/test endast på 44.
+Phase A steg 1–5 är genomförda (50 cleaned, 44 labeled, Sundin-features, weak labels, DAPT-korpus). Kvarvarande:
 
-Full ordning och implementationregler: **CONTEXT_HANDOVER_FOR_STRATEGY.md** och **STRATEGY_AND_PHASE_A.md**.
+1. **DAPT (A6):** Kör `run_dapt.py` med `dapt_corpus.json` (96 dok, 1.42M ord). Spara till `models/nap_dapt/final`.
+2. **Omträning (A7):** Kör `run_finetune.py` — fine-tune med 44 starka + 12 weak labels. Val/test **enbart** på starka. Sliding window (512/256).
+3. **Utvärdera:** Kör `run_evaluate.py` — jämför med baseline (65 % accuracy).
+4. **Phase B:** Multi-task (aux-heads från Sundin), RF(Sundin) + BERT-ensemble.
+
+Full ordning och implementationregler: **STRATEGY_AND_PHASE_A.md** och **CONTEXT_HANDOVER_FOR_STRATEGY.md**.
+
+---
+
+## Tester
+
+Testsviten täcker backend-modulerna (`risk_predictor`, `search_engine`, `data_loader`, `rag_system`) och integrationslogik (`shared_context`, `chat_handler`, `search_handler`). 94 enhetstester med mockade modeller och Streamlit-stub — inga GPU:er eller datafiler behövs.
+
+```bash
+# Kör hela testsviten
+python -m pytest tests/ -v
+
+# Med täckningsrapport (kräver pytest-cov)
+python -m pytest tests/ --cov=backend --cov=integration --cov=utils
+```
+
+Testerna finns i `tests/`:
+
+| Fil | Testar |
+|-----|--------|
+| `test_risk_predictor.py` | Softmax, chunking, label-mappning, PredictionResult |
+| `test_search_engine.py` | Textchunking, sökning med filter, deduplicering, liknande beslut |
+| `test_data_loader.py` | DecisionRecord, DataLoader-queries (etikett, domstol, datumintervall) |
+| `test_rag_system.py` | Intent-routing, formateringsmetoder, keyword-matchning |
+| `test_integration.py` | SharedContext sessionhantering, ChatHandler, SearchHandler |
+
+---
+
+## Utveckling
+
+### Setup
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows
+pip install -r nap-legal-ai-advisor/requirements.txt
+pip install pytest pytest-cov  # utvecklingsverktyg
+```
+
+### Projektstruktur
+
+Konfiguration finns i `pyproject.toml` (pytest, black, flake8). Miljövariabler kan sättas i `.env` (se `.env.example`).
 
 ---
 
