@@ -1,0 +1,880 @@
+{
+  "version": "1.1",
+  "created": "2026-02-06",
+  "total_court_water_bodies": 18,
+  "excluded_non_wb": 1,
+  "relevant_water_bodies": 17,
+  "total_linked": 17,
+  "linkage_tiers": {
+    "tier1_known": 3,
+    "tier2_fuzzy_high": 13,
+    "tier3_fuzzy_low": 1,
+    "no_match": 0
+  },
+  "in_mcda_count": 16,
+  "needs_review_count": 1,
+  "linkages": [
+    {
+      "court_water_body": "Abelvattsån",
+      "files": [
+        "MOD_M-693-22_2025-02-04.txt"
+      ],
+      "kommuner": [
+        "Storumans kommun"
+      ],
+      "kraftverk": [],
+      "linked_viss_ids": [
+        "WA15810209"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier3_fuzzy_low",
+      "confidence": 0.84,
+      "needs_review": true,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA15810209",
+          "viss_name": "Galvattsån",
+          "match_score": 0.842,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA13350865",
+          "viss_name": "Bakvattsån",
+          "match_score": 0.737,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA46728786",
+          "viss_name": "Fälpvattsån",
+          "match_score": 0.7,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA73859664",
+          "viss_name": "Lakavattsån",
+          "match_score": 0.7,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA88680961",
+          "viss_name": "Långvattsån",
+          "match_score": 0.7,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Fylleån",
+      "files": [
+        "MOD_M10196-24_2025-09-24.txt",
+        "dom2.txt"
+      ],
+      "kommuner": [
+        "Halmstads kommun"
+      ],
+      "kraftverk": [
+        "Marbäcks kraftverk",
+        "Gäddeviksås kvarn"
+      ],
+      "linked_viss_ids": [
+        "WA53648000"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier1_known",
+      "confidence": 0.99,
+      "needs_review": false
+    },
+    {
+      "court_water_body": "Gejmån",
+      "files": [
+        "MOD_M-693-22_2025-02-04.txt"
+      ],
+      "kommuner": [
+        "Storumans kommun"
+      ],
+      "kraftverk": [],
+      "linked_viss_ids": [
+        "WA81275460"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA81275460",
+          "viss_name": "Gejmån",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA24046534",
+          "viss_name": "Gejmån (mellan Abelvattnet och Bleriken)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA49716940",
+          "viss_name": "Gejmån (mellan Bleriken och Stor-Björkvattnet)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA24358763",
+          "viss_name": "Gejmån (mellan Stor-Björkvattnet och Gardiken)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA63368029",
+          "viss_name": "Emån",
+          "match_score": 0.75,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Genevadsån",
+      "files": [
+        "NAP_M3253-24_2025-04-01.txt"
+      ],
+      "kommuner": [
+        "Laholms kommun"
+      ],
+      "kraftverk": [
+        "Att det efter anmälan uppfördes en kvarn",
+        "Bölarps kvarn",
+        "Bölarps\nkvarn"
+      ],
+      "linked_viss_ids": [
+        "WA11813426"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA11813426",
+          "viss_name": "Genevadsån",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA11813426",
+          "viss_name": "Genevadsån (Mynningen-Alslövsån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA41061394",
+          "viss_name": "Getevadsån",
+          "match_score": 0.889,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA37847533",
+          "viss_name": "Svennevadsån",
+          "match_score": 0.8,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA61691534",
+          "viss_name": "Genevadsån/Brostorpsån (Alslövsån-källorna)",
+          "match_score": 0.793,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Helge å",
+      "files": [
+        "Vaxjo_M2614-23_2024-05-23.txt"
+      ],
+      "kommuner": [
+        "Hässleholms kommun"
+      ],
+      "kraftverk": [
+        "Aktuell dammanläggning med tillhörande kraftverk"
+      ],
+      "linked_viss_ids": [
+        "WA33288005"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA33288005",
+          "viss_name": "Helge å",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA17284642",
+          "viss_name": "Helge å: Graften-Mjöån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA80616216",
+          "viss_name": "Helge å: Mjöån - Vramsån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA62429780",
+          "viss_name": "Helge å: Havet - Igelgrop",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA19291052",
+          "viss_name": "Helge å: Almaån - Linebäck",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Lillån",
+      "files": [
+        "NAP_M2170-24_2025-06-04.txt"
+      ],
+      "kommuner": [
+        "Färgelanda kommun"
+      ],
+      "kraftverk": [
+        "Västra vattenkraftverk",
+        "Östra\nvattenkraftverk"
+      ],
+      "linked_viss_ids": [
+        "WA81296222"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA81296222",
+          "viss_name": "Lillån",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA42341490",
+          "viss_name": "Lillån (Krokån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA99240897",
+          "viss_name": "Lillån (Gnyltån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA34083309",
+          "viss_name": "Lillån (Linneån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA85905433",
+          "viss_name": "Lillån (Kapellån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Rolfsån",
+      "files": [
+        "NAP_M16477-23_2025-03-10.txt",
+        "NAP_M16477-23_2025-03-10_v2.txt"
+      ],
+      "kommuner": [],
+      "kraftverk": [
+        "Kraftverket ska drivas som ett strömkraftverk"
+      ],
+      "linked_viss_ids": [
+        "WA86783228",
+        "WA75108813"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier1_known",
+      "confidence": 0.99,
+      "needs_review": false
+    },
+    {
+      "court_water_body": "Rönne å",
+      "files": [
+        "Vaxjo_NV_2023-04-03.txt",
+        "Vaxjo_M10528-23_2025-03-13.txt"
+      ],
+      "kommuner": [
+        "Perstorps kommun"
+      ],
+      "kraftverk": [
+        "Kvarndamm",
+        "A med vattenkraftverk med\nturbindrift och damm",
+        "Snälleröds kvarn"
+      ],
+      "linked_viss_ids": [
+        "WA21601705"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA21601705",
+          "viss_name": "Rönne å",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA35051564",
+          "viss_name": "Rönne å: Lybybäcken-Källa",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA21487071",
+          "viss_name": "Rönne å: Skärån-Ybbarpsån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA60391049",
+          "viss_name": "Rönne å: Klövabäcken-Skärån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA26039331",
+          "viss_name": "Rönne å: Havet-Rössjöholmsån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Storån",
+      "files": [
+        "Vaxjo_E22_Soderkoping_2023-04-03.txt"
+      ],
+      "kommuner": [
+        "Söderköpings kommun"
+      ],
+      "kraftverk": [
+        "Nybble kraftverk"
+      ],
+      "linked_viss_ids": [
+        "WA47240457"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA47240457",
+          "viss_name": "Storån",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA93191803",
+          "viss_name": "Storå",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA60941486",
+          "viss_name": "Storån (Kisaån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA49230013",
+          "viss_name": "Storån (Svalsjö)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA62298879",
+          "viss_name": "Storån (Falerum)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Söderköpingsån",
+      "files": [
+        "Vaxjo_E22_Soderkoping_2023-04-03.txt"
+      ],
+      "kommuner": [
+        "Söderköpings kommun"
+      ],
+      "kraftverk": [
+        "Nybble kraftverk"
+      ],
+      "linked_viss_ids": [
+        "WA78468690"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 0.95,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA78468690",
+          "viss_name": "Söderköpingsån (Gusumsån)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA30906167",
+          "viss_name": "Söderköpingsån (Såken-Borken)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA82173171",
+          "viss_name": "Söderköpingsån (Värna - Risten)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA53109143",
+          "viss_name": "Söderköpingsån (Risten - Såken)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA82173171",
+          "viss_name": "Söderköpingsån (Värna - Risten)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Testeboån",
+      "files": [
+        "dom1.txt",
+        "NAP_M13931-23_2025-03-31_Stromsbro.txt",
+        "NAP_M9349-24_2025-10-02.txt"
+      ],
+      "kommuner": [
+        "Gävle kommun",
+        "Ockelbo kommun"
+      ],
+      "kraftverk": [
+        "Aktiebolag hade ansökt om att få anlägga\nen damm"
+      ],
+      "linked_viss_ids": [
+        "SE676807-152866",
+        "SE676174-153387"
+      ],
+      "in_mcda": false,
+      "match_tier": "tier1_known",
+      "confidence": 0.99,
+      "needs_review": false
+    },
+    {
+      "court_water_body": "Utifrån",
+      "files": [
+        "Vaxjo_M605-24_2024-09-03_Vaggeryd.txt"
+      ],
+      "kommuner": [
+        "Vaggeryds kommun"
+      ],
+      "kraftverk": [],
+      "linked_viss_ids": [],
+      "in_mcda": false,
+      "match_tier": "excluded",
+      "confidence": 0.0,
+      "needs_review": false,
+      "note": "Not a water body (false NER extraction)"
+    },
+    {
+      "court_water_body": "Vege å",
+      "files": [
+        "Vaxjo_M4965-23_2024-09-02_Hoganas.txt"
+      ],
+      "kommuner": [
+        "Höganäs kommun"
+      ],
+      "kraftverk": [],
+      "linked_viss_ids": [
+        "WA19717643"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA19717643",
+          "viss_name": "VEGE Å",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA69199310",
+          "viss_name": "VEGE Å:Hallabäcken-Källa",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA85123011",
+          "viss_name": "VEGE Å: Havet-Hasslarpsån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA15923408",
+          "viss_name": "VEGE Å:Humlebäcken-Hallabäcken",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA19717643",
+          "viss_name": "VEGE Å: Hasslarpsån-Humlebäcken",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Vegeån",
+      "files": [
+        "Vaxjo_NV_2024-09-02.txt"
+      ],
+      "kommuner": [
+        "Höganäs kommun"
+      ],
+      "kraftverk": [
+        "Fram till dess ska trädamm"
+      ],
+      "linked_viss_ids": [
+        "WA19717643"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 0.95,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA19717643",
+          "viss_name": "VEGE Å",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA69199310",
+          "viss_name": "VEGE Å:Hallabäcken-Källa",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA85123011",
+          "viss_name": "VEGE Å: Havet-Hasslarpsån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA15923408",
+          "viss_name": "VEGE Å:Humlebäcken-Hallabäcken",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA19717643",
+          "viss_name": "VEGE Å: Hasslarpsån-Humlebäcken",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Vessingeån",
+      "files": [
+        "NAP_M3253-24_2025-04-01.txt"
+      ],
+      "kommuner": [
+        "Laholms kommun"
+      ],
+      "kraftverk": [
+        "Att det efter anmälan uppfördes en kvarn",
+        "Bölarps kvarn",
+        "Bölarps\nkvarn"
+      ],
+      "linked_viss_ids": [
+        "WA69070766"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA69070766",
+          "viss_name": "Vessingeån",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA69070766",
+          "viss_name": "Vessingeån (Mynningen-Prästabäcken)",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA44777881",
+          "viss_name": "Vessingeån/Bölarpsån (Prästabäcken-källorna)",
+          "match_score": 0.797,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA17792044",
+          "viss_name": "Ässingån",
+          "match_score": 0.75,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA17792044",
+          "viss_name": "Ässingån: Ulbobäcken, Brattforsbäcken",
+          "match_score": 0.75,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Vindelälven",
+      "files": [
+        "Umea_Ostra_Spoland_2021-06-22.txt"
+      ],
+      "kommuner": [
+        "Vännäs kommun"
+      ],
+      "kraftverk": [],
+      "linked_viss_ids": [
+        "WA76752428"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA76752428",
+          "viss_name": "Vindelälven",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA88653778",
+          "viss_name": "Bäck till Vindelälven",
+          "match_score": 0.797,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA17946590",
+          "viss_name": "Bäck till Vindelälven ",
+          "match_score": 0.797,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA76246554",
+          "viss_name": "Indalsälven",
+          "match_score": 0.778,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA50099020",
+          "viss_name": "Vängelälven",
+          "match_score": 0.778,
+          "match_type": "fuzzy",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Ybbarpsån",
+      "files": [
+        "Vaxjo_NV_2023-04-03.txt"
+      ],
+      "kommuner": [
+        "Perstorps kommun"
+      ],
+      "kraftverk": [],
+      "linked_viss_ids": [
+        "WA14311308"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA14311308",
+          "viss_name": "Ybbarpsån",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA67942675",
+          "viss_name": "Ybbarpsån:Ybbarpssjön U-Fåglasjön in",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA14311308",
+          "viss_name": "Ybbarpsån:Rönne å-Östra Sorrödssjön in",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA24742157",
+          "viss_name": "Ybbarpsån:Svenstorpssjön U- Store Damm U",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA99822238",
+          "viss_name": "Ybbarpsån:Storarydsdammen in-Ybbarpssjön U",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    },
+    {
+      "court_water_body": "Örekilsälven",
+      "files": [
+        "NAP_M2170-24_2025-06-04.txt"
+      ],
+      "kommuner": [
+        "Färgelanda kommun"
+      ],
+      "kraftverk": [
+        "Västra vattenkraftverk",
+        "Östra\nvattenkraftverk"
+      ],
+      "linked_viss_ids": [
+        "WA33762102"
+      ],
+      "in_mcda": true,
+      "match_tier": "tier2_fuzzy_high",
+      "confidence": 1.0,
+      "needs_review": false,
+      "fuzzy_matches": [
+        {
+          "viss_id": "WA33762102",
+          "viss_name": "Örekilsälven",
+          "match_score": 1.0,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA11332787",
+          "viss_name": "Örekilsälven - Källområdet till Torpfors",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA47806230",
+          "viss_name": "Örekilsälven - mynningen till Munkedalsälvens inflöde",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA10249061",
+          "viss_name": "Örekilsälven - Torpfors till sammanflödet med Töftedalsån",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        },
+        {
+          "viss_id": "WA49248437",
+          "viss_name": "Örekilsälven - inloppet i Kärnsjön till Hajumsälvens inflöde",
+          "match_score": 0.95,
+          "match_type": "exact",
+          "kommun_match": false
+        }
+      ]
+    }
+  ]
+}

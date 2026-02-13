@@ -1,0 +1,117 @@
+{
+  "ari": 0.0353,
+  "n_samples": 44,
+  "cluster_to_risk_mapping": {
+    "1": "HIGH_RISK",
+    "0": "MEDIUM_RISK",
+    "2": "LOW_RISK"
+  },
+  "disagreements": [
+    {
+      "id": "m1275-22",
+      "label": "LOW_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m13999-24",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m2165-24",
+      "label": "HIGH_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m3473-24",
+      "label": "HIGH_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m4232-23",
+      "label": "LOW_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m4650-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "HIGH_RISK"
+    },
+    {
+      "id": "m503-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m5224-21",
+      "label": "LOW_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m6225-20",
+      "label": "LOW_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m7988-22",
+      "label": "HIGH_RISK",
+      "cluster_risk": "MEDIUM_RISK"
+    },
+    {
+      "id": "m396-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m506-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m391-99",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m2065-22",
+      "label": "HIGH_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m530-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m2614-23",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m4965-23",
+      "label": "HIGH_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m605-24",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m4021-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m6587-23",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "LOW_RISK"
+    },
+    {
+      "id": "m2695-22",
+      "label": "MEDIUM_RISK",
+      "cluster_risk": "HIGH_RISK"
+    }
+  ],
+  "message": "Low ARI suggests labels may not align with feature clusters; review disagreements manually."
+}

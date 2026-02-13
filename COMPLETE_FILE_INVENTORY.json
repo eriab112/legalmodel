@@ -1,0 +1,765 @@
+{
+  ".pdf": {
+    "count": 88,
+    "total_size_mb": 154.31,
+    "files": [
+      {
+        "path": "Data\\Ansökningar\\0f516575-0b08-4303-9dfe-33de32915437.pdf",
+        "size_mb": 2.73,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Nacka TR M 5642-24 Aktbil 1, Ansökan (e-post).pdf",
+        "size_mb": 0.62,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Nacka TR M 5642-24 Aktbil 51, Konsoliderad och kompletterad .pdf",
+        "size_mb": 4.83,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Nacka TR M 5642-24 Dagboksblad 2026-02-06.pdf",
+        "size_mb": 0.11,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Umeå TR M 2430-22 Aktbil 1.pdf",
+        "size_mb": 1.0,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Umeå TR M 2431-22 Aktbil 1.pdf",
+        "size_mb": 1.28,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Umeå TR M 302-22 Aktbil 1.pdf",
+        "size_mb": 0.31,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Umeå TR M 303-22 Aktbil 1.pdf",
+        "size_mb": 0.49,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 2743-23 Aktbil 1.pdf",
+        "size_mb": 0.38,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 2744-23 Aktbil 1.pdf",
+        "size_mb": 0.37,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 2746-23 Aktbil 1.pdf",
+        "size_mb": 0.5,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 2747-23 Aktbil 1.pdf",
+        "size_mb": 0.34,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3125-23 Aktbil 1.pdf",
+        "size_mb": 1.32,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3413-22 Aktbil 1.pdf",
+        "size_mb": 6.29,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3414-22 Aktbil 1.pdf",
+        "size_mb": 5.62,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3415-22 Aktbil 1.pdf",
+        "size_mb": 5.31,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3420-22 Aktbil 1.pdf",
+        "size_mb": 5.81,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3423-22 Aktbil 1.pdf",
+        "size_mb": 7.23,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3429-22 Aktbil 1.pdf",
+        "size_mb": 6.96,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3430-22 Aktbil 1.pdf",
+        "size_mb": 7.15,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3433-22 Aktbil 1.pdf",
+        "size_mb": 6.73,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3435-22 Aktbil 1.pdf",
+        "size_mb": 6.56,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3460-22 Aktbil 1.pdf",
+        "size_mb": 1.33,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 3472-22 Aktbil 1.pdf",
+        "size_mb": 0.24,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Vänersborgs TR M 422-22 Aktbil 1.pdf",
+        "size_mb": 0.93,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Växjö TR M 2796-24 Dom 2025-03-07.pdf",
+        "size_mb": 0.6,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Växjö TR M 483-22 Dom 2026-01-22.pdf",
+        "size_mb": 1.88,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Växjö TR M 485-22 Beslut under rättegång 2024-01-10.pdf",
+        "size_mb": 0.18,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Växjö TR M 486-22 Beslut under rättegång 2023-06-21.pdf",
+        "size_mb": 0.28,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Växjö TR M 488-22 Beslut under rättegång 2023-06-21.pdf",
+        "size_mb": 0.28,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Växjö TR M 533-22 Beslut under rättegång 2023-06-21.pdf",
+        "size_mb": 0.28,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 2694-22 Dagboksblad 2026-02-06.pdf",
+        "size_mb": 0.11,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 2694-22 Dom 2025-12-18.pdf",
+        "size_mb": 2.0,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 2695-22 Dagboksblad 2026-02-06.pdf",
+        "size_mb": 0.11,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 2695-22 Dom 2025-08-15.pdf",
+        "size_mb": 1.21,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 285-22 Aktbil 1, Ansökan   i 5 ex samt 10 USB.pdf",
+        "size_mb": 0.32,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 285-22 Dagboksblad 2026-02-06.pdf",
+        "size_mb": 0.13,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 287-22 Aktbil 1, Ansökan i 5 ex samt 10 USB.pdf",
+        "size_mb": 0.32,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Ansökningar\\Östersunds TR M 287-22 Dagboksblad 2026-02-06.pdf",
+        "size_mb": 0.11,
+        "folder": "Ansökningar"
+      },
+      {
+        "path": "Data\\Domar\\data\\dom1.pdf",
+        "size_mb": 1.22,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\dom2.pdf",
+        "size_mb": 0.99,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\dom3.pdf",
+        "size_mb": 1.09,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\MOD_M10258-23_2024-12-19.pdf",
+        "size_mb": 1.37,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\SvK_NAP_Slutrapport_2023.pdf",
+        "size_mb": 2.7,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Umea_Ostra_Spoland_2021-06-22.pdf",
+        "size_mb": 0.05,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Vaxjo_E22_Soderkoping_2023-04-03.pdf",
+        "size_mb": 0.62,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Vaxjo_M2614-23_2024-05-23.pdf",
+        "size_mb": 0.61,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Vaxjo_M4965-23_2024-09-02_Hoganas.pdf",
+        "size_mb": 0.8,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Vaxjo_M605-24_2024-09-03_Vaggeryd.pdf",
+        "size_mb": 0.38,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Vaxjo_NV_2023-04-03.pdf",
+        "size_mb": 0.43,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\Vaxjo_NV_2024-09-02.pdf",
+        "size_mb": 0.8,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Domar\\data\\VM-riktlinjer-vattenkraft_atgarder-undantag.pdf",
+        "size_mb": 1.22,
+        "folder": "Domar\\data"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\19FS 2021-10-TGA.pdf",
+        "size_mb": 0.32,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\2021-43 Vattenkvalitetskrav Västerhavets vattendistrikt.pdf",
+        "size_mb": 1.69,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\202111 Kvalitetskrav för vattenförekomster i Södra Östersjöns vattendistrikt.pdf",
+        "size_mb": 0.16,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\22FS 2021-5 Länsstyrelsen i Västernorrlands läns (Vattenmyndigheten för Bottenhavets vattendistrikts) föreskrifter om kvalitetskrav för vattenförekomster i Bottenhavets vattendist.pdf",
+        "size_mb": 0.17,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\allmanna-villkor-reviderade-20240327.pdf",
+        "size_mb": 0.28,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-1-dammsakerhet.pdf",
+        "size_mb": 0.12,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-11-losningar-nedstromsvandrande-fisk.pdf",
+        "size_mb": 0.98,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-12-kostnader.pdf",
+        "size_mb": 0.22,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-4-fiskinformation-malarter.pdf",
+        "size_mb": 0.41,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-5-losningar-uppstromsvandrande-fisk.pdf",
+        "size_mb": 4.82,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-6-stromning-vattendrag-fiskpassager-hydraulisk-modellering.pdf",
+        "size_mb": 1.19,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-7-hydraulisk-design-lockvatten.pdf",
+        "size_mb": 0.52,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\bilaga-5-8-hydrauliska-samband-fiskpassager.pdf",
+        "size_mb": 0.85,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\CIS_Guidance_Article_4_7_FINAL (1).pdf",
+        "size_mb": 2.98,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\CIS_Guidance_Article_4_7_FINAL.pdf",
+        "size_mb": 2.98,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\eudirektiv.pdf",
+        "size_mb": 0.84,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\GD 07 - Monitoring - Policy Summary.pdf",
+        "size_mb": 0.35,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\Guidance No 4 - heavily modified water bodies - HMWB (WG 2.2).pdf",
+        "size_mb": 2.82,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\miljoatgarder-i-vattendrag-exempelsamling-energiforskrapport-2022-856.pdf",
+        "size_mb": 26.86,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\miljobalken.pdf",
+        "size_mb": 0.24,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\Miljökonsekvensbeskrivning Åtgärdsprogram Bottenhavet.pdf",
+        "size_mb": 0.59,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\Miljökonsekvensbeskrivning Åtgärdsprogram Bottenviken.pdf",
+        "size_mb": 0.66,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\Miljökonsekvensbeskrivning Åtgärdsprogram Norra Östersjön.pdf",
+        "size_mb": 0.59,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\Miljökonsekvensbeskrivning Åtgärdsprogram Södra Östersjön.pdf",
+        "size_mb": 0.57,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\Miljökonsekvensbeskrivning Åtgärdsprogram Västerhavet.pdf",
+        "size_mb": 0.5,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\rapport-2025-19-samradsunderlag-for-avgransning.pdf",
+        "size_mb": 0.38,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\regeringsbeslut-nationell-plan-moderna-miljovillkor.pdf",
+        "size_mb": 0.4,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\remiss-2025-3660-marin-strategi.pdf",
+        "size_mb": 1.33,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\remiss-2025-3666-miljobedomning.pdf",
+        "size_mb": 0.46,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\se-final-paf-22-nov-2021.pdf",
+        "size_mb": 1.39,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\swe126179.pdf",
+        "size_mb": 0.31,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\swe187160.pdf",
+        "size_mb": 0.46,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\swe202925.pdf",
+        "size_mb": 0.18,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\swe221922.pdf",
+        "size_mb": 1.4,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\vagledning-natura2000-beslutad.pdf",
+        "size_mb": 0.54,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\VM-riktlinjer-vattenkraft_atgarder-undantag.pdf",
+        "size_mb": 1.22,
+        "folder": "Lagstiftningdiverse"
+      }
+    ]
+  },
+  ".txt": {
+    "count": 57,
+    "total_size_mb": 6.9,
+    "files": [
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\dom1.txt",
+        "size_mb": 0.1,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\dom2.txt",
+        "size_mb": 0.09,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\dom3.txt",
+        "size_mb": 0.23,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\f-14649-21-dom-2022-11-16.txt",
+        "size_mb": 0.03,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-10202-23-dom-2025-01-20.txt",
+        "size_mb": 0.15,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-1275-22-dom-2023-04-26.txt",
+        "size_mb": 0.04,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-12894-23-dom-2025-02-11.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-13999-24-slutligt-beslut-ej-sarskilt-uppsatt-2025-02-18.txt",
+        "size_mb": 0.0,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-1458-20-dom-2022-10-06.txt",
+        "size_mb": 0.23,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-1533-20-dom-2021-12-10.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-1849-22-dom-2023-06-21.txt",
+        "size_mb": 0.16,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-2165-24-dom-2024-12-17.txt",
+        "size_mb": 0.18,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-3473-24-dom-2025-02-17..txt",
+        "size_mb": 0.09,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-4232-23-dom-2024-10-31.txt",
+        "size_mb": 0.16,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-4324-21-dom-2023-06-14.txt",
+        "size_mb": 0.44,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-4650-22-dom-2024-04-12.txt",
+        "size_mb": 0.13,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-503-22-dom-2023-02-22.txt",
+        "size_mb": 0.21,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-516-21-dom-2022-10-06.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-5221-21-dom-2022-12-16.txt",
+        "size_mb": 0.14,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-5224-21-dom-2023-08-29.txt",
+        "size_mb": 0.24,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-5295-23-dom-2024-05-14.txt",
+        "size_mb": 0.07,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-5937-23-dom-2024-05-13.txt",
+        "size_mb": 0.04,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-6225-20-dom-2022-02-09.txt",
+        "size_mb": 0.04,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-7708-22-dom-2023-09-12.txt",
+        "size_mb": 0.02,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-7988-22-slutligt-beslut-sarskilt-uppsatt-2024-04-26.txt",
+        "size_mb": 0.12,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\m-899-23-dom-2024-12-03.txt",
+        "size_mb": 0.48,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\MOD_M-10258-23_2024-12-19.txt",
+        "size_mb": 0.31,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\MOD_M-13461-22_2024-04-03.txt",
+        "size_mb": 0.1,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\MOD_M-693-22_2025-02-04.txt",
+        "size_mb": 0.63,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\MOD_M10196-24_2025-09-24.txt",
+        "size_mb": 0.09,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\MOD_M10258-23_2024-12-19.txt",
+        "size_mb": 0.31,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M13931-23_2025-03-31_Stromsbro.txt",
+        "size_mb": 0.04,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M16477-23_2025-03-10.txt",
+        "size_mb": 0.1,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M16477-23_2025-03-10_v2.txt",
+        "size_mb": 0.1,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M2170-24_2025-06-04.txt",
+        "size_mb": 0.08,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M3253-24_2025-04-01.txt",
+        "size_mb": 0.03,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M3426-24_2025-05-23_Karsbols.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M3426-24_2025-05-23_Karsbols_v2.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M3426-24_2025-05-23_Karsbols_v3.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\NAP_M9349-24_2025-10-02.txt",
+        "size_mb": 0.1,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\om-5404-23-slutligt-beslut-ej-sarskilt-uppsatt-2025-02-25.txt",
+        "size_mb": 0.03,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\om-7938-23-slutligt-beslut-sarskilt-uppsatt-2024-02-27.txt",
+        "size_mb": 0.14,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\svea-hr-om-7673-23-slutligt-beslut-sarskilt-uppsatt-2024-04-12.txt",
+        "size_mb": 0.03,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\SvK_NAP_Slutrapport_2023.txt",
+        "size_mb": 0.22,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Umea_Ostra_Spoland_2021-06-22.txt",
+        "size_mb": 0.02,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_E22_Soderkoping_2023-04-03.txt",
+        "size_mb": 0.09,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_M10528-23_2025-03-13.txt",
+        "size_mb": 0.07,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_M2614-23_2024-05-23.txt",
+        "size_mb": 0.07,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_M4965-23_2024-09-02_Hoganas.txt",
+        "size_mb": 0.05,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_M605-24_2024-09-03_Vaggeryd.txt",
+        "size_mb": 0.02,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_NV_2023-04-03.txt",
+        "size_mb": 0.04,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_NV_2024-09-02.txt",
+        "size_mb": 0.09,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\Vaxjo_TR_P_3853-22_Dom_2024-01-31.txt",
+        "size_mb": 0.08,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Domar\\data\\processed\\court_decisions\\VM_Riktlinjer_Vattenkraft.txt",
+        "size_mb": 0.15,
+        "folder": "Domar\\data\\processed\\court_decisions"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\NAP_full_text.txt",
+        "size_mb": 0.06,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\Lagstiftningdiverse\\VM_Riktlinjer_Vattenkraft.txt",
+        "size_mb": 0.15,
+        "folder": "Lagstiftningdiverse"
+      },
+      {
+        "path": "Data\\processed\\label_review.txt",
+        "size_mb": 0.04,
+        "folder": "processed"
+      }
+    ]
+  },
+  ".json": {
+    "count": 4,
+    "total_size_mb": 13.35,
+    "files": [
+      {
+        "path": "Data\\processed\\cleaned_court_texts.json",
+        "size_mb": 12.14,
+        "folder": "processed"
+      },
+      {
+        "path": "Data\\processed\\labeled_dataset.json",
+        "size_mb": 1.18,
+        "folder": "processed"
+      },
+      {
+        "path": "Data\\processed\\label_overrides.json",
+        "size_mb": 0.0,
+        "folder": "processed"
+      },
+      {
+        "path": "Data\\processed\\linkage_table.json",
+        "size_mb": 0.02,
+        "folder": "processed"
+      }
+    ]
+  }
+}

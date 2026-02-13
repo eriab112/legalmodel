@@ -1,0 +1,1253 @@
+================================================================================
+NAP LegalBERT - LABEL REVIEW FILE
+================================================================================
+
+Review each decision's suggested label below.
+To override a label, create 'Data/processed/label_overrides.json' with:
+  {"m1275-22": "HIGH_RISK", "m5295-23": "LOW_RISK", ...}
+Then re-run this script to apply overrides.
+
+SUGGESTED DISTRIBUTION:
+  HIGH_RISK   :  8 (18%)
+  MEDIUM_RISK : 26 (59%)
+  LOW_RISK    : 10 (23%)
+
+LOW CONFIDENCE (19 decisions need extra review):
+  - m13999-24 (conf=0.40)
+  - m1533-20 (conf=0.40)
+  - m1849-22 (conf=0.40)
+  - m4324-21 (conf=0.40)
+  - m4650-22 (conf=0.40)
+  - m503-22 (conf=0.40)
+  - m5221-21 (conf=0.40)
+  - m3415-22 (conf=0.40)
+  - m2693-22 (conf=0.40)
+  - m3463-22 (conf=0.40)
+  - m396-22 (conf=0.40)
+  - m3412-22 (conf=0.40)
+  - m2703-22 (conf=0.40)
+  - m391-22 (conf=0.40)
+  - m506-22 (conf=0.40)
+  - m391-99 (conf=0.40)
+  - m530-22 (conf=0.40)
+  - m2614-23 (conf=0.40)
+  - m2695-22 (conf=0.40)
+
+================================================================================
+
+--- [ 1/44] m3753-22 ---
+  File:       dom3.txt
+  Case:       M 3753-22
+  Date:       2025-06-25
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Tillstånd till vattenverksamhet m.m. vid Änghultasjön i Uppvidinge kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.85)
+  Outcome:    OPERATOR_WINS - Upphäver myndighets beslut/föreläggande
+  Net score:  -6
+  Max cost:   0.75 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: fiskväg, minimitappning, utskov, kontrollprogram, biotopvård
+
+  Signals:
+    -6 Operator wins (upphäver beslut)
+
+  DOMSLUT (excerpt):
+    1. Mark- och miljööverdomstolen avslår Länsstyrelsen i Kronobergs läns yrkande om
+    att målet ska återförvisas till mark- och miljödomstolen för fortsatt handläggning.
+    2. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom på följande
+    sätt.
+    a) Villkor 5 ska ha följande lydelse:
+    En fiskväg ska anläggas i den västra fåran och dimensioneras för en
+    vattenföring mellan 0,1 och 0,6 m3/s. Fiskvägens utsteg i
+    Änghultasjön ska utformas i huvudsaklig överensstämmelse med
+
+
+--- [ 2/44] m10202-23 ---
+  File:       m-10202-23-dom-2025-01-20.txt
+  Case:       M 10202-23
+  Date:       2025-01-20
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om tillstånd till dammsäkerhetshöjande åtgärder vid Järpforsens kraftverk i Arvika kommun, Värmlands län
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    PERMIT_GRANTED - Tillstånd meddelas (med villkor)
+  Net score:  +3
+  Max cost:   0.04 MSEK
+  Measures:   fiskväg, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  In domslut: utskov, kontrollprogram
+
+  Signals:
+    +3 Tillstånd med utrivning
+
+  DOMSLUT (excerpt):
+    1. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom på
+    följande sätt.
+    a) Punkten 1 under rubriken Tillstånd i domslutet ska ha följande lydelse.
+    1. Mark- och miljödomstolen lämnar Arvika Kraft AB tillstånd enligt
+    11 kap. 9 § och 16 kap. 2 b § miljöbalken till följande dammsäkerhetshöjande åtgärder vid Järpforsens vattenkraftverk
+    - ändring av befintlig utskovsdamm, innebärande rivning samt återuppförande av utskovsdamm med erosionsskydd inom det område
+    som framgår av figur 2 i bi...
+
+
+--- [ 3/44] m1275-22 ---
+  File:       m-1275-22-dom-2023-04-26.txt
+  Case:       M 1275 -22
+  Date:       2023-04-26
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Prövning av latent villkor avseende Sunnerstaholms kraftverk i Voxnan i Bollnäs kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.55)
+  Outcome:    MINOR_CHANGE - Ändrar dom i mindre delar
+  Net score:  -2
+  Max cost:   0.11 MSEK
+  Measures:   faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram
+
+  Signals:
+    -2 Mindre ändring (dom i övrigt oförändrad)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+    sätt att Fortum Sverige AB ska ersätta
+    a.Kammarkollegiet för dess rättegångskostnader vid mark- och miljödomstolen med 40 800 kr jämte ränta enligt 6 § räntelagen från den
+    7 januari 2022 till dess betalning sker, och
+    b.Bollnäs kommun för dess rättegångskostnader vid mark- och
+    miljödomstolen med 113 906 kr, varav 91 125 kr avser ombudsarvode,
+    jämte ränta enligt 6 § räntelagen från den 7 januari 2022 till dess betalning...
+
+
+--- [ 4/44] m12894-23 ---
+  File:       m-12894-23-dom-2025-02-11.txt
+  Case:       M 12894 - 23
+  Date:       2025-02-11
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Föreläggande att söka tillstånd för vattenkraftverk m.m. inom fastigheten A i Dömle i Forshaga kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.85)
+  Outcome:    OPERATOR_WINS - Upphäver myndighets beslut/föreläggande
+  Net score:  -6
+  Max cost:   0.10 MSEK
+  Measures:   utrivning
+
+  Signals:
+    -6 Operator wins (upphäver beslut)
+
+  DOMSLUT (excerpt):
+    Mark - och miljööverdomstolen ändrar mark -och miljödomstolens dom och
+    upphäver Länsstyrelsen i Värmlands läns beslut den 9 december 2022
+    i ärende nr 535-7828 -2022.
+    
+    Mark
+    -
+    
+    och miljödomstolen ändrar länsstyrelsens beslut endast på så sätt att
+
+
+--- [ 5/44] m13999-24 ---
+  File:       m-13999-24-slutligt-beslut-ej-sarskilt-uppsatt-2025-02-18.txt
+  Case:       M 13999 - 24
+  Date:       2025-02-06
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om omprövning av vattenverksamhet i Suseån vid Mostorps kvarn på fastigheterna A och B; nu fråga om undanröjande och återförvisning m.m.
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   N/A
+  Measures:   None
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    Klagande
+    1. Mostorps Gård AB, 556506 -9639
+    Mostorps Gård 107
+    305 77 Getinge
+    
+
+
+--- [ 6/44] m1458-20 ---
+  File:       m-1458-20-dom-2022-10-06.txt
+  Case:       M 1458 -20
+  Date:       2022-10-06
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om tillstånd till genomförda renoveringsarbeten och avledning av vatten fram till Lobonäs vattenkraftverk m.m. i Loån, Ovanåkers kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.55)
+  Outcome:    MINOR_CHANGE - Ändrar dom i mindre delar
+  Net score:  -1
+  Max cost:   9.00 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  In domslut: fiskväg, utskov, kontrollprogram
+
+  Signals:
+    -2 Mindre ändring (dom i övrigt oförändrad)
+
+  DOMSLUT (excerpt):
+    1.Mark- och miljööverdomstolen avvisar A.F.s och A.F.s yrkande
+    om ersättning med 1 000 kr.
+    2. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+    sätt att villkor 10 och 12 samt punkten 3 under rubriken Övriga frågor ska ha följande
+    lydelse:
+    Villkor för tillståndet
+    10. Fingallret får efter samråd med tillsynsmyndigheten tillfälligt tas bort (lyftas
+    upp eller fällas) i samband med problem med iskravning som sätter igen gallret .
+
+
+--- [ 7/44] m1533-20 ---
+  File:       m-1533-20-dom-2021-12-10.txt
+  Case:       M 1533 -20
+  Date:       2021-12-10
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Försiktighetsåtgärder i samband med utrivning av vattenanläggning på fastigheten A i Hässleholms kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    REMANDED - Målet återförvisas
+  Net score:  +0
+  Max cost:   N/A
+  Measures:   fiskväg, fiskvandring, utrivning
+
+  Signals:
+    0 Målet återförvisas (osäkert utfall)
+
+  DOMSLUT (excerpt):
+    1.Mark- och miljööverdomstolen avslår A.L.s yrkande att Älvräddarnas
+    Samorganisations överklagande ska avvisas.
+    2. Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom oc h
+    återförvisar målet till mark- och miljödomstolen för fortsatt handläggning.
+    
+    Mark- och miljödomstolen undanröjer Länsstyrelsen i Skåne läns beslut den 19 juni
+    2018, ärende nr 535-845-2018 .
+    _____________ Bilaga A
+
+
+--- [ 8/44] m1849-22 ---
+  File:       m-1849-22-dom-2023-06-21.txt
+  Case:       M 1849 -22
+  Date:       2023-06-21
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Villkor för fiskväg m.m. i samband med lagligförklaring och tillstånd till vattenverksamhet vid Södra Svensbo kraftverk i Gryckån i Ovanåkers kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    REMANDED - Målet återförvisas
+  Net score:  +0
+  Max cost:   5.00 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: fiskväg, faunapassage, omlöp, minimitappning, utskov, kontrollprogram
+
+  Signals:
+    0 Målet återförvisas (osäkert utfall)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen upphäver tillståndspunkt 5 och villkor 5 i mark- och
+    miljödomstolens dom samt återförvisar målet till mark- och miljödomstolen för
+    fortsatt
+    behandling i fråga om fiskväg och tappning av vatten.
+    
+    Lagligförklaring
+    Mark- och miljödomstolen förklarar, med stöd av 17 och 18 § lagen (1998:811) om
+    införande av miljöbalken, Södra Svensbo kraftverk med tillhörande anläggningsdelar, bl.a. regleringsdamm, kraftverksintag, maskinstation och utloppskanal, vara
+
+
+--- [ 9/44] m2165-24 ---
+  File:       m-2165-24-dom-2024-12-17.txt
+  Case:       M 2165 - 24
+  Date:       2024-12-17
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om omprövning för moderna villkor avseende Stigen Västra vattenkraftverk i Örekilsälve n i Färgelanda kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    APPEAL_REJECTED - Överklagandet avslås
+  Net score:  +4
+  Max cost:   0.01 MSEK
+  Measures:   fiskväg, faunapassage, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: utskov, kontrollprogram
+
+  Signals:
+    +4 Operators överklagande avslås
+
+  DOMSLUT (excerpt):
+    Mark - och miljööverdomstolen avslår överklagandet.
+    
+    1. Mark
+    -
+    
+    och miljööverdomstolen avslår Kammarko
+    llegiets yrkande om avvisning
+    av ansökan.
+
+
+--- [10/44] m3473-24 ---
+  File:       m-3473-24-dom-2025-02-17..txt
+  Case:       M 3473 -24
+  Date:       2025-02-17
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om omprövni ng för moderna miljövillkor m.m. avseende Långarekull vattenkraftver k i Västerån, Gislaveds kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    PERMIT_GRANTED - Tillstånd meddelas (med villkor)
+  Net score:  +3
+  Max cost:   0.02 MSEK
+  Measures:   fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: fiskväg, omlöp, minimitappning, kontrollprogram, biotopvård
+
+  Signals:
+    +3 Tillstånd med utrivning
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen ändrar mark- och miljödomstolens domslut under
+    rubriken ”Omprövni ng för moderna miljövillkor och tillstånd” på följande s ätt.
+    1. Punkten 1 ska ha följande lydelse:
+    Den rättighet att ha befintlig anläggning och bedriva befintlig vattenverksamhet
+    vid Långarekull vattenkraftverk, som grundar sig på urminnes hävd, förenas
+    med de villkor som framgår nedan.
+    
+    Sid 2
+
+
+--- [11/44] m4232-23 ---
+  File:       m-4232-23-dom-2024-10-31.txt
+  Case:       M 4232-23
+  Date:       2024-10-31
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om omprövning för moderna miljövillkor för Uddby kraftverk i Tyresån i Tyresö kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.55)
+  Outcome:    MINOR_CHANGE - Ändrar dom i mindre delar
+  Net score:  -2
+  Max cost:   3.00 MSEK
+  Measures:   fiskväg, fiskvandring, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: kontrollprogram
+
+  Signals:
+    -2 Mindre ändring (dom i övrigt oförändrad)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+    sätt att Stockholms tingsrätts, vattendomstolen, dom den 1 juni 1990 i mål VA 69/87
+    -under rubriken Vattenhushållning och kontroll
+    oi villkor A2 ska ha följande lydelse:
+    Genom Fatbursdammen ska tappningen vara lägst 300 l/s under 60 dagar
+    från det att den påbörjas på hösten när tillrinningen tillåter det, dock senast
+    den 1 november, och under övrig tid 150 l /s. Vid lägre tillrinningar ska
+    dessa framsläppas.
+
+
+--- [12/44] m4324-21 ---
+  File:       m-4324-21-dom-2023-06-14.txt
+  Case:       M 4324 -21
+  Date:       2023-06-14
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Tillstånd till utrivning av del av vattenanläggning m.m. i Järleån vid Järle kvarn i Nora kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    DISMISSED - Avvisning (processuellt)
+  Net score:  +0
+  Max cost:   4.00 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: utskov, kontrollprogram, biotopvård
+
+  Signals:
+    0 Avvisning (processuellt)
+
+  DOMSLUT (excerpt):
+    1.Mark- och miljööverdomstolen avvisar Naturvårdsverkets yrkande om förlängd
+    arbetstid.
+    2.Mark- och miljööverdomstolen avslår överklagandena.
+    3.Mark- och miljööverdomstolen avslår Nora kommuns, MA:s, LK:s , PK:s, UL:s ,
+    JL:s, JO:s och UR:s yrkande om ersättning för rättegångskostnader i Mark- och
+    miljööverdomstolen. ___________________
+    
+    Tillstånd
+
+
+--- [13/44] m4650-22 ---
+  File:       m-4650-22-dom-2024-04-12.txt
+  Case:       M 4650 -22
+  Date:       2024-04-12
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avslutande av prövoti d samt fastställande av villkor för Gran ö kraftverk
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    MINOR_CHANGE - Ändrar dom i mindre delar
+  Net score:  +0
+  Max cost:   469.30 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: minimitappning
+
+  Signals:
+    -2 Mindre ändring (dom i övrigt oförändrad)
+    +2 Höga kostnader (469.3 MSEK)
+
+  DOMSLUT (excerpt):
+    1. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+    sätt att villkore t för det tillstån d enligt äldre vattenlagen till driften av Granö kraftverk
+    som dåvarande Söderbygdens vattendomstol lämnade genom deldom den 26 maj 1956,
+    A 33/1956 i mål A D 42/1949 ska ha följande lydelse.
+    
+    - En minimitappning om minst 7 m3/s ska släppas genom regleringsdammens luckor
+    under perioden 15 mars –15 november. Under övrig tid av året ska minst 5 m3/s
+    släppas. Om tillrinningen är min...
+
+
+--- [14/44] m503-22 ---
+  File:       m-503-22-dom-2023-02-22.txt
+  Case:       M 503 -22
+  Date:       2023-02-22
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om tillstånd till vattenverksamhet m.m. för muddring, byggande i vattenområde samt uppläggning av muddermassor vid Harrviken, Luleå kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    REMANDED - Målet återförvisas
+  Net score:  +0
+  Max cost:   0.88 MSEK
+  Measures:   fiskvandring, kontrollprogram
+
+  Signals:
+    0 Målet återförvisas (osäkert utfall)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och
+    återförvisar målet dit för fortsatt handläggning. Frågan om rättegångskostnader i Markoch miljööverdomstolen ska prövas av mark- och miljödomstolen i samband med att
+    målet återupptas.
+    
+    1. Mark- och miljödomstolen avslår yrkandet om avvisning av ansökan.
+    2. Mark- och miljödomstole n godkänner miljökonsekvensbeskrivningen.
+    3. Mark- och miljödomstolen avslår ansökan.
+    Prövningsavgift
+
+
+--- [15/44] m516-21 ---
+  File:       m-516-21-dom-2022-10-06.txt
+  Case:       M 516 -21
+  Date:       2022-10-06
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Anmälan av anläggningen Hällefors till den nationella planen för moderna miljövillkor
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.85)
+  Outcome:    OPERATOR_WINS - Upphäver myndighets beslut/föreläggande
+  Net score:  -6
+  Max cost:   N/A
+  Measures:   utskov, utrivning
+
+  Signals:
+    -6 Operator wins (upphäver beslut)
+
+  DOMSLUT (excerpt):
+    Med ändring av mark- och miljödomstolens dom fastställer Mark- och
+    miljööverdomstolen Länsstyrelsen i Kalmar läns beslut den 26 juli 2019, dnr 5315801-2019, att anläggningen Hällefors med tillhörande kraftverk inte ska omfattas av
+    den nationella planen för moderna miljövillkor.
+    
+    1. Mark- och miljödomstolen upphäver Länsstyrelsen i Kalmar läns beslut den
+    26 juli 2019, i ärende nr 531-5801-2019, och beslutar att anläggningen
+    Hällefors/Silverdalens Bruk omfattas av den nationella planen för moderna...
+
+
+--- [16/44] m5221-21 ---
+  File:       m-5221-21-dom-2022-12-16.txt
+  Case:       M 5221 -21
+  Date:       2022-12-16
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om omprövning för moderna miljövillkor på fastigheterna X och Y i Tingsryds kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    REMANDED - Målet återförvisas
+  Net score:  +0
+  Max cost:   0.06 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: fiskväg, faunapassage, omlöp, minimitappning, utskov, kontrollprogram, biotopvård
+
+  Signals:
+    0 Målet återförvisas (osäkert utfall)
+
+  DOMSLUT (excerpt):
+    1. Mark- och miljööverdomstolen avslår yrkandet om att domstolen ska inhämta
+    yttrande från vattenmyndigheten.
+    2. Mark- och miljööverdomstolen avslår yrkandet om syn.
+    3. Mark- och miljööverdomstolen undanröjer den överklagade domen, med undantag
+    för beslutet om prövningsavgift, samt återförvisar målet till mark- och miljödomstolen
+    för fortsatt behandling.
+    
+    Gällande tillstånd
+
+
+--- [17/44] m5224-21 ---
+  File:       m-5224-21-dom-2023-08-29.txt
+  Case:       M 5224 -21
+  Date:       2023-08-29
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om tillstånd till ombyggnad av regleringsdammen i Mien m.m. i Tingsryds kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.55)
+  Outcome:    MINOR_CHANGE - Ändrar dom i mindre delar
+  Net score:  -2
+  Max cost:   0.11 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: faunapassage, kontrollprogram, biotopvård
+
+  Signals:
+    -2 Mindre ändring (dom i övrigt oförändrad)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen ändrar den överklagade deldomen endast på så sätt att
+    villkor 6 ska ha följande lydelse.
+    Sökandena ska i samråd med Länsstyrelsen i Kronobergs län anpassa den västra fåran
+    inklusive insteget så att den är förenlig med bästa möjliga teknik för faunapassager för
+    både upp- och nedströmsvandrande fiskar av de i vattenförekomsten befintliga arterna .
+    Mark- och miljööverdomstolen avslår överklagandena i övrigt.
+    
+    God
+
+
+--- [18/44] m5295-23 ---
+  File:       m-5295-23-dom-2024-05-14.txt
+  Case:       M 5295 -23
+  Date:       2024-05-14
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Tillsyn avseende vattenkraftverk och dammar inom fastigheten X i Karlstads kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.70)
+  Outcome:    APPEAL_REJECTED - Överklagandet avslås
+  Net score:  -3
+  Max cost:   N/A
+  Measures:   utrivning
+
+  Signals:
+    -3 Myndighets överklagande avslås (operator vinner)
+
+  DOMSLUT (excerpt):
+    Med ändring av mark- och miljödomstolens dom upphäver Mark- och
+    miljööverdomstolen Länsstyrelsen i Värmlands beslut den 19 januari 2023 i
+    ärende nr
+    535-8178-2022.
+    
+    Mark- och miljödomstolen avslår överklagandet.
+    _____________ Bilaga A
+    
+
+
+--- [19/44] m5937-23 ---
+  File:       m-5937-23-dom-2024-05-13.txt
+  Case:       M 5937-23
+  Date:       2024-05-13
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Föreläggande om efterlevna d av vattenhushållningsbestämmelser enligt vattendom
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.85)
+  Outcome:    OPERATOR_WINS - Upphäver myndighets beslut/föreläggande
+  Net score:  -6
+  Max cost:   N/A
+  Measures:   minimitappning
+
+  Signals:
+    -6 Operator wins (upphäver beslut)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen avslår överklagandet.
+    
+    Mark- och miljödomstolen upphäver Länsstyrelse n i V ästmanlands läns beslut.
+
+
+--- [20/44] m6225-20 ---
+  File:       m-6225-20-dom-2022-02-09.txt
+  Case:       M 6225 -20
+  Date:       2022-02-09
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om förlängning av arbetstid avseende byggande av omlöp (fiskväg) vid Reinholdsfors kraftverk i Arvika kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.70)
+  Outcome:    EXTENSION_GRANTED - Förlängning beviljas
+  Net score:  -3
+  Max cost:   N/A
+  Measures:   fiskväg, fiskvandring, omlöp, kontrollprogram
+
+  Signals:
+    -3 Förlängning beviljas (gynnsamt)
+
+  DOMSLUT (excerpt):
+    1. Med ändring av mark- och miljödomstolens dom förlänger Mark- och miljööverdomstolen den arbetstid som bestämts i punkten 4 i Vänersborgs tingsrätts, miljödomstolen, dom den 19 maj 2009 i mål nr M 1109-08 (och som genom samma
+    tingsrätts, mark- och miljödomstolen, dom den 8 april 2015 i mål nr M 879-14
+    tidigare förlängts) till två (2) år efter det att Mark- och miljööverdomstolens dom i
+    detta mål fått laga kraft, dock längst till och med den 26 april 2024.
+    2. Mark- och miljööverdomstolen avslår...
+
+
+--- [21/44] m7988-22 ---
+  File:       m-7988-22-slutligt-beslut-sarskilt-uppsatt-2024-04-26.txt
+  Case:       M 7988 -22
+  Date:       2024-04-26
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om tillstånd till utrivning av Yxerns regleringsdamm m.m. i Västerviks och Vimmerby kommuner
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    PERMIT_GRANTED - Tillstånd meddelas (med villkor)
+  Net score:  +3
+  Max cost:   2.08 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: kontrollprogram, biotopvård
+
+  Signals:
+    +3 Tillstånd med utrivning
+
+  DOMSLUT (excerpt):
+    Tillstånd till utrivning
+    Mark- och miljödomstolen lämnar tillstånd enligt miljöbalken
+    a)till utrivning av befintlig dammanläggning vid sjön Yxerns utlopp, inom
+    fastigheten Västervik XXX och i samband därmed vidta biotopvårdande
+    åtgärder, samt
+    b)för genomförandet av planerade arbeten anlägga tillfällig fångdamm samt
+    sänka av sjöns vattennivå.
+    Allt i enlighet med vad som anges i den tekniska beskrivningen och ansökningshandlingarna i övrigt. Bilaga A
+
+
+--- [22/44] m2474-06 ---
+  File:       MOD_M-693-22_2025-02-04.txt
+  Case:       M 2474-06
+  Date:       2025-02-04
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Prövning av uppskjutna frågor avseende anläggande av kraftverk och ett nytt utskov i regleringsdammen i Abelvattnet m.m. i Storumans kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    CONDITIONS_MODIFIED - Villkor/dom ändras
+  Net score:  +3
+  Max cost:   125.15 MSEK
+  Measures:   faunapassage, utskov, kontrollprogram
+  In domslut: utskov, kontrollprogram
+
+  Signals:
+    +1 Villkor ändras (måttligt)
+    +2 Höga kostnader (125.2 MSEK)
+
+  DOMSLUT (excerpt):
+    1. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens deldomar på
+    följande sätt.
+    a. Mark- och miljööverdomstolen avslutar prövotidsförfarandet avseende
+    verksamheternas inverkan på renskötseln och förordnar att villkoren i
+    punkten 3 i domsluten ska ha följande lydelse.
+    
+    SVEA HOVRÄTT DOM M 693-22, M 1094-22
+    
+
+
+--- [23/44] m3415-22 ---
+  File:       MOD_M10196-24_2025-09-24.txt
+  Case:       M 3415-22
+  Date:       2025-09-24
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Ansökan om omprövning för moderna miljövillkor avseende Marbäcks kraftverk på fastigheterna X och Y, Fylleån, i Halmstads kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    REMANDED - Målet återförvisas
+  Net score:  +0
+  Max cost:   0.02 MSEK
+  Measures:   fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram
+
+  Signals:
+    0 Målet återförvisas (osäkert utfall)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och
+    återförvisar målet till mark- och miljödomstolen för fortsatt behandling.
+    
+    Avgörandet är elektroniskt undertecknat
+    
+    Box 2290 Birger Jarls Torg 16 08-561 670 00 måndag – fredag
+    103 17 Stockholm 08-561 675 50 08:00–16:30
+    
+
+
+--- [24/44] m2693-22 ---
+  File:       NAP_M13931-23_2025-03-31_Stromsbro.txt
+  Case:       M 2693-22
+  Date:       2025-03-31
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avvisad ansökan om omprövning för moderna miljövillkor avseende Strömsbro kraftverk i Testeboån i Gävle kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   N/A
+  Measures:   fiskväg, utskov
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    DOMSKÄL:
+    Verksamheten vid Strömsbro kraftverk bedrivs vid i huvudsak fyra anläggningsdelar:
+    den västra dammen med luckutskov, fiskväg, flyktväg och fingaller, den östra dammen
+    med luckutskov som reglerar vattnet mot intagskanalen och kraftverket, intagskanalen
+    med en mindre överfallsdamm som avleder breddat vatten tillbaka till Testeboån samt
+
+
+--- [25/44] m3463-22 ---
+  File:       NAP_M16477-23_2025-03-10.txt
+  Case:       M 3463-22
+  Date:       2025-03-10
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Rättegångskostnader
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.02 MSEK
+  Measures:   fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård
+  In domslut: fiskväg, omlöp, minimitappning, utskov, kontrollprogram
+
+  Signals:
+    0 Utfall oklart
+
+  DOMSLUT (excerpt):
+    A. Mark- och miljödomstolen, som finner att till ansökan fogad miljökonsekvensbeskrivning uppfyller kraven i 6 kap. miljöbalken, slutför den specifika
+    miljöbedömningen och meddelar Hushållningssällskapet Sjuhärad tillstånd till
+    att på fastigheterna och , Marks kommun, från Gärån(Ulån) avleda vatten
+    om maximalt 0,8 m3/s och bedriva vattenverksamhet förproduktion av
+    vattenkraftsel vid befintlig vattenkraftsanläggning bestående avföljande delar:
+    En dammbyggnad med en total längd om 22 meter med krö...
+
+
+--- [26/44] m396-22 ---
+  File:       NAP_M2170-24_2025-06-04.txt
+  Case:       M 396-22
+  Date:       2025-06-04
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avvisad ansökan om omprövning för moderna miljövillkor avseende Stigen Östra vattenkraftverk i Örekilsälven i Färgelanda kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.00 MSEK
+  Measures:   None
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    DOMSKÄL:
+    Prövningsramen
+    Mark- och miljööverdomstolen har att ta ställning till om verksamheten vid Stigen
+    Östra bedrivs med stöd av ett tillstånd eller en sådan särskild rättighet som kan läggas
+    till grund för en omprövning av verksamheten för moderna miljövillkor.
+
+
+--- [27/44] m3412-22 ---
+  File:       NAP_M3253-24_2025-04-01.txt
+  Case:       M 3412-22
+  Date:       2025-04-01
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avvisad ansökan om omprövning för moderna miljövillkor avseende Bölarps kvarn på fastigheten A, i Laholms kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.00 MSEK
+  Measures:   fiskväg, minimitappning
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    YRKANDEN:
+    F.A. och E.Z. har yrkat att Mark- och miljööverdomstolen i första hand ska återförvisa
+    målet till mark- och miljödomstolen för fortsatt handläggning. De har i andra hand
+    yrkat att målet ska vilandeförklaras till dess Högsta domstolen tagit ställning till
+    överklagandena av Mark- och miljööverdomstolens beslut i ÖM 13530-22 m.fl.
+
+
+--- [28/44] m4962-23 ---
+  File:       NAP_M3426-24_2025-05-23_Karsbols.txt
+  Case:       M 4962-23
+  Date:       2025-05-23
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Föreläggande att ansöka om tillstånd för vattenverksamhet m.m. inom fastigheterna A och B i Sunne kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.85)
+  Outcome:    OPERATOR_WINS - Upphäver myndighets beslut/föreläggande
+  Net score:  -6
+  Max cost:   N/A
+  Measures:   minimitappning, utskov, utrivning
+
+  Signals:
+    -6 Operator wins (upphäver beslut)
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom och upphäver
+    Länsstyrelsen i Värmlands läns beslut den 27 september 2023 i ärende nr 535-32142023.
+    
+    Box 2290 Birger Jarls Torg 16 08-561 670 00 måndag – fredag
+    103 17 Stockholm 08-561 675 50 08:00–16:30
+    
+    Mark- och miljödomstolen ändrar länsstyrelsens beslut endast på så sätt att föreläggandet ska ha efterföljts senast arton månader efter det att detsamma vunnit laga
+    kraft.
+
+
+--- [29/44] m2703-22 ---
+  File:       NAP_M9349-24_2025-10-02.txt
+  Case:       M 2703-22
+  Date:       2025-10-02
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Omprövning för moderna miljövillkor gällande Bresiljedammen i Testeboån i Ockelbo kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.00 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: utskov, kontrollprogram, biotopvård
+
+  Signals:
+    0 Utfall oklart
+
+  DOMSLUT (excerpt):
+    Mark- och miljööverdomstolen avslår överklagandena.
+    
+    1. Mark- och miljödomstolen återkallar tillståndet lämnat genom dåvarande
+    Österbygdens vattendomstols dom den 4 augusti 1948 i mål AD 36/1948 och
+    
+    Box 708 Storgatan 6 063-15 06 00 måndag – fredag
+    
+    www.ostersundstingsratt.domstol.se 13:00–15:00
+
+
+--- [30/44] m391-22 ---
+  File:       om-5404-23-slutligt-beslut-ej-sarskilt-uppsatt-2025-02-25.txt
+  Case:       M 391-22
+  Date:       2025-02-25
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avvisad ansökan om omprövning för moderna miljövillkor avseende Näsböle kraftverk i Valboån, Färgelanda kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.02 MSEK
+  Measures:   fiskväg, faunapassage, minimitappning, utskov, kontrollprogram
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    YRKANDEN:
+    Antonsson Kraft AB (bolaget) har yrkat att Mark- och miljööverdomstolen ska
+    upphäva mark- och miljödomstolens beslut att avvisa bolagets ansökan om
+    omprövning för moderna miljövillkor avseende Näsböle kraftverk och återförvisa
+    målet till mark- och miljödomstolen för fortsatt handläggning där. Bolaget har till stöd
+
+
+--- [31/44] m305-99 ---
+  File:       om-7938-23-slutligt-beslut-sarskilt-uppsatt-2024-02-27.txt
+  Case:       M 305-99
+  Date:       2024-02-27
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Tillåtligheten av yrkande om minimitappning m.m. i mål om uppskjutna frågor om bl.a. slutliga vattenhushållningsbestämmelser för Stornorrfors kraftstation i Vindelälven i Umeå kommun; nu fråga om avvisning av överklagande
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.55)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +2
+  Max cost:   25.00 MSEK
+  Measures:   fiskväg, fiskvandring, minimitappning, utskov
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+    +2 Höga kostnader (25.0 MSEK)
+
+  DOMSLUT (excerpt):
+    YRKANDEN:
+    I MARK- OCH MILJÖÖVERDOMSTOLEN
+    Vattenfall Vattenkraft AB har yrkat att Mark- och miljööverdomstolen ska ändra
+    mark- och miljödomstolens beslut och bifalla bolagets talan i mark- och miljödomstolen.
+    Vännäs kommun , Vindelns kommun , Arjeplogs kommun , Sorsele kommun och
+
+
+--- [32/44] m506-22 ---
+  File:       svea-hr-om-7673-23-slutligt-beslut-sarskilt-uppsatt-2024-04-12.txt
+  Case:       M 506-22
+  Date:       2024-04-12
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avvisat yrkande om omprövning för moderna miljövillkor avseende Skaftarp vatten- kraftverk vid Kägleån i Ängelholms kommun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   N/A
+  Measures:   minimitappning, utskov, utrivning
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    YRKANDEN:
+    I MARK- OCH MILJÖÖVERDOMSTOLEN
+    ELHE och BEOL har yrkat att Mark- och miljööverdomstolen ska upphäva markoch miljödomstolens beslut att avvisa deras där i första hand framställda yrkande om
+    omprövning för moderna miljövillkor avseende Skaftarp vattenkraftverk och
+    återförvisa målet dit för fortsatt handläggning. De har till stöd för talan gjort gällande
+
+
+--- [33/44] m391-99 ---
+  File:       Umea_Ostra_Spoland_2021-06-22.txt
+  Case:       M 391-99
+  Date:       2021-06-22
+  Court:      Umeå tingsrätt, MMD
+  Subject:    None
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   N/A
+  Measures:   None
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    1
+    ANSÖKAN
+    2021-07-xx
+    Umeå tingsrätt
+    
+
+
+--- [34/44] m2065-22 ---
+  File:       Vaxjo_E22_Soderkoping_2023-04-03.txt
+  Case:       M 2065-22
+  Date:       2023-04-03
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om tillstånd enligt 11 kap. miljöbalken för anläggande av bro över Storån samt tillhörande pålning, spontning och schaktning i vattenområde i samband med byggande av E22 Förbifart Söderköping, Söderköpings kommun. Avrinningsområde: 68 (Söderköpingsån) Koordinater: (SWEREF99 TM) N: 6482479 E:
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    PERMIT_GRANTED - Tillstånd meddelas (med villkor)
+  Net score:  +3
+  Max cost:   0.24 MSEK
+  Measures:   utskov, kontrollprogram
+  In domslut: kontrollprogram
+
+  Signals:
+    +3 Tillstånd med utrivning
+
+  DOMSLUT (excerpt):
+    Tillstånd
+    Mark- och miljödomstolen lämnar Trafikverket tillstånd till vattenverksamhet enligt
+    11 kap. miljöbalken att inom vattenområde för Storån vid fastigheterna Ällerstad
+    1:48, Kolstad 1:1 samt Hammarspången 2:1, Söderköpings kommun:
+    1. uppföra två brostöd tillhörande ny bro.
+    2. utföra erforderliga schaktnings-, pålnings-, spontnings- och grundläggningsarbeten.
+    3. uppföra en tillfällig arbetsväg med pålbrygga över Storån.
+    
+
+
+--- [35/44] m530-22 ---
+  File:       Vaxjo_M10528-23_2025-03-13.txt
+  Case:       M 530-22
+  Date:       2025-03-13
+  Court:      Mark- och miljööverdomstolen (MÖD)
+  Subject:    Avvisad ansökan om omprövning för moderna miljövillkor avseende Snällerödskvarns kraftverk på fastigheten A i Klippans kom mun
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.01 MSEK
+  Measures:   fiskvandring, omlöp, utskov, utrivning
+
+  Signals:
+    0 Inget domslut hittat (processhandling?)
+
+  DOMSLUT (excerpt):
+    YRKANDEN:
+    I MARK- OCH MILJÖÖVERDOMSTOLEN
+    P.R. har yrk at att Mark- och m iljööverdomstolen ska undanröja mark- och
+    miljödomstolens beslut och återförvisa målet till mark- och miljödomstolen för fortsatt
+    handläggning. Hon har gjort gällande att det utifrån utredningen i målet inte är
+
+
+--- [36/44] m2614-23 ---
+  File:       Vaxjo_M2614-23_2024-05-23.txt
+  Case:       M 2614-23
+  Date:       2024-05-23
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om tillstånd till utrivning av anläggningsdamm på fastigheten Tormestorp 5:31, Hässleholms kommun Avrinningsområde: Helge å Anläggnings-ID: 75585
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.04 MSEK
+  Measures:   minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: kontrollprogram, biotopvård
+
+  Signals:
+    0 Utfall oklart
+
+  DOMSLUT (excerpt):
+    Tillstånd
+    Mark- och miljödomstolen beviljar tillstånd enligt 11 kap. 19 § miljöbalken (MB)
+    till följande vattenverksamheter.
+    a. I sin helhet riva ut den på fastigheten Tormestorp 5:31 belägna dammanläggningen (Hammarmölledammen).
+    b. fylla igen den övre stenskodda delen av utloppskanalen från själva
+    kraftverket i syfte att minimera miljöpåverkan på den naturliga åfåran.
+    Dispens enligt artskyddsförordningen
+    Mark- och miljödomstolen meddelar dispens enligt 15 § artskyddsförordningen för
+
+
+--- [37/44] m4965-23 ---
+  File:       Vaxjo_M4965-23_2024-09-02_Hoganas.txt
+  Case:       M 4965-23
+  Date:       2024-09-02
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om tillstånd enligt miljöbalken till vattenverksamhet med uppförande av en badbrygga vid Kvickbadet i Höganäs, Höganäs kommun Avrinningsområde: 94/95 (mellan Råån och Vege å) Anläggnings-id: 76382
+  Relevance:  RELEVANT
+
+  SUGGESTED:  HIGH_RISK  (confidence: 0.70)
+  Outcome:    PERMIT_GRANTED - Tillstånd meddelas (med villkor)
+  Net score:  +3
+  Max cost:   0.04 MSEK
+  Measures:   kontrollprogram
+  In domslut: kontrollprogram
+
+  Signals:
+    +3 Tillstånd med utrivning
+
+  DOMSLUT (excerpt):
+    Tillstånd
+    Mark- och miljödomstolen lämnar Höganäs kommun (kommunen) tillstånd enligt
+    11 kap. miljöbalken att inom fastigheten Höganäs 36:50, i enlighet med ansökan
+    - anlägga en brygga med därtill hörande anordningar, samt
+    - utföra erforderliga anläggningsarbeten i berört område.
+    Villkor
+    Mark- och miljödomstolen föreskriver följande villkor för verksamheten.
+    1 Verksamheten ska bedrivas i huvudsaklig överensstämmelse med vad
+
+
+--- [38/44] m605-24 ---
+  File:       Vaxjo_M605-24_2024-09-03_Vaggeryd.txt
+  Case:       M 605-24
+  Date:       2024-09-03
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om förlängning av genomförandetid, Vaggeryd kommun Anl.ID.: 75425 Avrinningsområde: 98 Lagan
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.55)
+  Outcome:    CONDITIONS_MODIFIED - Villkor/dom ändras
+  Net score:  +1
+  Max cost:   0.00 MSEK
+  Measures:   faunapassage, fiskvandring, omlöp, utskov, skyddsgaller, utrivning
+  In domslut: faunapassage, skyddsgaller
+
+  Signals:
+    +1 Villkor ändras (måttligt)
+
+  DOMSLUT (excerpt):
+    Mark- och miljödomstolen ändrar villkor A3, B6 och B7 i gällande tillstånd,
+    meddelat i dom den 28 december 2020, mål M 73-19. Villkoren får istället följande
+    lydelser:
+    A3. Sökandena ska senast den 12 maj 2026 ha anlagt en faunapassage.
+    B6. I kraftverkets intagskanal ska, senast den 12 maj 2027, finnas ett skyddsgaller
+    för avledning av nedvandrande fisk. Gallret ska ha en lutning mot horisontalplanet
+    på 30-35 grader och en största spaltvidd vid 14 mm.
+    B7. I kraftverkets intagskanal ska, senast de...
+
+
+--- [39/44] m4021-22 ---
+  File:       Vaxjo_NV_2023-04-03.txt
+  Case:       M 4021-22
+  Date:       2023-04-03
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan enligt 24 kap. 13 § miljöbalken och 1 kap. 15 § industriutsläppsförord- ningen om ändring av villkor och andra begränsningsvärden för bolagets avloppsre- ningsverk i Perstorp, Perstorps kommun Avrinningsområde: 96 (Rönne å) N: 6220890 E: 399060 Anläggnings ID: 36695
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.55)
+  Outcome:    CONDITIONS_MODIFIED - Villkor/dom ändras
+  Net score:  +1
+  Max cost:   N/A
+  Measures:   None
+
+  Signals:
+    +1 Villkor ändras (måttligt)
+
+  DOMSLUT (excerpt):
+    Ändring av villkor i dom
+    Med stöd av 24 kap. 13 § miljöbalken ändrar mark- och miljödomstolen det i dom
+    från den 9 maj 2018 (mål nr M 1222-12) meddelade villkor 11 till följande lydelse:
+    11. Utsläppet av nickel och zink från avloppsreningsverket till Ybbarpsån får inte
+    överskrida följande värden, beräknade som flödesvägda årsmedelvärden och baserade på minst månatlig provtagning; nickel 130 g/dygn och zink 779 g/dygn.
+    Ändring av begränsningsvärden i BAT-slutsatserna
+    Med stöd av 21 kap. 3 § miljö...
+
+
+--- [40/44] m6587-23 ---
+  File:       Vaxjo_NV_2024-09-02.txt
+  Case:       M 6587-23
+  Date:       2024-09-02
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om ändringstillstånd enligt miljöbalken till viss ändrad verksamhet vid Höganäsbolagens anläggning i Höganäs kommun Anl.ID.: 31755 Avrinningsområde: 94/95 Mellan Rååån och Vegeån
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.55)
+  Outcome:    CONDITIONS_MODIFIED - Villkor/dom ändras
+  Net score:  +1
+  Max cost:   2.50 MSEK
+  Measures:   kontrollprogram
+
+  Signals:
+    +1 Villkor ändras (måttligt)
+
+  DOMSLUT (excerpt):
+    Miljökonsekvensbeskrivning
+    Mark- och miljödomstolen godkänner den i målet ingivna miljökonsekvensbeskrivningen.
+    
+    Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+    
+    Tillstånd
+    Mark- och miljödomstolen lämnar, med stöd av 16 kap. 2 a § miljöbalken och med
+    ändring av vad som tillståndsgivits genom mark- och miljödomstolens dom den 15
+
+
+--- [41/44] m2796-24 ---
+  File:       Växjö TR M 2796-24 Dom 2025-03-07.txt
+  Case:       M 2796-24
+  Date:       2025-03-07
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om omprövning för moderna miljövillkor vid Björnamåla kraftverk, Karls- hamns kommun Avrinningsområde: 84/85 AnläggningsID: 30438
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.70)
+  Outcome:    CONDITIONS_MODIFIED - Villkor/dom ändras
+  Net score:  +4
+  Max cost:   N/A
+  Measures:   fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård
+  In domslut: fiskväg, minimitappning, utskov, kontrollprogram, biotopvård
+
+  Signals:
+    +4 Villkor med utrivning
+
+  DOMSLUT (excerpt):
+    Moderna miljövillkor
+    Mark- och miljödomstolen fastställer moderna miljövillkor, enligt nedan, för den
+    vattenverksamhet som Gösta Johanssons Bilverkstad HB, Gösta Johansson och
+    Inger Johansson med stöd av ovan angiven vattendom bedriver på fastigheten
+    Karlshamn, Björnamåla 1:5.
+    
+    
+    
+
+
+--- [42/44] m483-22 ---
+  File:       Växjö TR M 483-22 Dom 2026-01-22.txt
+  Case:       M 483-22
+  Date:       2026-01-22
+  Court:      Växjö tingsrätt, MMD
+  Subject:    Ansökan om omprövning för moderna miljövillkor, samt tillstånd enligt miljöbalken, för Stora Mölla vattenkraftverk i Pinnån, på fastigheterna Öjamölla 1:3, Klippans kommun och Össjö 26:134, Ängelholms kommun Avrinningsområde: 96, Rönne å Anläggnings-ID: 30621
+  Relevance:  RELEVANT
+
+  SUGGESTED:  LOW_RISK  (confidence: 0.70)
+  Outcome:    PERMIT_GRANTED - Tillstånd meddelas (med villkor)
+  Net score:  +3
+  Max cost:   0.06 MSEK
+  Measures:   faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  In domslut: omlöp, minimitappning, kontrollprogram
+
+  Signals:
+    +3 Tillstånd med utrivning
+
+  DOMSLUT (excerpt):
+    1. Mark- och miljödomstolen avslår sökandens förstahandsyrkande.
+    2. Mark- och miljödomstolen godkänner den i målet ingivna
+    miljökonsekvensbeskrivningen.
+    3. Mark- och miljödomstolen lämnar tillstånd i efterhand för att vid
+    anläggningen Stora Mölla vattenkraftverk inom fastigheterna Öjamölla 1:3,
+    Klippans kommun, och Össjö 26:134, Ängelholms kommun, bibehålla
+    befintlig vattenkraftsanläggning bestående av samtliga anläggningsdelar,
+    som består av:
+
+
+--- [43/44] m2694-22 ---
+  File:       Östersunds TR M 2694-22 Dom 2025-12-18.txt
+  Case:       M 2694-22
+  Date:       2025-12-18
+  Court:      Östersunds tingsrätt, MMD
+  Subject:    Omprövning för moderna miljövillkor avseende Oslättfors kraftverk, Gävle kommun Avrinningsområde: 51 (Testeboån) Koordinater (SWEREF 99 TM): N 6738773, E 607172 Anläggnings-ID: 20652
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.55)
+  Outcome:    REJECTED - Ansökan/yrkande avslås
+  Net score:  +1
+  Max cost:   0.20 MSEK
+  Measures:   fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  In domslut: fiskväg, kontrollprogram
+
+  Signals:
+    +1 Yrkande avslås
+
+  DOMSLUT (excerpt):
+    Mark- och miljödomstolen avvisar Testeboåns Fiskevårdsområdesförenings
+    ersättningsyrkande och avslår samtliga yrkanden om avvisning av ansökan.
+    
+    Förutom vad som hittills gällt som villkor för Oslättfors kraftverk enligt
+    Österbygdens vattendomstols dom den 15 september 1956 (Ans. D. 40/1956) och
+    
+    
+    
+
+
+--- [44/44] m2695-22 ---
+  File:       Östersunds TR M 2695-22 Dom 2025-08-15.txt
+  Case:       M 2695-22
+  Date:       2025-08-15
+  Court:      Östersunds tingsrätt, MMD
+  Subject:    Nationella planen, vattenverksamhet - moderna miljövillkor, Åmots Bruks vattenkraftverk, Ockelbo kommun Avrinningsområde: 51 (Testeboån) Koordinater (SWEREF 99 TM): N: 6759518 E: 578513 AnläggningsID: 1170
+  Relevance:  RELEVANT
+
+  SUGGESTED:  MEDIUM_RISK  (confidence: 0.40)
+  Outcome:    UNCLEAR - Kan ej avgöras automatiskt
+  Net score:  +0
+  Max cost:   0.03 MSEK
+  Measures:   fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  In domslut: fiskväg, kontrollprogram, biotopvård
+
+  Signals:
+    0 Utfall oklart
+
+  DOMSLUT (excerpt):
+    1. Efter omprövning enligt 24 kap. 10 § miljöbalken beslutar mark- och
+    miljödomstolen om nya och ändrade villkor för den verksamhet som bedrivs vid
+    Åmots Bruks vattenkraftverk med stöd av utslaget i Österbygdens
+    vattendomstol den 19 november 1932 (Ans. D. 13/1931), Österbygdens
+    vattendomstol den 16 maj 1956, (Ans. D. 99/1955), och genom utslaget i
+    Stockholms tingsrätt, vattendomstolen, den 16 mars 1987 i mål VA 58/85.
+    
+    ÖSTERSUNDS TINGSRÄTT
+

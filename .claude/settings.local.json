@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sqlite3:*)",
+      "Bash(python -c:*)",
+      "Bash(ls -la \"C:\\\\Users\\\\SE2I7A\\\\Desktop\\\\legalmodel\\\\Data\\\\Ansökningar\"\" 2>/dev/null || dir /B \"C:UsersSE2I7ADesktoplegalmodelDataAnsökningar \")",
+      "Bash(python scripts/02_clean_court_texts.py:*)",
+      "Bash(python scripts/03_create_labeled_dataset.py:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(C:\\\\Users\\\\SE2I7A\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\python.exe:*)",
+      "Bash(py:*)",
+      "Bash(node -e:*)",
+      "Bash(wmic:*)",
+      "Bash(node:*)",
+      "Bash(pip --version:*)",
+      "Bash(pip install:*)",
+      "Bash(dir:*)",
+      "Bash(awk:*)",
+      "Bash(where:*)",
+      "Bash(wc:*)",
+      "Bash(python.exe -m pip install:*)",
+      "Bash(pip config:*)"
+    ]
+  }
+}

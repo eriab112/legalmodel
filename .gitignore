@@ -1,0 +1,43 @@
+# Trained models (too large for GitHub)
+models/
+swedish-bert-models/
+
+# Raw data (source PDFs and nested git history — text already in Data/processed/)
+Data/Domar/
+Data/Ansökningar/
+Data/Lagstiftningdiverse/
+
+# Separate project data
+nap_model-main/
+
+# Claude Code temp files
+tmpclaude-*
+nul
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+*.pkl
+
+# Environment
+.env
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# PDF source (tracked as TXT in processed)
+kmae250140.pdf

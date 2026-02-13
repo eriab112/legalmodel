@@ -1,0 +1,90 @@
+[
+  {
+    "id": "m2796-24",
+    "filename": "Växjö TR M 2796-24 Dom 2025-03-07.txt",
+    "features": {
+      "downstream_has_screen": false,
+      "downstream_gap_mm": 13.0,
+      "downstream_angle_degrees": 80.0,
+      "downstream_bypass_ls": null,
+      "upstream_has_fishway": true,
+      "upstream_type": "undefined",
+      "upstream_slope_pct": 12.0,
+      "upstream_discharge_ls": 10,
+      "upstream_has_eel_ramp": false,
+      "flow_min_ls": null,
+      "flow_hydropeaking_banned": true,
+      "flow_percent_mq": null,
+      "monitoring_required": true,
+      "monitoring_functional": false,
+      "cost_msek": null,
+      "timeline_years": null
+    }
+  },
+  {
+    "id": "m483-22",
+    "filename": "Växjö TR M 483-22 Dom 2026-01-22.txt",
+    "features": {
+      "downstream_has_screen": false,
+      "downstream_gap_mm": 15.0,
+      "downstream_angle_degrees": 80.0,
+      "downstream_bypass_ls": 10,
+      "upstream_has_fishway": false,
+      "upstream_type": "nature-like",
+      "upstream_slope_pct": 6.5,
+      "upstream_discharge_ls": null,
+      "upstream_has_eel_ramp": false,
+      "flow_min_ls": 100,
+      "flow_hydropeaking_banned": false,
+      "flow_percent_mq": null,
+      "monitoring_required": true,
+      "monitoring_functional": false,
+      "cost_msek": null,
+      "timeline_years": null
+    }
+  },
+  {
+    "id": "m2694-22",
+    "filename": "Östersunds TR M 2694-22 Dom 2025-12-18.txt",
+    "features": {
+      "downstream_has_screen": false,
+      "downstream_gap_mm": 12.0,
+      "downstream_angle_degrees": 45.0,
+      "downstream_bypass_ls": null,
+      "upstream_has_fishway": true,
+      "upstream_type": "nature-like",
+      "upstream_slope_pct": null,
+      "upstream_discharge_ls": null,
+      "upstream_has_eel_ramp": true,
+      "flow_min_ls": null,
+      "flow_hydropeaking_banned": true,
+      "flow_percent_mq": null,
+      "monitoring_required": true,
+      "monitoring_functional": false,
+      "cost_msek": null,
+      "timeline_years": null
+    }
+  },
+  {
+    "id": "m2695-22",
+    "filename": "Östersunds TR M 2695-22 Dom 2025-08-15.txt",
+    "features": {
+      "downstream_has_screen": false,
+      "downstream_gap_mm": 13.0,
+      "downstream_angle_degrees": 30.0,
+      "downstream_bypass_ls": null,
+      "upstream_has_fishway": true,
+      "upstream_type": "vertical-slot",
+      "upstream_slope_pct": 10.0,
+      "upstream_discharge_ls": null,
+      "upstream_has_eel_ramp": true,
+      "flow_min_ls": null,
+      "flow_hydropeaking_banned": false,
+      "flow_percent_mq": 10.0,
+      "monitoring_required": true,
+      "monitoring_functional": true,
+      "cost_msek": null,
+      "timeline_years": null
+    }
+  }
+]

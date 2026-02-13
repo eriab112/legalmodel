@@ -1,0 +1,39 @@
+{
+  "feature_importance": {
+    "downstream_has_screen": 0.0,
+    "downstream_gap_mm": 0.0487,
+    "downstream_angle_degrees": 0.105,
+    "downstream_bypass_ls": 0.0,
+    "upstream_has_fishway": 0.098,
+    "upstream_type_int": 0.1093,
+    "upstream_slope_pct": 0.1226,
+    "upstream_discharge_ls": 0.0313,
+    "upstream_has_eel_ramp": 0.1582,
+    "flow_min_ls": 0.0658,
+    "flow_hydropeaking_banned": 0.0153,
+    "flow_percent_mq": 0.0388,
+    "monitoring_required": 0.104,
+    "monitoring_functional": 0.0306,
+    "cost_msek": 0.0694,
+    "timeline_years": 0.0029
+  },
+  "feature_importance_std": {
+    "downstream_has_screen": 0.0,
+    "downstream_gap_mm": 0.0193,
+    "downstream_angle_degrees": 0.0201,
+    "downstream_bypass_ls": 0.0,
+    "upstream_has_fishway": 0.0444,
+    "upstream_type_int": 0.0388,
+    "upstream_slope_pct": 0.029,
+    "upstream_discharge_ls": 0.0237,
+    "upstream_has_eel_ramp": 0.0501,
+    "flow_min_ls": 0.0234,
+    "flow_hydropeaking_banned": 0.0131,
+    "flow_percent_mq": 0.0201,
+    "monitoring_required": 0.0402,
+    "monitoring_functional": 0.0334,
+    "cost_msek": 0.0269,
+    "timeline_years": 0.0026
+  },
+  "note": "Averaged over 5-fold stratified CV; n_samples=44. Interpret as correlation with risk in this set."
+}

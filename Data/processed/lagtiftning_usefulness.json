@@ -1,0 +1,46 @@
+{
+  "pretraining_candidates": [
+    "19FS 2021-10-TGA.pdf",
+    "2021-43 Vattenkvalitetskrav Västerhavets vattendistrikt.pdf",
+    "202111 Kvalitetskrav för vattenförekomster i Södra Östersjöns vattendistrikt.pdf",
+    "22FS 2021-5 Länsstyrelsen i Västernorrlands läns (Vattenmyndigheten för Bottenhavets vattendistrikts) föreskrifter om kvalitetskrav för vattenförekomster i Bottenhavets vattendist.pdf",
+    "allmanna-villkor-reviderade-20240327.pdf",
+    "bilaga-5-1-dammsakerhet.pdf",
+    "miljoatgarder-i-vattendrag-exempelsamling-energiforskrapport-2022-856.pdf",
+    "miljobalken.pdf",
+    "Miljökonsekvensbeskrivning Åtgärdsprogram Bottenhavet.pdf",
+    "Miljökonsekvensbeskrivning Åtgärdsprogram Bottenviken.pdf",
+    "Miljökonsekvensbeskrivning Åtgärdsprogram Norra Östersjön.pdf",
+    "Miljökonsekvensbeskrivning Åtgärdsprogram Södra Östersjön.pdf",
+    "Miljökonsekvensbeskrivning Åtgärdsprogram Västerhavet.pdf",
+    "NAP_full_text.txt",
+    "rapport-2025-19-samradsunderlag-for-avgransning.pdf",
+    "regeringsbeslut-nationell-plan-moderna-miljovillkor.pdf",
+    "remiss-2025-3660-marin-strategi.pdf",
+    "remiss-2025-3666-miljobedomning.pdf",
+    "se-final-paf-22-nov-2021.pdf",
+    "swe126179.pdf",
+    "swe187160.pdf",
+    "swe202925.pdf",
+    "swe221922.pdf",
+    "vagledning-natura2000-beslutad.pdf",
+    "VM-riktlinjer-vattenkraft_atgarder-undantag.pdf",
+    "VM_Riktlinjer_Vattenkraft.txt"
+  ],
+  "context_augmentation": [
+    "bilaga-5-11-losningar-nedstromsvandrande-fisk.pdf",
+    "bilaga-5-12-kostnader.pdf",
+    "bilaga-5-4-fiskinformation-malarter.pdf",
+    "bilaga-5-5-losningar-uppstromsvandrande-fisk.pdf",
+    "bilaga-5-6-stromning-vattendrag-fiskpassager-hydraulisk-modellering.pdf",
+    "bilaga-5-7-hydraulisk-design-lockvatten.pdf",
+    "bilaga-5-8-hydrauliska-samband-fiskpassager.pdf",
+    "eudirektiv.pdf"
+  ],
+  "reference_only": [
+    "CIS_Guidance_Article_4_7_FINAL (1).pdf",
+    "CIS_Guidance_Article_4_7_FINAL.pdf",
+    "GD 07 - Monitoring - Policy Summary.pdf",
+    "Guidance No 4 - heavily modified water bodies - HMWB (WG 2.2).pdf"
+  ]
+}

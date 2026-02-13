@@ -1,0 +1,48 @@
+[
+  {
+    "id": "m2796-24",
+    "filename": "Växjö TR M 2796-24 Dom 2025-03-07.txt",
+    "suggested_label": "MEDIUM_RISK",
+    "score": 3.0,
+    "reasons": [
+      "Downstream gap specified (13.0mm) but angle 80.0 deg > 35",
+      "Specific upstream passage: fishway (undefined)",
+      "Hydropeaking banned",
+      "Basic monitoring required"
+    ]
+  },
+  {
+    "id": "m483-22",
+    "filename": "Växjö TR M 483-22 Dom 2026-01-22.txt",
+    "suggested_label": "LOW_RISK",
+    "score": 1.5,
+    "reasons": [
+      "Downstream gap specified (15.0mm) but angle 80.0 deg > 35",
+      "Min flow specified: 100 L/s",
+      "Basic monitoring required"
+    ]
+  },
+  {
+    "id": "m2694-22",
+    "filename": "Östersunds TR M 2694-22 Dom 2025-12-18.txt",
+    "suggested_label": "MEDIUM_RISK",
+    "score": 3.0,
+    "reasons": [
+      "Downstream gap specified (12.0mm) but angle 45.0 deg > 35",
+      "Specific upstream passage: fishway (nature-like) + eel ramp",
+      "Hydropeaking banned",
+      "Basic monitoring required"
+    ]
+  },
+  {
+    "id": "m2695-22",
+    "filename": "Östersunds TR M 2695-22 Dom 2025-08-15.txt",
+    "suggested_label": "MEDIUM_RISK",
+    "score": 3,
+    "reasons": [
+      "Strict downstream passage (gap 13.0mm, angle 30.0 deg)",
+      "Specific upstream passage: fishway (vertical-slot) + eel ramp",
+      "Functional monitoring required"
+    ]
+  }
+]

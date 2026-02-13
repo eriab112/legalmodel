@@ -1,0 +1,21 @@
+{
+  "_comment": "Manual label overrides for NAP LegalBERT. Set label to EXCLUDE to remove from dataset.",
+  "m8024-05": "EXCLUDE",
+  "_m8024-05": "Fastighetsreglering - ej vattenkraft",
+  "m7708-22": "EXCLUDE",
+  "_m7708-22": "Utsläppsrätter - ej vattenkraft",
+  "m899-23": "EXCLUDE",
+  "_m899-23": "Täktverksamhet - ej vattenkraft",
+  "m3273-22": "EXCLUDE",
+  "_m3273-22": "Bergtäkt - ej vattenkraft",
+  "m2479-22": "EXCLUDE",
+  "_m2479-22": "Solcellsanläggning - ej vattenkraft",
+  "m2024-01": "EXCLUDE",
+  "_m2024-01": "Detaljplan - ej vattenkraft",
+  "m3753-22": "HIGH_RISK",
+  "_m3753-22": "Avslår länsstyrelsens yrkande om återförvisning MEN ändrar villkor med fiskväg, faunapassage, minimitappning, utrivning. Operatören får behålla kraftverk men med omfattande villkor.",
+  "m2796-24": "MEDIUM_RISK",
+  "m483-22": "LOW_RISK",
+  "m2694-22": "MEDIUM_RISK",
+  "m2695-22": "MEDIUM_RISK"
+}

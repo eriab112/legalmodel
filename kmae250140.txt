@@ -1,0 +1,1495 @@
+REVIEW PAPER
+Insights from a nation-wide environmental relicensing
+of hydropower facilities in Sweden: a review of court verdicts
+from a biological perspective
+Joseﬁn Sundin* , Joacim Näslund, Philip Jacobson, Birgitta Jacobson, Johan Östergren
+and Daniel Nyqvist
+Swedish University of Agricultural Sciences, Department of Aquatic Resources, Stångholmsvägen 2, SE-17893, Drottningholm, Sweden
+Received November 16 2025 – Accepted December 21, 2025
+Abstract – Hydropower, utilized for centuries, is promoted globally as renewable energy. The many
+ecological costs associated with hydropower facilities can be mitigated, but the perceived socio-economic
+beneﬁts often outweigh environmental concern. The EU Water Framework Directive (WFD), implemented
+in 2000, established a framework for community action in the ﬁeld of water policy. It constitutes an
+instrument to compel hydropower facilities to align with environmental requirements. Based on the WFD
+and national law, a National Plan for Modern Environmental Conditions for Hydropower (NAP) was
+formulated in Sweden to renegotiate the environmental permits of around 2000 hydropower plants and
+dams. The NAP process commenced in 2022 and is estimated to last approximately 20 year. In this review,
+we assessed the 33 court cases completed until the end of 2024, out of which 22 resulted in permit
+withdrawal and dam removal, while 11 received decisions requiring remedial measures. The primary focus
+of remedial measures was re-establishing longitudinal connectivity; other environmental aspects received
+less attention, and monitoring requirements were almost non-existent. We recommend measures using
+adaptive design, prioritizing functionality, and monitoring over detailed technical speciﬁcations. In addition,
+greater attention should be given also to aquatic habitats in affected reaches: addressing e.g., ﬂow, water
+levels, and temperature. In conclusion, this nation-wide process provides a unique opportunity to implement
+measures that could beneﬁt entire riverine ecosystems.
+Keywords: Dam removal / environmental law / ﬁsh migration / hydroelectric production / river connectivity
+1 Introduction
+Hydropower facilities and their associated dams and
+reservoirs have contributed energy to human society for
+centuries, initially on a local scale in the form of e.g., mills and
+later at much larger scales after the development of
+hydroelectric plants (Almeida et al., 2022). Hydroelectricity
+is globally promoted as a renewable resource, but ecological
+costs are often high (He et al., 2024; Nyqvist et al., 2025).
+Impoundments upstream of dams turn river rapids into lake-
+like environments and downstream sections have altered ﬂow-
+sedimentation- and physico-chemical dynamics impacting the
+river ecosystems (He et al., 2024). For mobile organisms like
+ﬁshes, dams block up- and downstream movements, in effect
+fragmenting
+both
+habitats
+and
+populations,
+leading
+to
+population decline or even local extinction of migratory
+species (Jonsson et al., 1999; Limburg and Waldman, 2009,
+Algera et al., 2020; Nyqvist et al., 2025). Importantly, similar
+issues can apply to relatively resident species, which need to
+move in relation to changed environmental conditions and
+disperse to maintain genetic diversity (Jones et al., 2021;
+Schiavon et al., 2024). On a global scale, dams are considered
+to be a threat to almost 4000 aquatic, semi-aquatic, and
+terrestrial species (He et al., 2024). Avariety of measures have
+been implemented to mitigate the ecological effects of
+hydropower. This includes various ﬁsh passage solutions
+(Katopodis and Williams, 2012; Silva et al., 2018) which
+initially were focused mainly on aiding upstream passage of
+salmonids, but later also cover two-way passage of whole ﬁsh
+communities (Mallen-Cooper, 1999; Calles et al., 2013a).
+Other measures relate to ﬂow regulation effects, which can be
+mitigated by implementing multifaceted natural ﬂow variabil-
+ity (environmental ﬂows, or “e-ﬂow”) (Richter et al., 1997;
+Poff et al., 2010; Acreman et al., 2014). A main concern
+related to environmental ﬂow is lost power production, but
+*Corresponding authors: joseﬁn.sundin@slu.se;
+joseﬁn@teamsundin.se
+Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+© J. Sundin et al., Published by EDP Sciences 2026
+https://doi.org/10.1051/kmae/2025034
+Knowledge &
+Management of
+Aquatic
+Ecosystems
+www.kmae-journal.org
+Journal fully supported by Office
+français de la biodiversité
+This is an Open Access article distributed under the terms of the Creative Commons Attribution License CC-BY-ND (https://creativecommons.org/licenses/by-nd/4.0/), which permits unrestricted use,
+distribution, and reproduction in any medium, provided the original work is properly cited. If you remix, transform, or build upon the material, you may not distribute the modiﬁed material.
+
+models indicate that the annual loss need not be substantial
+(Widén et al., 2022b), although regulatory capacity might be
+reduced. In practice, however, regulation on minimum ﬂow is
+more commonly applied than environmental ﬂows (Arthington
+et al., 2006; Malm Renöfält et al., 2010), despite the riverine
+ecosystems’ dependence on natural and seasonal variation in
+ﬂow magnitude, rate of change, frequency, duration, and
+timing (Poff et al., 2010; Acreman et al., 2014). For
+temperature- oxygen- and gas supersaturation effects, remedial
+measures are available but seldom implemented (Poole and
+Berman, 2001; Li et al., 2022). Relating to all mitigation
+measures at hand, monitoring and evaluation of the applied
+measures in combination with adaptive management based on
+such
+evaluations
+is
+required
+for
+successful
+mitigation
+performance (Birnie-Gauvin et al., 2017; Nyqvist et al., 2017).
+In Sweden, the usage of water for energy generation dates
+back many centuries, supplying e.g., mills, triphammers, and
+saws through waterwheels, often fed from small dams (Fryxell
+et al., 1931; Swedish National Heritage Board, 2021). The ﬁrst
+Swedish hydroelectric plant was constructed in 1882; a small-
+scale private plant at Rydal in the river Viskan (Perers et al.,
+2007). A quick expansion of private and municipal hydro-
+power plants followed in the late 1800’s and early 1900’s
+(Fryxell et al., 1931). Large-scale production plants were
+inaugurated in the 1910’s at the advent of state-owned
+hydropower (Olidan in the river Göta älv in 1910, Porjus in the
+river Luleälven in 1915, and Älvkarleby in the river Dalälven in
+1917, Fryxell et al., 1931; Ödmann et al., 1982; Perers et al.,
+2007). The main construction period lasted between 1910 and
+1970’s, with a culmination from 1940’s to 1960’s in
+association with the development of the national power grid
+which made production in the north accessible to the rest of the
+country (Ödmann et al., 1982; Perers et al., 2007; Lindström
+and Ruud, 2017). Construction levelled off when the potential
+for further large-scale development became limited without
+causing deterioration to the last few free-ﬂowing large rivers,
+with associated critique from environmentalists (Arheimer and
+Lindström, 2014; Köhler and Ruud, 2019). This hydroelectric
+development has resulted in a present-day state where Sweden
+has around 2000 dams associated to hydroelectricity produc-
+tion (Lindblom and Holmgren, 2016).
+Historically, the perceived socio-economic beneﬁts of
+increased
+energy
+production
+outweighed
+environmental
+concern, which is reﬂected in the existent (legally bound)
+operational permits, or the lack thereof in some cases (Ödmann
+et al., 1982; Lindström and Ruud, 2017; Schäfer, 2021).
+Indeed, hydropower plants often operate under original
+permits that have remained valid without re-evaluation under
+modern environmental laws (Svensson, 2000). Consequently,
+in Sweden, hydroelectric production has historically faced
+fewer environmental mitigation requirements than other
+industries (Schäfer, 2021). Even if some history writers have
+claimed that no serious criticism was raised against the
+negative environmental effects until the mid-1900’s (Ödmann
+et al., 1982; Jakobsson, 2002), this perspective likely
+overlooks silent or silenced opposition to river regulation; not
+the least the experiences and opinions of the indigenous Sámi,
+whoenduredlandappropriation,forcedrelocations,lossofwater
+access, destruction of reindeer grazing lands, and other major
+environmental changes in their homelands associated to with
+early large-scale hydropower development (Össbo, 2023a, b).
+In 2019, Swedish environmental law was updated to
+require hydroelectric plants to comply with modern environ-
+mental legislation (SFS 1998:808, chapter 11, xx27-28,
+updated by SFS 2018:1407). Importantly, the EU Water
+Framework Directive (2000/60/EC) was implemented in 2000,
+which established a framework for community action in the
+ﬁeld of water policy. Based on this directive, and the legal
+update, the Swedish government tasked the Swedish Agency
+for Marine and Water Management (SwAM), the Swedish
+Energy Agency, and Svenska Kraftnät (the authority responsi-
+ble for Sweden’s electricity transmission system) with
+coordinating efforts to modernize environmental conditions
+of hydropower facilities (SwAM et al., 2019). A National Plan
+for Modern Environmental Conditions for Hydropower (NAP)
+was later formulated to renegotiate the environmental permits
+of all hydropower facilities with permits older than 40 yr
+(Swedish
+Government,
+M2019/01769).
+This
+large-scale
+process, covering almost all of Sweden’s hydropower plants
+and dams, was decided upon by the government in 2020 and
+commenced in 2022 and is estimated to take approximately
+20 yr. It involves re-licensing each plant through Environmen-
+tal Court negotiations, preceded by a collaborative process
+including powerplant owners, authorities and interest groups,
+to align with current national and EU legislation. To safeguard
+electricity production and grid balance, key facilities will face
+less stringent requirements (Swedish Government, M2019/
+01769). Operators who ﬁnd modernization too costly may
+choose to cease operations and remove associated dams
+(Swedish Government, M2019/01769). The NAP work has,
+however, not progressed undisturbed. In December 2022, the
+Ministry of Environment decided to pause the process,
+initiating a 12-month suspension on January 30, 2023
+(Ministry of Environment, M2022/02251). The Ministry of
+Climate and Enterprise has since then extended the pause
+several times, with the latest extension lasting until July 1,
+2025 (SFS 2024:285), and the process was restarted in August
+2025. Due to Sweden’s non-compliance with the Water
+Framework Directive, the European Commission launched an
+infringement procedure in December 2024, issuing a formal
+notice [INFR(2024)2236]. The NAP process hence constitutes
+an exceptional case study where energy production needs are
+weighted against environmental protection via national and
+international environmental law and directives.
+Fewer than 40 re-licensing court trials had been completed
+within the NAP process until the end of 2024. Nonetheless,
+several issues have already emerged, including conﬂicts
+between electricity production and environmental consider-
+ations, fairness in trials, and uncertainties around water-body
+deﬁnitions and classiﬁcation, ensuring best-practice measures,
+and monitoring of functionality and effects of prescribed
+measures (e.g., County Administrative Boards, 2022; Lenvin,
+2022; Government Ofﬁces of Sweden, 2024; Pettersson and
+Bladh, 2024; Sandberg, 2024). This underscores the signiﬁcant
+need for information and knowledge ahead of the remaining
+retrials. Here we evaluate the court verdicts completed so far,
+focusing on those with legally binding requirements for
+remedial measures. We summarize the listed measures
+and monitoring obligations, with particular attention to the
+European eel, Anguilla anguilla, given the high importance of
+up-and downstream connectivity for this species, and since it is
+critically endangered (Pike et al., 2020). Gaps in the
+Page 2 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+requirements are identiﬁed, and we provide recommendations
+for measures and monitoring to be included in future retrials.
+2 Review of court decisions
+2.1 Data extraction
+In Sweden, all court decisions are public due to the
+principle of public access to information (SFS 2009:400;
+Riksdag of Sweden, 2009). The court decisions on the re-
+licensing of the environmental legal conditions for hydropow-
+er plants can hence be requested and accessed by anyone. We
+identiﬁed completed retrials via the web application “Ström-
+men”, provided by the Swedish Agency for Marine and Water
+Management (SwAM, 2024). For the 33 retrials that had been
+completed until the end of 2024 (i.e., before the onset of the
+pause, only counting decisions that cannot be overruled, in
+Swedish: har vunnit laga kraft), the court decisions were
+obtained by requesting them from the respective courts. The
+decisions were requested and received via email in Portable
+Document Format (.pdf). From Strömmen, the following
+information was extracted: name of hydropower facility, river,
+court case number (if applicable supreme court number), court
+name, decision (retraction of permission – i.e., removal of
+facility, or granted to continue with modern environmental
+conditions). From the court verdicts and related discussion in
+the document, the following information was extracted:
+capacity of the hydropower plant (Q), hydropower plant
+effect/power (in kilowatt, kW), mean annual ﬂow of the river
+(MQ), mean low ﬂow of the river (MLQ), upstream passage
+solutions, downstream passage solutions, requirements con-
+cerning type of guidance, maximum angle of rack (in cases
+where the type of guidance was an inclined [alfa rack] or
+angled [beta rack]; Harbicht et al., 2022), maximum gap width
+of rack (in cases where the type of guidance was an inclined or
+angled rack), discharge through downstream bypass, eel ramps
+(yes/no), type of ﬁshway, required slope of ﬁshway, ﬂow in
+ﬁshway, hydropeaking restrictions, e-ﬂow requirements, and
+monitoring requirements. To obtain speciﬁc data related to the
+European eel, the words “ål”, “ålen” and “ålyngel” (i.e., eel,
+the eel and eel elvers in Swedish) was searched for in the court
+verdicts. In what context eel was mentioned was noted, and
+other relevant comments in relation to context were also noted.
+Information on measures and monitoring was extracted from
+the court verdicts or the comments on the court verdicts, and,
+while sometimes complemented by information provided
+elsewhere, the discussions leading to the verdict were not taken
+into account.
+Of the 33 completed cases, 22 resulted in permit
+withdrawal and dam removal (Fig. 1). In the remaining 11
+cases, the court allowed continued hydropower production,
+contingent on meeting modern environmental conditions listed
+in the verdict (Fig. 1). Ten of these are small-scale plants (<1.5
+MW), and one is a regulation dam for downstream hydropower
+(Tab. 1). All verdicts emphasize longitudinal connectivity and
+ﬁsh passage, requiring downstream ﬁsh passage solutions; 10
+of 11 also mandate improved upstream passage (Tab. 2, and see
+“passage” subheading). Environmental ﬂow received less
+attention, though most verdicts include minimum ﬂow
+requirements through ﬁshways and some restrict hydropeaking
+(Tab. 2, and see “ﬂow” subheading).
+2.2 Downstream passage measures in the court
+decisions
+Guidance screens and associated bypasses are required at
+nine of the 11 facilities (Tab. 2). Among the required guidance
+screens, four are inclined (i.e., guiding the ﬁsh vertically
+towards the water’s surface: alfa rack), one is angled (i.e.,
+guiding the ﬁsh laterally towards one side of the river/channel:
+beta rack), and four are undeﬁned (Tab. 2). Maximum angles
+against the ﬂow are 30°(n=2), 35°(n=6), and 45°(n=1), while
+maximum gap widths are deﬁned as 13 mm (n= 1), 15 mm
+(n=2), or 18 mm (n=6 ) (Tab. 2). Bypass pipes leading ﬁsh
+downstream are required together with the rack at all facilities
+except at Fada, where eels are to be trapped in a traditional eel
+trap (in Swedish: ålkista) and transported downstream past the
+dam (transport of other species is not mentioned). One facility
+requires an overlay plate for velocity refuge by the end of the
+rack (Lingforsen). At one facility, the lack of such plate is
+explained by low water velocity making it redundant (Ellenö).
+For six facilities where guidance racks were required, bypass
+discharge is deﬁned, ranging 30220 L s1. Based on turbine
+capacity stated in the verdicts, this corresponds to a median of
+5.2% (range =1.520%, n=6) of the maximum ﬂow through
+the rack itself. Two facilities did not require guidance screens:
+Kaserna and Kengis bruk. The facility Kaserna, being a
+regulation dam, does not have a turbine but regulates ﬂow for
+downstream hydropower plants and therefore the court
+presumably assumes that ﬁsh will safely pass through the
+only route available. At Kengis bruk, the dam does not cover
+the full width of the river, and remedial measures to improve
+downstream passage include reducing the width of a temporary
+dam, closing the power plant for two weeks during peak
+salmonid
+smolt
+migration
+(closure
+triggered
+by
+either
+temperature increases or peak ﬂow), and running the power
+plant with open sluice gates next to the turbine intake through
+the bulk of the smolt run (other ﬁsh species are not mentioned).
+2.3 Upstream passage measures in the court
+decisions
+At all facilities except Kengis bruk (where the dam does
+not span the full river width), some type of upstream passage
+solution is required (Tab. 2). This includes ﬁshways that allow
+the entire ﬁsh community to pass, or at least a large part of it
+(n=6), or eel ramps for juvenile eels (n=6) (Tab. 2). Two
+verdicts require both an eel ramp and a technical ﬁshway (Tab.
+2). Where only eel ramps are required, this is based on
+assumptions that naturally this reach would only be passable
+for eel.
+Among the required ﬁshways, four are nature-like and two
+are vertical slot ﬁshways, (Tab. 2). Slopes for nature-like
+ﬁshways range from 1.2% to 4% (Tab. 2), while the vertical
+slot ﬁshway has a maximum drop of 15 cm and a slope of
+57%. Where speciﬁed (n=3), water discharge to the ﬁshways
+range from 50 to 330 L s1 (Tab. 2), or 5% to 17% of the river’s
+mean annual ﬂow (MQ). One of the eel ramps requires the
+downstream bypass pipe to exit near the ramp to provide
+additional attraction water.
+The operation period is deﬁned for three ﬁshways and ﬁve
+eel ramps. Fishways must function year-round, except for one
+Page 3 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+Fig. 1. Map of Sweden showing all 33 completed court case locations. The 22 facilities with withdrawn permits (dams to be removed) are
+indicated with blue points. The 11 facilities granted continued hydropower production (conditional on meeting modern environmental standards)
+are indicated with red triangles, with each facility labelled by name.
+Page 4 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+site where winter conditions (e.g., ice cover) exempt operation.
+Eel ramps are mandated to operate from May (n=4) or June
+(n=1), to end of September (n=2) or mid-October (n=3). For
+three facilities (Lingforsen, Ellenö, and Stigen Västra),
+operation periods may be adjusted in consultation with the
+County Administrative Board (i.e., the supervisory authority).
+For the facility Stigen Västra it is further speciﬁed that based
+on climate change and/or new knowledge, operation period
+adjustments may be needed. In addition, for three facilities
+(Ellenö, Stigen Västra, Kaserna), it is speciﬁed for what eel
+sizes the ramp shall function for (10–40 or 0–70 cm).
+Fishway placement is detailed in some verdicts, while
+others require the ﬁnal setup to be determined in consultation
+with the County Administrative Board or a ﬁsh passage
+specialist. At one facility (Lingforsen), a chain barrier is
+prescribed to guide ﬁsh from the tailrace to the bypassed river
+where the ﬁshway is located. At another facility (Husbykvarn),
+an additional ﬁshway is required to connect the tailrace to the
+area downstream the spillway, where the primary ﬁshway is
+situated. At one site (Kärramölla), the power plant must shut
+down one day per week from September to October to facilitate
+upstream migration (attraction to the ﬁshway) of salmonid
+spawners.
+2.4 Flow and habitat measures in the court decisions
+Hydropeaking (i.e., short term shifts in turbined discharge
+to track electricity demands or prices, in Swedish: korttidsre-
+glering) is explicitly prohibited in six verdicts, while two
+verdicts mandate reduced rates of change in spilled or turbined
+ﬂow without specifying thresholds. Despite most dams having
+bypassed river reaches of different lengths, minimum ﬂow is
+typically just a consequence of discharge in the ﬁsh passage
+solutions. Mandated minimum ﬂow range from 5 to 610 L s1
+(Tab. 2) or the river discharge. Mean annual ﬂow (MQ) and
+mean low ﬂow (MLQ) are available in the verdict background
+material for nine facilities. For these, the median environmen-
+tal ﬂow constitutes 10% (range: 317%) of the mean MQ, or
+100% (range: 50131%) of MLQ. Dynamic or adaptive
+environmental ﬂows are not mentioned in any verdicts.
+Downstream habitat restoration to facilitate ﬁsh movement is
+required in three cases (Lingforsen, Kärramölla, and Ellenö).
+No other habitat measures are mentioned in any verdicts.
+2.5 Monitoring in the court decisions
+Monitoring requirements in the court verdicts for actions
+implemented to fulﬁl modern environmental conditions are
+limited. For most facilities, monitoring requirements only
+concern registration of water discharge, or conﬁrming water
+discharge in ﬁsh passage solutions. Evaluation of the function
+of remedial measures is only required in a few verdicts (Fada,
+Skeppsta, Kaserna, and Kärramölla). At the facility Fada, the
+functionality of up- and downstream passage facilities should
+be conﬁrmed using the best available monitoring technique
+during the ﬁrst 3 yr post-implementation. This verdict also
+allows adjustment if conservation status targets (in Swedish:
+bevarandestatus)
+or
+environmental
+quality
+standards
+(in Swedish: miljökvalitetsnorm) are not met in accordance
+with relevant legislation (i.e., the implementation of the EU
+Habitats directive (92/43/EEC) and Water Framework direc-
+tive (2000/60/EC) in the Swedish Environmental Code). At the
+facility Skeppsta, a statement of functionality from an expert is
+required, but the basis for the statement is not deﬁned. At the
+facility Kaserna (the regulation dam), evaluation of the
+functionality of the ﬁsh passage solution is also required, again
+without specifying what the evaluation should contain. For the
+facility Kärramölla, the regulatory authority should advise on
+the evaluation of passage solutions. Regarding eel ramps,
+monitoring is only mentioned for one facility (Lingforsen)
+Table 1. Descriptive data for the 11 facilities granted continued hydropower production (conditional on meeting modern environmental
+standards): name of the facility, river catchment, court, court case number, water ﬂow of the hydropower plant (Q), effect of the hydropower
+plant (in kilowatt, kW), mean annual ﬂow of the river (MQ), and mean low ﬂow of the river (MLQ). Missing information in the court decisions is
+denoted not provided (NP). Note that Kaserna is a regulation dam and not a hydropower facility (hence, water ﬂow and effect is not applicable
+(NA) at this site.
+Hydropower plant
+River
+Facility
+Catchment
+Court
+Court case
+Q (m3/s)
+Effect (kW)
+MQ (m3/s)
+MLQ (m3/s)
+Husbykvarn
+Tämnarån
+Nacka
+M 593-22
+6.00
+340
+6.12
+1.03
+Ullfors
+Tämnarån
+Nacka
+M 611-22
+5.00
+80**
+6.12**
+1.03
+Fada
+Kilaån
+Nacka
+M 628-22
+1.10
+NP
+0.03
+0.01
+Skeppsta
+Trosaån
+Nacka
+M 629-22
+0.80
+55
+NP
+0.05
+Kengis bruk
+Torneälven
+Umeå
+M 2448-22
+6.80
+220
+157
+22.6
+Kärramölla
+Stensån
+Vänersborg
+M 332-22
+1.10
+16
+1.04
+0.18
+Lingforsen
+Fylleån
+Vänersborg
+M 3419-22
+1.10
+NP
+1.58
+0.13
+Sandhult Näs
+Rolfsån
+Vänersborg
+M 3466-22
+0.15
+15
+0.07
+0.01
+Ellenö
+Örekilsälven
+Vänersborg
+M 351-22
+9.80
+360
+7.30
+NP
+Stigen Västra
+Örekilsälven
+Vänersborg
+M 395-22
+2.50
+120
+0.66
+0.10
+Kaserna
+Örekilsälven
+Vänersborg
+M 415-22
+NA
+NA
+10.00
+1.70
+** Provided by the County Administrative Board.
+Page 5 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+where the eel ladder should be checked weekly, no additional
+information is given in the verdict.
+2.6 Withdrawal of permit and dam removals in the
+court decisions
+Of the 33 retrials completed so far, 22 led to dam removal
+(Tab. 3). These cases fall outside of the main scope of this
+study. Monitoring post-removal-effects is however important
+to understand ecosystem responses, and we therefore present
+data on dam removals in short. Seven facilities were small
+scale (effect below 1.5 MW), which is within the same range as
+those that were granted permission for continued hydropower
+production (Tab. 1), and the remaining 15 were listed as having
+“unknown” effect (some of which were dams, not hydropower
+plants) (Tab. 3). One dam could not be found in the ﬁeld, not
+even remains of it, (Damm vid Småvatten M 580-22, Tab. 3).
+All verdicts list some form of restorative and/or habitat
+enhancing measures.
+3 Discussion
+Since the start of the retrials within the National Plan for
+Modern Environmental Conditions for Hydropower in 2022 to
+the ﬁrst pause in 2023, a total of 33 cases have been completed
+(until the end of 2024, counting decisions that cannot be
+overruled). Of these, 11 facilities were granted continued
+hydropower production, conditional on fulﬁlling modern
+environmental conditions. The remaining 22 cases resulted
+in permit withdrawal and dam removal. All verdicts focus on
+longitudinal connectivity and ﬁsh passage and are based on
+present species distribution and environmental conditions.
+When mentioned, monitoring requirements focus mainly on
+abiotic factors (e.g., ﬂow in ﬁshway), with only a few verdicts
+formulating requirements based on function or ecological
+effects of remedial measures.
+3.1 Downstream passage and guidelines
+Given the historical relative absence of downstream
+passage solutions in Swedish rivers (Calles et al., 2013), it
+is encouraging that most verdicts include speciﬁc protection
+and guidance systems to allow downstream passage of ﬁsh.
+Nine verdicts require low sloping racks with small gap-widths
+to hinder ﬁsh from passing through turbines and guide them to
+a safe route. Versions of such solutions have proven effective
+for eel (Calles et al., 2021; Tomanova et al., 2023) and juvenile
+and adult salmon (Nyqvist et al., 2017, 2018; Tomanova et al.,
+2021). Gap width (Harbicht et al., 2022) and angle (Albayrak
+et al., 2020) are important characteristics to the guidance rack
+function. In the assessed verdicts, gap-widths and sloping
+angle ranged between 1318 mm 3045°, respectively. Calles
+et al. (2013) deﬁnes best available technique as gap-widths of
+1013 mm and angles 30°, but the authors do not exclude
+good performance at slightly larger gap-widths and greater
+angles. Indeed, good guidance has been reported for gap
+widths of 1520 mm, and angles of 26-30 (Calles et al., 2021;
+Tomanova et al., 2023). Guidance performance also depends
+on features like overlay plates and bypass entrance design
+(Albayrak et al., 2020), which at times can result in low
+Table 2. Descriptive data for the 11 facilities granted continued hydropower production (conditional on meeting modern environmental standards): name of the facility, requirements
+concerning type of guidance, maximum angle of rack (in cases where the type of guidance was an alfa or beta rack), maximum gap width of rack (in cases where the type of guidance was an
+inclined or angled rack), amount of water discharge through bypass, eel ramps (yes/no), type of ﬁshway, required slope of ﬁshway, ﬂow in ﬁshway, minimum ﬂow, restriction against
+hydropeaking (No peaking), and requirements to change turbine discharge at a slow rate (Reduced rate). Missing information in the court decisions is denoted not provided (NP). Note that
+Kaserna is a regulation dam and not a hydropower facility (hence, water ﬂow and effect are not applicable (NA) at this site.
+Downstream passage
+Upstream passage
+Flow
+Facility
+Guidance
+Angle
+Gap width
+(mm)
+Bypass (L)
+Eel ramp
+Fishway
+Slope
+Flow (L/s)
+Min. ﬂow (L)
+No
+peaking
+Reduced rate
+Husbykvarn
+Inclined rack
+35
+18
+90
+No
+Nature-like**
+2,5%
+330
+NP
+X
+Ullfors
+Inclined rack
+35
+18
+150
+No
+Vertical slot
+7%
+NP
+NP
+Fada
+Rack (undeﬁned)
+45*
+18
+NP
+Yes
+No
+NA
+NA
+26
+X
+Skeppsta
+Inclined rack
+30
+18
+NP
+No
+Nature-like
+1,2%
+50
+50
+X
+Kengis bruk
+Large spill + shutdown
+NA
+NA
+NA
+No
+River
+NA
+NA
+Kärramölla
+Rack (undeﬁned)
+35
+13
+80
+No
+Nature-like
+4%*
+NP
+180
+Lingforsen
+Rack (undeﬁned)
+35
+15
+70
+Yes
+Nature-like
+3%
+170
+170
+X
+X
+Sandhult Näs
+Rack (undeﬁned)
+35
+15
+30
+Yes
+No
+NA
+NA
+5
+Ellenö
+Inclined rack
+35
+18
+NP
+Yes
+No
+NA
+NA
+220
+x
+Stigen Västra
+Angled rack
+30
+18
+100
+Yes
+No
+NA
+NA
+100
+X
+X
+Kaserna
+Spill (no turbine)
+NA
+NA
+NA
+Yes
+Vertical slot**
+5%
+NP
+1000
+*Provided in comment to the court decision (in Swedish: domskäl).
+** Provided by the County Administrative Board.
+Page 6 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+guidance performance (de Bie et al., 2018). Also, ﬁsh sizes up
+to 20-times the gap-width can pass through these racks (Knott
+et al., 2023), however, this likely varies between species due to
+differences in body shape. Therefore, given the technical
+speciﬁcations deﬁned in the verdicts, good guidance perfor-
+mance is possible but should not be assumed for all species of
+ﬁsh.
+3.2 Upstream passage vs. guidelines
+Upstream passage solutions adapted for the entire ﬁsh
+community are only required at sites that allowed natural
+passage historically. Described slopes in the verdicts align with
+some guidelines (FAO/DVWK, 2002; SwAM, 2020) but
+partially breach recommendations in others (Calles et al.,
+2013; Schmutz and Mielach, 2013). Importantly, ﬁsh passage
+success is the product of multiple steps as the ﬁsh must
+approach, enter, pass through, and exit the ﬁshway (Castro-
+Santos et al., 2009). While slope-recommendations focus on
+ensuring that the ﬁsh can pass through the ﬁshway, the
+attraction (i.e., ﬁnding and entering the ﬁshway) is typically an
+important source of failure (Bunt et al., 2012). Attraction
+efﬁciency depends on water discharge proportion and entrance
+placement, and positions close to the barrier and main ﬂow, and
+discharges of at least 5%, is recommended for small rivers
+(Calles et al., 2013). Placement is typically considered in the
+verdicts, and for the three facilities where ﬁshway discharge
+and mean annual discharge of the river was available,
+proportions ranged from 1–10%, aligning somewhat with
+the guidelines. The ideal ﬁshway position, however, depends
+on discharge composition. For example, a ﬁshway may have
+high attraction when most water is turbined, and low attraction
+when much water is spilled, or vice versa, depending on where
+the ﬁshway is positioned in relation to the hydropower plant
+(Hagelin et al., 2019). Interestingly, one verdict mandates a
+chain guidance barrier to guide ﬁsh towards the ﬁshway. While
+potentially useful, the scientiﬁc knowledge on physical
+guidance for upstream migrating ﬁsh remains poor (Benitez
+et al., 2025). Overall, as placement and water allocation often
+conﬂict with electricity production, obtaining good passage
+conditions typically require data on functionality followed by
+adaptive designs (Nyqvist et al., 2017).
+Due to natural barriers such as waterfalls, some locations
+are considered naturally passable only by juvenile eels, and
+hence only requiring an eel ramp. Importantly, eel ramps – as
+most upstream passage solutions – are only designed to aid
+upstream migration, not downstream migration, and hence
+constitute a one-way migration solution that needs to be
+accompanied by downstream passage solutions. Placement is
+important for the performance of the eel ramp, as well as the
+design, including longitudinal and lateral slope, climbing
+substrate, conveyance ﬂow, ﬂow direction, and crest shape
+(Fjeldstad et al., 2018). Concerns have been raised that many
+eel ramps may function poorly (e.g., Watz et al., 2019;
+Williamson et al., 2025). Very few verdicts specify design or
+placement, except the facility Fada, where the eel ramp should
+be 300 mm wide, and the facility Stigen Västra, where the
+ramp substrate should work for ﬁsh of many sizes (however,
+without specifying type of substrate). Monitoring of the eel
+ramp functionality is generally lacking. It is also worrying that
+the operation period varies (when deﬁned, speciﬁed to start in
+May or June, and last until end of September or mid-October),
+since no reasoning is provided. In Sweden, eel migrate
+upstream outside the periods speciﬁed in the verdicts. For
+Table 3. Descriptive data for 22 facilities where the retrial led to dam removal: name of facility, river catchment, court, court case number, effect
+of hydropower plant (unknown or small scale <1.5 MW). Note that some facilities are dams and not hydropower plants.
+Facility
+River catchment
+Court
+Court case
+Size
+Mölnbokvarnsdammen
+Trosaån
+Nacka
+M 630-22
+Unknown
+Bäckland Kraftverk
+Ångermanälven/Gådeån
+Östersund
+M 286-22
+Small scale
+Fansendammen
+Testeboån
+Östersund
+M 2697-22
+Unknown
+Grössjö kraftverk
+Grössjöån
+Östersund
+M 284-22
+Unknown
+Torringens*
+Ljungan
+Östersund
+1523-23
+Unknown
+Ovansjö Kraftverk
+Ljungan/Stångån
+Östersund
+M 107-23
+Unknown
+Skärsätts Kraftverk
+Ljungan/Stångån
+Östersund
+M 1521-23
+Unknown
+Torrsjö kraftverk
+Ljungan/Stångån/Torrsjöån
+Östersund
+M 1522-23
+Unknown
+Kölsjödammen
+Testeboån
+Östersund
+M 2699-22/M 545-24
+Unknown
+Storfallets kraftverk
+Kågeälven
+Umeå
+M 1957-22
+Unknown
+Forslidens kraftverk
+Rickleån
+Umeå
+M 3634-20
+Small scale
+Damm vid Småvatten
+Örekilsälven
+Vänersborg
+M 580-22
+Unknown
+Damm vid Ålevatten
+Örekilsälven
+Vänersborg
+M 578-22
+Unknown
+Stora Holmevatten
+Örekilsälven
+Vänersborg
+M 582-22
+Unknown
+Jordals kraftverk
+Örekilsälven
+Vänersborg
+M 368-22
+Unknown
+Hulta kraftstation
+Rolfsån
+Vänersborg
+M 3476-22
+Small scale
+Loviseholms kraftverk
+Enningdalsälven
+Vänersborg
+M 16-22
+Small scale
+Stockforsens kraftverk
+Gullspångsälven
+Vänersborg
+M 2093-23
+Small scale
+Ebbarps kraftverk
+Rönne å
+Vänersborg
+M 505-22
+Small scale
+Rössjöholms kraftstation
+Rönne å
+Växjö
+M 5011-21
+Unknown
+Söndraby kraftverk
+Rönne å
+Växjö
+M 509-22
+Unknown
+Västra kvarn
+Rönne å
+Växjö
+M 495-22
+Small scale
+Page 7 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+example, glass eel are trapped in the cooling water intake at the
+Ringhals nuclear power plant already by January/February
+(Westerberg and Wickström, 2016; Jaktén Langert et al., 2025)
+and migrate upstream in the nearby river Viskan throughout
+October (Sjöholm and Käll, 2024). Functioning eel ramps are
+crucial not only for river connectivity but also for monitoring
+of recruitment (ICES WGEEL, 2024). Notably, the longest
+European eel recruitment series (1900–2017) comes from such
+monitoring at the Olidan facility in the river Göta älv (ICES
+WGEEL,
+2024;
+unfortunately,
+the
+data
+collection
+was
+discontinued in 2018). Only one verdict requires regular
+checks of the eel ramp (Lingforsen), but no information is
+given on what the checks imply, or if data on eel counts should
+be collected. To ensure the function of eel ramps and data
+collection on recruitment, guidelines, monitoring, and an
+adaptive approach regarding operation period, placement, and
+design, will be needed in future verdicts.
+3.3 Flow, habitat, and other impacts
+All facilities receiving verdicts of modern environmental
+conditions are small run-of-the-river hydropower plants with
+very limited water storage capacity. This likely explains the
+strong focus on passage solutions and the relative omission of
+habitat and ﬂow related measures, with these restricted to
+ﬁshway ﬂows, prohibition against hydropeaking or restricted
+rates of change of turbine discharge. Nevertheless, several of
+the dams have bypassed river reaches that are most likely
+degraded (compared to their original lotic state) by water
+abstraction for hydropower production (Poff et al., 2010;
+Kiernan et al., 2012). Despite this, environmental ﬂows are
+only a consequence of ﬂow through the ﬁshway (i.e., there’s no
+additional environmental ﬂow requirements), and habitat
+concerns in bypassed stretches are largely restricted to
+downstream passability. Importantly, hydropower mitigation
+is related to broader ecological functions beyond passage (He
+et al., 2024), even if impacts on ﬁsh passage often dominate
+media and stakeholder attention. Given the high frequency of
+damming, and hence the lack of lotic river reaches, ignoring
+ﬂow and habitat effects may be an opportunity lost for Swedish
+rivers (Göthe et al., 2019; Widén et al., 2022a, c; 2023).
+The narrow focus on ﬁsh passage solutions in the verdicts
+also implies that other environmental impacts are largely
+overlooked. For example, few non-ﬁsh related measures are
+mentioned. While nature-like ﬁshways can facilitate passage for
+other animals (e.g., invertebrates: Streib et al., 2020), the same is
+not true for eel ramps. Moreover, ﬂow conditions unrelated to
+passage, and issues like temperature and gas supersaturation are
+ignored(Poffetal.,2010;Zaideletal.,2021;Lietal.,2022).Asa
+result,evenwithmodernenvironmentalconditions,downstream
+habitats and non-ﬁsh species (e.g., birds, semi-aquatic animals,
+and riparian plants) may remain as impacted as before (e.g.,
+Nilsson et al., 1997; He et al., 2024; Altanov et al., 2025). Even
+though the re-licensed facilities are relatively small dams and
+short bypassed river reaches, at national scale this oversight may
+havesigniﬁcantimplicationsforecosystemvaluesatrisk.Thisis
+particularly relevant in Sweden, where the absolute majority of
+hydropower facilities are small (approximately 1900 plants
+contribute 6% to the total Swedish hydroelectricity, including
+approximately 1030 micro-powerplants with effects under 125
+kW, Lindblom and Holmgren, 2016). Only 208 power plants
+have an effect over 10 MW, contributing approximately 94% of
+the Swedish hydroelectricity (Lindblom and Holmgren, 2016).
+3.4 Lack of monitoring requirements
+Ensuring proper function of passage solutions is important
+given the inherent compromise between energy production and
+function, which means that there are many different passage
+solution designs (Noonan et al., 2012; Bunt et al., 2012). Even if
+ﬁsh are able to pass through the ﬁshway it may still perform
+poorly due to issues with attraction, entrance, or conditions after
+passage (Nyqvist et al., 2016; Hagelin et al., 2019). Hence,
+bypasses can become mortality traps instead of safe passage
+routes (Nyqvist et al., 2016), and even functioning ﬁshways can
+cause delays due to low attraction efﬁciency (Hagelin et al.,
+2019).Itisthereforeworryingthatmostcourtverdictsglossover
+post-construction monitoring, with only three explicitly requir-
+ing some evaluation of function. Additionally, the empirical
+evidence for many mitigation measures is relatively vague,
+making detailed design requirements without corresponding
+functionality requirements, problematic (Rogosch et al., 2024).
+Monitoring, evaluation, and adaptation are key for successful
+restoration in general, particularly for ﬁsh passage solutions
+(Rogosch et al., 2024). Some verdicts allow adaptive passage
+solution adjustments if conservation status targets or environ-
+mental quality standards are not met. This is, in general, a sound
+approach that inevitably relies on monitoring. When monitoring
+isrequired,itisimportanttoconsiderthatenvironmentalindices,
+used in e.g., ecological status assessment, are indicative, not
+deﬁnitive,withrespecttoecologicalstatusassessment,andcarry
+substantial uncertainties and in some cases ﬂaws (Löfgren et al.,
+2009;Näslundetal.,2022).Hence,well-formulatedspeciﬁcand
+relevant monitoring objectives are necessary for proper
+evaluations.
+The hydropower facilities that have completed re-licensing
+so far are small, making substantial monitoring appear costly
+relative to production values. Instead of being a potential
+argument against monitoring and evaluation, however, this can
+be seen as an incitement for an industry-wide approach:
+coordinated monitoring across sites could be more productive
+than isolated efforts. For example, studying ﬁsh passage
+efﬁciency and environmental ﬂows at multiple locations could
+inform on what works under speciﬁc conditions (Weber et al.,
+2018; Nyqvist et al., 2025). Such an approach would evaluate
+speciﬁc mitigation effort types while also expanding our
+knowledge on mitigation solutions in general. Results could
+suggest adaptations for existing solutions and inform future
+court processes. Similarly, technical validation could also be
+coordinated, ensuring that the implemented measures follow
+standardsandguidelines.Validationdocuments couldbeshared,
+and the joint level of ambition could thereby increase. Requiring
+functionality, maintenance of installations, and monitoring
+appears fundamental for a successful re-licensing process, and
+its’s omission a lost opportunity to the detriment of our rivers.
+3.5 Dam removals – opportunities from a wider
+management perspective
+Of the 33 retrials, 22 led to permit withdrawals and dam
+removals, typically at the owner’s request. Given that dam
+Page 8 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+removal eliminates environmental issues related to longitudi-
+nal
+connectivity
+and
+natural
+ﬂow
+dynamics
+(provided
+sufﬁcient post-removal river channel restoration), this is
+encouraging from a river ecology perspective. It is also
+noteworthy that dam removals present an opportunity to
+contribute to the 25000 km of free-ﬂowing river sections
+mandated (at the EU-wide level) by the recently implemented
+EU Nature Restoration Regulation (EU, 2024/1991). This,
+however, requires consideration of additional environmental
+measures in terms of restoring lateral river connectivity in
+reaches up- and downstream of the removed dam, likely by
+other actors than the dam owners. Synchronized planning and a
+holistic approach at larger spatial scales could beneﬁt river and
+riparian ecosystems and create synergistic positive effects on
+ecosystems (Stoffers et al., 2024). Taking the opportunity to
+monitor ecological effects of the dam removals, from a central
+agency perspective, could also inform future restoration and
+hydropower mitigation projects, including insights on ecosys-
+tem recovery rates.
+4 Conclusion
+We conclude that while ﬁshways (and/or eel ramps) are
+covered in most verdicts where continued hydropower
+production was granted, the focus on a few design components
+rather than actual functionality risks poor passage efﬁciency.
+The lack of monitoring requirements means that even if
+passage efﬁciency is high, or
+vice versa,
+it will be
+undocumented. We propose that ﬁshways should enable
+passage for the entire ﬁsh community, which typically requires
+site speciﬁc adaptive design and monitoring of functionality
+(Nyqvist et al., 2017; Silva et al., 2018). For eel ramps,
+guidelines on placement, design, and monitoring should be
+followed (e.g., Fjeldstad et al., 2018; Watz et al., 2019;
+Williamson et al., 2025), the operation period should cover the
+entire migration period (Westerberg and Wickström, 2016;
+Sjöholm and Käll, 2024; Jaktén Langert et al., 2025), and a
+downstream passage solution needs to be combined with the
+eel ramp. Beyond passage, other parameters should be
+covered, inducing but not limited to habitat restoration,
+ensuring ﬂow and avoiding dry stretches, avoidance of
+temperature effects and gas supersaturation, and inclusion
+of non-ﬁsh organisms (e.g., Nilsson et al., 1997; Zaidel et al.,
+2021; He et al., 2024; Altanov et al., 2025). We emphasize that
+resulting dam removals represent an unprecedented chance to
+further improve ecological integrity in our waters, as well as
+contributing to the mandated goals within the recently
+implemented EU Nature Restoration Regulation (EU, 2024/
+1991). At the current retrial speed however, there is a risk that
+the goal of processing all hydropower facilities within 20 yr
+will not be reached, implying prolonged ecological risk to the
+riverine ecosystems (Nyqvist et al., 2025). The nation-wide
+Swedish retrial process does nonetheless provide a unique
+opportunity to implement measures and monitoring to improve
+not only connectivity, but the whole riverine ecosystem, and
+early cases can serve as case studies for implementation of
+mitigation measures in other hydropower-regulated rivers.
+Acknowledgments
+We would like to acknowledge Joel Berglund, Johan Cederbrink,
+and anonymous County Administration Board employees for
+comments on the manuscript. Thanks to reviewers for their comments
+that improved the manuscript.
+Funding
+Part of this work was executed within the European
+Commission’s Data Collection Framework (DCF). Funding
+was also received from national ﬁshing fee funds, allocated for
+research and development of ﬁsheries management, according
+to Chapter 6, Section 6 of the Act with special provisions
+regarding water activities (1998:812)
+Conﬂicts of interest
+The authors declare no conﬂict of interest. Note that this
+paper is an academic contribution and should not be seen as
+explicit legal advice.
+Data availability statement
+The raw data extracted from court verdicts can be found in
+Tables 13 in the paper. All court verdicts can be accessed via
+each respective court, in line with the principle of public access
+to information (SFS 2009:400; Riksdag of Sweden 2009). A
+list of completed court verdicts can be found via the web
+application “Strömmen”, provided by the Swedish Agency for
+Marine and Water Management (SwAM, 2024).
+Author contribution statement
+Author contribution roles are listed according to the
+Contributor Role Taxonomy (CRediT) guidelines (https://
+credit.niso.org): Conceptualization: JS, DN, JN, PJ; Data
+curation: BJ, DN; Visualization: BJ; Writing – original draft:
+JS, DN, JN; Writing – review & editing: all authors.
+Ethics approval
+All data in the paper was extracted from court decisions
+that are publicly available due to the principle of public access
+to information in Sweden (SFS 2009:400).
+References
+Acreman M, Arthington AH, Colloff MJ, Couch C, Crossman ND,
+Dyer F, Overton I, Pollino CA, Stewardson MJ, Young W. 2014.
+Environmental ﬂows for natural, hybrid, and novel riverine
+ecosystems in a changing world. Front Ecol Environ 12: 466–473.
+Albayrak I, Boes RM, Kriewitz-Byun CR, Peter A, Tullis BP. 2020.
+Fish guidance structures: hydraulic performance and ﬁsh guidance
+efﬁciencies. J Ecohydraulics 5: 113–131.
+Page 9 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+Algera DA, Rytwinski T, Taylor JJ, Bennett JR, Smokorowski KE,
+Harrison PM, Clarke KD, Enders EC, Power M, Bevelhimer MS,
+Cooke SJ. 2020. What are the relative risks of mortality and injury
+for ﬁsh during downstream passage at hydroelectric dams in
+temperate regions? A systematic review. Environ Evid 9:3.
+Almeida RM, Schmitt RJP, Castelletti A, Flecker AS, Harou JJ,
+Heilpern SA, Kittner N, Kondolf GM, Opperman JJ, Shi Q, Gomes
+CP, McIntyre PB. 2022. Strategic planning of hydropower
+development: balancing beneﬁts and socioenvironmental costs.
+Curr Opin Environ Sustain 56:101175.
+Altanov VY, Jähnig SC, He F. 2025. A systematic map of hydropower
+impacts on megafauna at the land-water interface. Biol Conserv
+305:111092.
+Arheimer B, Lindström G. 2014. Electricity vs Ecosystems –
+understanding and predicting hydropower impact on Swedish river
+ﬂow. Proc IAHS 364:313319.
+Arthington AH, Bunn SE, Poff NL, Naiman RJ. 2006. The challenge
+of providing environmental ﬂow rules to sustain river ecosystems.
+Ecol Appl 16:13111318.
+Benitez J-P, Sonny D, Colson D, Dierckx A, Ovidio M. 2025.
+Hydroelectric power plant and upstream ﬁsh migration: evaluation
+of the efﬁciency of a behavioural barrier. J Ecohydraulics 0(0): 1–
+14.
+Birnie-Gauvin K, Tummers JS, Lucas MC, Aarestrup K. 2017.
+Adaptive management in the context of barriers in European
+freshwater ecosystems. J Environ Manag 204(Part 1): 436–441.
+Bunt C, Castro-Santos T, Haro A. 2012. Performance of ﬁsh passage
+structures at upstream barriers to migration. River Res Appl 28:
+457–478.
+Calles O, Degerman E, Wickström H, Christiansson J, Gustafsson S,
+Näslund I. 2013. Anordningar för upp-och nedströmspassage av
+ﬁsk vid vattenanläggningar – Underlag till vägledning om lämpliga
+försiktighetsmått och bästa möjliga teknik för vattenkraft. Havs-
+och vattenmyndighetens rapport 2013:14. Swedish Agency for
+Marine and Water Management, Gothenburg. (in Swedish, with
+English summary)
+Calles O, Elghagen J, Nyqvist D, Harbicht A, Nilsson PA. 2021.
+Efﬁcient and timely downstream passage solutions for European
+silver eels at hydropower dams. Ecol Eng 170:106350.
+Castro-Santos T, Cotel A, Webb P. 2009. Fishway evaluations for
+better bioengineering: an integrative approach. Am Fish Soc Symp
+69: 557–575.
+County Administrative Boards (Dalarna-, Gävleborg- and Uppsala
+Counties). 2022. Omprövning av vattenkraften – Beskrivning av
+Dalälvens huvudavrinningsområde (Dno: 580–2022-1). Falun:
+County Administrative Board of Dalarna County. https://www.
+lansstyrelsen.se/download/18.8cd5a1b19362fb4fc2221d/
+1732536930547/Ompr%25C3%25B6vning%2520av%2520vat
+tenkraften%2520Beskrivning%2520av%2520Dal%25C3%
+25A4lvens%2520huvudavrinningsomr%25C3%25A5de.pdf
+(In
+Swedish)
+de Bie J, Peirson G, Kemp PS. 2018. Effectiveness of horizontally and
+vertically oriented wedge-wire screens to guide downstream
+moving juvenile chub (Squalius cephalus). Ecol Eng 123: 127–134.
+Fjeldstad H.P, Pulg U, Forseth T. 2018. Safe two-way migration for
+salmonids and eel past hydropower structures in Europe: a review
+and recommendations for best-practice solutions. Marine and
+Freshwater Research 69:1834–1847.
+FAO/DVWK (Food and Agriculture Organization of the United
+Nations/ Deutschen Verbandes für Wasserwirtschaft und Kulturbau
+e. V.). 2002. Fish passes: design, dimensions, and monitoring.
+Rome: Food and Agriculture Organization of the United Nations.
+Fryxell KA, Jansson M, Källström V. 1931. Sveriges utbyggda
+vattenkraft år 1930. Specialundersökning av Kommerskollegium.
+Stockholm: Kungl. Boktryckeriet. P. A. Norstedt & söner. (In
+Swedish)
+Göthe E, Degerman E, Sandin L, Segersten J, Tamario C, McKie BG.
+2019. Flow restoration and the impacts of multiple stressors on ﬁsh
+communities in regulated rivers. J Appl Ecol 56: 1687–1702.
+Government
+Ofﬁces
+of
+Sweden.
+2024.
+Förutsättningarna
+för
+vattenkraftens omprövning förbättras. Press release 2024-08-22.
+Stockholm: Government Ofﬁces of Sweden. https://www.reger
+ingen.se/pressmeddelanden/2024/08/forutsattningarna-for-vattenk
+raftens-omprovning-forbattras2/ (In Swedish)
+Hagelin A, Museth J, Greenberg LA, Kraabøl M, Calles O, Bergman
+E. 2019. Upstream ﬁshway performance by Atlantic salmon (Salmo
+salar) and brown trout (Salmo trutta) spawners at complex
+hydropower dams-is prior experience a success criterion? Can J
+Fish Aquat Sci 78: 124–134.
+Harbicht AB, Watz J, Nyqvist D, Virmaja T, Carlsson N, Aldvén D,
+Nilsson PA, Calles O. 2022. Guiding migrating salmonid smolts:
+experimentally assessing the performance of angled and inclined
+screens with varying gap widths. Ecol Eng 174:106438.
+He F, ZarﬂC, Tockner K, Olden JD, Campos Z, Muniz F, Svenning J-
+C, Jähnig SC. 2024. Hydropower impacts on riverine biodiversity.
+Nat Rev Earth Environ 5: 755–772.
+ICES WGEEL 2024. Joint EIFAAC/ICES/GFCM Working Group on
+Eels (WGEEL). ICES Scientiﬁc Reports. 6:90. 146 pp. https://doi.
+org/10.17895/ices.pub.27233457.
+Jakobsson E. 2002. Industrialization of rivers: a water system
+approach to hydropower development. Knowledge, Technology, &
+Policy 14: 41–56.
+Jaktén Langert W, Käll F, Adill A. 2025. Biologisk recipientkontroll
+för Ringhals kärnkraftverk. Aqua notes, 2025:9.
+Jones PE, Champneys T, Vevers J, Börger L, Svendsen J-C,
+Consuegra S, Jones J, Garcia de Leaniz C. 2021. Selective effects
+of small barriers on riverresident ﬁsh. J Appl Ecol 58: 1487–1498.
+Jonsson B, Waples RS, Friedland K. 1999. Extinction considerations
+for diadromous ﬁshes. ICES J Mar Sci 56: 405–409.
+Katopodis C, Williams JG. 2012. The development of ﬁsh passage
+research in a historical context. Ecol Eng 48: 8–18.
+Kiernan JD, Moyle PB, Crain PK. 2012. Restoring native ﬁsh
+assemblages to a regulated California stream using the natural ﬂow
+regime concept. Ecol Appl 22: 1472–1482.
+Knott J, Müller M, Pander J, Geist J. 2023. Bigger than expected:
+species-and size-speciﬁc passage of ﬁsh through hydropower
+screens. Ecol Eng 188:106883.
+Köhler B, Ruud A. 2019. How are environmental measures realized in
+European hydropower? A case-study of Austria, Sweden and
+Switzerland. HydroCen Report 6. Norwegian Research Centre for
+Hydropower Technology, Trondheim. https://ntnuopen.ntnu.no/
+ntnu-xmlui/handle/11250/2603532
+Lenvin F. 2022. Omprövning av vattenverksamhet: Effektivitet och
+moderna miljövillkor på bekostnad av vattenkraftsproduktion?
+Bachelor thesis. Karlstad: Karlstad Business School, Karlstad
+University. https://kau.diva-portal.org/smash/get/diva2:1730265/
+FULLTEXT01.pdf
+Li P, Zhu DZ, Li R, Wang Y, Crossman JA, Kuhn WL. 2022.
+Production of total dissolved gas supersaturation at hydropower
+facilities and its transport: a review. Water Res 223:119012.
+Page 10 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+Limburg KE, Waldman JR. 2009. Dramatic declines in North Atlantic
+diadromous ﬁshes. BioScience 59: 955–965.
+Lindblom E, Holmgren K. 2016. Den småskaliga vattenkraftens
+miljöpåverkan och samhällsnytta. En syntesstudie. IVL Rapport B
+2258. IVL Svenska Miljöinstitutet, Stockholm. (In Swedish)
+https://www.ivl.se/download/18.34244ba71728fcb3f3f8bd/
+1591705067948/B2258.pdf
+Lindström A, Ruud A. 2017. Whose hydropower? From conﬂictual
+management into an era of reconciling environmental concerns; a
+retake of hydropower governance towards win-win solutions?
+Sustainability 9:1262.
+Lucas M, Baras E, Thom TJ, Duncan A, Slavik O. 2001. Migration of
+freshwater ﬁshes. Oxford: Blackwell Science.
+Löfgren
+S,
+Kahlert
+M,
+Johansson
+M,
+Bergengren
+J.
+2009.
+Classiﬁcation of two Swedish forest streams in accordance with
+the European Union Water Framework Directive. AMBIO: J Hum
+Environ 38: 394–400.
+Malm Renöfält B, Jansson R, Nilsson C. 2010. Effects of hydropower
+generation and opportunities for environmental ﬂow management
+in Swedish riverine ecosystems. Freshw Biol 55: 49–67.
+Mallen-Cooper M. 1999. Developing ﬁshways for non-salmonid
+ﬁshes; a case study from the Murray River in Australia. In: Odeh M,
+ed. Innovations in Fish Passage Technology, Bethesda MD:
+American Fisheries Society, pp. 173–195.
+Nilsson C, Jansson R, Zinko U. 1997. Long-term responses of river-
+margin vegetation to water-level regulation. Science 276: 798–800.
+Noonan MJ, Grant JW, Jackson CD. 2012. A quantitative assessment
+of ﬁsh passage efﬁciency. Fish Fish 13: 450–464.
+Nyqvist D, Greenberg LA, Goerig E, Calles O, Bergman E, Ardren
+WR, Castro-Santos T. 2016. Migratory delay leads to reduced
+passage success of Atlantic salmon smolts at a hydroelectric dam.
+Ecol Freshw Fish 26: 707–718.
+Nyqvist D, Nilsson PA, Alenäs I, Elghagen J, Hebrand M, Karlsson S,
+Kläppe S, Calles O. 2017. Upstream and downstream passage of
+migrating adult Atlantic salmon: remedial measures improve
+passage performance at a hydropower dam. Ecol Eng 102: 331–
+343.
+Nyqvist D, Elghagen J, Heiss M, Calles O. 2018. An angled rack with
+a bypass and a nature-like ﬁshway pass Atlantic salmon smolts
+downstream at a hydropower dam. Mar Freshw Res 69: 1894–
+1904.
+Nyqvist D, Calles O, Carlson P, Holmgren K, Malm-Renöfält B,
+Widén Å, Bergengren J, Näslund J. 2025. Balancing hydropower
+production and ecologyecological impacts, mitigation measures,
+and programmatic monitoring. Knowl Manag Aquatic Ecosyst
+426:24.
+Näslund J, Wickström H, Degerman E, Sundin J. 2022. Negative
+inﬂuence of a threatened species on ecological status classiﬁcation:
+a case study of the inﬂuence of European eel within the Swedish
+ﬁsh index VIX. Ecol Indic 144:109537.
+Ödmann E, Bucht E, Nordström M. 1982. Vildmarken och välfärden.
+Stockholm: Liber Förlag. (in Swedish) https://libris.kb.se/bib/
+7267735
+Össbo Å. 2023a. Back to square one. Green sacriﬁce zones in Sápmi
+and Swedish policy responses to energy emergencies. Arct Rev Law
+Polit 14: 112–134.
+Össbo Å. 2023b. Hydropower company sites: a study of Swedish
+settler colonialism. Settl Colon Stud 13: 115–132.
+Perers R, Lundin U, Leijon M. 2007. Development of synchronous
+generators for Swedish hydropower: a review. Renew Sustain
+Energy Rev 11: 1008–1017.
+Pettersson Å, Bladh J. 2024. Låt vattenkraften fortsätta leverera.
+Dagens Industri 2024–11-27 (updated 2024–11-28). https://www.
+di.se/debatt/lat-vattenkraften-fortsatta-leverera/
+(Accessed:
+2025-04-18) (In Swedish)
+Pike C, Crook V, Gollock M. 2020. Anguilla anguilla. The IUCN Red
+List of Threatened Species e.T60344A152845178.
+Poff NL, Richter BD, Arthington AH, Bunn SE, Naiman RJ, Kendy E,
+Acreman M, Apse C, Bledsoe BP, Freeman MC, Henriksen J,
+Jacobson RB, Kennen JG, Merritt DM, O’Keeffe JH, Olden JD,
+Rogers K, Tharme RE, Warner A. 2010. The ecological limits
+of
+hydrologic
+alteration
+(ELOHA):
+a
+new
+framework
+for
+developing regional environmental ﬂow standards. Freshw Biol
+55: 147–170.
+Poole GC, Berman CH. 2001. An ecological perspective on in-stream
+temperature: natural heat dynamics and mechanisms of human-
+caused thermal degradation. Environ Manag 27: 787–802.
+Riksdag
+of
+Sweden.
+2009.
+Offentlighets-
+och
+sekretesslag
+(2009:400). Svensk författningssamling SFS nr: 2009:400. Stock-
+holm: Justitiedepartementet L6, Sveriges riksdag. (In Swedish)
+https://www.riksdagen.se/sv/dokument-och-lagar/dokument/
+svensk-forfattningssamling/offentlighets-och-sekretesslag-
+2009400_sfs-2009-400/
+Rogosch JS, Boehm HIA, Tingley RW, Wright KD, Webb EB,
+Paukert CP. 2024. Evaluating effectiveness of restoration to address
+current stressors to riverine ﬁsh. Freshw Biol 69: 607–622.
+Sandberg S. 2024. Fortums syn på regeringens förslag till omprövning
+av svensk vattenkraft. Solna: Fortum. https://www.fortum.com/se/
+om-oss/nyheter/blogg/Fortums-syn-p%C3%A5-regeringens-f%
+C3%B6rslag-till-ompr%C3%B6vning-av-svensk-vattenkraft
+(Accessed: 2025-04-18) (In Swedish)
+Schäfer T. 2021. Legal protection schemes for free-ﬂowing rivers in
+Europe: an overview. Sustainability 13:6423.
+Schiavon A, Comoglio C, Candiotto A, Spairani M, Hölker F, Tarena
+F, Watz J, Nyqvist D. 2024. Navigating the drought: upstream
+migration of a small-sized Cypriniformes (Telestes muticellus) in
+response to drying in a partially intermittent mountain stream.
+Knowl Manag Aquatic Ecosyst 425:6.
+Schmutz S, Mielach C. 2013. Measures for ensuring ﬁsh migration at
+transversal structures. Vienna: ICPDR-International Commission
+for the Protection of the Danube River. https://www.icpdr.org/
+resources/measures-ensuring-ﬁsh-migration-transverse-structures
+Silva AT, Lucas MC, Castro-Santos T, Katopodis C, Baumgartner LJ,
+Thiem JD, Aarestrup K, Pompeu PS, O’Brien GC, Braun DC,
+Burnett NJ, Zhu DZ, Fjeldstad H-P, Forseth T, Rajaratnam N,
+Williams JG, Cooke SJ. 2018. The future of ﬁsh passage science,
+engineering, and practice. Fish Fish 19:340362.
+Sjöholm J, Käll F. 2024. Uppvandring av ålyngel i Viskan-Årsrapport
+för 2023. Aqua Notes, 2024: 30. Department of Aquatic Resources,
+Swedish University of Agricultural Sciences. https://doi.org/
+10.54612/a.2goiejce1u (In Swedish)
+Streib L, Kattwinkel M, Heer H, Ruzika S, Schäfer RB. 2020. How
+does habitat connectivity inﬂuence the colonization success of a
+hemimetabolous aquatic insect? A modeling approach. Ecol
+Modell 416:108909.
+Stoffers T, Altermatt F, Baldan D, Bilous O, Borgwardt F, Buijse AD,
+Bondar-Kunze E, Cid N, Erős T, Ferreira MT, Funk T, Haidvogl G,
+Hohensinner S, Kowal J, Nagelkerke LA, Neuburg J, Peller T,
+Schmutz S, Singer GA, Unfer G, Vitecek S, Jähnig SC, Hein T.
+2024.
+Reviving
+Europe’s
+rivers:
+seven
+challenges
+in
+the
+implementation of the nature restoration law to restore free-
+ﬂowing rivers. Wiley Interdiscip Rev Water 11: e1717.
+Page 11 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
+
+Svensson BS. 2000. Hydropower and instream ﬂow requirements for
+ﬁsh in Sweden. Fish Manag Ecol 7: 145–155.
+SwAM (Swedish Agency for Marine and Water Management). 2024.
+Strömmen- Fakta om nationell plan för moderna miljövillkor för
+vattenkraften i Sverige. Gothenburg: Swedish Agency for Marine
+and Water Management. https://havbipub.havochvatten.se/dv/ui/
+project.jsp?pageid=visualAnalyzer&reportmode=full&report
+path=%2F%40Catalog%2Fshared%2FHemsidan%2FNAP%
+2FDV%2FStr%C3%B6mmen%20 (Accessed: 2025-02-01) (In
+Swedish)
+SwAM (Swedish Agency for Marine and Water Management). 2020.
+Vägledning för ﬁsk-och faunapassager. Gothenburg: Swedish
+Agency for Marine and Water Management. https://www.havoch
+vatten.se/arbete-i-vatten-och-energiproduktion/vattenkraftverk-
+och-dammar/miljo–och-skyddsatgarder/vagledning-for-ﬁsk–och-
+faunapassager.html(Accessed 2025-04-21) (In Swedish)
+SwAM (Swedish Agency for Marine and Water Management), SEA
+(Swedish Energy Agency), SvK (Svenksa kraftnät). 2019. Förslag
+till nationell plan för omprövning av vattenkraft. Med beskrivning
+av vattenmiljö och effektiv tillgång till vattenkraftsel samt
+identiﬁerade behov för fortsatt arbete. Gothenburg: Swedish
+Agency for Marine and Water Management. (In Swedish)
+Swedish National Heritage Board. 2021. Dammar som fornlämning –
+Vägledning för tillämpning av fornlämningsbegreppet enligt
+kulturmiljölagen (1988:950) samt allmänt om hantering av dammar
+i KML- och MB-beslut. Visby: Swedish National Heritage Board.
+Tomanova S, Courret D, Richard S, Tedesco PA, Mataix V, Frey A,
+Lagarrigue T, Chatellier L, Tétard S. 2021. Protecting the
+downstream migration of salmon smolts from hydroelectric power
+plants with inclined racks and optimized bypass water discharge.
+J Environ Manag 284:112012.
+Tomanova S, Tissot L, Tétard S, Richard S, Mercier O, Mataix V, Frey
+A, Lagarrigue T, Tedesco PA, Courret D. 2023. Bypass discharge,
+approach velocities and bar spacing: the three key-parameters to
+efﬁciently protect silver eels with inclined racks. Knowl Manag
+Aquatic Ecosyst 424:15.
+Watz J, Nilsson P, Degerman E, Tamario C, Calles O. 2019. Climbing
+the ladder: an evaluation of three different anguillid eel climbing
+substrata and placement of upstream passage solutions at migration
+barriers. Anim Conserv 22: 452–462.
+Weber C, Åberg U, Buijse AD, Hughes FMR, McKie BG, Piégay H,
+Roni P, Vollenwieder S, Haertel-Borer S. 2018. Goals and
+principles for programmatic river restoration monitoring and
+evaluation: collaborative learning across multiple projects. Wiley
+Interdiscip Rev Water 5: e1257.
+Westerberg H, Wickström H. 2016. Stock assessment of eels in the
+Baltic: reconciling survey estimates to achieve quantitative
+analysis. ICES J Mar Sci 73: 75–83.
+Widén Å, Ahonen J, Renöfält BM, Jansson R. 2022a. Ljungan inför
+miljöprövningavvattenkraften:naturvärden,ﬂödenochströmhabitat
+samt möjliga miljönyttor. Report Umeå University, Umeå, Sweden.
+WidénÅ,MalmRenöfältB,DegermanE,WisaeusD,JanssonR.2022b.
+Environmentalﬂowscenariosforaregulatedriversystem:projecting
+catchmentwide ecosystem beneﬁts and consequences for hydroelec-
+tric production. Water Resour Res 58: e2021WR030297.
+Widén Å, Segersten J, Donadi S, Degerman E, Malm-Renöfält B,
+Karlsson Tiselius A, Lundbäck S, Jansson R. 2022c. Sveriges
+torrfåror: geograﬁ, naturvärden och metoder för miljöförbättringar.
+Umeå, Sweden: Report Umeå University.
+Widén Å, Malm-Renöfält B, Jansson R. 2023. Restaurering av Juktån.
+Umeå, Sweden: Report Umeå University.
+Williamson MJ, Allen BE, Brand JA, Pike C, Sergeant C, Grzesiok C,
+Wright RM, Piper AT. 2025. Improving eel pass efﬁciency: the role
+of crest shape and water ﬂow in facilitating upstream juvenile eel
+migration. J Fish Biol. https://doi.org/10.1111/jfb.70017
+Zaidel PA, Roy AH, Houle KM, Lambert B, Letcher BH, Nislow KH,
+Smith C. 2021. Impacts of small dams on stream temperature. Ecol
+Indic 120:106878.
+Cite this article as: Sundin J, Näslund J, Jacobson P, Jacobson B, Östergren J, Nyqvist D. 2026. Insights from a nation-wide environmental
+relicensing of hydropower facilities in Sweden: a review of court verdicts from a biological perspective. Knowl. Manag. Aquat. Ecosyst., 427,
+6. https://doi.org/10.1051/kmae/2025034
+Page 12 of 12
+J. Sundin et al.: Knowl. Manag. Aquat. Ecosyst. 2026, 427, 6
