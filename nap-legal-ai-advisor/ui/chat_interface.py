@@ -25,7 +25,7 @@ def render_chat_mode(chat_handler):
         render_quick_actions(chat_handler)
 
     # Chat input
-    if prompt := st.chat_input("Stall en fraga om miljodomstolsbeslut..."):
+    if prompt := st.chat_input("Ställ en fråga om miljödomstolsbeslut..."):
         with st.chat_message("user"):
             st.markdown(prompt)
 

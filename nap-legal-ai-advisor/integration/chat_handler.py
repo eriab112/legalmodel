@@ -13,18 +13,18 @@ from integration.shared_context import SharedContext
 # Quick action definitions (Swedish)
 QUICK_ACTIONS = [
     {
-        "label": "Hog-risk beslut",
-        "query": "Vilka beslut har hog risk?",
+        "label": "Högrisk-beslut",
+        "query": "Vilka beslut har hög risk?",
         "icon": "🔴",
     },
     {
-        "label": "Vanligaste atgarder",
-        "query": "Vilka ar de vanligaste atgarderna?",
+        "label": "Vanligaste åtgärder",
+        "query": "Vilka är de vanligaste åtgärderna?",
         "icon": "🔧",
     },
     {
-        "label": "Riskfordelning",
-        "query": "Visa riskfordelningen",
+        "label": "Riskfördelning",
+        "query": "Visa riskfördelningen",
         "icon": "📊",
     },
     {
@@ -34,16 +34,16 @@ QUICK_ACTIONS = [
     },
 ]
 
-WELCOME_MESSAGE = """Hej! Jag ar NAP Legal AI Advisor - ett AI-system for analys av svenska miljodomstolsbeslut om vattenkraft.
+WELCOME_MESSAGE = """Hej! Jag är NAP Legal AI Advisor \u2013 ett AI-system för analys av svenska miljödomstolsbeslut om vattenkraft.
 
-Jag kan hjalpa dig med:
-- **Riskanalys** - Visa beslut per riskniva (hog/medel/lag)
-- **Semantisk sokning** - Sok i 40 domstolsbeslut med naturligt sprak
-- **Jamforelser** - Jamfor tva beslut sida vid sida
-- **Statistik** - Overblick over atgarder, kostnader och utfall
-- **Riskprediktion** - Analysera text med LegalBERT-modellen
+Jag kan hjälpa dig med:
+- **Riskanalys** \u2013 Visa beslut per risknivå (hög/medel/låg)
+- **Sökning** \u2013 Sök i domstolsbeslut, lagstiftning och ansökningar
+- **Jämförelser** \u2013 Jämför två beslut sida vid sida
+- **Statistik** \u2013 Överblick över åtgärder, kostnader och utfall
+- **Riskprediktion** \u2013 Analysera text med LegalBERT-modellen
 
-Prova en snabbfragor nedan eller stall en egen fraga!"""
+Ställ en fråga nedan eller använd snabbknapparna!"""
 
 
 class ChatHandler:

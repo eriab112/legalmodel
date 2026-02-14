@@ -29,8 +29,11 @@ build/
 .eggs/
 *.pkl
 
-# Environment
+# Environment files with secrets
 .env
+nap-legal-ai-advisor/.env
+
+# Virtual environments
 .venv/
 venv/
 env/

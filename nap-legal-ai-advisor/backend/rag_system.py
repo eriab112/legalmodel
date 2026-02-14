@@ -2,19 +2,20 @@
 RAG system combining semantic search + risk predictor + data_loader.
 
 Provides retrieval-based responses using template formatting enriched
-with metadata from the labeled dataset. No external LLM API needed.
+with metadata from the labeled dataset. Optional LLM (Gemini) for open-ended questions.
 """
 
 import re
 from typing import Dict, List, Optional
 
+from backend.llm_engine import GeminiEngine, format_context, get_llm_engine
 from utils.data_loader import DecisionRecord
 
 
 RISK_LABELS_SV = {
-    "HIGH_RISK": "Hog risk",
-    "MEDIUM_RISK": "Medel risk",
-    "LOW_RISK": "Lag risk",
+    "HIGH_RISK": "Hög risk",
+    "MEDIUM_RISK": "Medelrisk",
+    "LOW_RISK": "Låg risk",
 }
 
 RISK_EMOJI = {
@@ -27,10 +28,11 @@ RISK_EMOJI = {
 class RAGSystem:
     """Combines search, prediction, and data for template-based responses."""
 
-    def __init__(self, data_loader, search_engine, predictor):
+    def __init__(self, data_loader, search_engine, predictor, llm_engine=None):
         self.data = data_loader
         self.search = search_engine
         self.predictor = predictor
+        self.llm = llm_engine  # None means fallback to template responses
 
     def generate_response(self, query: str) -> str:
         """Classify intent and route to appropriate handler."""
@@ -56,13 +58,16 @@ class RAGSystem:
         elif _matches(q, ["kostnad", "cost", "kronor"]) or _matches_word(q, "kr"):
             return self._format_cost_info()
         else:
-            # Default: semantic search
-            return self._format_search_response(query)
+            # Open-ended question: use LLM if available, otherwise semantic search
+            if self.llm:
+                return self._generate_llm_response(query)
+            else:
+                return self._format_search_response(query)
 
     def _format_risk_response(self, label: str) -> str:
         decisions = self.data.get_decisions_by_label(label)
         if not decisions:
-            return f"Inga beslut hittades med riskniva {RISK_LABELS_SV.get(label, label)}."
+            return f"Inga beslut hittades med risknivå {RISK_LABELS_SV.get(label, label)}."
 
         emoji = RISK_EMOJI.get(label, "")
         header = f"### {emoji} Beslut med {RISK_LABELS_SV[label]} ({len(decisions)} st)\n\n"
@@ -82,7 +87,7 @@ class RAGSystem:
             if outcome:
                 line += f"\n  - Utfall: {outcome}"
             if measures:
-                line += f"\n  - Atgarder: {measures}"
+                line += f"\n  - Åtgärder: {measures}"
             lines.append(line)
 
         return header + "\n".join(lines)
@@ -90,7 +95,7 @@ class RAGSystem:
     def _format_distribution(self) -> str:
         dist = self.data.get_label_distribution()
         total = sum(dist.values())
-        lines = ["### Riskfordelning\n"]
+        lines = ["### Riskfördelning\n"]
         for label in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
             count = dist.get(label, 0)
             pct = (count / total * 100) if total > 0 else 0
@@ -102,8 +107,8 @@ class RAGSystem:
     def _format_measures(self) -> str:
         freq = self.data.get_measure_frequency()
         if not freq:
-            return "Inga atgarder hittades."
-        lines = ["### Vanligaste atgarder i domslut\n"]
+            return "Inga åtgärder hittades."
+        lines = ["### Vanligaste åtgärder i domslut\n"]
         for measure, count in list(freq.items())[:10]:
             lines.append(f"- **{measure}**: {count} beslut")
         return "\n".join(lines)
@@ -128,7 +133,7 @@ class RAGSystem:
         pattern = r'm[\s-]?(\d+)[\s-](\d+)'
         matches = re.findall(pattern, query, re.IGNORECASE)
         if len(matches) < 2:
-            return "Ange tva malnummer for att jamfora, t.ex. 'Jamfor M 3753-22 med M 605-24'."
+            return "Ange två målnummer för att jämföra, t.ex. 'Jämför M 3753-22 med M 605-24'."
 
         ids = [f"m{m[0]}-{m[1]}" for m in matches[:2]]
         decisions = [self.data.get_decision(did) for did in ids]
@@ -140,7 +145,7 @@ class RAGSystem:
         return self._format_comparison(decisions[0], decisions[1])
 
     def _format_comparison(self, d1: DecisionRecord, d2: DecisionRecord) -> str:
-        lines = ["### Jamforelse\n"]
+        lines = ["### Jämförelse\n"]
         lines.append("| | **{}** | **{}** |".format(
             d1.metadata.get("case_number", d1.id),
             d2.metadata.get("case_number", d2.id),
@@ -152,14 +157,14 @@ class RAGSystem:
         lines.append("| Datum | {} | {} |".format(
             d1.metadata.get("date", ""), d2.metadata.get("date", ""),
         ))
-        lines.append("| Riskniva | {} {} | {} {} |".format(
+        lines.append("| Risknivå | {} {} | {} {} |".format(
             RISK_EMOJI.get(d1.label, ""), RISK_LABELS_SV.get(d1.label, d1.label or "Ej klassificerad"),
             RISK_EMOJI.get(d2.label, ""), RISK_LABELS_SV.get(d2.label, d2.label or "Ej klassificerad"),
         ))
 
         m1 = d1.scoring_details.get("domslut_measures", []) if d1.scoring_details else []
         m2 = d2.scoring_details.get("domslut_measures", []) if d2.scoring_details else []
-        lines.append("| Atgarder | {} | {} |".format(
+        lines.append("| Åtgärder | {} | {} |".format(
             ", ".join(m1) if m1 else "-",
             ", ".join(m2) if m2 else "-",
         ))
@@ -183,7 +188,7 @@ class RAGSystem:
             f"- **Totalt antal beslut**: {len(all_decisions)} (varav {total} klassificerade)",
             f"- **Datumintervall**: {date_min} till {date_max}",
             f"- **Domstolar**: {len(courts)} st",
-            f"- **Unika atgarder**: {len(measures)} typer",
+            f"- **Unika åtgärder**: {len(measures)} typer",
         ]
         for label in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
             count = dist.get(label, 0)
@@ -200,7 +205,7 @@ class RAGSystem:
                 costs.append((d, d.scoring_details["max_cost_sek"]))
 
         if not costs:
-            return "Ingen kostnadsinformation tillganglig."
+            return "Ingen kostnadsinformation tillgänglig."
 
         costs.sort(key=lambda x: -x[1])
         for d, cost in costs[:10]:
@@ -209,12 +214,28 @@ class RAGSystem:
             lines.append(f"- {emoji} **{case}**: {cost:,.0f} kr")
         return "\n".join(lines)
 
+    def _generate_llm_response(self, query: str, n_results: int = 10) -> str:
+        """Generate an LLM response with RAG context from the full knowledge base."""
+        # Retrieve relevant chunks across all document types
+        results = self.search.search(query, n_results=n_results)
+
+        if not results:
+            return "Jag hittade inga relevanta dokument i kunskapsbasen för din fråga. Försök att omformulera eller vara mer specifik."
+
+        # Format context for the LLM
+        context, sources = format_context(results)
+
+        # Generate response
+        response = self.llm.generate_response(query, context, sources)
+
+        return response
+
     def _format_search_response(self, query: str) -> str:
         results = self.search.search(query, n_results=5)
         if not results:
-            return "Inga relevanta resultat hittades. Forsok med andra sokord."
+            return "Inga relevanta resultat hittades. Försök med andra sökord."
 
-        lines = [f"### Sokresultat for: *{query}*\n"]
+        lines = [f"### Sökresultat för: *{query}*\n"]
         for r in results:
             case = r.metadata.get("case_number", r.decision_id)
             date = r.metadata.get("date", "")

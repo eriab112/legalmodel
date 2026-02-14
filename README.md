@@ -8,7 +8,7 @@
 
 | Del | Beskrivning |
 |-----|-------------|
-| **nap-legal-ai-advisor/** | Streamlit-app: **Chat** (Gemini RAG) och **Sök** (semantisk sökning över domar, lagstiftning och ansökningar). Riskprediktion med LegalBERT (HIGH/MEDIUM/LOW). KnowledgeBase med tre dokumenttyper. |
+| **nap-legal-ai-advisor/** | Streamlit-app med tre flikar: **Översikt** (dashboard med nyckeltal och Plotly-diagram), **Utforska** (sök och filtrera beslut, lagstiftning och ansökningar) och **AI-assistent** (Gemini RAG-chatt). Riskprediktion med LegalBERT (HIGH/MEDIUM/LOW). KnowledgeBase med tre dokumenttyper. |
 | **scripts/** | Pipeline: rensning av domtexter → etiketter → träning → utvärdering. Plus Sundin-feature-extraktion, weak labels, DAPT-korpus, PDF-extraktion m.m. 13 script, ~3 800 rader. |
 | **tests/** | 94 enhetstester (pytest) för backend, integration och utils. Mockar Streamlit och modeller — kräver varken GPU eller datafiler. |
 | **Data/** | Rådata (Domar, Ansökningar, Lagstiftningdiverse) och **Data/processed/** med JSON som appen och scripten använder. |
@@ -79,10 +79,10 @@ python scripts/06_evaluate_basic.py
 ```
 legalmodel/
 ├── README.md                    # Denna fil
-├── nap-legal-ai-advisor/       # Streamlit-app (Chat + Sök, riskprediktion)
+├── nap-legal-ai-advisor/       # Streamlit-app (Översikt + Utforska + AI-assistent)
 │   ├── backend/                # risk_predictor, search_engine, rag_system, llm_engine
 │   ├── integration/            # chat_handler, search_handler, shared_context
-│   ├── ui/                     # chat_interface, search_interface, styles
+│   ├── ui/                     # overview_interface, explorer_interface, chat_interface, search_interface, styles
 │   └── utils/                  # data_loader (DataLoader + KnowledgeBase), ssl_fix
 ├── scripts/                     # Pipeline och hjälpscript (02–06 + Sundin, DAPT, m.m.)
 ├── tests/                       # 94 enhetstester (pytest)
@@ -211,7 +211,7 @@ Alla script körs från **repo root**, t.ex. `python scripts/02_clean_court_text
 
 - **Modell:** ~65 % genomsnittlig accuracy (5-fold); stark MEDIUM_RISK-bias. Endast **fold_4** används i appen (ingen ensemble).
 - **Data:** 44 märkta beslut är litet för 110M-parametrar; generalisering osäker. MEDIUM_RISK överrepresenterad (59 %).
-- **App:** Gemini LLM-engine integrerad (RAG med källhänvisning), men inte ännu kopplad till chatt-UI. Sök indexerar nu beslut + lagstiftning + ansökningar. Ingen auth, rate limit eller strukturerad logging.
+- **App:** Tre-flikars dashboard: Översikt (nyckeltal + Plotly-diagram), Utforska (sök/filtrera alla dokumenttyper) och AI-assistent (Gemini RAG-chatt med källhänvisning). Ingen auth, rate limit eller strukturerad logging.
 - **Säkerhet:** SSL-workaround i `utils/ssl_fix.py` och i 05 – inte lämpligt för produktion utan korrekt proxy/CA.
 
 Mer detaljer: **SYSTEM_REVIEW.md**.
@@ -222,10 +222,9 @@ Mer detaljer: **SYSTEM_REVIEW.md**.
 
 Phase A (DAPT + fine-tuning) är genomförd. Kvarvarande:
 
-1. **Koppla Gemini till chatt-UI:** `llm_engine.py` är redo — integrera `GeminiEngine` i `chat_handler.py` för RAG-baserad fråga/svar.
-2. **Fler märkta dokument:** Mer data är den viktigaste förbättringen för modellprestanda (44 → 100+ rekommenderas).
-3. **5-fold CV för DAPT-modell:** Rättvis jämförelse med baseline som också använder 5-fold CV.
-4. **Phase B:** Multi-task (aux-heads från Sundin), RF(Sundin) + BERT-ensemble.
+1. **Fler märkta dokument:** Mer data är den viktigaste förbättringen för modellprestanda (44 → 100+ rekommenderas).
+2. **5-fold CV för DAPT-modell:** Rättvis jämförelse med baseline som också använder 5-fold CV.
+3. **Phase B:** Multi-task (aux-heads från Sundin), RF(Sundin) + BERT-ensemble.
 
 Full ordning och implementationregler: **STRATEGY_AND_PHASE_A.md** och **CONTEXT_HANDOVER_FOR_STRATEGY.md**.
 

@@ -22,33 +22,33 @@ def render_search_mode(search_handler):
     col1, col2 = st.columns([4, 1])
     with col1:
         query = st.text_input(
-            "Sok i domstolsbeslut",
+            "Sök i domstolsbeslut",
             value=search_handler.get_search_query(),
             placeholder="T.ex. faunapassage vid vattenkraftverk, minimitappning...",
             label_visibility="collapsed",
         )
     with col2:
-        search_clicked = st.button("Sok", type="primary", use_container_width=True)
+        search_clicked = st.button("Sök", type="primary", use_container_width=True)
 
     # Filters sidebar
     render_filters_sidebar(search_handler)
 
     # Execute search
     if search_clicked and query:
-        with st.spinner("Soker..."):
+        with st.spinner("Söker..."):
             results = search_handler.execute_search(query)
     else:
         results = search_handler.get_search_results()
 
     # Display results
     if results:
-        st.markdown(f"**{len(results)} resultat** for *{search_handler.get_search_query()}*")
+        st.markdown(f"**{len(results)} resultat** för *{search_handler.get_search_query()}*")
         for result in results:
             render_result_card(result, search_handler)
     elif search_handler.get_search_query():
-        st.info("Inga resultat hittades. Prova andra sokord.")
+        st.info("Inga resultat hittades. Prova andra sökord.")
     else:
-        st.info("Anvand sokfaltet ovan for att soka i 40 domstolsbeslut om vattenkraft.")
+        st.info("Använd sökfältet ovan för att söka i alla dokument om vattenkraft.")
 
 
 def render_filters_sidebar(search_handler):
@@ -61,13 +61,13 @@ def render_filters_sidebar(search_handler):
         # Risk level filter
         label_options = ["Alla"] + available["labels"]
         label_display = {
-            "Alla": "Alla riskniva",
-            "HIGH_RISK": "Hog risk",
-            "MEDIUM_RISK": "Medel risk",
-            "LOW_RISK": "Lag risk",
+            "Alla": "Alla risknivåer",
+            "HIGH_RISK": "Hög risk",
+            "MEDIUM_RISK": "Medelrisk",
+            "LOW_RISK": "Låg risk",
         }
         selected_label = st.selectbox(
-            "Riskniva",
+            "Risknivå",
             label_options,
             format_func=lambda x: label_display.get(x, x),
         )
@@ -133,7 +133,7 @@ def render_decision_detail(search_handler):
         return
 
     # Back button
-    if st.button("Tillbaka till sokresultat"):
+    if st.button("Tillbaka till sökresultat"):
         SharedContext.set_selected_decision(None)
         st.rerun()
 
@@ -147,24 +147,24 @@ def render_decision_detail(search_handler):
         st.markdown("### Metadata")
         st.markdown(f"**Domstol**: {decision.metadata.get('court', '')}")
         st.markdown(f"**Datum**: {decision.metadata.get('date', '')}")
-        st.markdown(f"**Niva**: {decision.metadata.get('court_level', '')}")
-        st.markdown(f"**Amne**: {decision.metadata.get('subject', '')}")
+        st.markdown(f"**Nivå**: {decision.metadata.get('court_level', '')}")
+        st.markdown(f"**Ämne**: {decision.metadata.get('subject', '')}")
 
         if decision.label:
             badge = risk_badge_html(decision.label)
             st.markdown(f"**Klassificering**: {badge}", unsafe_allow_html=True)
 
         if decision.scoring_details:
-            st.markdown("### Bedomningsdetaljer")
+            st.markdown("### Bedömningsdetaljer")
             sd = decision.scoring_details
             st.markdown(f"**Utfallstyp**: {sd.get('outcome_desc', '')}")
             if sd.get("domslut_measures"):
-                st.markdown(f"**Domslut-atgarder**: {', '.join(sd['domslut_measures'])}")
+                st.markdown(f"**Domslut-åtgärder**: {', '.join(sd['domslut_measures'])}")
             if sd.get("max_cost_sek"):
                 st.markdown(f"**Max kostnad**: {sd['max_cost_sek']:,.0f} kr")
 
         if decision.linked_water_bodies:
-            st.markdown("### Lankade vattenforekomster")
+            st.markdown("### Länkade vattenförekomster")
             for wb in decision.linked_water_bodies:
                 viss = ", ".join(wb.get("viss_ids", []))
                 st.markdown(f"- **{wb.get('water_body', '')}** ({viss})")
@@ -175,11 +175,11 @@ def render_decision_detail(search_handler):
         # Check if prediction should run automatically
         run_pred = st.session_state.get(f"run_prediction_{decision_id}", False)
 
-        if run_pred or st.button("Kor prediktion", key=f"run_pred_{decision_id}"):
+        if run_pred or st.button("Kör prediktion", key=f"run_pred_{decision_id}"):
             # Clear the auto-run flag
             st.session_state.pop(f"run_prediction_{decision_id}", None)
 
-            with st.spinner("Kor LegalBERT-inference..."):
+            with st.spinner("Kör LegalBERT-inference..."):
                 prediction = search_handler.get_risk_prediction(decision_id)
 
             if prediction:
@@ -189,7 +189,7 @@ def render_decision_detail(search_handler):
             if cached:
                 render_prediction_detail(cached)
             else:
-                st.info("Klicka for att kora LegalBERT-prediktion pa detta beslut.")
+                st.info("Klicka för att köra LegalBERT-prediktion på detta beslut.")
 
     # Tabs for full text
     st.markdown("---")

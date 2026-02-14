@@ -127,6 +127,34 @@ CUSTOM_CSS = """
         color: #1E3A8A;
         margin-bottom: 0.5rem;
     }
+
+    /* Overview dashboard */
+    .overview-stat {
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    /* Explorer cards for non-decision documents */
+    .doc-type-badge {
+        display: inline-block;
+        padding: 0.15rem 0.5rem;
+        border-radius: 0.75rem;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-left: 0.5rem;
+    }
+    .doc-type-legislation {
+        background-color: #DBEAFE;
+        color: #1E40AF;
+    }
+    .doc-type-application {
+        background-color: #FEF3C7;
+        color: #92400E;
+    }
+    .doc-type-decision {
+        background-color: #F3F4F6;
+        color: #374151;
+    }
 </style>
 """
 
@@ -137,9 +165,9 @@ RISK_BADGE_CSS = {
 }
 
 RISK_LABELS_SV = {
-    "HIGH_RISK": "Hog risk",
-    "MEDIUM_RISK": "Medel risk",
-    "LOW_RISK": "Lag risk",
+    "HIGH_RISK": "Hög risk",
+    "MEDIUM_RISK": "Medelrisk",
+    "LOW_RISK": "Låg risk",
 }
 
 
@@ -156,3 +184,19 @@ def metric_card_html(value, label: str) -> str:
         <div class="metric-label">{label}</div>
     </div>
     """
+
+
+def doc_type_badge_html(doc_type: str) -> str:
+    labels = {
+        "decision": "📄 Beslut",
+        "legislation": "📜 Lagstiftning",
+        "application": "📋 Ansökan",
+    }
+    css = {
+        "decision": "doc-type-decision",
+        "legislation": "doc-type-legislation",
+        "application": "doc-type-application",
+    }
+    label = labels.get(doc_type, doc_type)
+    css_class = css.get(doc_type, "")
+    return f'<span class="doc-type-badge {css_class}">{label}</span>'
