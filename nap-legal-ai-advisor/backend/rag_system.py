@@ -8,8 +8,10 @@ with metadata from the labeled dataset. Optional LLM (Gemini) for open-ended que
 import re
 from typing import Dict, List, Optional
 
+from backend.agents import MultiAgentRouter
 from backend.llm_engine import GeminiEngine, format_context, get_llm_engine
 from utils.data_loader import DecisionRecord
+from utils.timing import timed
 
 
 RISK_LABELS_SV = {
@@ -34,6 +36,10 @@ class RAGSystem:
         self.predictor = predictor
         self.llm = llm_engine  # None means fallback to template responses
 
+        # Multi-agent router for domain-specific RAG
+        self.router = MultiAgentRouter(search_engine, llm_engine)
+
+    @timed("rag.generate_response")
     def generate_response(self, query: str) -> str:
         """Classify intent and route to appropriate handler."""
         q = query.lower().strip()
@@ -57,14 +63,17 @@ class RAGSystem:
             return self._format_statistics()
         elif _matches(q, ["kostnad", "cost", "kronor"]) or _matches_word(q, "kr"):
             return self._format_cost_info()
+        elif _matches(q, ["analysera", "predicera", "bedöm risk", "riskbedöm", "predict"]):
+            return self._handle_risk_prediction(query)
         else:
-            # Open-ended question: use LLM if available, otherwise semantic search
+            # Route to domain-specific agents
             if self.llm:
-                return self._generate_llm_response(query)
+                return self.router.route(query)
             else:
                 return self._format_search_response(query)
 
     def _format_risk_response(self, label: str) -> str:
+        """Format a list of decisions with the given risk label."""
         decisions = self.data.get_decisions_by_label(label)
         if not decisions:
             return f"Inga beslut hittades med risknivå {RISK_LABELS_SV.get(label, label)}."
@@ -93,11 +102,14 @@ class RAGSystem:
         return header + "\n".join(lines)
 
     def _format_distribution(self) -> str:
+        """Format label distribution summary."""
         dist = self.data.get_label_distribution()
         total = sum(dist.values())
         lines = ["### Riskfördelning\n"]
         for label in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
             count = dist.get(label, 0)
+            if count == 0:
+                continue
             pct = (count / total * 100) if total > 0 else 0
             emoji = RISK_EMOJI.get(label, "")
             lines.append(f"- {emoji} **{RISK_LABELS_SV[label]}**: {count} beslut ({pct:.0f}%)")
@@ -105,7 +117,10 @@ class RAGSystem:
         return "\n".join(lines)
 
     def _format_measures(self) -> str:
+        """Format most common measures from court rulings."""
         freq = self.data.get_measure_frequency()
+        _exclude = {"kontrollprogram", "skyddsgaller"}
+        freq = {k: v for k, v in freq.items() if k not in _exclude}
         if not freq:
             return "Inga åtgärder hittades."
         lines = ["### Vanligaste åtgärder i domslut\n"]
@@ -114,6 +129,7 @@ class RAGSystem:
         return "\n".join(lines)
 
     def _format_recent_decisions(self) -> str:
+        """Format the most recent labeled decisions."""
         decisions = sorted(
             self.data.get_labeled_decisions(),
             key=lambda d: d.metadata.get("date", ""),
@@ -129,6 +145,7 @@ class RAGSystem:
         return "\n".join(lines)
 
     def _handle_comparison(self, query: str) -> str:
+        """Extract two case IDs from query and format a comparison table."""
         # Extract case IDs from query (e.g., "m3753-22" or "M 3753-22")
         pattern = r'm[\s-]?(\d+)[\s-](\d+)'
         matches = re.findall(pattern, query, re.IGNORECASE)
@@ -145,6 +162,7 @@ class RAGSystem:
         return self._format_comparison(decisions[0], decisions[1])
 
     def _format_comparison(self, d1: DecisionRecord, d2: DecisionRecord) -> str:
+        """Format a side-by-side comparison of two decisions."""
         lines = ["### Jämförelse\n"]
         lines.append("| | **{}** | **{}** |".format(
             d1.metadata.get("case_number", d1.id),
@@ -176,6 +194,7 @@ class RAGSystem:
         return "\n".join(lines)
 
     def _format_statistics(self) -> str:
+        """Format overall statistics for the knowledge base."""
         dist = self.data.get_label_distribution()
         total = sum(dist.values())
         all_decisions = self.data.get_all_decisions()
@@ -192,11 +211,14 @@ class RAGSystem:
         ]
         for label in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
             count = dist.get(label, 0)
+            if count == 0:
+                continue
             emoji = RISK_EMOJI.get(label, "")
             lines.append(f"- {emoji} {RISK_LABELS_SV[label]}: {count}")
         return "\n".join(lines)
 
     def _format_cost_info(self) -> str:
+        """Format cost information from decisions with max_cost_sek."""
         lines = ["### Kostnadsinformation\n"]
         decisions = self.data.get_labeled_decisions()
         costs = []
@@ -214,6 +236,80 @@ class RAGSystem:
             lines.append(f"- {emoji} **{case}**: {cost:,.0f} kr")
         return "\n".join(lines)
 
+    @timed("rag.risk_prediction")
+    def _handle_risk_prediction(self, query: str) -> str:
+        """Handle risk prediction requests in the chat."""
+        # Check if a case number is mentioned
+        pattern = r'm[\s-]?(\d+)[\s-](\d+)'
+        matches = re.findall(pattern, query, re.IGNORECASE)
+
+        if matches:
+            # Predict for a specific case
+            case_id = f"m{matches[0][0]}-{matches[0][1]}"
+            decision = self.data.get_decision(case_id)
+            if not decision:
+                return f"Kunde inte hitta beslut med målnummer {case_id}."
+
+            prediction = self.predictor.predict_decision(decision)
+            case_num = decision.metadata.get("case_number", case_id)
+            court = decision.metadata.get("court", "")
+            date = decision.metadata.get("date", "")
+
+            emoji = RISK_EMOJI.get(prediction.predicted_label, "")
+            label_sv = RISK_LABELS_SV.get(prediction.predicted_label, prediction.predicted_label)
+
+            lines = [
+                f"### {emoji} Riskbedömning: {case_num}",
+                f"**Domstol**: {court} | **Datum**: {date}",
+                f"",
+                f"**LegalBERT-prediktion**: {label_sv}",
+                f"**Konfidens**: {prediction.confidence:.1%}",
+                f"**Analyserade chunks**: {prediction.num_chunks}",
+            ]
+
+            # Add probability breakdown
+            lines.append("")
+            lines.append("**Sannolikheter:**")
+            for label_name, prob in prediction.probabilities.items():
+                prob_emoji = RISK_EMOJI.get(label_name, "")
+                prob_label = RISK_LABELS_SV.get(label_name, label_name)
+                bar = "\u2588" * int(prob * 20) + "\u2591" * (20 - int(prob * 20))
+                lines.append(f"- {prob_emoji} {prob_label}: {bar} {prob:.1%}")
+
+            # If ground truth exists, show comparison
+            if prediction.ground_truth:
+                gt_sv = RISK_LABELS_SV.get(prediction.ground_truth, prediction.ground_truth)
+                gt_emoji = RISK_EMOJI.get(prediction.ground_truth, "")
+                match = "\u2705 Korrekt" if prediction.predicted_label == prediction.ground_truth else "\u26a0\ufe0f Avviker"
+                lines.append(f"")
+                lines.append(f"**Faktisk klassificering**: {gt_emoji} {gt_sv} ({match})")
+
+            # If LLM is available, add explanation
+            if self.llm:
+                lines.append("")
+                lines.append("---")
+                # Get relevant context for explanation
+                results = self.search.search(f"risk {case_num}", n_results=3)
+                if results:
+                    context, sources = format_context(results)
+                    explanation_query = (
+                        f"Förklara kortfattat varför domstolsbeslut {case_num} "
+                        f"kan klassificeras som {label_sv}. "
+                        f"Fokusera på de viktigaste faktorerna i beslutet."
+                    )
+                    explanation = self.llm.generate_response(explanation_query, context, sources)
+                    lines.append(explanation)
+
+            return "\n".join(lines)
+        else:
+            return (
+                "Ange ett målnummer för att analysera risk, t.ex.:\n"
+                "- *Analysera M 3753-22*\n"
+                "- *Predicera risk för M 1849-22*\n\n"
+                "Eller klistra in text direkt i **Utforska**-fliken för att analysera egen text."
+            )
+
+    @timed("rag.llm_response")
     def _generate_llm_response(self, query: str, n_results: int = 10) -> str:
         """Generate an LLM response with RAG context from the full knowledge base."""
         # Retrieve relevant chunks across all document types
@@ -231,6 +327,7 @@ class RAGSystem:
         return response
 
     def _format_search_response(self, query: str) -> str:
+        """Format search results as a fallback when LLM is unavailable."""
         results = self.search.search(query, n_results=5)
         if not results:
             return "Inga relevanta resultat hittades. Försök med andra sökord."

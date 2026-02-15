@@ -1,0 +1,1194 @@
+{
+  "description": "Binary reclassification of all 44 NAP decisions. Review suggested labels before training.",
+  "reclassification_rules": "Rules applied in order to MEDIUM_RISK decisions: (1) 3+ domslut_measures → HIGH_RISK; (2) 1-2 domslut_measures + outcome Villkor/dom ändras or Tillstånd meddelas → HIGH_RISK; (3) 1-2 domslut_measures + outcome Kan ej avgöras or Målet återförvisas → HIGH_RISK; (4) 0 measures + outcome Kan ej avgöras → LOW_RISK; (5) 0 measures + outcome Målet återförvisas → LOW_RISK; (6) 0 measures + outcome contains avslås or Avvisning → LOW_RISK; (7) 0 measures + outcome Villkor/dom ändras or Ändrar dom → if cost>1M HIGH_RISK else LOW_RISK; (8) Remaining edge cases → LOW_RISK with needs_review=true.",
+  "decisions": [
+    {
+      "id": "m530-22",
+      "case_number": "M 530-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskvandring",
+          "omlöp",
+          "utskov",
+          "utrivning"
+        ],
+        "max_cost_sek": 5000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m1458-20",
+      "case_number": "M 1458 -20",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Ändrar dom i mindre delar",
+        "n_measures": 3,
+        "measures": [
+          "fiskväg",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "utrivning"
+        ],
+        "max_cost_sek": 9000000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2474-06",
+      "case_number": "M 2474-06",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Villkor/dom ändras",
+        "n_measures": 2,
+        "measures": [
+          "utskov",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "faunapassage",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 125153673.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m605-24",
+      "case_number": "M 605-24",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule2_1to2_measures_plus_permit_or_condition_change",
+      "evidence": {
+        "outcome": "Villkor/dom ändras",
+        "n_measures": 2,
+        "measures": [
+          "faunapassage",
+          "skyddsgaller"
+        ],
+        "all_mentioned_measures": [
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "utskov",
+          "skyddsgaller",
+          "utrivning"
+        ],
+        "max_cost_sek": 1500.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m1275-22",
+      "case_number": "M 1275 -22",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Ändrar dom i mindre delar",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 113906.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m4232-23",
+      "case_number": "M 4232-23",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Ändrar dom i mindre delar",
+        "n_measures": 1,
+        "measures": [
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 3000000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m6225-20",
+      "case_number": "M 6225 -20",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Förlängning beviljas",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "omlöp",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m3412-22",
+      "case_number": "M 3412-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "minimitappning"
+        ],
+        "max_cost_sek": 1500.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2165-24",
+      "case_number": "M 2165 - 24",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Överklagandet avslås",
+        "n_measures": 2,
+        "measures": [
+          "utskov",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 10200.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m1849-22",
+      "case_number": "M 1849 -22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Målet återförvisas",
+        "n_measures": 6,
+        "measures": [
+          "fiskväg",
+          "faunapassage",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 5000000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m3473-24",
+      "case_number": "M 3473 -24",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Tillstånd meddelas (med villkor)",
+        "n_measures": 5,
+        "measures": [
+          "fiskväg",
+          "omlöp",
+          "minimitappning",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 15300.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m6587-23",
+      "case_number": "M 6587-23",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule7_zero_measures_condition_change_high_cost",
+      "evidence": {
+        "outcome": "Villkor/dom ändras",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 2500000.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m305-99",
+      "case_number": "M 305-99",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "minimitappning",
+          "utskov"
+        ],
+        "max_cost_sek": 25000000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m4324-21",
+      "case_number": "M 4324 -21",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Avvisning (processuellt)",
+        "n_measures": 3,
+        "measures": [
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 4000000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2694-22",
+      "case_number": "M 2694-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "manual_override_measures_present",
+      "evidence": {
+        "outcome": "Ansökan/yrkande avslås",
+        "n_measures": 2,
+        "measures": [
+          "fiskväg",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "utrivning"
+        ],
+        "max_cost_sek": 200000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m391-22",
+      "case_number": "M 391-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 15550.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m5937-23",
+      "case_number": "M 5937-23",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.85,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Upphäver myndighets beslut/föreläggande",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "minimitappning"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m4650-22",
+      "case_number": "M 4650 -22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "manual_override_extreme_cost",
+      "evidence": {
+        "outcome": "Ändrar dom i mindre delar",
+        "n_measures": 1,
+        "measures": [
+          "minimitappning"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 469300000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2065-22",
+      "case_number": "M 2065-22",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Tillstånd meddelas (med villkor)",
+        "n_measures": 1,
+        "measures": [
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "utskov",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 240000.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2693-22",
+      "case_number": "M 2693-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "utskov"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m4965-23",
+      "case_number": "M 4965-23",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Tillstånd meddelas (med villkor)",
+        "n_measures": 1,
+        "measures": [
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 35000.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2796-24",
+      "case_number": "M 2796-24",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Villkor/dom ändras",
+        "n_measures": 5,
+        "measures": [
+          "fiskväg",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m3463-22",
+      "case_number": "M 3463-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 5,
+        "measures": [
+          "fiskväg",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "max_cost_sek": 16000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m1533-20",
+      "case_number": "M 1533 -20",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule5_zero_measures_remanded",
+      "evidence": {
+        "outcome": "Målet återförvisas",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "utrivning"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m7988-22",
+      "case_number": "M 7988 -22",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Tillstånd meddelas (med villkor)",
+        "n_measures": 2,
+        "measures": [
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 2080552.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m5295-23",
+      "case_number": "M 5295 -23",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Överklagandet avslås",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "utrivning"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m396-22",
+      "case_number": "M 396-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [],
+        "max_cost_sek": 1500.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2695-22",
+      "case_number": "M 2695-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 3,
+        "measures": [
+          "fiskväg",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 31000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m3415-22",
+      "case_number": "M 3415-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule5_zero_measures_remanded",
+      "evidence": {
+        "outcome": "Målet återförvisas",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 16300.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m516-21",
+      "case_number": "M 516 -21",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.85,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Upphäver myndighets beslut/föreläggande",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "utskov",
+          "utrivning"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2703-22",
+      "case_number": "M 2703-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 3,
+        "measures": [
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 1500.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m3753-22",
+      "case_number": "M 3753-22",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.85,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Upphäver myndighets beslut/föreläggande",
+        "n_measures": 5,
+        "measures": [
+          "fiskväg",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 753396.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m4021-22",
+      "case_number": "M 4021-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule7_zero_measures_condition_change_low_cost",
+      "evidence": {
+        "outcome": "Villkor/dom ändras",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m391-99",
+      "case_number": "M 391-99",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m5224-21",
+      "case_number": "M 5224 -21",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.55,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Ändrar dom i mindre delar",
+        "n_measures": 3,
+        "measures": [
+          "faunapassage",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 110400.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m483-22",
+      "case_number": "M 483-22",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Tillstånd meddelas (med villkor)",
+        "n_measures": 3,
+        "measures": [
+          "omlöp",
+          "minimitappning",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "utrivning"
+        ],
+        "max_cost_sek": 57600.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m503-22",
+      "case_number": "M 503 -22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule5_zero_measures_remanded",
+      "evidence": {
+        "outcome": "Målet återförvisas",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "fiskvandring",
+          "kontrollprogram"
+        ],
+        "max_cost_sek": 875000.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m13999-24",
+      "case_number": "M 13999 - 24",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m2614-23",
+      "case_number": "M 2614-23",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule3_1to2_measures_plus_unclear_or_remanded",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 2,
+        "measures": [
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 36800.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m5221-21",
+      "case_number": "M 5221 -21",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "HIGH_RISK",
+      "reclassified": true,
+      "rule_applied": "rule1_3plus_domslut_measures",
+      "evidence": {
+        "outcome": "Målet återförvisas",
+        "n_measures": 7,
+        "measures": [
+          "fiskväg",
+          "faunapassage",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "faunapassage",
+          "fiskvandring",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "biotopvård",
+          "utrivning"
+        ],
+        "max_cost_sek": 56800.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m4962-23",
+      "case_number": "M 4962-23",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.85,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Upphäver myndighets beslut/föreläggande",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "minimitappning",
+          "utskov",
+          "utrivning"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m10202-23",
+      "case_number": "M 10202-23",
+      "original_label": "HIGH_RISK",
+      "original_confidence": 0.7,
+      "binary_label": "HIGH_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Tillstånd meddelas (med villkor)",
+        "n_measures": 2,
+        "measures": [
+          "utskov",
+          "kontrollprogram"
+        ],
+        "all_mentioned_measures": [
+          "fiskväg",
+          "omlöp",
+          "minimitappning",
+          "utskov",
+          "kontrollprogram",
+          "utrivning"
+        ],
+        "max_cost_sek": 35000.0,
+        "has_fishway": true,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m12894-23",
+      "case_number": "M 12894 - 23",
+      "original_label": "LOW_RISK",
+      "original_confidence": 0.85,
+      "binary_label": "LOW_RISK",
+      "reclassified": false,
+      "rule_applied": "kept_original",
+      "evidence": {
+        "outcome": "Upphäver myndighets beslut/föreläggande",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "utrivning"
+        ],
+        "max_cost_sek": 100000.0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    },
+    {
+      "id": "m506-22",
+      "case_number": "M 506-22",
+      "original_label": "MEDIUM_RISK",
+      "original_confidence": 0.4,
+      "binary_label": "LOW_RISK",
+      "reclassified": true,
+      "rule_applied": "rule4_zero_measures_unclear_outcome",
+      "evidence": {
+        "outcome": "Kan ej avgöras automatiskt",
+        "n_measures": 0,
+        "measures": [],
+        "all_mentioned_measures": [
+          "minimitappning",
+          "utskov",
+          "utrivning"
+        ],
+        "max_cost_sek": 0,
+        "has_fishway": false,
+        "monitoring_required": true
+      },
+      "needs_review": false
+    }
+  ],
+  "summary": {
+    "total": 44,
+    "kept_high": 8,
+    "kept_low": 10,
+    "medium_to_high": 13,
+    "medium_to_low": 13,
+    "needs_review": 0,
+    "final_high": 21,
+    "final_low": 23
+  }
+}

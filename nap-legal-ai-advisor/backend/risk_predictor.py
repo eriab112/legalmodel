@@ -1,10 +1,8 @@
 """
-LegalBERT risk predictor using fold_4 (best fold: Acc=0.750, F1=0.739).
+LegalBERT risk predictor — Binary classification (HIGH_RISK vs LOW_RISK).
 
-Sliding window inference matches scripts/05_finetune_legalbert.py exactly:
-- CHUNK_SIZE=512, STRIDE=256
-- Tokenize without special tokens, then add [CLS]/[SEP] per chunk
-- Aggregate by averaging logits across chunks, then argmax
+Domain-adapted KB-BERT fine-tuned on 44 Swedish court decisions.
+Accuracy: 80% | HIGH_RISK recall: 100% (conservative bias).
 """
 
 import os
@@ -16,14 +14,16 @@ import numpy as np
 import streamlit as st
 import torch
 
+from utils.timing import timed
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-_default_model = BASE_DIR / "models" / "nap_legalbert_cv" / "fold_4" / "best_model"
+_default_model = BASE_DIR / "models" / "nap_binary" / "best"
 _env_model = os.getenv("MODEL_PATH")
 MODEL_DIR = Path(_env_model) if _env_model and Path(_env_model).is_absolute() else (BASE_DIR / _env_model if _env_model else _default_model)
 
-LABEL_MAP = {"HIGH_RISK": 0, "MEDIUM_RISK": 1, "LOW_RISK": 2}
-ID2LABEL = {v: k for k, v in LABEL_MAP.items()}
-NUM_LABELS = 3
+LABEL_MAP = {"HIGH_RISK": 0, "LOW_RISK": 1}
+ID2LABEL = {0: "HIGH_RISK", 1: "LOW_RISK"}
+NUM_LABELS = 2
 
 CHUNK_SIZE = 512
 STRIDE = 256
@@ -31,6 +31,7 @@ STRIDE = 256
 
 @dataclass
 class PredictionResult:
+    """Aggregated prediction result for a single document."""
     predicted_label: str
     probabilities: Dict[str, float]
     confidence: float
@@ -47,7 +48,7 @@ class LegalBERTPredictor:
         self._tokenizer = None
         self._device = None
 
-    def _load_model(self):
+    def _load_model(self) -> None:
         from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
         self._device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -139,6 +140,7 @@ class LegalBERTPredictor:
 
         return chunks
 
+    @timed("predictor.predict_text")
     def predict_text(self, text: str, ground_truth: Optional[str] = None) -> PredictionResult:
         """Run inference on text using sliding window + logit aggregation.
 
@@ -198,7 +200,8 @@ class LegalBERTPredictor:
         return self.predict_text(text, ground_truth=decision.label)
 
 
-def _softmax(x):
+def _softmax(x: np.ndarray) -> np.ndarray:
+    """Compute softmax probabilities from logits."""
     e = np.exp(x - np.max(x))
     return e / e.sum()
 

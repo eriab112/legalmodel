@@ -46,15 +46,23 @@ def render_overview(data_loader, knowledge_base=None):
     chart_left, chart_right = st.columns(2)
 
     with chart_left:
+        color_map = {"HIGH_RISK": "#DC2626", "MEDIUM_RISK": "#F59E0B", "LOW_RISK": "#16A34A"}
+        label_sv_map = {"HIGH_RISK": "Hög risk", "MEDIUM_RISK": "Medelrisk", "LOW_RISK": "Låg risk"}
+        chart_labels = []
+        chart_values = []
+        chart_colors = []
+        for label in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
+            count = dist.get(label, 0)
+            if count > 0:
+                chart_labels.append(label_sv_map[label])
+                chart_values.append(count)
+                chart_colors.append(color_map[label])
+
         fig = go.Figure(data=[go.Pie(
-            labels=["Hög risk", "Medelrisk", "Låg risk"],
-            values=[
-                dist.get("HIGH_RISK", 0),
-                dist.get("MEDIUM_RISK", 0),
-                dist.get("LOW_RISK", 0),
-            ],
+            labels=chart_labels,
+            values=chart_values,
             hole=0.4,
-            marker=dict(colors=["#DC2626", "#F59E0B", "#16A34A"]),
+            marker=dict(colors=chart_colors),
             textinfo="value+percent",
         )])
         fig.update_layout(
@@ -63,13 +71,13 @@ def render_overview(data_loader, knowledge_base=None):
             height=350,
             margin=dict(t=40, b=20, l=20, r=20),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     with chart_right:
         decisions = data_loader.get_labeled_decisions()
         court_counts = {}
         for d in decisions:
-            court = d.metadata.get("court", "Okänd")
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "Okänd")
             court_counts[court] = court_counts.get(court, 0) + 1
 
         sorted_courts = sorted(court_counts.items(), key=lambda x: x[1], reverse=True)
@@ -88,7 +96,7 @@ def render_overview(data_loader, knowledge_base=None):
             margin=dict(t=40, b=20, l=20, r=120),
             yaxis=dict(autorange="reversed"),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
     # --- Corpus composition ---
     if knowledge_base:
@@ -106,6 +114,19 @@ def render_overview(data_loader, knowledge_base=None):
             st.caption("tillståndsansökningar")
 
     st.markdown("")
+
+    # --- Model performance ---
+    st.markdown("### Modellprestanda")
+    perf_col1, perf_col2, perf_col3, perf_col4 = st.columns(4)
+    with perf_col1:
+        st.metric("Accuracy", "80%")
+    with perf_col2:
+        st.metric("Hög risk recall", "100%")
+    with perf_col3:
+        st.metric("F1 (macro)", "0.80")
+    with perf_col4:
+        st.metric("Träningsdata", "44 beslut")
+    st.caption("DAPT + fine-tuned KB-BERT på svenska miljödomstolsbeslut. Binär klassificering (Hög/Låg risk).")
 
     # --- Recent decisions table ---
     st.markdown("### Senaste klassificerade beslut")
@@ -133,7 +154,7 @@ def render_overview(data_loader, knowledge_base=None):
 
     if rows:
         df = pd.DataFrame(rows)
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.dataframe(df, width="stretch", hide_index=True)
     else:
         st.info("Inga klassificerade beslut tillgängliga.")
 
@@ -142,6 +163,8 @@ def render_overview(data_loader, knowledge_base=None):
     # --- Measures frequency ---
     st.markdown("### Vanligaste åtgärder")
     measure_freq = data_loader.get_measure_frequency()
+    _exclude = {"kontrollprogram", "skyddsgaller"}
+    measure_freq = {k: v for k, v in measure_freq.items() if k not in _exclude}
     top_measures = dict(list(measure_freq.items())[:10])
 
     if top_measures:
@@ -159,6 +182,6 @@ def render_overview(data_loader, knowledge_base=None):
             margin=dict(t=20, b=20, l=20, r=20),
             yaxis=dict(autorange="reversed"),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
     else:
         st.info("Inga åtgärder tillgängliga.")

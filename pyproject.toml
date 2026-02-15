@@ -3,11 +3,12 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.backends._legacy:_Backend"
 
 [project]
-name = "nap-legal-ai"
-version = "0.1.0"
-description = "NAP Legal AI Advisor — riskindikation och semantisk sökning i svenska miljödomstolsbeslut"
+name = "nap-legal-ai-advisor"
+version = "2.0.0"
+description = "NAP Legal AI Advisor — multi-agent RAG, binary risk classifier and analytics dashboard for Swedish hydropower environmental permits"
 requires-python = ">=3.10"
 license = {text = "Proprietary"}
+authors = [{name = "NAP Legal AI Team"}]
 
 dependencies = [
     "streamlit>=1.28.0",
@@ -37,6 +38,9 @@ pipeline = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["nap-legal-ai-advisor"]
+markers = [
+    "slow: marks tests as slow (e.g. model load, full index build)",
+]
 
 [tool.black]
 line-length = 100

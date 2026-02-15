@@ -44,7 +44,7 @@ def render_explorer(search_handler):
             label_visibility="collapsed",
         )
     with btn_col:
-        search_clicked = st.button("Sök", type="primary", use_container_width=True, key="explorer_search_btn")
+        search_clicked = st.button("Sök", type="primary", width="stretch", key="explorer_search_btn")
 
     # --- Filter row (inline) ---
     f_col1, f_col2, f_col3, f_col4 = st.columns(4)
@@ -231,7 +231,7 @@ def _render_browse_mode(search_handler):
 
     if rows:
         df = pd.DataFrame(rows)
-        st.dataframe(df, use_container_width=True, hide_index=True)
+        st.dataframe(df, width="stretch", hide_index=True)
 
         # Decision detail lookup
         st.markdown("---")

@@ -32,18 +32,25 @@ QUICK_ACTIONS = [
         "query": "Visa de senaste besluten",
         "icon": "📅",
     },
+    {
+        "label": "Analysera risk",
+        "query": "Analysera M 3753-22",
+        "icon": "🎯",
+    },
 ]
 
-WELCOME_MESSAGE = """Hej! Jag är NAP Legal AI Advisor \u2013 ett AI-system för analys av svenska miljödomstolsbeslut om vattenkraft.
+WELCOME_MESSAGE = """Hej! Jag är NAP Legal AI Advisor \u2013 ett AI-drivet beslutsstöd för vattenkraftens miljöanpassning.
 
-Jag kan hjälpa dig med:
-- **Riskanalys** \u2013 Visa beslut per risknivå (hög/medel/låg)
-- **Sökning** \u2013 Sök i domstolsbeslut, lagstiftning och ansökningar
-- **Jämförelser** \u2013 Jämför två beslut sida vid sida
-- **Statistik** \u2013 Överblick över åtgärder, kostnader och utfall
-- **Riskprediktion** \u2013 Analysera text med LegalBERT-modellen
+Jag har tre specialiserade kunskapsagenter:
+- \U0001f3db\ufe0f **Domstolsagent** \u2013 Expert på 50 domstolsbeslut och ansökningar
+- \U0001f4dc **Svensk rättsagent** \u2013 Expert på miljöbalken, NAP, tekniska riktlinjer
+- \U0001f1ea\U0001f1fa **EU-agent** \u2013 Expert på vattendirektivet och CIS-vägledningar
 
-Ställ en fråga nedan eller använd snabbknapparna!"""
+Jag kan även:
+- \U0001f3af **Analysera risk** \u2013 LegalBERT-prediktion för specifika beslut (t.ex. *Analysera M 3753-22*)
+- \U0001f4ca **Jämföra och sammanställa** \u2013 Statistik, jämförelser och kostnadsanalyser
+
+Ställ en fråga \u2013 jag väljer automatiskt rätt agent baserat på din fråga, eller kombinerar flera vid behov!"""
 
 
 class ChatHandler:

@@ -6,6 +6,7 @@ and eliminates external DB dependencies like ChromaDB/FAISS.
 """
 
 import hashlib
+import os
 import pickle
 from dataclasses import dataclass
 from pathlib import Path
@@ -13,6 +14,8 @@ from typing import Dict, List, Optional
 
 import numpy as np
 import streamlit as st
+
+from utils.timing import timed
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / ".cache"
 EMBEDDINGS_CACHE = CACHE_DIR / "embeddings.pkl"
@@ -47,7 +50,21 @@ class SemanticSearchEngine:
     def model(self):
         if self._model is None:
             from sentence_transformers import SentenceTransformer
-            self._model = SentenceTransformer(MODEL_NAME)
+            try:
+                self._model = SentenceTransformer(MODEL_NAME)
+            except Exception as e:
+                print(f"WARNING: Failed to load sentence-transformers model: {e}")
+                print("Attempting offline load...")
+                try:
+                    os.environ["TRANSFORMERS_OFFLINE"] = "1"
+                    os.environ["HF_HUB_OFFLINE"] = "1"
+                    self._model = SentenceTransformer(MODEL_NAME)
+                except Exception as e2:
+                    print(f"ERROR: Could not load embedding model: {e2}")
+                    print("FIX: Run this on a network without proxy restrictions:")
+                    print(f"  python -c \"from sentence_transformers import SentenceTransformer; SentenceTransformer('{MODEL_NAME}')\"")
+                    print("Then copy ~/.cache/huggingface/ to this machine.")
+                    raise RuntimeError(f"Cannot load embedding model '{MODEL_NAME}'. See instructions above.") from e2
         return self._model
 
     def chunk_text(self, text: str, chunk_size: int = 500, overlap: int = 100) -> List[str]:
@@ -133,6 +150,7 @@ class SemanticSearchEngine:
         # Save cache
         self._save_cache()
 
+    @timed("search.build_full_index")
     def build_full_index(self, documents):
         """Build search index from DocumentRecord list (all doc types).
 
@@ -175,9 +193,11 @@ class SemanticSearchEngine:
         self._save_cache_file(FULL_EMBEDDINGS_CACHE)
 
     def _try_load_cache(self, data_hash: str) -> bool:
+        """Try to load the legacy embeddings cache."""
         return self._try_load_cache_file(EMBEDDINGS_CACHE, data_hash)
 
     def _try_load_cache_file(self, cache_path: Path, data_hash: str) -> bool:
+        """Try loading embeddings from a cache file, validating by hash."""
         if not cache_path.exists():
             return False
         try:
@@ -192,10 +212,12 @@ class SemanticSearchEngine:
             pass
         return False
 
-    def _save_cache(self):
+    def _save_cache(self) -> None:
+        """Save embeddings to the legacy cache file."""
         self._save_cache_file(EMBEDDINGS_CACHE)
 
-    def _save_cache_file(self, cache_path: Path):
+    def _save_cache_file(self, cache_path: Path) -> None:
+        """Save embeddings and chunks to a cache file."""
         CACHE_DIR.mkdir(parents=True, exist_ok=True)
         with open(cache_path, "wb") as f:
             pickle.dump({
@@ -204,6 +226,7 @@ class SemanticSearchEngine:
                 "embeddings": self._embeddings,
             }, f)
 
+    @timed("search.search")
     def search(
         self,
         query: str,

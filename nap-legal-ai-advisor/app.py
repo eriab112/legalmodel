@@ -3,8 +3,8 @@ NAP Legal AI Advisor - Main Streamlit Application
 
 Integrated platform combining:
 1. Conversational AI with retrieval-based Q&A
-2. Semantic search over 46 Swedish court decisions
-3. LegalBERT risk predictions (fine-tuned KB-BERT, fold_4)
+2. Semantic search over Swedish court decisions, legislation, and applications
+3. LegalBERT risk predictions (DAPT + fine-tuned KB-BERT, binary classification)
 """
 
 import sys
@@ -49,35 +49,37 @@ from utils.data_loader import load_data, load_knowledge_base
 def init_backend():
     """Initialize all backend components (cached)."""
     if "backend_ready" not in st.session_state:
-        with st.spinner("Laddar NAP Legal AI Advisor..."):
-            data = load_data()
-            search = get_search_engine()
-            predictor = get_predictor()
+        try:
+            with st.spinner("Laddar data och kunskapsbas..."):
+                data = load_data()
+                search = get_search_engine()
+                predictor = get_predictor()
+                kb = load_knowledge_base()
+                st.session_state.knowledge_base = kb
 
-            # Build search index
-            search.build_index(data.get_all_decisions())
+            with st.spinner("Bygger sökindex (kan ta 30–60 s första gången)..."):
+                search.build_full_index(kb.get_all_documents())
 
-            # Build expanded search index with all document types
-            kb = load_knowledge_base()
-            search.build_full_index(kb.get_all_documents())
-            st.session_state.knowledge_base = kb
-
-            # Initialize LLM engine (None if API key not set)
-            llm_engine = get_llm_engine()
-            if llm_engine:
-                print("Gemini LLM engine: ACTIVE")
-            else:
-                print("Gemini LLM engine: INACTIVE (no API key)")
-            st.session_state.llm_engine = llm_engine
-
-            # Store in session state
-            st.session_state.data_loader = data
-            st.session_state.search_engine = search
-            st.session_state.predictor = predictor
-            st.session_state.rag_system = RAGSystem(data, search, predictor, llm_engine=llm_engine)
-            st.session_state.chat_handler = ChatHandler(st.session_state.rag_system)
-            st.session_state.search_handler = SearchHandler(data, search, predictor)
-            st.session_state.backend_ready = True
+            with st.spinner("Startar motorer..."):
+                llm_engine = get_llm_engine()
+                if llm_engine:
+                    print("Gemini LLM engine: ACTIVE")
+                else:
+                    print("Gemini LLM engine: INACTIVE (no API key)")
+                st.session_state.llm_engine = llm_engine
+                st.session_state.data_loader = data
+                st.session_state.search_engine = search
+                st.session_state.predictor = predictor
+                st.session_state.rag_system = RAGSystem(data, search, predictor, llm_engine=llm_engine)
+                st.session_state.chat_handler = ChatHandler(st.session_state.rag_system)
+                st.session_state.search_handler = SearchHandler(data, search, predictor)
+                st.session_state.backend_ready = True
+        except Exception as e:
+            import traceback
+            st.error(f"**Startfel:** {e}")
+            st.code(traceback.format_exc(), language="text")
+            st.caption("Kör appen från projektets rotmapp (där mapparna Data/ och nap-legal-ai-advisor/ finns).")
+            return None, None, None
 
     return (
         st.session_state.chat_handler,
@@ -125,26 +127,44 @@ def render_sidebar(data_loader):
 
         st.markdown("")
 
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.markdown(
-                metric_card_html(dist.get("HIGH_RISK", 0), "Hög"),
-                unsafe_allow_html=True,
-            )
-        with col2:
-            st.markdown(
-                metric_card_html(dist.get("MEDIUM_RISK", 0), "Medel"),
-                unsafe_allow_html=True,
-            )
-        with col3:
-            st.markdown(
-                metric_card_html(dist.get("LOW_RISK", 0), "Låg"),
-                unsafe_allow_html=True,
-            )
+        high_count = dist.get("HIGH_RISK", 0)
+        med_count = dist.get("MEDIUM_RISK", 0)
+        low_count = dist.get("LOW_RISK", 0)
+
+        if med_count > 0:
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.markdown(
+                    metric_card_html(high_count, "Hög"),
+                    unsafe_allow_html=True,
+                )
+            with col2:
+                st.markdown(
+                    metric_card_html(med_count, "Medel"),
+                    unsafe_allow_html=True,
+                )
+            with col3:
+                st.markdown(
+                    metric_card_html(low_count, "Låg"),
+                    unsafe_allow_html=True,
+                )
+        else:
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown(
+                    metric_card_html(high_count, "Hög risk"),
+                    unsafe_allow_html=True,
+                )
+            with col2:
+                st.markdown(
+                    metric_card_html(low_count, "Låg risk"),
+                    unsafe_allow_html=True,
+                )
 
         st.markdown("---")
         st.markdown(
-            "**Modell**: KB-BERT fine-tuned (fold_4)  \n"
+            "**Modell**: KB-BERT binary (DAPT + fine-tuned)  \n"
+            "**Precision**: 80% accuracy, 100% HIGH recall  \n"
             "**Sökning**: MiniLM multilingual  \n"
             f"**Data**: {total_labeled} klassificerade av {total_all} beslut"
         )
@@ -157,6 +177,8 @@ def main():
     # Initialize
     SharedContext.initialize()
     chat_handler, search_handler, data_loader = init_backend()
+    if chat_handler is None:
+        return
 
     # Header
     st.markdown(

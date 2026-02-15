@@ -28,7 +28,7 @@ def render_search_mode(search_handler):
             label_visibility="collapsed",
         )
     with col2:
-        search_clicked = st.button("Sök", type="primary", use_container_width=True)
+        search_clicked = st.button("Sök", type="primary", width="stretch")
 
     # Filters sidebar
     render_filters_sidebar(search_handler)
@@ -82,7 +82,7 @@ def render_filters_sidebar(search_handler):
         SharedContext.set_filters(label=label_filter, court=court_filter)
 
         # Clear filters button
-        if st.button("Rensa filter", use_container_width=True):
+        if st.button("Rensa filter", width="stretch"):
             SharedContext.clear_filters()
             st.rerun()
 
@@ -230,8 +230,8 @@ def render_prediction_detail(prediction):
 
     # Probability bars
     st.markdown("#### Sannolikheter")
-    for label_name in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
-        prob = prediction.probabilities.get(label_name, 0)
+    for label_name in prediction.probabilities:
+        prob = prediction.probabilities[label_name]
         css_class = RISK_BADGE_CSS.get(label_name, "")
         label_sv = RISK_LABELS_SV.get(label_name, label_name)
         width = max(int(prob * 100), 1)

@@ -44,7 +44,7 @@ def render_quick_actions(chat_handler):
             if st.button(
                 f"{action['icon']} {action['label']}",
                 key=f"qa_{action['label']}",
-                use_container_width=True,
+                width="stretch",
             ):
                 # Process quick action
                 with st.chat_message("user"):

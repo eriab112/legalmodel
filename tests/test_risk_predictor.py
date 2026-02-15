@@ -20,8 +20,8 @@ from backend.risk_predictor import (
 
 class TestSoftmax:
     def test_uniform_logits(self):
-        result = _softmax(np.array([0.0, 0.0, 0.0]))
-        np.testing.assert_allclose(result, [1 / 3, 1 / 3, 1 / 3], atol=1e-7)
+        result = _softmax(np.array([0.0, 0.0]))
+        np.testing.assert_allclose(result, [0.5, 0.5], atol=1e-7)
 
     def test_dominant_class(self):
         result = _softmax(np.array([10.0, 0.0, 0.0]))
@@ -49,14 +49,14 @@ class TestSoftmax:
 
 class TestLabelMapping:
     def test_label_map_keys(self):
-        assert set(LABEL_MAP.keys()) == {"HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"}
+        assert set(LABEL_MAP.keys()) == {"HIGH_RISK", "LOW_RISK"}
 
     def test_id2label_roundtrip(self):
         for name, idx in LABEL_MAP.items():
             assert ID2LABEL[idx] == name
 
     def test_num_labels(self):
-        assert NUM_LABELS == 3
+        assert NUM_LABELS == 2
 
 
 # ---------------------------------------------------------------------------
@@ -79,20 +79,20 @@ class TestPredictionResult:
     def test_creation(self):
         pr = PredictionResult(
             predicted_label="HIGH_RISK",
-            probabilities={"HIGH_RISK": 0.7, "MEDIUM_RISK": 0.2, "LOW_RISK": 0.1},
-            confidence=0.7,
+            probabilities={"HIGH_RISK": 0.8, "LOW_RISK": 0.2},
+            confidence=0.8,
             num_chunks=3,
             chunk_predictions=[],
         )
         assert pr.predicted_label == "HIGH_RISK"
-        assert pr.confidence == 0.7
-        assert pr.num_chunks == 3
+        assert pr.confidence == 0.8
+        assert len(pr.probabilities) == 2
         assert pr.ground_truth is None
 
     def test_with_ground_truth(self):
         pr = PredictionResult(
             predicted_label="LOW_RISK",
-            probabilities={"HIGH_RISK": 0.1, "MEDIUM_RISK": 0.1, "LOW_RISK": 0.8},
+            probabilities={"HIGH_RISK": 0.2, "LOW_RISK": 0.8},
             confidence=0.8,
             num_chunks=1,
             chunk_predictions=[],

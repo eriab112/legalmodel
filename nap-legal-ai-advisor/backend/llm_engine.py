@@ -7,6 +7,8 @@ from typing import Any, Dict, Generator, List, Optional
 
 import google.generativeai as genai
 
+from utils.timing import timed
+
 SYSTEM_PROMPT = """Du är en AI-expert på svensk miljörätt, specifikt inom området Nationella planen för moderna miljövillkor (NAP) för vattenkraft.
 
 Du har tillgång till en kunskapsbas med domstolsbeslut, lagstiftning, riktlinjer och ansökningar relaterade till vattenkraft och miljöanpassning i Sverige.
@@ -79,17 +81,20 @@ class GeminiEngine:
         api_key = os.getenv("GEMINI_API_KEY")
         if not api_key:
             raise ValueError("GEMINI_API_KEY environment variable not set")
-        genai.configure(api_key=api_key)
-        model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
+        # REST transport: API calls use HTTPS (patched by ssl_fix), not gRPC — works behind corporate proxy
+        genai.configure(api_key=api_key, transport="rest")
+        self.model_name = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
         self._model = genai.GenerativeModel(
-            model_name=model_name,
+            model_name=self.model_name,
             system_instruction=SYSTEM_PROMPT,
         )
         self._chat_sessions: Dict[str, Any] = {}  # for conversation memory later
-        print(f"GeminiEngine initialized with model: {model_name}")
+        print(f"GeminiEngine initialized with model: {self.model_name}")
 
+    @timed("llm.generate_response")
     def generate_response(
-        self, query: str, context: str, sources: List[Dict]
+        self, query: str, context: str, sources: List[Dict],
+        system_prompt_override: Optional[str] = None,
     ) -> str:
         """Generate a response using Gemini with RAG context.
 
@@ -97,6 +102,7 @@ class GeminiEngine:
             query: User's question
             context: Formatted context from format_context()
             sources: Source metadata list from format_context()
+            system_prompt_override: If provided, use this system instruction instead of the default
         Returns:
             Generated response text
         """
@@ -108,7 +114,14 @@ class GeminiEngine:
 Användarens fråga: {query}
 """
         try:
-            response = self._model.generate_content(prompt)
+            if system_prompt_override:
+                temp_model = genai.GenerativeModel(
+                    model_name=self.model_name,
+                    system_instruction=system_prompt_override,
+                )
+                response = temp_model.generate_content(prompt)
+            else:
+                response = self._model.generate_content(prompt)
             if response.text is None:
                 return "Tyvärr kunde jag inte generera ett svar just nu. Försök igen senare. (Inget svar från modellen)"
             return response.text

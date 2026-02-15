@@ -1,8 +1,8 @@
 """
 Data loading and merging for NAP Legal AI Advisor.
 
-Merges labeled_dataset.json (40 labeled decisions) with
-cleaned_court_texts.json (46 total decisions) and linkage_table.json.
+Merges labeled_dataset_binary.json (44 labeled decisions) with
+cleaned_court_texts.json (50 total decisions) and linkage_table.json.
 """
 
 import json
@@ -16,6 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DATA_DIR = BASE_DIR / "Data" / "processed"
 
 LABELED_PATH = DATA_DIR / "labeled_dataset.json"
+BINARY_LABELED_PATH = DATA_DIR / "labeled_dataset_binary.json"
 CLEANED_PATH = DATA_DIR / "cleaned_court_texts.json"
 LINKAGE_PATH = DATA_DIR / "linkage_table.json"
 LEGISLATION_PATH = DATA_DIR / "lagtiftning_texts.json"
@@ -59,14 +60,16 @@ class DataLoader:
         self._label_distribution: Dict[str, int] = {}
         self._load_all()
 
-    def _load_all(self):
+    def _load_all(self) -> None:
+        """Load and merge all data sources into DecisionRecord objects."""
         # Load cleaned texts (46 decisions - full text + sections)
         with open(CLEANED_PATH, "r", encoding="utf-8") as f:
             cleaned_data = json.load(f)
         cleaned_by_id = {d["id"]: d for d in cleaned_data["decisions"]}
 
-        # Load labeled dataset (40 decisions - labels + scoring)
-        with open(LABELED_PATH, "r", encoding="utf-8") as f:
+        # Prefer binary labels if available
+        labeled_path = BINARY_LABELED_PATH if BINARY_LABELED_PATH.exists() else LABELED_PATH
+        with open(labeled_path, "r", encoding="utf-8") as f:
             labeled_data = json.load(f)
 
         self._label_distribution = labeled_data.get("label_distribution", {})
@@ -136,21 +139,27 @@ class DataLoader:
             self._decisions[dec_id] = record
 
     def get_all_decisions(self) -> List[DecisionRecord]:
+        """Return all decisions (labeled and unlabeled)."""
         return list(self._decisions.values())
 
     def get_decision(self, dec_id: str) -> Optional[DecisionRecord]:
+        """Return a single decision by ID, or None if not found."""
         return self._decisions.get(dec_id)
 
     def get_labeled_decisions(self) -> List[DecisionRecord]:
+        """Return only decisions that have a risk label."""
         return [d for d in self._decisions.values() if d.label is not None]
 
     def get_decisions_by_label(self, label: str) -> List[DecisionRecord]:
+        """Return decisions matching the given risk label."""
         return [d for d in self._decisions.values() if d.label == label]
 
     def get_label_distribution(self) -> Dict[str, int]:
+        """Return label distribution from the dataset metadata."""
         return self._label_distribution
 
     def get_measure_frequency(self) -> Dict[str, int]:
+        """Return measure frequency counts sorted by frequency."""
         freq = {}
         for d in self.get_labeled_decisions():
             measures = []
@@ -163,6 +172,7 @@ class DataLoader:
         return dict(sorted(freq.items(), key=lambda x: -x[1]))
 
     def get_courts(self) -> List[str]:
+        """Return sorted list of unique court names."""
         courts = set()
         for d in self.get_labeled_decisions():
             court = d.metadata.get("court", "")
@@ -170,7 +180,8 @@ class DataLoader:
                 courts.add(court)
         return sorted(courts)
 
-    def get_date_range(self):
+    def get_date_range(self) -> tuple[Optional[str], Optional[str]]:
+        """Return (min_date, max_date) from labeled decisions."""
         dates = []
         for d in self.get_labeled_decisions():
             date = d.metadata.get("date", "")
@@ -199,11 +210,13 @@ class KnowledgeBase:
         stem = Path(filename).stem
         return stem.replace(" ", "_").lower()
 
-    def _load_all(self):
-        # Build label lookup from labeled_dataset.json
+    def _load_all(self) -> None:
+        """Load all document types into the knowledge base."""
+        # Build label lookup — prefer binary labels if available
+        labeled_path = BINARY_LABELED_PATH if BINARY_LABELED_PATH.exists() else LABELED_PATH
         label_by_id: Dict[str, str] = {}
-        if LABELED_PATH.exists():
-            with open(LABELED_PATH, "r", encoding="utf-8") as f:
+        if labeled_path.exists():
+            with open(labeled_path, "r", encoding="utf-8") as f:
                 labeled_data = json.load(f)
             for split_name in ["train", "val", "test"]:
                 for item in labeled_data.get("splits", {}).get(split_name, []):
@@ -306,15 +319,19 @@ class KnowledgeBase:
         )
 
     def get_all_documents(self) -> List[DocumentRecord]:
+        """Return all documents in the knowledge base."""
         return list(self._documents)
 
     def get_documents_by_type(self, doc_type: str) -> List[DocumentRecord]:
+        """Return documents filtered by type (decision, legislation, application)."""
         return [d for d in self._documents if d.doc_type == doc_type]
 
     def get_document(self, doc_id: str) -> Optional[DocumentRecord]:
+        """Return a single document by ID, or None if not found."""
         return self._by_id.get(doc_id)
 
-    def get_corpus_stats(self) -> Dict:
+    def get_corpus_stats(self) -> Dict[str, int]:
+        """Return document count per type and total."""
         counts = {}
         for d in self._documents:
             counts[d.doc_type] = counts.get(d.doc_type, 0) + 1
