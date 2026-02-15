@@ -1,6 +1,7 @@
 """Tests for backend.rag_system — intent routing, formatting, keyword matching."""
 
 import pytest
+from collections import Counter
 from unittest.mock import MagicMock
 
 from backend.rag_system import RAGSystem, RISK_LABELS_SV, RISK_EMOJI, _matches, _matches_word
@@ -48,13 +49,13 @@ def rag():
 
     decisions = [
         _make_decision(id="m1-22", label="HIGH_RISK",
-                       metadata={"court": "Nacka TR", "date": "2024-01-10", "case_number": "M 1-22"},
+                       metadata={"court": "Nacka TR", "date": "2024-01-10", "case_number": "M 1-22", "processing_time_days": 100, "application_outcome": "granted"},
                        scoring_details={"outcome_desc": "Tillstånd", "domslut_measures": ["Fiskväg"], "max_cost_sek": 500000}),
         _make_decision(id="m2-22", label="LOW_RISK",
-                       metadata={"court": "Växjö TR", "date": "2023-06-01", "case_number": "M 2-22"},
+                       metadata={"court": "Växjö TR", "date": "2023-06-01", "case_number": "M 2-22", "processing_time_days": 50, "application_outcome": "denied"},
                        scoring_details={"outcome_desc": "Avslag", "domslut_measures": ["Minimitappning"]}),
         _make_decision(id="m3-22", label="LOW_RISK",
-                       metadata={"court": "Nacka TR", "date": "2024-03-20", "case_number": "M 3-22"},
+                       metadata={"court": "Nacka TR", "date": "2024-03-20", "case_number": "M 3-22", "processing_time_days": 75, "application_outcome": "granted"},
                        scoring_details={"outcome_desc": "Tillstånd", "domslut_measures": []}),
     ]
 
@@ -66,6 +67,12 @@ def rag():
     data_loader.get_courts.return_value = ["Nacka TR", "Växjö TR"]
     data_loader.get_date_range.return_value = ("2023-06-01", "2024-03-20")
     data_loader.get_decision.side_effect = lambda did: next((d for d in decisions if d.id == did), None)
+    data_loader.get_outcomes_by_court.return_value = {
+        "Nacka TR": Counter({"granted": 2, "denied": 1}),
+        "Växjö TR": Counter({"denied": 1, "appeal_denied": 1}),
+    }
+    data_loader.get_outcome_distribution.return_value = Counter({"granted": 2, "denied": 2})
+    data_loader.get_processing_times.return_value = [("M 1-22", 100), ("M 2-22", 50), ("M 3-22", 75)]
 
     search_engine.search.return_value = []
 
@@ -125,6 +132,30 @@ class TestIntentRouting:
         response = rag.generate_response("Berätta om Ume älv")
         assert "Inga relevanta" in response or "Sökresultat" in response
 
+    def test_case_number_query_uses_direct_lookup(self, rag):
+        """When user asks about a specific case number, use direct data lookup."""
+        rag.llm = MagicMock()
+        rag.llm.generate_response.return_value = "Svar om mål m1-22"
+        rag.search.find_similar_decisions.return_value = []
+        response = rag.generate_response("vad hände i m1-22")
+        # Should use direct lookup, not fall through to search
+        rag.data.get_decision.assert_called()
+
+    def test_recent_decisions_with_court_filter(self, rag):
+        response = rag.generate_response("senaste besluten vid växjö")
+        assert "Växjö" in response
+
+    def test_recent_decisions_with_count(self, rag):
+        response = rag.generate_response("3 senaste besluten")
+        # Should contain at most 3 decision lines (each line has **M x-22**)
+        bullet_lines = [l for l in response.split("\n") if l.strip().startswith("- ") and "**M " in l]
+        assert len(bullet_lines) <= 3
+
+    def test_rankings_denial_rate(self, rag):
+        response = rag.generate_response("vilken domstol nekar flest")
+        assert "avslag" in response or "nekande" in response
+        assert "Nacka" in response or "Växjö" in response
+
 
 # ---------------------------------------------------------------------------
 # Formatting
@@ -143,7 +174,7 @@ class TestFormatting:
         assert "3" in response  # total still 3 decisions
 
     def test_measures_empty(self, rag):
-        rag.data.get_measure_frequency.return_value = {}
+        rag.data.get_labeled_decisions.return_value = []
         response = rag._format_measures()
         assert "Inga åtgärder" in response
 
@@ -164,6 +195,137 @@ class TestFormatting:
         rag.search.search.return_value = []
         response = rag._format_search_response("test query")
         assert "Inga relevanta" in response
+
+
+# ---------------------------------------------------------------------------
+# New intent handlers (outcomes, processing times, power plants, watercourses)
+# ---------------------------------------------------------------------------
+
+class TestNewIntentHandlers:
+    def test_outcome_query(self, rag):
+        response = rag.generate_response("Visa utfallsfördelning")
+        assert "Utfall" in response or "granted" in response
+
+    def test_processing_time_query(self, rag):
+        response = rag.generate_response("Hur lång handläggningstid?")
+        assert "Handläggningstider" in response or "dagar" in response
+
+    def test_power_plant_query(self, rag):
+        rag.data.get_power_plants.return_value = [("M 1-22", "Stora Mölla")]
+        response = rag.generate_response("Vilka kraftverk finns?")
+        assert "Kraftverk" in response or "Stora Mölla" in response
+
+    def test_power_plant_empty(self, rag):
+        rag.data.get_power_plants.return_value = []
+        response = rag._format_power_plants()
+        assert "Ingen kraftverksinformation" in response
+
+    def test_watercourse_query(self, rag):
+        rag.data.get_watercourses.return_value = ["Ume älv", "Testeboån"]
+        response = rag.generate_response("Vilka vattendrag?")
+        assert "Vattendrag" in response or "Ume" in response
+
+    def test_watercourse_empty(self, rag):
+        rag.data.get_watercourses.return_value = []
+        response = rag._format_watercourses()
+        assert "Ingen vattendragsinformation" in response
+
+    def test_processing_time_format(self, rag):
+        response = rag._format_processing_times()
+        assert "Handläggningstider" in response
+        assert "dagar" in response
+
+    def test_processing_time_empty(self, rag):
+        rag.data.get_all_decisions.return_value = []
+        response = rag._format_processing_times()
+        assert "Ingen handläggningstidsdata" in response
+
+    def test_outcome_format(self, rag):
+        response = rag._format_outcomes()
+        assert "Utfall" in response
+
+    def test_outcome_empty(self, rag):
+        rag.data.get_outcome_distribution.return_value = Counter()
+        response = rag._format_outcomes()
+        assert "Ingen utfallsdata" in response
+
+    def test_rankings_measure(self, rag):
+        response = rag._format_rankings("vanligaste åtgärd")
+        assert "åtgärder" in response.lower() or "Ranking" in response
+
+    def test_rankings_cost(self, rag):
+        response = rag._format_rankings("dyraste kostnad")
+        assert "Ranking" in response or "Dyraste" in response
+
+    def test_cost_with_filters(self, rag):
+        response = rag.generate_response("Vad kostar fiskväg i kronor vid Nacka?")
+        assert "Kostnad" in response or "kr" in response
+
+    def test_statistics_with_court_filter(self, rag):
+        response = rag.generate_response("Visa statistik vid Nacka")
+        assert "Statistik" in response and "Nacka" in response
+
+    def test_recent_with_risk_filter(self, rag):
+        response = rag.generate_response("senaste besluten med hög risk")
+        assert "Senaste" in response or "Hög risk" in response
+
+
+# ---------------------------------------------------------------------------
+# Filter extraction helpers
+# ---------------------------------------------------------------------------
+
+class TestFilterExtraction:
+    def test_extract_court_filter(self):
+        from backend.rag_system import _extract_court_filter
+        assert _extract_court_filter("beslut vid Nacka") == "Nacka"
+        assert _extract_court_filter("Växjö domstol") == "Växjö"
+        assert _extract_court_filter("inget relevant") is None
+
+    def test_extract_count(self):
+        from backend.rag_system import _extract_count
+        assert _extract_count("3 senaste") == 3
+        assert _extract_count("10 senaste") == 10
+        assert _extract_count("senaste besluten") == 5  # default
+
+    def test_extract_outcome_filter(self):
+        from backend.rag_system import _extract_outcome_filter
+        assert _extract_outcome_filter("nekade beslut") == "denied"
+        assert _extract_outcome_filter("beviljat tillstånd") == "granted"
+        assert _extract_outcome_filter("inget") is None
+
+    def test_extract_measure_filter(self):
+        from backend.rag_system import _extract_measure_filter
+        assert _extract_measure_filter("fiskväg") == "fiskväg"
+        assert _extract_measure_filter("minimitappning") == "minimitappning"
+        assert _extract_measure_filter("inget") is None
+
+    def test_extract_risk_filter(self):
+        from backend.rag_system import _extract_risk_filter
+        assert _extract_risk_filter("hög risk beslut") == "HIGH_RISK"
+        assert _extract_risk_filter("låg risk") == "LOW_RISK"
+        assert _extract_risk_filter("inget") is None
+
+    def test_apply_filters_by_court(self):
+        from backend.rag_system import _apply_filters
+        from tests.conftest import _make_decision
+        decisions = [
+            _make_decision(id="m1", metadata={"court": "Nacka TR", "date": "2024-01-01", "case_number": "M 1"}),
+            _make_decision(id="m2", metadata={"court": "Växjö TR", "date": "2024-01-01", "case_number": "M 2"}),
+        ]
+        filtered = _apply_filters(decisions, court_filter="Nacka")
+        assert len(filtered) == 1
+        assert filtered[0].id == "m1"
+
+    def test_apply_filters_by_outcome(self):
+        from backend.rag_system import _apply_filters
+        from tests.conftest import _make_decision
+        decisions = [
+            _make_decision(id="m1", metadata={"court": "Nacka TR", "date": "2024-01-01", "case_number": "M 1", "application_outcome": "denied"}),
+            _make_decision(id="m2", metadata={"court": "Växjö TR", "date": "2024-01-01", "case_number": "M 2", "application_outcome": "granted"}),
+        ]
+        denied = _apply_filters(decisions, outcome_filter="denied")
+        assert len(denied) == 1
+        assert denied[0].id == "m1"
 
 
 # ---------------------------------------------------------------------------

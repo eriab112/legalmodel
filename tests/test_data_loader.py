@@ -193,3 +193,134 @@ class TestDataLoader:
         assert d1.split == "train"
         d3 = loader.get_decision("m3")
         assert d3.split == "val"
+
+
+# ---------------------------------------------------------------------------
+# New metadata query methods
+# ---------------------------------------------------------------------------
+
+class TestMetadataQueries:
+    """Tests for outcome, power plant, watercourse, and processing time queries."""
+
+    @pytest.fixture
+    def loader_with_metadata(self):
+        decisions = [
+            {
+                "id": "m1",
+                "metadata": {
+                    "court": "Nacka Mark- och miljödomstol",
+                    "date": "2024-01-10",
+                    "application_outcome": "granted",
+                    "power_plant_name": "Stora Mölla",
+                    "watercourse": "Pinnån",
+                    "processing_time_days": 365,
+                },
+            },
+            {
+                "id": "m2",
+                "metadata": {
+                    "court": "Växjö Mark- och miljödomstol",
+                    "date": "2023-06-01",
+                    "application_outcome": "denied",
+                    "power_plant_name": "Lilla Kvarn",
+                    "watercourse": "Pinnån",
+                    "processing_time_days": 200,
+                },
+            },
+            {
+                "id": "m3",
+                "metadata": {
+                    "court": "Mark- och miljööverdomstolen (MÖD)",
+                    "date": "2024-03-20",
+                    "application_outcome": "appeal_denied",
+                    "power_plant_name": None,
+                    "watercourse": "Testeboån",
+                    "processing_time_days": None,
+                },
+            },
+            {
+                "id": "m4",
+                "metadata": {
+                    "court": "Nacka Mark- och miljödomstol",
+                    "date": "2022-12-01",
+                    "application_outcome": "granted",
+                    "power_plant_name": "Bredforsen",
+                    "watercourse": None,
+                    "processing_time_days": 500,
+                },
+            },
+        ]
+        splits = {
+            "train": [
+                {"id": "m1", "label": "HIGH_RISK", "key_text": "t1",
+                 "metadata": decisions[0]["metadata"], "scoring_details": {}},
+                {"id": "m2", "label": "LOW_RISK", "key_text": "t2",
+                 "metadata": decisions[1]["metadata"], "scoring_details": {}},
+            ],
+            "val": [
+                {"id": "m3", "label": "LOW_RISK", "key_text": "t3",
+                 "metadata": decisions[2]["metadata"], "scoring_details": {}},
+            ],
+            "test": [],
+        }
+        label_dist = {"HIGH_RISK": 1, "LOW_RISK": 2}
+        return _create_loader(decisions, splits, label_dist)
+
+    def test_get_outcome_distribution(self, loader_with_metadata):
+        dist = loader_with_metadata.get_outcome_distribution()
+        assert dist["granted"] == 2
+        assert dist["denied"] == 1
+        assert dist["appeal_denied"] == 1
+
+    def test_get_outcomes_by_court(self, loader_with_metadata):
+        by_court = loader_with_metadata.get_outcomes_by_court()
+        # MÖD should be recognized
+        assert "MÖD" in by_court
+        assert by_court["MÖD"]["appeal_denied"] == 1
+
+    def test_get_power_plants(self, loader_with_metadata):
+        plants = loader_with_metadata.get_power_plants()
+        names = [name for _, name in plants]
+        assert "Stora Mölla" in names
+        assert "Lilla Kvarn" in names
+        assert "Bredforsen" in names
+        # m3 has None, should be excluded
+        assert len(plants) == 3
+
+    def test_get_watercourses(self, loader_with_metadata):
+        wcs = loader_with_metadata.get_watercourses()
+        assert "Pinnån" in wcs
+        assert "Testeboån" in wcs
+        # Should be unique
+        assert len(wcs) == 2
+
+    def test_get_processing_times(self, loader_with_metadata):
+        times = loader_with_metadata.get_processing_times()
+        cases = [case for case, _ in times]
+        days = [d for _, d in times]
+        assert len(times) == 3  # m3 has None, excluded
+        assert 365 in days
+        assert 200 in days
+        assert 500 in days
+
+    def test_get_outcome_distribution_empty(self):
+        """No outcomes set: should return empty Counter."""
+        decisions = [{"id": "m1", "metadata": {"court": "Test"}}]
+        splits = {"train": [], "val": [], "test": []}
+        loader = _create_loader(decisions, splits)
+        dist = loader.get_outcome_distribution()
+        assert len(dist) == 0
+
+    def test_get_watercourses_empty(self):
+        decisions = [{"id": "m1", "metadata": {"court": "Test"}}]
+        splits = {"train": [], "val": [], "test": []}
+        loader = _create_loader(decisions, splits)
+        wcs = loader.get_watercourses()
+        assert wcs == []
+
+    def test_get_processing_times_empty(self):
+        decisions = [{"id": "m1", "metadata": {"court": "Test"}}]
+        splits = {"train": [], "val": [], "test": []}
+        loader = _create_loader(decisions, splits)
+        times = loader.get_processing_times()
+        assert times == []

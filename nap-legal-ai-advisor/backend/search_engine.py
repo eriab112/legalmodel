@@ -254,8 +254,11 @@ class SemanticSearchEngine:
         for i, chunk in enumerate(self._chunks):
             if label_filter and chunk["label"] != label_filter:
                 mask[i] = False
-            if court_filter and chunk["metadata"].get("court", "") != court_filter:
-                mask[i] = False
+            if court_filter:
+                court = chunk["metadata"].get("court", "")
+                orig_court = chunk["metadata"].get("originating_court", "")
+                if court_filter not in court and court_filter not in orig_court:
+                    mask[i] = False
             if date_from and chunk["metadata"].get("date", "") < date_from:
                 mask[i] = False
             if date_to and chunk["metadata"].get("date", "") > date_to:

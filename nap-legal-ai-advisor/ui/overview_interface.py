@@ -3,15 +3,46 @@ Overview dashboard for NAP Legal AI Advisor.
 Shows key metrics, charts, and system status at a glance.
 """
 
+import statistics
+
 import streamlit as st
 import plotly.graph_objects as go
-import pandas as pd
+from collections import Counter
+
+
+# Outcome color mapping (EN key -> color)
+_OUTCOME_COLORS = {
+    "granted": "#16A34A",
+    "granted_modified": "#16A34A",
+    "conditions_changed": "#3B82F6",
+    "denied": "#DC2626",
+    "appeal_denied": "#DC2626",
+    "remanded": "#F59E0B",
+    "overturned": "#F59E0B",
+    "unclear": "#6B7280",
+}
+
+# Canonical display order for stacked bar legend
+_OUTCOME_ORDER = [
+    "granted",
+    "granted_modified",
+    "conditions_changed",
+    "denied",
+    "appeal_denied",
+    "remanded",
+    "overturned",
+    "unclear",
+]
+
+
+def _outcome_color(outcome_key: str) -> str:
+    return _OUTCOME_COLORS.get(outcome_key, "#6B7280")
 
 
 def render_overview(data_loader, knowledge_base=None):
     """Render the overview dashboard."""
 
-    # --- Top metrics row ---
+    # --- Row 1: Key metrics (5 cards) ---
     if knowledge_base:
         stats = knowledge_base.get_corpus_stats()
         total_docs = stats.get("total", 0)
@@ -30,7 +61,14 @@ def render_overview(data_loader, knowledge_base=None):
     else:
         date_range_str = "\u2014"
 
-    col1, col2, col3, col4 = st.columns(4)
+    proc_times = data_loader.get_processing_times()
+    if proc_times:
+        avg_days = int(statistics.mean(t[1] for t in proc_times))
+        avg_proc_str = f"{avg_days} dagar"
+    else:
+        avg_proc_str = "\u2014"
+
+    col1, col2, col3, col4, col5 = st.columns(5)
     with col1:
         st.metric("Dokument i kunskapsbas", total_docs)
     with col2:
@@ -39,10 +77,12 @@ def render_overview(data_loader, knowledge_base=None):
         st.metric("Domstolar", len(courts))
     with col4:
         st.metric("Datumintervall", date_range_str)
+    with col5:
+        st.metric("Snitt handläggningstid", avg_proc_str)
 
     st.markdown("")
 
-    # --- Two-column chart row ---
+    # --- Row 2: Risk distribution pie + Outcome by court stacked bar ---
     chart_left, chart_right = st.columns(2)
 
     with chart_left:
@@ -74,31 +114,72 @@ def render_overview(data_loader, knowledge_base=None):
         st.plotly_chart(fig, width="stretch")
 
     with chart_right:
-        decisions = data_loader.get_labeled_decisions()
-        court_counts = {}
-        for d in decisions:
-            court = d.metadata.get("originating_court") or d.metadata.get("court", "Okänd")
-            court_counts[court] = court_counts.get(court, 0) + 1
+        # Build EN->SV outcome label lookup
+        all_decisions = data_loader.get_all_decisions()
+        outcome_en_to_sv = {}
+        for d in all_decisions:
+            en = d.metadata.get("application_outcome")
+            sv = d.metadata.get("application_outcome_sv")
+            if en and sv:
+                outcome_en_to_sv[en] = sv
 
-        sorted_courts = sorted(court_counts.items(), key=lambda x: x[1], reverse=True)
-        court_names = [c[0] for c in sorted_courts]
-        court_values = [c[1] for c in sorted_courts]
+        # Outcomes by court – stacked bar chart
+        outcomes_by_court = data_loader.get_outcomes_by_court()
+        if outcomes_by_court:
+            all_outcomes_in_data = set()
+            for ctr in outcomes_by_court.values():
+                all_outcomes_in_data.update(ctr.keys())
 
-        fig = go.Figure(data=[go.Bar(
-            x=court_values,
-            y=court_names,
-            orientation="h",
-            marker_color="#1E3A8A",
-        )])
-        fig.update_layout(
-            title="Beslut per domstol",
-            height=350,
-            margin=dict(t=40, b=20, l=20, r=120),
-            yaxis=dict(autorange="reversed"),
-        )
-        st.plotly_chart(fig, width="stretch")
+            court_totals = {
+                c: sum(ctr.values()) for c, ctr in outcomes_by_court.items()
+            }
+            sorted_court_names = sorted(
+                court_totals, key=court_totals.get, reverse=True
+            )
 
-    # --- Corpus composition ---
+            fig = go.Figure()
+            for outcome_key in _OUTCOME_ORDER:
+                if outcome_key not in all_outcomes_in_data:
+                    continue
+                sv_label = outcome_en_to_sv.get(outcome_key, outcome_key)
+                counts = [
+                    outcomes_by_court[c].get(outcome_key, 0)
+                    for c in sorted_court_names
+                ]
+                fig.add_trace(go.Bar(
+                    name=sv_label,
+                    x=sorted_court_names,
+                    y=counts,
+                    marker_color=_outcome_color(outcome_key),
+                ))
+
+            fig.update_layout(
+                title="Utfall per domstol",
+                barmode="stack",
+                height=350,
+                margin=dict(t=40, b=20, l=20, r=20),
+                legend=dict(orientation="h", yanchor="bottom", y=-0.35),
+            )
+            st.plotly_chart(fig, width="stretch")
+        else:
+            st.info("Inga utfallsdata per domstol tillgängliga.")
+
+    # --- Row 3: Model performance (compact single row) ---
+    st.markdown("### Modellprestanda")
+    perf_col1, perf_col2, perf_col3, perf_col4 = st.columns(4)
+    with perf_col1:
+        st.metric("Accuracy", "80%")
+    with perf_col2:
+        st.metric("Hög risk recall", "100%")
+    with perf_col3:
+        st.metric("F1 (macro)", "0.80")
+    with perf_col4:
+        st.metric("Träningsdata", "44 beslut")
+    st.caption("DAPT + fine-tuned KB-BERT på svenska miljödomstolsbeslut. Binär klassificering (Hög/Låg risk).")
+
+    st.markdown("")
+
+    # --- Row 4: Corpus composition ---
     if knowledge_base:
         st.markdown("### Kunskapsbas")
         stats = knowledge_base.get_corpus_stats()
@@ -112,76 +193,3 @@ def render_overview(data_loader, knowledge_base=None):
         with kb_col3:
             st.metric("Ansökningar", stats.get("application", 0))
             st.caption("tillståndsansökningar")
-
-    st.markdown("")
-
-    # --- Model performance ---
-    st.markdown("### Modellprestanda")
-    perf_col1, perf_col2, perf_col3, perf_col4 = st.columns(4)
-    with perf_col1:
-        st.metric("Accuracy", "80%")
-    with perf_col2:
-        st.metric("Hög risk recall", "100%")
-    with perf_col3:
-        st.metric("F1 (macro)", "0.80")
-    with perf_col4:
-        st.metric("Träningsdata", "44 beslut")
-    st.caption("DAPT + fine-tuned KB-BERT på svenska miljödomstolsbeslut. Binär klassificering (Hög/Låg risk).")
-
-    # --- Recent decisions table ---
-    st.markdown("### Senaste klassificerade beslut")
-    labeled = data_loader.get_labeled_decisions()
-    labeled_sorted = sorted(
-        labeled,
-        key=lambda d: d.metadata.get("date", ""),
-        reverse=True,
-    )[:10]
-
-    risk_sv = {
-        "HIGH_RISK": "Hög risk",
-        "MEDIUM_RISK": "Medelrisk",
-        "LOW_RISK": "Låg risk",
-    }
-
-    rows = []
-    for d in labeled_sorted:
-        rows.append({
-            "Målnummer": d.metadata.get("case_number", d.id),
-            "Domstol": d.metadata.get("court", ""),
-            "Datum": d.metadata.get("date", ""),
-            "Risknivå": risk_sv.get(d.label, d.label or ""),
-        })
-
-    if rows:
-        df = pd.DataFrame(rows)
-        st.dataframe(df, width="stretch", hide_index=True)
-    else:
-        st.info("Inga klassificerade beslut tillgängliga.")
-
-    st.markdown("")
-
-    # --- Measures frequency ---
-    st.markdown("### Vanligaste åtgärder")
-    measure_freq = data_loader.get_measure_frequency()
-    _exclude = {"kontrollprogram", "skyddsgaller"}
-    measure_freq = {k: v for k, v in measure_freq.items() if k not in _exclude}
-    top_measures = dict(list(measure_freq.items())[:10])
-
-    if top_measures:
-        measure_names = list(top_measures.keys())
-        measure_values = list(top_measures.values())
-
-        fig = go.Figure(data=[go.Bar(
-            x=measure_values,
-            y=measure_names,
-            orientation="h",
-            marker_color="#0D9488",
-        )])
-        fig.update_layout(
-            height=max(350, len(measure_names) * 35),
-            margin=dict(t=20, b=20, l=20, r=20),
-            yaxis=dict(autorange="reversed"),
-        )
-        st.plotly_chart(fig, width="stretch")
-    else:
-        st.info("Inga åtgärder tillgängliga.")

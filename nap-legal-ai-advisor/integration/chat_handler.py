@@ -37,6 +37,11 @@ QUICK_ACTIONS = [
         "query": "Analysera M 3753-22",
         "icon": "🎯",
     },
+    {
+        "label": "Utfall",
+        "query": "Visa utfallsfördelning",
+        "icon": "📋",
+    },
 ]
 
 WELCOME_MESSAGE = """Hej! Jag är NAP Legal AI Advisor \u2013 ett AI-drivet beslutsstöd för vattenkraftens miljöanpassning.

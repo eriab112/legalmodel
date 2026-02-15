@@ -104,7 +104,7 @@ class TestChatHandler:
 
     def test_get_quick_actions(self, handler):
         actions = handler.get_quick_actions()
-        assert len(actions) == 5
+        assert len(actions) == 6
         assert all("label" in a and "query" in a for a in actions)
 
     def test_get_welcome_message(self, handler):

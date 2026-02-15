@@ -165,7 +165,7 @@ legalmodel/
 
 ## Tester
 
-Testsviten innehåller **132 enhetstester** (exklusive 2 slow-markerade) med mockade modeller och Streamlit-stub — varken GPU eller datafiler krävs.
+Testsviten innehåller **167 enhetstester** (exklusive 2 slow-markerade) med mockade modeller och Streamlit-stub — varken GPU eller datafiler krävs.
 
 ```bash
 # Kör hela testsviten
@@ -181,7 +181,7 @@ python -m pytest tests/ --cov=backend --cov=integration --cov=utils
 | `test_data_loader.py` | DecisionRecord, DataLoader-queries, etiketter, domstolar, datumintervall |
 | `test_knowledge_base.py` | DocumentRecord, KnowledgeBase, corpus stats |
 | `test_llm_engine.py` | Context-formatering, Gemini engine initialization |
-| `test_rag_system.py` | Intent-routing, formatering, keyword-matchning, RAG-konstanter |
+| `test_rag_system.py` | Intent-routing, formatering, keyword-matchning, RAG-konstanter, filterextraktion, utfall, handläggningstider, kraftverk, vattendrag |
 | `test_risk_predictor.py` | Softmax, chunking, label-mappning, PredictionResult (binär) |
 | `test_search_engine.py` | Textchunking, sökning med filter, deduplicering, liknande beslut |
 | `test_integration.py` | SharedContext, ChatHandler, SearchHandler |

@@ -6,9 +6,10 @@ cleaned_court_texts.json (50 total decisions) and linkage_table.json.
 """
 
 import json
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 import streamlit as st
 
@@ -172,10 +173,10 @@ class DataLoader:
         return dict(sorted(freq.items(), key=lambda x: -x[1]))
 
     def get_courts(self) -> List[str]:
-        """Return sorted list of unique court names."""
+        """Return sorted list of unique originating court names (with fallback to court)."""
         courts = set()
         for d in self.get_labeled_decisions():
-            court = d.metadata.get("court", "")
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "")
             if court:
                 courts.add(court)
         return sorted(courts)
@@ -190,6 +191,58 @@ class DataLoader:
         if dates:
             return min(dates), max(dates)
         return None, None
+
+    def get_outcome_distribution(self) -> Counter:
+        """Return Counter of application_outcome values across all decisions."""
+        counts: Counter = Counter()
+        for d in self.get_all_decisions():
+            outcome = d.metadata.get("application_outcome")
+            if outcome:
+                counts[outcome] += 1
+        return counts
+
+    def get_outcomes_by_court(self) -> Dict[str, Counter]:
+        """Return dict of court -> Counter of application_outcome values."""
+        result: Dict[str, Counter] = {}
+        for d in self.get_all_decisions():
+            outcome = d.metadata.get("application_outcome")
+            if not outcome:
+                continue
+            court = d.metadata.get("court", "")
+            court_short = court.split("(")[0].strip() if court else "Okänd"
+            if "MÖD" in court or "överdomstolen" in court:
+                court_short = "MÖD"
+            result.setdefault(court_short, Counter())[outcome] += 1
+        return result
+
+    def get_power_plants(self) -> List[Tuple[str, str]]:
+        """Return list of (case_number, power_plant_name) for decisions with a power plant."""
+        plants = []
+        for d in self.get_all_decisions():
+            name = d.metadata.get("power_plant_name")
+            case = d.metadata.get("case_number", d.id)
+            if name:
+                plants.append((case, name))
+        return plants
+
+    def get_watercourses(self) -> List[str]:
+        """Return sorted list of unique watercourse names found in decisions."""
+        wcs = set()
+        for d in self.get_all_decisions():
+            wc = d.metadata.get("watercourse")
+            if wc:
+                wcs.add(wc)
+        return sorted(wcs)
+
+    def get_processing_times(self) -> List[Tuple[str, int]]:
+        """Return list of (case_number, days) for decisions with processing time data."""
+        times = []
+        for d in self.get_all_decisions():
+            days = d.metadata.get("processing_time_days")
+            case = d.metadata.get("case_number", d.id)
+            if days is not None:
+                times.append((case, days))
+        return times
 
 
 @st.cache_data

@@ -56,6 +56,11 @@ class TestClassifyQuery:
         result = classify_query("Vad säger CIS guidance om HMWB?")
         assert result == AgentDomain.EU_LAW
 
+    def test_case_number_routes_to_court(self):
+        assert classify_query("vad hände i m 483-22") == AgentDomain.COURT
+        assert classify_query("berätta om M 3753-22") == AgentDomain.COURT
+        assert classify_query("M 605-24 utfall") == AgentDomain.COURT
+
 
 class TestDomainAgent:
     @pytest.fixture

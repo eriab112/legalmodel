@@ -34,7 +34,7 @@ class AgentResponse:
 # --- Document classification ---
 # These filename patterns determine which agent "owns" which legislation documents.
 # Court decisions (doc_type="decision") always go to COURT agent.
-# Applications (doc_type="application") go to both COURT and SWEDISH_LAW.
+# Applications (doc_type="application") go to COURT agent only.
 
 EU_FILENAME_PATTERNS = [
     "CIS_Guidance",
@@ -155,6 +155,10 @@ EU_KEYWORDS = [
 def classify_query(query: str) -> AgentDomain:
     """Classify a user query to determine which agent(s) should handle it."""
     q = query.lower().strip()
+
+    # Case number pattern (e.g., "M 483-22") always routes to COURT
+    if re.search(r'm[\s-]?\d+[\s-]\d+', q, re.IGNORECASE):
+        return AgentDomain.COURT
 
     court_score = sum(1 for kw in COURT_KEYWORDS if kw in q)
     swedish_score = sum(1 for kw in SWEDISH_LAW_KEYWORDS if kw in q)
@@ -278,7 +282,7 @@ class MultiAgentRouter:
             domain=AgentDomain.SWEDISH_LAW,
             search_engine=search_engine,
             llm_engine=llm_engine,
-            doc_type_filters=["legislation", "application"],
+            doc_type_filters=["legislation"],
             filename_filter_fn=lambda fn: classify_legislation_domain(fn) == AgentDomain.SWEDISH_LAW,
         )
 

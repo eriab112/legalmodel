@@ -6,12 +6,139 @@ with metadata from the labeled dataset. Optional LLM (Gemini) for open-ended que
 """
 
 import re
-from typing import Dict, List, Optional
+import statistics
+from typing import Callable, Dict, List, Optional, Tuple
 
-from backend.agents import MultiAgentRouter
+from backend.agents import MultiAgentRouter, COURT_SYSTEM_PROMPT
 from backend.llm_engine import GeminiEngine, format_context, get_llm_engine
 from utils.data_loader import DecisionRecord
 from utils.timing import timed
+
+
+# ---------------------------------------------------------------------------
+# Query filter extraction (compound query support)
+# ---------------------------------------------------------------------------
+
+def _extract_court_filter(q: str) -> Optional[str]:
+    """Extract court name from query if mentioned."""
+    court_map = {
+        "växjö": "Växjö",
+        "nacka": "Nacka",
+        "östersund": "Östersund",
+        "umeå": "Umeå",
+        "vänersborg": "Vänersborg",
+        "möd": "MÖD",
+    }
+    q_lower = q.lower()
+    for key, value in court_map.items():
+        if key in q_lower:
+            return value
+    return None
+
+
+def _extract_count(q: str) -> int:
+    """Extract a count from query like '3 senaste' or 'top 5'."""
+    match = re.search(r"(\d+)\s*(?:senaste|första|top|dyraste|billigaste)", q, re.IGNORECASE)
+    if match:
+        return min(int(match.group(1)), 20)
+    return 5  # default
+
+
+def _extract_outcome_filter(q: str) -> Optional[str]:
+    """Extract outcome filter from query."""
+    q_lower = q.lower()
+    if any(w in q_lower for w in ["nekad", "avslag", "avslagen", "nekat", "nekande"]):
+        return "denied"
+    if any(w in q_lower for w in ["beviljat", "godkänd", "tillstånd beviljat"]):
+        return "granted"
+    if any(w in q_lower for w in ["återförvis", "remand"]):
+        return "remanded"
+    return None
+
+
+def _extract_measure_filter(q: str) -> Optional[str]:
+    """Extract measure type from query."""
+    measures = [
+        "fiskväg",
+        "omlöp",
+        "minimitappning",
+        "biotopvård",
+        "utskov",
+        "utrivning",
+        "faunapassage",
+    ]
+    q_lower = q.lower()
+    for m in measures:
+        if m in q_lower:
+            return m
+    return None
+
+
+def _extract_risk_filter(q: str) -> Optional[str]:
+    """Extract risk label filter from query."""
+    q_lower = q.lower()
+    if any(w in q_lower for w in ["hög risk", "hog risk", "high risk", "hoga risker"]):
+        return "HIGH_RISK"
+    if any(w in q_lower for w in ["låg risk", "lag risk", "low risk", "laga risker"]):
+        return "LOW_RISK"
+    if any(w in q_lower for w in ["medel risk", "medium risk"]):
+        return "MEDIUM_RISK"
+    return None
+
+
+def _apply_filters(
+    decisions: List[DecisionRecord],
+    court_filter: Optional[str] = None,
+    risk_filter: Optional[str] = None,
+    outcome_filter: Optional[str] = None,
+    measure_filter: Optional[str] = None,
+) -> List[DecisionRecord]:
+    """Filter decisions by court, risk label, outcome, and/or measure."""
+    result = list(decisions)
+    if court_filter:
+        c = court_filter.lower()
+        result = [
+            d
+            for d in result
+            if (
+                (d.metadata.get("court") or "").lower().find(c) >= 0
+                or (d.metadata.get("originating_court") or "").lower().find(c) >= 0
+            )
+        ]
+    if risk_filter:
+        result = [d for d in result if d.label == risk_filter]
+    if outcome_filter:
+        if outcome_filter == "denied":
+            result = [
+                d
+                for d in result
+                if d.metadata.get("application_outcome") in ("denied", "appeal_denied")
+            ]
+        elif outcome_filter == "granted":
+            result = [
+                d
+                for d in result
+                if d.metadata.get("application_outcome")
+                in ("granted", "granted_modified", "conditions_changed")
+            ]
+        elif outcome_filter == "remanded":
+            result = [
+                d for d in result if d.metadata.get("application_outcome") == "remanded"
+            ]
+    if measure_filter:
+        m = measure_filter.lower()
+        result = [
+            d
+            for d in result
+            if any(
+                m in (x or "").lower()
+                for x in (
+                    (d.scoring_details or {}).get("domslut_measures") or []
+                )
+                + (d.extracted_measures or [])
+            )
+        ]
+    return result
 
 
 RISK_LABELS_SV = {
@@ -41,36 +168,89 @@ class RAGSystem:
 
     @timed("rag.generate_response")
     def generate_response(self, query: str) -> str:
-        """Classify intent and route to appropriate handler."""
+        """Classify intent and route to appropriate handler. Supports compound queries with filters."""
         q = query.lower().strip()
 
-        # Intent detection via keywords
-        if _matches(q, ["hog risk", "hög risk", "high risk", "hoga risker"]):
-            return self._format_risk_response("HIGH_RISK")
-        elif _matches(q, ["lag risk", "låg risk", "low risk", "laga risker"]):
-            return self._format_risk_response("LOW_RISK")
-        elif _matches(q, ["medel risk", "medium risk"]):
-            return self._format_risk_response("MEDIUM_RISK")
-        elif _matches(q, ["riskfordelning", "riskfördelning", "fordelning", "distribution"]):
-            return self._format_distribution()
-        elif _matches(q, ["atgard", "åtgärd", "vanligaste", "measures"]):
-            return self._format_measures()
-        elif _matches(q, ["senaste", "nyaste", "latest", "recent"]):
-            return self._format_recent_decisions()
-        elif _matches(q, ["jamfor", "jämför", "compare", "versus", " vs "]):
-            return self._handle_comparison(q)
-        elif _matches(q, ["statistik", "statistics", "overblick", "översikt"]):
-            return self._format_statistics()
-        elif _matches(q, ["kostnad", "cost", "kronor"]) or _matches_word(q, "kr"):
-            return self._format_cost_info()
-        elif _matches(q, ["analysera", "predicera", "bedöm risk", "riskbedöm", "predict"]):
-            return self._handle_risk_prediction(query)
-        else:
-            # Route to domain-specific agents
-            if self.llm:
-                return self.router.route(query)
-            else:
-                return self._format_search_response(query)
+        # Check if user is asking about a specific case — direct lookup first
+        case_pattern = r'm[\s-]?(\d+)[\s-](\d+)'
+        case_matches = re.findall(case_pattern, q, re.IGNORECASE)
+        if case_matches and not _matches(q, ["analysera", "predicera", "bedöm risk", "riskbedöm", "predict"]):
+            case_id = f"m{case_matches[0][0]}-{case_matches[0][1]}"
+            decision = self.data.get_decision(case_id)
+            if decision and self.llm:
+                return self._answer_about_decision(query, decision)
+
+        # Detect query modifiers (apply to any intent)
+        court_filter = _extract_court_filter(q)
+        count_filter = _extract_count(q)
+        outcome_filter = _extract_outcome_filter(q)
+        measure_filter = _extract_measure_filter(q)
+        risk_filter = _extract_risk_filter(q)
+
+        # Score all intents; pick best (most keyword matches, then first in list for tie)
+        def score(keywords: List[str], extra: bool = False) -> int:
+            s = sum(1 for kw in keywords if kw in q)
+            return s + (1 if extra else 0)
+
+        # (score, order_index, handler) — order_index for tie-break
+        intent_candidates: List[Tuple[int, int, Callable[[], str]]] = []
+        order = 0
+
+        intent_candidates.append((
+            score(["analysera", "predicera", "bedöm risk", "riskbedöm", "predict"]),
+            order, lambda: self._handle_risk_prediction(query)))
+        order += 1
+        intent_candidates.append((score(["hog risk", "hög risk", "high risk", "hoga risker"]), order, lambda: self._format_risk_response("HIGH_RISK")))
+        order += 1
+        intent_candidates.append((score(["lag risk", "låg risk", "low risk", "laga risker"]), order, lambda: self._format_risk_response("LOW_RISK")))
+        order += 1
+        intent_candidates.append((score(["medel risk", "medium risk"]), order, lambda: self._format_risk_response("MEDIUM_RISK")))
+        order += 1
+        intent_candidates.append((score(["riskfordelning", "riskfördelning", "fordelning", "distribution"]), order, lambda: self._format_distribution()))
+        order += 1
+        intent_candidates.append((score(["jamfor", "jämför", "compare", "versus", " vs "]), order, lambda: self._handle_comparison(query)))
+        order += 1
+        intent_candidates.append((score(["atgard", "åtgärd", "vanligaste", "measures"]), order, lambda: self._format_measures(court_filter=court_filter)))
+        order += 1
+        intent_candidates.append((
+            score(["senaste", "nyaste", "latest", "recent"]),
+            order,
+            lambda: self._format_recent_decisions(
+                query,
+                court_filter=court_filter,
+                count_filter=count_filter,
+                outcome_filter=outcome_filter,
+                measure_filter=measure_filter,
+                risk_filter=risk_filter,
+            ),
+        ))
+        order += 1
+        intent_candidates.append((score(["statistik", "statistics", "overblick", "översikt"]), order, lambda: self._format_statistics(court_filter=court_filter)))
+        order += 1
+        intent_candidates.append((
+            score(["kostnad", "cost", "kronor", "dyraste", "dyr", "billigaste"]) or (1 if _matches_word(q, "kr") else 0),
+            order,
+            lambda: self._format_cost_info(court_filter=court_filter, measure_filter=measure_filter),
+        ))
+        order += 1
+        intent_candidates.append((score(["utfall", "outcome", "beviljat", "avslag", "nekad", "avslaget", "tillstånd beviljat"]), order, lambda: self._format_outcomes()))
+        order += 1
+        intent_candidates.append((score(["handläggningstid", "processing time", "hur lång tid"]), order, lambda: self._format_processing_times()))
+        order += 1
+        intent_candidates.append((score(["kraftverk", "anläggning", "power plant"]), order, lambda: self._format_power_plants()))
+        order += 1
+        intent_candidates.append((score(["vattendrag", "watercourse", "river"]) or (1 if " å " in q else 0), order, lambda: self._format_watercourses()))
+        order += 1
+        intent_candidates.append((score(["rankordna", "ranking", "flest", "oftast", "domstol", "court", "nekar", "avslår"]), order, lambda: self._format_rankings(q)))
+
+        best = max(intent_candidates, key=lambda x: (x[0], -x[1]))  # max score, then smallest order
+        if best[0] > 0:
+            return best[2]()
+
+        # Fallback: domain-specific agents or search
+        if self.llm:
+            return self.router.route(query)
+        return self._format_search_response(query)
 
     def _format_risk_response(self, label: str) -> str:
         """Format a list of decisions with the given risk label."""
@@ -116,30 +296,80 @@ class RAGSystem:
         lines.append(f"\n**Totalt**: {total} klassificerade beslut")
         return "\n".join(lines)
 
-    def _format_measures(self) -> str:
-        """Format most common measures from court rulings."""
-        freq = self.data.get_measure_frequency()
+    def _format_measures(self, court_filter: Optional[str] = None) -> str:
+        """Format most common measures from court rulings, optionally filtered by court."""
+        decisions = self.data.get_labeled_decisions()
+        if court_filter:
+            decisions = _apply_filters(decisions, court_filter=court_filter)
+        freq: Dict[str, int] = {}
+        for d in decisions:
+            measures = []
+            if d.scoring_details:
+                measures = d.scoring_details.get("domslut_measures", [])
+            if not measures:
+                measures = d.extracted_measures or []
+            for m in measures:
+                freq[m] = freq.get(m, 0) + 1
+        freq = dict(sorted(freq.items(), key=lambda x: -x[1]))
         _exclude = {"kontrollprogram", "skyddsgaller"}
         freq = {k: v for k, v in freq.items() if k not in _exclude}
         if not freq:
             return "Inga åtgärder hittades."
-        lines = ["### Vanligaste åtgärder i domslut\n"]
+        header = "### Vanligaste åtgärder i domslut\n"
+        if court_filter:
+            header = f"### Vanligaste åtgärder i domslut (vid {court_filter})\n"
+        lines = [header]
         for measure, count in list(freq.items())[:10]:
             lines.append(f"- **{measure}**: {count} beslut")
         return "\n".join(lines)
 
-    def _format_recent_decisions(self) -> str:
-        """Format the most recent labeled decisions."""
+    def _format_recent_decisions(
+        self,
+        query: str = "",
+        court_filter: Optional[str] = None,
+        count_filter: int = 5,
+        outcome_filter: Optional[str] = None,
+        measure_filter: Optional[str] = None,
+        risk_filter: Optional[str] = None,
+    ) -> str:
+        """Format the most recent labeled decisions with optional filters."""
+        decisions = self.data.get_labeled_decisions()
+        decisions = _apply_filters(
+            decisions,
+            court_filter=court_filter,
+            risk_filter=risk_filter,
+            outcome_filter=outcome_filter,
+            measure_filter=measure_filter,
+        )
         decisions = sorted(
-            self.data.get_labeled_decisions(),
+            decisions,
             key=lambda d: d.metadata.get("date", ""),
             reverse=True,
-        )[:5]
-        lines = ["### Senaste besluten\n"]
+        )[:count_filter]
+
+        filters_applied = []
+        if court_filter:
+            filters_applied.append(f"domstol={court_filter}")
+        if risk_filter:
+            filters_applied.append(f"risk={RISK_LABELS_SV.get(risk_filter, risk_filter)}")
+        if outcome_filter:
+            filters_applied.append(f"utfall={outcome_filter}")
+        if measure_filter:
+            filters_applied.append(f"åtgärd={measure_filter}")
+        filters_applied.append(f"antal={count_filter}")
+
+        header = "### Senaste besluten\n"
+        if filters_applied:
+            header = f"### Senaste besluten (filter: {', '.join(filters_applied)})\n"
+
+        lines = [header]
+        if not decisions:
+            lines.append("Inga beslut matchade filtren.")
+            return "\n".join(lines)
         for d in decisions:
             case = d.metadata.get("case_number", d.id)
             date = d.metadata.get("date", "")
-            court = d.metadata.get("court", "")
+            court = d.metadata.get("court", "") or d.metadata.get("originating_court", "")
             emoji = RISK_EMOJI.get(d.label, "")
             lines.append(f"- {emoji} **{case}** ({date}) - {court} [{RISK_LABELS_SV.get(d.label, '')}]")
         return "\n".join(lines)
@@ -160,6 +390,46 @@ class RAGSystem:
             return f"Kunde inte hitta beslut: {', '.join(missing)}"
 
         return self._format_comparison(decisions[0], decisions[1])
+
+    def _answer_about_decision(self, query: str, decision: DecisionRecord) -> str:
+        """Answer a question about a specific decision using its own text + similar decisions."""
+        # Build context from the decision's own sections
+        sections = decision.sections or {}
+        context_parts = []
+        case_num = decision.metadata.get("case_number", decision.id)
+        court = decision.metadata.get("court", "")
+        date = decision.metadata.get("date", "")
+
+        context_parts.append(f"[1] {case_num} — {court} ({date}) [beslut]")
+        # Include key sections in priority order
+        for section_name in ["domslut", "domskäl", "bakgrund", "saken"]:
+            section_text = sections.get(section_name, "")
+            if section_text:
+                context_parts.append(f"\n--- {section_name.upper()} ---\n{section_text[:3000]}")
+        # Fallback to full_text if no sections
+        if not any(sections.get(s) for s in ["domslut", "domskäl", "bakgrund", "saken"]):
+            context_parts.append(f"\n{decision.full_text[:5000]}")
+
+        sources = [{"index": 1, "title": f"{case_num} — {court}", "doc_type": "decision",
+                     "type_label": "beslut", "doc_id": decision.id, "filename": decision.filename}]
+
+        # Also retrieve 3-5 similar decisions for comparison context
+        similar_results = self.search.find_similar_decisions(decision.id, n_results=4)
+        for i, r in enumerate(similar_results, start=2):
+            title = getattr(r, "title", "") or r.decision_id
+            context_parts.append(f"\n[{i}] {title} [beslut]\n{r.chunk_text[:500]}")
+            sources.append({"index": i, "title": title, "doc_type": "decision",
+                            "type_label": "beslut", "doc_id": r.decision_id, "filename": r.filename})
+
+        context = "\n".join(context_parts)
+
+        response = self.llm.generate_response(
+            query, context, sources,
+            system_prompt_override=COURT_SYSTEM_PROMPT,
+        )
+
+        footer = f"\n\n---\n*\U0001f3db\ufe0f Domstolsagent | {len(sources)} källor använda*"
+        return response + footer
 
     def _format_comparison(self, d1: DecisionRecord, d2: DecisionRecord) -> str:
         """Format a side-by-side comparison of two decisions."""
@@ -193,21 +463,34 @@ class RAGSystem:
 
         return "\n".join(lines)
 
-    def _format_statistics(self) -> str:
-        """Format overall statistics for the knowledge base."""
-        dist = self.data.get_label_distribution()
-        total = sum(dist.values())
+    def _format_statistics(self, court_filter: Optional[str] = None) -> str:
+        """Format overall statistics, optionally filtered by court (e.g. 'vanligaste åtgärder vid växjö')."""
         all_decisions = self.data.get_all_decisions()
-        courts = self.data.get_courts()
-        date_min, date_max = self.data.get_date_range()
-        measures = self.data.get_measure_frequency()
+        if court_filter:
+            all_decisions = _apply_filters(all_decisions, court_filter=court_filter)
+        labeled = [d for d in all_decisions if d.label is not None]
+        total_labeled = len(labeled)
+        dist: Dict[str, int] = {}
+        for d in labeled:
+            dist[d.label] = dist.get(d.label, 0) + 1
+        courts = sorted({(d.metadata.get("court") or d.metadata.get("originating_court") or "").split("(")[0].strip() for d in all_decisions if (d.metadata.get("court") or d.metadata.get("originating_court"))})
+        dates = [d.metadata.get("date") for d in all_decisions if d.metadata.get("date")]
+        date_min = min(dates) if dates else None
+        date_max = max(dates) if dates else None
+        measure_freq: Dict[str, int] = {}
+        for d in labeled:
+            for m in (d.scoring_details or {}).get("domslut_measures", []) or (d.extracted_measures or []):
+                measure_freq[m] = measure_freq.get(m, 0) + 1
 
+        header = "### Statistik\n"
+        if court_filter:
+            header = f"### Statistik (vid {court_filter})\n"
         lines = [
-            "### Statistik\n",
-            f"- **Totalt antal beslut**: {len(all_decisions)} (varav {total} klassificerade)",
-            f"- **Datumintervall**: {date_min} till {date_max}",
+            header,
+            f"- **Totalt antal beslut**: {len(all_decisions)} (varav {total_labeled} klassificerade)",
+            f"- **Datumintervall**: {date_min or '-'} till {date_max or '-'}",
             f"- **Domstolar**: {len(courts)} st",
-            f"- **Unika åtgärder**: {len(measures)} typer",
+            f"- **Unika åtgärder**: {len(measure_freq)} typer",
         ]
         for label in ["HIGH_RISK", "MEDIUM_RISK", "LOW_RISK"]:
             count = dist.get(label, 0)
@@ -215,26 +498,188 @@ class RAGSystem:
                 continue
             emoji = RISK_EMOJI.get(label, "")
             lines.append(f"- {emoji} {RISK_LABELS_SV[label]}: {count}")
+
+        outcome_dist: Dict[str, int] = {}
+        for d in all_decisions:
+            o = d.metadata.get("application_outcome")
+            if o:
+                outcome_dist[o] = outcome_dist.get(o, 0) + 1
+        if outcome_dist:
+            lines.append("\n**Utfallsfördelning:**")
+            for outcome, count in sorted(outcome_dist.items(), key=lambda x: -x[1]):
+                lines.append(f"- {outcome}: {count}")
+
         return "\n".join(lines)
 
-    def _format_cost_info(self) -> str:
-        """Format cost information from decisions with max_cost_sek."""
-        lines = ["### Kostnadsinformation\n"]
+    def _format_cost_info(
+        self,
+        court_filter: Optional[str] = None,
+        measure_filter: Optional[str] = None,
+    ) -> str:
+        """Format cost information using total_cost_sek (fallback to max_cost_sek), with optional filters."""
         decisions = self.data.get_labeled_decisions()
-        costs = []
+        decisions = _apply_filters(decisions, court_filter=court_filter, measure_filter=measure_filter)
+        costs: List[Tuple[DecisionRecord, float]] = []
         for d in decisions:
-            if d.scoring_details and d.scoring_details.get("max_cost_sek"):
-                costs.append((d, d.scoring_details["max_cost_sek"]))
+            cost = d.metadata.get("total_cost_sek")
+            if cost is None and d.scoring_details:
+                cost = d.scoring_details.get("max_cost_sek")
+            if cost is not None:
+                costs.append((d, float(cost)))
 
+        filters_applied = [f for f in [court_filter and f"domstol={court_filter}", measure_filter and f"åtgärd={measure_filter}"] if f]
+        header = "### Kostnadsinformation\n"
+        if filters_applied:
+            header = f"### Kostnadsinformation (filter: {', '.join(filters_applied)})\n"
+        lines = [header]
         if not costs:
-            return "Ingen kostnadsinformation tillgänglig."
+            return header + "Ingen kostnadsinformation tillgänglig."
 
         costs.sort(key=lambda x: -x[1])
         for d, cost in costs[:10]:
             case = d.metadata.get("case_number", d.id)
+            court = d.metadata.get("court", "") or d.metadata.get("originating_court", "")
+            outcome = d.metadata.get("application_outcome_sv") or (d.scoring_details or {}).get("outcome_desc", "")
             emoji = RISK_EMOJI.get(d.label, "")
-            lines.append(f"- {emoji} **{case}**: {cost:,.0f} kr")
+            lines.append(f"- {emoji} **{case}**: {cost:,.0f} kr — {court}" + (f" ({outcome})" if outcome else ""))
         return "\n".join(lines)
+
+    def _format_outcomes(self) -> str:
+        """Format application outcome distribution and per-court breakdown."""
+        dist = self.data.get_outcome_distribution()
+        by_court = self.data.get_outcomes_by_court()
+
+        if not dist:
+            return "Ingen utfallsdata tillgänglig. Kör extraktionsskriptet först."
+
+        total = sum(dist.values())
+        lines = ["### Utfallsfördelning\n"]
+        for outcome, count in dist.most_common():
+            pct = count / total * 100 if total else 0
+            lines.append(f"- **{outcome}**: {count} beslut ({pct:.0f}%)")
+        lines.append(f"\n**Totalt**: {total} beslut\n")
+
+        lines.append("### Utfall per domstol\n")
+        for court, court_dist in sorted(by_court.items()):
+            parts = [f"{o}={c}" for o, c in court_dist.most_common()]
+            lines.append(f"- **{court}**: {', '.join(parts)}")
+
+        return "\n".join(lines)
+
+    def _format_processing_times(self) -> str:
+        """Format processing time statistics: overall avg+median, per-court breakdown, top 10 longest."""
+        decisions = self.data.get_all_decisions()
+        with_days: List[Tuple[DecisionRecord, int]] = []
+        for d in decisions:
+            days = d.metadata.get("processing_time_days")
+            if days is not None:
+                with_days.append((d, int(days)))
+        if not with_days:
+            return "Ingen handläggningstidsdata tillgänglig."
+
+        days_list = [d for _, d in with_days]
+        avg = sum(days_list) / len(days_list)
+        med = statistics.median(days_list)
+        lines = [
+            "### Handläggningstider\n",
+            f"- **Antal beslut med data**: {len(with_days)}",
+            f"- **Genomsnitt**: {avg:.0f} dagar",
+            f"- **Median**: {med:.0f} dagar",
+            f"- **Minimum**: {min(days_list)} dagar",
+            f"- **Maximum**: {max(days_list)} dagar\n",
+        ]
+
+        # Per-court breakdown
+        by_court: Dict[str, List[int]] = {}
+        for d, days in with_days:
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "Okänd")
+            court_short = court.split("(")[0].strip() if court else "Okänd"
+            if "MÖD" in (court or "") or "överdomstolen" in (court or "").lower():
+                court_short = "MÖD"
+            by_court.setdefault(court_short, []).append(days)
+        lines.append("**Per domstol:**\n")
+        for court_name in sorted(by_court.keys()):
+            lst = by_court[court_name]
+            lines.append(
+                f"- **{court_name}**: snitt {sum(lst) / len(lst):.0f} dagar, "
+                f"min {min(lst)}, max {max(lst)}, antal {len(lst)}"
+            )
+        lines.append("\n**10 längsta fallen:**\n")
+        by_case = [(d.metadata.get("case_number", d.id), days) for d, days in with_days]
+        by_case.sort(key=lambda x: -x[1])
+        for case, days in by_case[:10]:
+            lines.append(f"- **{case}**: {days} dagar")
+        return "\n".join(lines)
+
+    def _format_power_plants(self) -> str:
+        """Format list of power plants found in decisions."""
+        plants = self.data.get_power_plants()
+        if not plants:
+            return "Ingen kraftverksinformation tillgänglig."
+
+        lines = [f"### Kraftverk ({len(plants)} identifierade)\n"]
+        for case, name in sorted(plants, key=lambda x: x[1]):
+            lines.append(f"- **{name}** ({case})")
+        return "\n".join(lines)
+
+    def _format_watercourses(self) -> str:
+        """Format list of watercourses found in decisions."""
+        wcs = self.data.get_watercourses()
+        if not wcs:
+            return "Ingen vattendragsinformation tillgänglig."
+
+        lines = [f"### Vattendrag ({len(wcs)} unika)\n"]
+        for wc in wcs:
+            lines.append(f"- {wc}")
+        return "\n".join(lines)
+
+    def _format_rankings(self, query: str) -> str:
+        """Format rankings: denial-focused court ranking (count + rate), dyraste by total_cost_sek, or default outcome."""
+        q = query.lower()
+        lines = []
+
+        if _matches(q, ["domstol", "court", "nekar", "avslår"]):
+            by_court = self.data.get_outcomes_by_court()
+            denied_outcomes = {"denied", "appeal_denied"}
+            court_stats = []
+            for court, dist in by_court.items():
+                total = sum(dist.values())
+                denials = sum(dist.get(o, 0) for o in denied_outcomes)
+                rate = (denials / total * 100) if total else 0
+                court_stats.append((court, total, denials, rate))
+            court_stats.sort(key=lambda x: (-x[2], -x[3]))  # by denial count, then rate
+            lines.append("### Ranking: Domstolar (avslag/nekande)\n")
+            lines.append("Sorterat efter antal avslag, sedan andel avslag.\n")
+            for court, total, denials, rate in court_stats:
+                lines.append(f"- **{court}**: {denials} avslag av {total} beslut ({rate:.0f}% nekande)")
+        elif _matches(q, ["åtgärd", "measure", "atgard"]):
+            freq = self.data.get_measure_frequency()
+            lines.append("### Ranking: Vanligaste åtgärder\n")
+            for measure, count in list(freq.items())[:15]:
+                lines.append(f"- **{measure}**: {count} beslut")
+        elif _matches(q, ["kostnad", "dyr", "dyraste", "cost"]):
+            decisions = self.data.get_all_decisions()
+            cost_list: List[Tuple[DecisionRecord, float]] = []
+            for d in decisions:
+                cost = d.metadata.get("total_cost_sek")
+                if cost is None and d.scoring_details:
+                    cost = d.scoring_details.get("max_cost_sek")
+                if cost is not None:
+                    cost_list.append((d, float(cost)))
+            cost_list.sort(key=lambda x: -x[1])
+            lines.append("### Ranking: Dyraste beslut\n")
+            for d, cost in cost_list[:10]:
+                case = d.metadata.get("case_number", d.id)
+                court = d.metadata.get("court", "") or d.metadata.get("originating_court", "")
+                outcome = d.metadata.get("application_outcome_sv") or (d.scoring_details or {}).get("outcome_desc", "")
+                lines.append(f"- **{case}**: {cost:,.0f} kr — {court}" + (f" ({outcome})" if outcome else ""))
+        else:
+            dist = self.data.get_outcome_distribution()
+            lines.append("### Ranking: Utfall\n")
+            for outcome, count in dist.most_common():
+                lines.append(f"- **{outcome}**: {count} beslut")
+
+        return "\n".join(lines) if lines else "Kunde inte avgöra vad som ska rankordnas."
 
     @timed("rag.risk_prediction")
     def _handle_risk_prediction(self, query: str) -> str:
@@ -357,5 +802,4 @@ def _matches(text: str, keywords: List[str]) -> bool:
 
 def _matches_word(text: str, word: str) -> bool:
     """Match a keyword as a whole word only."""
-    import re
     return bool(re.search(r'\b' + re.escape(word) + r'\b', text))

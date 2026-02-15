@@ -41,7 +41,9 @@
           "word_count": 20421,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Återförvisat"
         },
         "scoring_details": {
           "net_score": 0,
@@ -93,7 +95,9 @@
           "word_count": 5951,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "denied",
+          "application_outcome_sv": "Ansökan/yrkande avslås"
         },
         "scoring_details": {
           "net_score": -3,
@@ -132,7 +136,9 @@
           "word_count": 14918,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "granted",
+          "application_outcome_sv": "Tillstånd beviljas"
         },
         "scoring_details": {
           "net_score": 0,
@@ -180,7 +186,9 @@
           "word_count": 12930,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "granted",
+          "application_outcome_sv": "Tillstånd beviljas"
         },
         "scoring_details": {
           "net_score": 1,
@@ -216,7 +224,9 @@
           "word_count": 9904,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": 0,
@@ -259,7 +269,9 @@
           "word_count": 34950,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": -2,
@@ -307,7 +319,9 @@
           "word_count": 13188,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Återförvisat"
         },
         "scoring_details": {
           "net_score": 0,
@@ -348,7 +362,9 @@
           "word_count": 6028,
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -385,7 +401,9 @@
           "word_count": 6607,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "overturned",
+          "application_outcome_sv": "Upphäver beslut"
         },
         "scoring_details": {
           "net_score": -6,
@@ -421,7 +439,9 @@
           "word_count": 7473,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "denied",
+          "application_outcome_sv": "Ansökan/yrkande avslås"
         },
         "scoring_details": {
           "net_score": 3,
@@ -459,7 +479,9 @@
           "word_count": 15504,
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": 0,
@@ -507,7 +529,9 @@
           "word_count": 18361,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": 0,
@@ -552,7 +576,9 @@
           "word_count": 11239,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -586,7 +612,9 @@
           "word_count": 30417,
           "doc_type": "dom",
           "originating_court": "Umeå tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Återförvisat"
         },
         "scoring_details": {
           "net_score": 0,
@@ -623,7 +651,9 @@
           "word_count": 32208,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "overturned",
+          "application_outcome_sv": "Upphäver beslut"
         },
         "scoring_details": {
           "net_score": -6,
@@ -673,7 +703,9 @@
           "word_count": 10339,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -712,7 +744,9 @@
           "word_count": 21570,
           "doc_type": "dom",
           "originating_court": "Nacka tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": -2,
@@ -756,7 +790,9 @@
           "word_count": 16390,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": 0,
@@ -803,7 +839,9 @@
           "word_count": 12548,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "granted",
+          "application_outcome_sv": "Tillstånd beviljas"
         },
         "scoring_details": {
           "net_score": 3,
@@ -842,7 +880,9 @@
           "word_count": 11444,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": -3,
@@ -878,7 +918,9 @@
           "word_count": 2911,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -912,7 +954,9 @@
           "word_count": 11790,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "overturned",
+          "application_outcome_sv": "Upphäver beslut"
         },
         "scoring_details": {
           "net_score": 4,
@@ -960,7 +1004,9 @@
           "word_count": 19774,
           "doc_type": "beslut",
           "originating_court": "Umeå tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 2,
@@ -999,7 +1045,9 @@
           "word_count": 17546,
           "doc_type": "beslut",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd med ändrade villkor"
         },
         "scoring_details": {
           "net_score": 3,
@@ -1045,7 +1093,9 @@
           "word_count": 91717,
           "doc_type": "dom",
           "originating_court": "Umeå tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": 3,
@@ -1086,7 +1136,9 @@
           "word_count": 23833,
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Återförvisat"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1137,7 +1189,9 @@
           "word_count": 7363,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Återförvisat"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1175,7 +1229,9 @@
           "word_count": 3119,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": 1,
@@ -1219,7 +1275,9 @@
           "word_count": 5887,
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd med ändrade villkor"
         },
         "scoring_details": {
           "net_score": -2,
@@ -1260,7 +1318,9 @@
           "word_count": 12683,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd med ändrade villkor"
         },
         "scoring_details": {
           "net_score": 3,
@@ -1309,7 +1369,9 @@
           "word_count": 5128,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1346,7 +1408,9 @@
           "word_count": 61507,
           "doc_type": "dom",
           "originating_court": "Nacka tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1394,7 +1458,9 @@
           "word_count": 5554,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd med ändrade villkor"
         },
         "scoring_details": {
           "net_score": 1,
@@ -1428,7 +1494,9 @@
           "word_count": 631,
           "doc_type": "beslut",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1464,7 +1532,9 @@
           "word_count": 3739,
           "doc_type": "beslut",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1502,7 +1572,9 @@
           "word_count": 22545,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": 1,
@@ -1548,7 +1620,9 @@
           "word_count": 7136,
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Återförvisat"
         },
         "scoring_details": {
           "net_score": -6,
@@ -1585,7 +1659,9 @@
           "word_count": 6002,
           "doc_type": "dom",
           "originating_court": "Nacka tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": -6,
@@ -1621,7 +1697,9 @@
           "word_count": 32144,
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": -1,
@@ -1670,7 +1748,9 @@
           "word_count": 3890,
           "doc_type": "beslut",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "unclear",
+          "application_outcome_sv": "Oklart"
         },
         "scoring_details": {
           "net_score": 0,
@@ -1710,7 +1790,9 @@
           "word_count": 26164,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "appeal_denied",
+          "application_outcome_sv": "Överklagande avslås"
         },
         "scoring_details": {
           "net_score": 4,
@@ -1755,7 +1837,9 @@
           "word_count": 6785,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "overturned",
+          "application_outcome_sv": "Upphäver beslut"
         },
         "scoring_details": {
           "net_score": -6,
@@ -1793,7 +1877,9 @@
           "word_count": 20251,
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
-          "is_appeal": true
+          "is_appeal": true,
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras"
         },
         "scoring_details": {
           "net_score": 3,
@@ -1837,7 +1923,9 @@
           "word_count": 24487,
           "doc_type": "dom",
           "originating_court": null,
-          "is_appeal": false
+          "is_appeal": false,
+          "application_outcome": "granted",
+          "application_outcome_sv": "Tillstånd beviljas"
         },
         "scoring_details": {
           "net_score": 3,
