@@ -12,7 +12,7 @@ import pandas as pd
 import plotly.graph_objects as go
 
 from integration.shared_context import SharedContext
-from ui.styles import risk_badge_html, RISK_LABELS_SV, doc_type_badge_html
+from ui.styles import risk_badge_html, doc_type_badge_html
 from ui.search_interface import render_decision_detail, render_prediction_detail
 
 
@@ -273,6 +273,7 @@ def _render_explorer_card(result, search_handler):
 def _render_browse_mode(search_handler, outcome_filter=None):
     """Show a browseable table of all labeled decisions."""
     st.markdown("### Alla klassificerade beslut")
+    st.caption("Klicka på en rad för att öppna beslutet.")
 
     decisions = search_handler.data.get_labeled_decisions()
 
@@ -301,31 +302,25 @@ def _render_browse_mode(search_handler, outcome_filter=None):
             "Utfall": d.metadata.get("application_outcome_sv", ""),
             "Kraftverk": d.metadata.get("power_plant_name", ""),
             "Vattendrag": d.metadata.get("watercourse", ""),
+            "_id": d.id,
         })
 
     if rows:
         df = pd.DataFrame(rows)
-        st.dataframe(df, width="stretch", hide_index=True)
-
-        # Decision detail lookup
-        st.markdown("---")
-        case_input = st.text_input(
-            "Ange målnummer för att visa detaljer (t.ex. m3753-22)",
-            key="explorer_case_lookup",
+        event = st.dataframe(
+            df.drop(columns=["_id"]),
+            use_container_width=True,
+            hide_index=True,
+            on_select="rerun",
+            selection_mode="single-row",
+            key="explorer_browse_table",
         )
-        if case_input:
-            # Try to find the decision by case number
-            match = None
-            for d in decisions_sorted:
-                cn = d.metadata.get("case_number", d.id)
-                if cn.lower() == case_input.strip().lower() or d.id.lower() == case_input.strip().lower():
-                    match = d
-                    break
-            if match:
-                SharedContext.set_selected_decision(match.id)
-                st.rerun()
-            else:
-                st.warning(f"Inget beslut hittades med målnummer '{case_input}'.")
+
+        if event and event.selection and event.selection.rows:
+            selected_idx = event.selection.rows[0]
+            selected_id = rows[selected_idx]["_id"]
+            SharedContext.set_selected_decision(selected_id)
+            st.rerun()
     else:
         st.info("Inga klassificerade beslut tillgängliga.")
 

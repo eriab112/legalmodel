@@ -11,8 +11,22 @@ AI-drivet beslutsstöd för Sveriges Nationella plan för moderna miljövillkor 
 Appen har tre flikar:
 
 - **Översikt** — Nyckeltal, riskfördelning, domstolsstatistik, Plotly-diagram och klickbar beslutstabell
-- **Utforska** — Sök och filtrera domstolsbeslut, lagstiftning och ansökningar; riskprediktion på enskilda beslut
+- **Utforska** — Sök och filtrera domstolsbeslut, lagstiftning och ansökningar; klickbar browse-tabell, AI-genererade sammanfattningar (Gemini), strukturerad detaljvy med nyckeldata, LegalBERT-riskprediktion, sektionsindelad fulltext, och navigerbara liknande beslut
 - **AI-assistent** — Multi-agent RAG-chatbot med Gemini LLM och källhänvisning
+
+### Besluts-detaljvy (Utforska)
+
+Detaljvyn använder progressiv disclosure — sammanfattning först, sedan nyckeldata, därefter fulltext vid behov:
+
+1. **Rubrik** — Målnummer, domstol, datum och riskbadge
+2. **AI-sammanfattning** — Strukturerad sammanfattning genererad av Gemini (cachad i session_state)
+3. **Nyckeldata** — 4 metrikkort: utfall, antal åtgärder, uppskattad kostnad, handläggningstid
+4. **Ytterligare uppgifter** [expander] — Vattendrag, kraftverk, operatör, VISS-data
+5. **LegalBERT Riskprediktion** [expander] — On-demand prediktion med sannolikhetsfördelning
+6. **Fullständigt beslut** [expander] — Sektionsflikar (domslut, domskäl, bakgrund) + fulltext
+7. **Liknande beslut** — 5 semantiskt likartade beslut med klickbar navigation
+
+Browse-tabellen och sökresultaten delar samma detaljvy via `SharedContext.set_selected_decision()`.
 
 ### Multi-agent-arkitektur
 
@@ -204,6 +218,7 @@ python -m pytest tests/ --cov=backend --cov=integration --cov=utils
 | `test_risk_predictor.py` | Softmax, chunking, label-mappning, PredictionResult (binär) |
 | `test_search_engine.py` | Textchunking, sökning med filter, deduplicering, liknande beslut |
 | `test_integration.py` | SharedContext, ChatHandler, SearchHandler |
+| `test_ui_explorer.py` | Klickbar browse-tabell, besluts-detaljvy, AI-sammanfattning, liknande beslut |
 | `test_startup_integration.py` | Sökvägsresolution, dataladdning, KnowledgeBase-laddning |
 
 ---
