@@ -187,6 +187,39 @@ class RAGSystem:
         measure_filter = _extract_measure_filter(q)
         risk_filter = _extract_risk_filter(q)
 
+        # Custom risk assessment — user describes their plant situation (check FIRST, more specific)
+        assessment_signals = [
+            "mitt kraftverk", "min anläggning", "mitt vattenkraftverk",
+            "vår anläggning", "vårt kraftverk",
+            "jag har ett", "vi har ett", "vi äger",
+            "bedöm min risk", "bedöm risk för min", "riskbedömning för min",
+            "vad kan jag förvänta", "vad blir utfallet",
+        ]
+        is_assessment = any(signal in q for signal in assessment_signals)
+
+        if is_assessment and self.llm:
+            return self._custom_risk_assessment(query)
+
+        # Advisory/analytical patterns — check SECOND (more general)
+        advisory_signals = [
+            "vad ska jag", "vad bör jag", "vad kan jag", "vad rekommenderar",
+            "hur ska jag", "hur bör jag", "hur kan jag",
+            "vilken typ", "vilken sorts", "vilket alternativ",
+            "kostnadseffektiv", "effektivast", "bäst", "snabbast", "billigast",
+            "rekommendera", "föreslå", "tipsa", "råd",
+            "min deadline",
+            "jag behöver", "jag vill", "jag planerar",
+            "alternativ", "möjlighet", "strategi",
+            "vad säger", "vad kräver", "vad innebär",
+            "varför", "hur fungerar", "förklara",
+            "jämför med", "skillnad mellan",
+        ]
+        is_advisory = any(signal in q for signal in advisory_signals)
+
+        if is_advisory and self.llm:
+            # Skip template intents entirely — route to LLM agents
+            return self.router.route(query)
+
         # Score all intents; pick best (most keyword matches, then first in list for tie)
         def score(keywords: List[str], extra: bool = False) -> int:
             s = sum(1 for kw in keywords if kw in q)
@@ -263,7 +296,7 @@ class RAGSystem:
         lines = []
         for d in sorted(decisions, key=lambda x: x.metadata.get("date", ""), reverse=True):
             case = d.metadata.get("case_number", d.id)
-            court = d.metadata.get("court", "")
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "")
             date = d.metadata.get("date", "")
             outcome = ""
             if d.scoring_details:
@@ -369,7 +402,7 @@ class RAGSystem:
         for d in decisions:
             case = d.metadata.get("case_number", d.id)
             date = d.metadata.get("date", "")
-            court = d.metadata.get("court", "") or d.metadata.get("originating_court", "")
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "")
             emoji = RISK_EMOJI.get(d.label, "")
             lines.append(f"- {emoji} **{case}** ({date}) - {court} [{RISK_LABELS_SV.get(d.label, '')}]")
         return "\n".join(lines)
@@ -397,7 +430,7 @@ class RAGSystem:
         sections = decision.sections or {}
         context_parts = []
         case_num = decision.metadata.get("case_number", decision.id)
-        court = decision.metadata.get("court", "")
+        court = decision.metadata.get("originating_court") or decision.metadata.get("court", "")
         date = decision.metadata.get("date", "")
 
         context_parts.append(f"[1] {case_num} — {court} ({date}) [beslut]")
@@ -431,6 +464,226 @@ class RAGSystem:
         footer = f"\n\n---\n*\U0001f3db\ufe0f Domstolsagent | {len(sources)} källor använda*"
         return response + footer
 
+    # Swedish cities/regions → likely MMD jurisdiction
+    _LOCATION_TO_COURT = {
+        "stockholm": "Nacka", "nacka": "Nacka", "uppsala": "Nacka",
+        "göteborg": "Vänersborg", "gothenburg": "Vänersborg",
+        "vänersborg": "Vänersborg", "karlstad": "Vänersborg", "värmland": "Vänersborg",
+        "växjö": "Växjö", "jönköping": "Växjö", "kalmar": "Växjö",
+        "kronoberg": "Växjö", "skåne": "Växjö", "blekinge": "Växjö",
+        "östersund": "Östersund", "jämtland": "Östersund", "dalarna": "Östersund",
+        "gävle": "Östersund", "gävleborg": "Östersund", "hälsingland": "Östersund",
+        "umeå": "Umeå", "norrland": "Umeå", "luleå": "Umeå",
+        "norrbotten": "Umeå", "västerbotten": "Umeå",
+    }
+
+    _ASSESSMENT_SYSTEM_PROMPT = """Du är en AI-rådgivare specialiserad på riskbedömning för vattenkraftens miljöanpassning inom NAP.
+
+En verksamhetsutövare beskriver sitt vattenkraftverk och sin situation. Du har fått:
+1. Deras beskrivning av anläggningen
+2. Statistik från liknande domstolsbeslut i kunskapsbasen
+3. Utdrag från de mest relevanta besluten
+
+Din uppgift:
+- Bedöm vilken risknivå (hög/låg) verksamhetsutövaren troligen står inför
+- Lista de åtgärder som domstolar typiskt kräver för liknande anläggningar
+- Uppskatta ungefärliga kostnader baserat på jämförelsebesluten
+- Ge konkreta rekommendationer för hur de bör förbereda sig
+- Var tydlig med att detta är en indikation baserad på historiska beslut, inte juridisk rådgivning
+
+Svara på svenska. Strukturera svaret med tydliga rubriker.
+Citera specifika jämförelsebeslut med målnummer.
+Avsluta med en sammanfattande riskindikation: 🔴 Hög risk / 🟢 Låg risk / 🟡 Osäker."""
+
+    def _custom_risk_assessment(self, query: str) -> str:
+        """Perform a custom risk assessment based on user's plant description."""
+        q = query.lower()
+
+        # --- Extract plant characteristics ---
+        # Location → court jurisdiction
+        detected_court = None
+        for location, court in self._LOCATION_TO_COURT.items():
+            if location in q:
+                detected_court = court
+                break
+
+        # Size
+        size = None
+        if "litet" in q or "liten" in q or "lilla" in q:
+            size = "litet"
+        elif "medelstort" in q or "medel" in q:
+            size = "medelstort"
+        elif "stort" in q or "stora" in q:
+            size = "stort"
+
+        # Fish species
+        fish_species = []
+        for species in ["lax", "öring", "ål", "harr", "sik", "gädda", "abborre", "nejonöga"]:
+            if species in q:
+                fish_species.append(species)
+
+        # Existing measures
+        existing_measures = []
+        for measure in ["fiskväg", "omlöp", "minimitappning", "biotopvård",
+                        "utskov", "utrivning", "faunapassage", "skyddsgaller"]:
+            if measure in q:
+                existing_measures.append(measure)
+
+        # Production
+        production = None
+        gwh_match = re.search(r'(\d+(?:[.,]\d+)?)\s*gwh', q)
+        mw_match = re.search(r'(\d+(?:[.,]\d+)?)\s*mw', q)
+        if gwh_match:
+            production = f"{gwh_match.group(1)} GWh"
+        elif mw_match:
+            production = f"{mw_match.group(1)} MW"
+
+        # Watercourse
+        watercourse_names = self.data.get_watercourses() if hasattr(self.data, 'get_watercourses') else []
+        detected_watercourse = None
+        for wc in watercourse_names:
+            if wc.lower() in q:
+                detected_watercourse = wc
+                break
+
+        # --- Find similar cases ---
+        results = self.search.search(query, n_results=8)
+
+        # If a court was detected, boost results from that court
+        if detected_court and results:
+            def court_boost(r):
+                r_court = r.metadata.get("originating_court") or r.metadata.get("court", "")
+                return 0 if detected_court.lower() in r_court.lower() else 1
+            results = sorted(results, key=lambda r: (court_boost(r), -r.similarity))
+
+        # --- Compute statistics from similar cases ---
+        similar_decisions = []
+        for r in results:
+            d = self.data.get_decision(r.decision_id)
+            if d:
+                similar_decisions.append(d)
+
+        n_similar = len(similar_decisions)
+        high_risk_count = sum(1 for d in similar_decisions if d.label == "HIGH_RISK")
+        low_risk_count = sum(1 for d in similar_decisions if d.label == "LOW_RISK")
+
+        # Most common measures
+        measure_freq: Dict[str, int] = {}
+        for d in similar_decisions:
+            measures = (d.scoring_details or {}).get("domslut_measures", []) or d.extracted_measures or []
+            for m in measures:
+                measure_freq[m] = measure_freq.get(m, 0) + 1
+        measure_freq = dict(sorted(measure_freq.items(), key=lambda x: -x[1]))
+
+        # Average costs
+        costs_found = []
+        for d in similar_decisions:
+            cost = d.metadata.get("total_cost_sek")
+            if cost is None and d.scoring_details:
+                cost = d.scoring_details.get("max_cost_sek")
+            if cost is not None:
+                costs_found.append(float(cost))
+        avg_cost = sum(costs_found) / len(costs_found) if costs_found else None
+
+        # Outcomes
+        outcome_dist: Dict[str, int] = {}
+        for d in similar_decisions:
+            o = d.metadata.get("application_outcome")
+            if o:
+                outcome_dist[o] = outcome_dist.get(o, 0) + 1
+
+        # Average processing time
+        proc_times = []
+        for d in similar_decisions:
+            pt = d.metadata.get("processing_time_days")
+            if pt is not None:
+                proc_times.append(int(pt))
+        avg_proc_time = sum(proc_times) / len(proc_times) if proc_times else None
+
+        # --- Build context for Gemini ---
+        context_parts = [f"Användarens beskrivning: {query}\n"]
+
+        # Add statistics summary
+        context_parts.append("--- STATISTIK FRÅN LIKNANDE BESLUT ---")
+        if n_similar:
+            context_parts.append(f"Antal liknande beslut: {n_similar}")
+            context_parts.append(f"Hög risk: {high_risk_count}, Låg risk: {low_risk_count}")
+            if measure_freq:
+                top_measures = ", ".join(f"{m} ({c})" for m, c in list(measure_freq.items())[:5])
+                context_parts.append(f"Vanligaste åtgärder: {top_measures}")
+            if avg_cost:
+                context_parts.append(f"Genomsnittlig kostnad: {avg_cost:,.0f} kr")
+            if outcome_dist:
+                outcome_str = ", ".join(f"{o}: {c}" for o, c in outcome_dist.items())
+                context_parts.append(f"Utfall: {outcome_str}")
+            if avg_proc_time:
+                context_parts.append(f"Genomsnittlig handläggningstid: {avg_proc_time:.0f} dagar")
+        if detected_court:
+            context_parts.append(f"Trolig domstol: {detected_court}")
+        if size:
+            context_parts.append(f"Anläggningsstorlek: {size}")
+        if fish_species:
+            context_parts.append(f"Nämnda fiskarter: {', '.join(fish_species)}")
+        if detected_watercourse:
+            context_parts.append(f"Vattendrag: {detected_watercourse}")
+        if production:
+            context_parts.append(f"Produktion: {production}")
+
+        # Add excerpts from the 3 most similar decisions
+        context_parts.append("\n--- UTDRAG FRÅN LIKNANDE BESLUT ---")
+        sources = []
+        for i, d in enumerate(similar_decisions[:3], start=1):
+            case_num = d.metadata.get("case_number", d.id)
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "")
+            date = d.metadata.get("date", "")
+            domslut = (d.sections or {}).get("domslut", "")[:1500]
+            label_sv = RISK_LABELS_SV.get(d.label, d.label or "Ej klassificerad")
+            measures = (d.scoring_details or {}).get("domslut_measures", [])
+            cost = d.metadata.get("total_cost_sek") or (d.scoring_details or {}).get("max_cost_sek")
+
+            context_parts.append(f"\n[{i}] {case_num} — {court} ({date}) — {label_sv}")
+            if measures:
+                context_parts.append(f"Åtgärder: {', '.join(measures)}")
+            if cost:
+                context_parts.append(f"Kostnad: {float(cost):,.0f} kr")
+            if domslut:
+                context_parts.append(f"Domslut: {domslut}")
+
+            sources.append({
+                "index": i, "title": f"{case_num} — {court}",
+                "doc_type": "decision", "type_label": "beslut",
+                "doc_id": d.id, "filename": d.filename,
+            })
+
+        context = "\n".join(context_parts)
+
+        # --- Send to Gemini ---
+        response = self.llm.generate_response(
+            query, context, sources,
+            system_prompt_override=self._ASSESSMENT_SYSTEM_PROMPT,
+        )
+
+        # --- Format output ---
+        # Statistics summary box
+        stats_lines = []
+        if n_similar:
+            high_pct = (high_risk_count / n_similar * 100) if n_similar else 0
+            low_pct = (low_risk_count / n_similar * 100) if n_similar else 0
+            stats_lines.append(f"\n---\n**Baserat på {n_similar} liknande beslut:**")
+            stats_lines.append(f"- Risknivå: {high_pct:.0f}% hög risk, {low_pct:.0f}% låg risk")
+            if measure_freq:
+                measure_summary = ", ".join(
+                    f"{m} ({c}/{n_similar})" for m, c in list(measure_freq.items())[:5]
+                )
+                stats_lines.append(f"- Vanligaste åtgärder: {measure_summary}")
+            if avg_cost:
+                stats_lines.append(f"- Genomsnittlig kostnad: {avg_cost:,.0f} kr")
+            if avg_proc_time:
+                stats_lines.append(f"- Genomsnittlig handläggningstid: {avg_proc_time:.0f} dagar")
+
+        footer = f"\n\n---\n*\U0001f3af Riskbedömning | {n_similar} jämförelsebeslut*"
+        return f"### \U0001f3af Riskbedömning för din anläggning\n\n{response}" + "\n".join(stats_lines) + footer
+
     def _format_comparison(self, d1: DecisionRecord, d2: DecisionRecord) -> str:
         """Format a side-by-side comparison of two decisions."""
         lines = ["### Jämförelse\n"]
@@ -440,7 +693,8 @@ class RAGSystem:
         ))
         lines.append("|---|---|---|")
         lines.append("| Domstol | {} | {} |".format(
-            d1.metadata.get("court", ""), d2.metadata.get("court", ""),
+            d1.metadata.get("originating_court") or d1.metadata.get("court", ""),
+            d2.metadata.get("originating_court") or d2.metadata.get("court", ""),
         ))
         lines.append("| Datum | {} | {} |".format(
             d1.metadata.get("date", ""), d2.metadata.get("date", ""),
@@ -473,7 +727,7 @@ class RAGSystem:
         dist: Dict[str, int] = {}
         for d in labeled:
             dist[d.label] = dist.get(d.label, 0) + 1
-        courts = sorted({(d.metadata.get("court") or d.metadata.get("originating_court") or "").split("(")[0].strip() for d in all_decisions if (d.metadata.get("court") or d.metadata.get("originating_court"))})
+        courts = sorted({(d.metadata.get("originating_court") or d.metadata.get("court") or "").split("(")[0].strip() for d in all_decisions if (d.metadata.get("originating_court") or d.metadata.get("court"))})
         dates = [d.metadata.get("date") for d in all_decisions if d.metadata.get("date")]
         date_min = min(dates) if dates else None
         date_max = max(dates) if dates else None
@@ -538,7 +792,7 @@ class RAGSystem:
         costs.sort(key=lambda x: -x[1])
         for d, cost in costs[:10]:
             case = d.metadata.get("case_number", d.id)
-            court = d.metadata.get("court", "") or d.metadata.get("originating_court", "")
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "")
             outcome = d.metadata.get("application_outcome_sv") or (d.scoring_details or {}).get("outcome_desc", "")
             emoji = RISK_EMOJI.get(d.label, "")
             lines.append(f"- {emoji} **{case}**: {cost:,.0f} kr — {court}" + (f" ({outcome})" if outcome else ""))
@@ -594,8 +848,6 @@ class RAGSystem:
         for d, days in with_days:
             court = d.metadata.get("originating_court") or d.metadata.get("court", "Okänd")
             court_short = court.split("(")[0].strip() if court else "Okänd"
-            if "MÖD" in (court or "") or "överdomstolen" in (court or "").lower():
-                court_short = "MÖD"
             by_court.setdefault(court_short, []).append(days)
         lines.append("**Per domstol:**\n")
         for court_name in sorted(by_court.keys()):
@@ -670,7 +922,7 @@ class RAGSystem:
             lines.append("### Ranking: Dyraste beslut\n")
             for d, cost in cost_list[:10]:
                 case = d.metadata.get("case_number", d.id)
-                court = d.metadata.get("court", "") or d.metadata.get("originating_court", "")
+                court = d.metadata.get("originating_court") or d.metadata.get("court", "")
                 outcome = d.metadata.get("application_outcome_sv") or (d.scoring_details or {}).get("outcome_desc", "")
                 lines.append(f"- **{case}**: {cost:,.0f} kr — {court}" + (f" ({outcome})" if outcome else ""))
         else:
@@ -697,7 +949,7 @@ class RAGSystem:
 
             prediction = self.predictor.predict_decision(decision)
             case_num = decision.metadata.get("case_number", case_id)
-            court = decision.metadata.get("court", "")
+            court = decision.metadata.get("originating_court") or decision.metadata.get("court", "")
             date = decision.metadata.get("date", "")
 
             emoji = RISK_EMOJI.get(prediction.predicted_label, "")
@@ -781,7 +1033,7 @@ class RAGSystem:
         for r in results:
             case = r.metadata.get("case_number", r.decision_id)
             date = r.metadata.get("date", "")
-            court = r.metadata.get("court", "")
+            court = r.metadata.get("originating_court") or r.metadata.get("court", "")
             emoji = RISK_EMOJI.get(r.label, "")
             sim = f"{r.similarity:.1%}"
 

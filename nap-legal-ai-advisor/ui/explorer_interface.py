@@ -579,10 +579,7 @@ def _render_time_analysis(data_loader, all_decisions):
     for d in all_decisions:
         cn = d.metadata.get("case_number", d.id)
         ct = d.metadata.get("originating_court") or d.metadata.get("court", "Okänd")
-        if "MÖD" in ct or "överdomstolen" in ct:
-            ct = "MÖD"
-        else:
-            ct = ct.split("(")[0].strip() if ct else "Okänd"
+        ct = ct.split("(")[0].strip() if ct else "Okänd"
         case_court[cn] = ct
 
     unique_courts = sorted(set(case_court.get(lbl, "Okänd") for lbl in t_labels))

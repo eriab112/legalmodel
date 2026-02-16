@@ -274,9 +274,10 @@ class TestMetadataQueries:
 
     def test_get_outcomes_by_court(self, loader_with_metadata):
         by_court = loader_with_metadata.get_outcomes_by_court()
-        # MÖD should be recognized
-        assert "MÖD" in by_court
-        assert by_court["MÖD"]["appeal_denied"] == 1
+        # Uses originating_court with fallback to court; no MÖD special case
+        assert "Mark- och miljööverdomstolen" in by_court
+        assert by_court["Mark- och miljööverdomstolen"]["appeal_denied"] == 1
+        assert "Nacka Mark- och miljödomstol" in by_court
 
     def test_get_power_plants(self, loader_with_metadata):
         plants = loader_with_metadata.get_power_plants()

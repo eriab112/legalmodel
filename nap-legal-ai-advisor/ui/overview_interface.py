@@ -5,9 +5,12 @@ Shows key metrics, charts, and system status at a glance.
 
 import statistics
 
+import pandas as pd
 import streamlit as st
 import plotly.graph_objects as go
 from collections import Counter
+
+from integration.shared_context import SharedContext
 
 
 # Outcome color mapping (EN key -> color)
@@ -193,3 +196,68 @@ def render_overview(data_loader, knowledge_base=None):
         with kb_col3:
             st.metric("Ansökningar", stats.get("application", 0))
             st.caption("tillståndsansökningar")
+
+    # --- Row 5: Clickable decisions table ---
+    st.markdown("")
+    st.markdown("### Beslut")
+    st.caption("Klicka på ett beslut för att se detaljer i Utforska-fliken")
+
+    risk_sv = {"HIGH_RISK": "Hög risk", "LOW_RISK": "Låg risk"}
+
+    all_sorted = sorted(
+        data_loader.get_all_decisions(),
+        key=lambda d: d.metadata.get("date", ""),
+        reverse=True,
+    )
+
+    rows = []
+    for d in all_sorted:
+        court = d.metadata.get("originating_court") or d.metadata.get("court", "")
+        rows.append({
+            "Målnummer": d.metadata.get("case_number", d.id),
+            "Domstol": court,
+            "Datum": d.metadata.get("date", ""),
+            "Risknivå": risk_sv.get(d.label, "") if d.label else "",
+            "Utfall": d.metadata.get("application_outcome_sv", ""),
+            "Kraftverk": d.metadata.get("power_plant_name", ""),
+            "id": d.id,
+        })
+
+    if rows:
+        df = pd.DataFrame(rows)
+        event = st.dataframe(
+            df.drop(columns=["id"]),
+            use_container_width=True,
+            hide_index=True,
+            on_select="rerun",
+            selection_mode="single-row",
+            key="overview_decision_table",
+        )
+
+        if event and event.selection and event.selection.rows:
+            selected_idx = event.selection.rows[0]
+            selected_id = rows[selected_idx]["id"]
+            SharedContext.set_selected_decision(selected_id)
+            st.session_state["show_decision_detail"] = True
+            st.info(
+                f"Valt beslut: **{rows[selected_idx]['Målnummer']}** — "
+                f"gå till **Utforska**-fliken för att se detaljer."
+            )
+
+        # Fallback: text input for case number lookup
+        case_input = st.text_input(
+            "Visa detaljer för målnummer:",
+            placeholder="t.ex. m483-22",
+            key="overview_case_lookup",
+        )
+        if case_input:
+            match = data_loader.get_decision(case_input.strip().lower())
+            if match:
+                SharedContext.set_selected_decision(match.id)
+                st.session_state["show_decision_detail"] = True
+                st.info(
+                    f"Valt: **{match.metadata.get('case_number', match.id)}** — "
+                    f"gå till **Utforska**-fliken för att se detaljer."
+                )
+            else:
+                st.warning(f"Inget beslut hittades: {case_input}")

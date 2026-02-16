@@ -10,7 +10,7 @@ AI-drivet beslutsstöd för Sveriges Nationella plan för moderna miljövillkor 
 
 Appen har tre flikar:
 
-- **Översikt** — Nyckeltal, riskfördelning, domstolsstatistik och Plotly-diagram
+- **Översikt** — Nyckeltal, riskfördelning, domstolsstatistik, Plotly-diagram och klickbar beslutstabell
 - **Utforska** — Sök och filtrera domstolsbeslut, lagstiftning och ansökningar; riskprediktion på enskilda beslut
 - **AI-assistent** — Multi-agent RAG-chatbot med Gemini LLM och källhänvisning
 
@@ -26,6 +26,25 @@ Chatboten använder tre specialiserade agenter plus en syntesrouter:
 | Syntesrouter | Tvärgående frågor | Alla dokumenttyper |
 
 Routern klassificerar frågor med nyckelordsbaserad scoring och dirigerar till rätt agent. Vid signaler från 2+ domäner aktiveras syntesagenten som sammanställer svar från alla tre.
+
+### Intent-routing
+
+Frågor prioriteras i tre steg innan nyckelordsbaserad intent-scoring:
+
+1. **Assessment-frågor** — Beskrivningar av egen anläggning ("mitt kraftverk", "jag har ett") dirigeras till en anpassad riskbedömning med Gemini och liknande domstolsbeslut
+2. **Rådgivande/analytiska frågor** — Personliga, förklarande eller jämförande frågor ("varför", "kostnadseffektiv", "vad säger lagen") skickas direkt till LLM-agenterna, utan att fångas av statiska mallar
+3. **Mallfrågor** — Rena datafrågor ("visa senaste besluten", "hög risk") besvaras med snabba template-svar
+
+### Anpassad riskbedömning
+
+Användare kan beskriva sitt kraftverk och få en individuell riskbedömning:
+
+- Extraherar anläggningsegenskaper (plats → domstol, storlek, fiskarter, befintliga åtgärder, produktion)
+- Hittar 5–8 liknande domstolsbeslut via semantisk sökning med domstolsboost
+- Beräknar statistik: riskfördelning, vanligaste åtgärder, genomsnittskostnad, handläggningstid
+- Bygger kontext med utdrag från de 3 mest relevanta besluten
+- Skickar till Gemini med specialiserad bedömningsprompt
+- Returnerar strukturerad analys med statistiksammanställning
 
 ### Binär riskklassificerare
 
@@ -165,7 +184,7 @@ legalmodel/
 
 ## Tester
 
-Testsviten innehåller **167 enhetstester** (exklusive 2 slow-markerade) med mockade modeller och Streamlit-stub — varken GPU eller datafiler krävs.
+Testsviten innehåller **175 enhetstester** (exklusive 2 slow-markerade) med mockade modeller och Streamlit-stub — varken GPU eller datafiler krävs.
 
 ```bash
 # Kör hela testsviten
@@ -181,7 +200,7 @@ python -m pytest tests/ --cov=backend --cov=integration --cov=utils
 | `test_data_loader.py` | DecisionRecord, DataLoader-queries, etiketter, domstolar, datumintervall |
 | `test_knowledge_base.py` | DocumentRecord, KnowledgeBase, corpus stats |
 | `test_llm_engine.py` | Context-formatering, Gemini engine initialization |
-| `test_rag_system.py` | Intent-routing, formatering, keyword-matchning, RAG-konstanter, filterextraktion, utfall, handläggningstider, kraftverk, vattendrag |
+| `test_rag_system.py` | Intent-routing, formatering, keyword-matchning, RAG-konstanter, filterextraktion, utfall, handläggningstider, kraftverk, vattendrag, advisory routing, anpassad riskbedömning |
 | `test_risk_predictor.py` | Softmax, chunking, label-mappning, PredictionResult (binär) |
 | `test_search_engine.py` | Textchunking, sökning med filter, deduplicering, liknande beslut |
 | `test_integration.py` | SharedContext, ChatHandler, SearchHandler |
@@ -194,7 +213,7 @@ python -m pytest tests/ --cov=backend --cov=integration --cov=utils
 - **Data:** 44 märkta beslut är litet för deep learning — generalisering osäker
 - **SSL:** Workaround i `utils/ssl_fix.py` för företagsmiljöer med SSL-proxy — inte lämpligt för produktion utan korrekt CA-certifikat
 - **Säkerhet:** Ingen autentisering eller rate limiting
-- **Router:** Nyckelordsbaserad routing (inte ML-baserad) — kan missa komplexa tvärgående frågor
+- **Router:** Nyckelordsbaserad routing med advisory/assessment-förfiltrering — fångar de flesta frågetyper men kan missa nyanser i komplexa tvärgående frågor
 
 ---
 

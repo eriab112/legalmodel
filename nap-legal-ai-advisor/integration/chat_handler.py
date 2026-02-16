@@ -42,6 +42,11 @@ QUICK_ACTIONS = [
         "query": "Visa utfallsfördelning",
         "icon": "📋",
     },
+    {
+        "label": "Bedöm min risk",
+        "query": "Jag har ett medelstort vattenkraftverk. Bedöm min risk för NAP-prövningen.",
+        "icon": "🎯",
+    },
 ]
 
 WELCOME_MESSAGE = """Hej! Jag är NAP Legal AI Advisor \u2013 ett AI-drivet beslutsstöd för vattenkraftens miljöanpassning.
@@ -53,6 +58,7 @@ Jag har tre specialiserade kunskapsagenter:
 
 Jag kan även:
 - \U0001f3af **Analysera risk** \u2013 LegalBERT-prediktion för specifika beslut (t.ex. *Analysera M 3753-22*)
+- \U0001f3af **Bedöm din risk** \u2013 Beskriv ditt kraftverk så ger jag en riskbedömning baserat på liknande domstolsbeslut
 - \U0001f4ca **Jämföra och sammanställa** \u2013 Statistik, jämförelser och kostnadsanalyser
 
 Ställ en fråga \u2013 jag väljer automatiskt rätt agent baserat på din fråga, eller kombinerar flera vid behov!"""

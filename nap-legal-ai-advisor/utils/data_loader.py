@@ -208,10 +208,8 @@ class DataLoader:
             outcome = d.metadata.get("application_outcome")
             if not outcome:
                 continue
-            court = d.metadata.get("court", "")
+            court = d.metadata.get("originating_court") or d.metadata.get("court", "")
             court_short = court.split("(")[0].strip() if court else "Okänd"
-            if "MÖD" in court or "överdomstolen" in court:
-                court_short = "MÖD"
             result.setdefault(court_short, Counter())[outcome] += 1
         return result
 
@@ -300,6 +298,7 @@ class KnowledgeBase:
                     text=d.get("text_full", ""),
                     metadata={
                         "court": meta.get("court"),
+                        "originating_court": meta.get("originating_court"),
                         "date": meta.get("date"),
                         "case_number": meta.get("case_number"),
                     },

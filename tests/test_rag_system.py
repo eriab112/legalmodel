@@ -340,3 +340,97 @@ class TestRagConstants:
     def test_risk_emoji(self):
         assert "HIGH_RISK" in RISK_EMOJI
         assert "LOW_RISK" in RISK_EMOJI
+
+
+# ---------------------------------------------------------------------------
+# Advisory routing & custom risk assessment
+# ---------------------------------------------------------------------------
+
+@pytest.fixture
+def rag_with_llm(rag):
+    """RAG system with a mocked LLM engine attached."""
+    llm = MagicMock()
+    llm.generate_response.return_value = "LLM-genererat svar"
+    rag.llm = llm
+    rag.router = MagicMock()
+    rag.router.route.return_value = "Router-genererat svar"
+    return rag
+
+
+class TestAdvisoryRouting:
+    def test_advisory_query_goes_to_llm(self, rag_with_llm):
+        """Advisory queries should NOT trigger template responses."""
+        response = rag_with_llm.generate_response("vilka åtgärder är mest kostnadseffektiva?")
+        # Should NOT be the static measures list (contains "utskov: " pattern)
+        assert "utskov: " not in response
+
+    def test_personal_query_goes_to_assessment(self, rag_with_llm):
+        """Personal queries with 'jag har ett' should go to assessment (checked before advisory)."""
+        mock_result = MagicMock()
+        mock_result.decision_id = "m1-22"
+        mock_result.metadata = {"court": "Nacka TR", "case_number": "M 1-22"}
+        mock_result.similarity = 0.85
+        rag_with_llm.search.search.return_value = [mock_result]
+        rag_with_llm.data.get_watercourses.return_value = []
+        response = rag_with_llm.generate_response("jag har ett kraftverk, vad ska jag göra?")
+        # Should NOT be the power plant listing — should go to assessment handler
+        assert "Kraftverk (" not in response
+
+    def test_advisory_routes_to_router(self, rag_with_llm):
+        """Advisory queries should be routed via the multi-agent router."""
+        rag_with_llm.generate_response("vilka åtgärder är mest kostnadseffektiva?")
+        rag_with_llm.router.route.assert_called_once()
+
+    def test_analytical_query_goes_to_llm(self, rag_with_llm):
+        """Questions asking for explanation should go to LLM."""
+        response = rag_with_llm.generate_response("varför kräver domstolen fiskväg?")
+        assert "Kraftverk (" not in response
+        rag_with_llm.router.route.assert_called_once()
+
+    def test_non_advisory_still_uses_templates(self, rag_with_llm):
+        """Non-advisory queries should still use template responses."""
+        response = rag_with_llm.generate_response("Visa hog risk beslut")
+        assert "Hög risk" in response or "HIGH_RISK" in response
+        rag_with_llm.router.route.assert_not_called()
+
+
+class TestCustomRiskAssessment:
+    def test_custom_assessment_detected(self, rag_with_llm):
+        """Custom risk assessment queries should trigger the assessment handler."""
+        # Set up search to return some results
+        mock_result = MagicMock()
+        mock_result.decision_id = "m1-22"
+        mock_result.metadata = {"court": "Nacka TR", "case_number": "M 1-22"}
+        mock_result.similarity = 0.85
+        rag_with_llm.search.search.return_value = [mock_result]
+        rag_with_llm.data.get_watercourses.return_value = []
+
+        response = rag_with_llm.generate_response("Jag har ett medelstort vattenkraftverk i Gävle")
+        # "Jag har ett" is an assessment signal → triggers _custom_risk_assessment
+        assert "Kraftverk (" not in response
+        # Assessment handler calls LLM
+        rag_with_llm.llm.generate_response.assert_called_once()
+
+    def test_assessment_query_calls_llm(self, rag_with_llm):
+        """Assessment should call the LLM with specialized prompt."""
+        mock_result = MagicMock()
+        mock_result.decision_id = "m1-22"
+        mock_result.metadata = {"court": "Nacka TR", "case_number": "M 1-22"}
+        mock_result.similarity = 0.85
+        rag_with_llm.search.search.return_value = [mock_result]
+        rag_with_llm.data.get_watercourses.return_value = []
+
+        # "mitt kraftverk" + "bedöm min risk" triggers assessment (checked before advisory)
+        response = rag_with_llm.generate_response("Bedöm min risk för mitt kraftverk")
+        # Assessment check runs first, catches "mitt kraftverk" → calls _custom_risk_assessment
+        assert response is not None
+        rag_with_llm.llm.generate_response.assert_called_once()
+
+    def test_assessment_without_llm_falls_through(self, rag):
+        """Without LLM, assessment queries should fall through to templates."""
+        rag.data.get_power_plants.return_value = [("M 1-22", "Testverket")]
+        response = rag.generate_response("mitt kraftverk behöver bedömning")
+        # Without LLM, the advisory/assessment checks are skipped
+        # and template matching takes over
+        assert response is not None
+
