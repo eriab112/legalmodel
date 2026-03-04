@@ -1,18 +1,18 @@
 {
   "version": "1.0-binary",
   "created": "2026-02-14",
-  "total_decisions": 44,
+  "total_decisions": 40,
   "label_distribution": {
-    "HIGH_RISK": 21,
-    "LOW_RISK": 23
+    "HIGH_RISK": 19,
+    "LOW_RISK": 21
   },
   "split_ratios": {
-    "train": 0.7727272727272727,
-    "val": 0.11363636363636363,
-    "test": 0.11363636363636363
+    "train": 0.75,
+    "val": 0.125,
+    "test": 0.125
   },
   "split_sizes": {
-    "train": 34,
+    "train": 30,
     "val": 5,
     "test": 5
   },
@@ -96,12 +96,12 @@
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "denied",
-          "application_outcome_sv": "Ansökan/yrkande avslås"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljat med ändringar"
         },
         "scoring_details": {
           "net_score": -3,
-          "outcome_type": "EXTENSION_GRANTED",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Förlängning beviljas",
           "max_cost_sek": 0,
           "measures": [
@@ -137,12 +137,12 @@
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "granted",
-          "application_outcome_sv": "Tillstånd beviljas"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljat med ändrade villkor"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 16000.0,
           "measures": [
@@ -161,44 +161,6 @@
             "utskov",
             "kontrollprogram"
           ],
-          "is_relevant": true,
-          "override": false
-        }
-      },
-      {
-        "id": "m6587-23",
-        "filename": "Vaxjo_NV_2024-09-02.txt",
-        "label": "HIGH_RISK",
-        "original_label": "MEDIUM_RISK",
-        "confidence": 0.55,
-        "key_text": "DOMSLUT:\nMiljökonsekvensbeskrivning\nMark- och miljödomstolen godkänner den i målet ingivna miljökonsekvensbeskrivningen.\n\nBox 81 Kungsgatan 8 0470-560 100 måndag – fredag\n\nTillstånd\nMark- och miljödomstolen lämnar, med stöd av 16 kap. 2 a § miljöbalken och med\nändring av vad som tillståndsgivits genom mark- och miljödomstolens dom den 15\ndecember 2015 i mål M 4170-13 (delvis ändrad genom Mark- och miljööverdomstolens dom den 13 oktober 2016 i mål M 316-16), Höganäs AB, Höganäs Sweden\nAB och Höganäs Hamnbyggnads AB för bolagens verksamhet i Höganäs kommun,\ntillstånd enligt 9 kap. miljöbalken till:\n(a) drift av en anläggning för termisk förgasning av biomassa, för tillverkning av\nhögst 60 GWh syngas per år och högst 8 200 ton biokol per år innefattande\nförbränning av icke-farligt avfall med en installerad tillförd effekt om 10 MW\nsamt kringanläggningar i form av lager,\n(b) försöks- och pilotverksamhet inom anläggningen för termisk förgasning samt\n(c) de ytterligare anpassningar och mindre ändringar som föranleds av ändringarna i (a) ovan och som redovisas i ansökan jämte bilagor.\nVillkor\nMark- och miljödomstolen ändrar villkoren angående utsläppen av stoft och kväveoxider samt energiledningssystem i tillståndsbeslutet i deldom daterad den 15 december 2015 i mål nr M 4170-13 till följande lydelse.\n2. Det totala utsläppet av stoft från fasta utsläppspunkter för tillverkning av metallpulver samt rökgaser från Probiostålanläggningen får som begränsningsvärde inte överstiga 15 ton per år.\n5. Utsläpp av kväveoxider - angivet som NO - från tunnelugnarnas rökgaser i\n2\nSvampverket och från Probiostålanläggningens rökgaser får sammantaget inte\növerstiga 100 ton per år.\n\n14. Verksamheten ska styras av ett certifierat energiledningssystem enligt standarden ISO 50001 eller standarder som kan komma att ersätta denna. Ledningssystemet ska innehålla rutiner för inköp och projektering av energikrävande utrustning baserat på livscykelkostnad, LCC (Life Cycle Cost). Probiostålanläggningen får exkluderas från energiledningssystemet.\nMark- och miljödomstolen förenar vidare tillståndet för den samlade verksamheten\nmed följande ytterligare villkor.\n17. I Probiostålanläggningen får följande avfallstyper tas emot och behandlas.\nTyp av biomassa Avfallskod\nRestströmmar från skogsbruk, till exempel 02 01 03 Växtdelar\nGROT (grenar, rötter & toppar) och bark\nRestströmmar från jordbruk, till exempel\nhalm, vinklipp\nRestströmmar från sågverk, till exempel 03 01 05 Annat spån, spill, trä\noch\nspån, spill faner och andra spånskivor än de\nsom anges i 03 01 04\nRestavfall från massa- och pappersbruk, till 03 03 01 Bark- och träavfall\nexempel bark- och träavfall\nVitt returträ / vit RT-flis / rent returträ klass\nI. Får endast vara berört av skärande och bor15 01 03 Träförpackningar\nrande verktyg och inte innehålla spik, skruv,\nmålarfärg etc\n17 02 01 Trä\n.\n19 12 07 Annat trä än det som\nanges i 19 12 06\n20 01 38 Annat trä än det som\nanges i 20 01 37\nTillsynsmyndigheten får godkänna att även andra typer av avfall, med ur miljösynpunkt likvärdiga egenskaper, tas emot och behandlas.\n\n18. Senast den 31 december året efter det första kalenderår, då Probiostålanläggningen har varit i drift i minst 4 000 timmar, ska trädamm och aska lagras i silos eller i annan sluten hantering under tak, för att undvika damning och spill.\nFram till dess ska trädamm och aska lagras nederbördsskyddat.\n19. Facklan i Probiostålanläggningen ska ha robusthet att fungera även vid ogynnsamt väder.\n20. Åtgärder ska i skälig utsträckning successivt vidtas för att effektivisera\nenergianvändningen i all verksamhet som omfattas av detta tillstånd.\nÅtgärderna ska utgå från sökandebolagens energikartläggning som redovisar\nenergianvändningen och hur den kan effektiviseras. En energihushållningsplan\nska tas fram. I planen ska redovisas sökandebolagens arbete med energieffektivisering, bränsleval och resultatet av genomförda åtgärder. Energihushållningsplanen ska ges in till tillsynsmyndigheten vart fjärde år, eller med\ndet intervall som tillsynsmyndigheten bestämmer. Den första energihushållningsplanen ska ges in senast den 1 juli 2025.\nAv planen ska framgå vilka energihushållande åtgärder som är tekniskt möjliga\natt genomföra samt kostnaden och energieffektiviseringen för respektive åtgärd. Betydande mervärden till följd av genomförda åtgärder ska också framgå\nav planen. Det ska även anges vilka åtgärder som sökandebolagen är beredd att\nvidta och en motivering till varför övriga redovisade åtgärder inte kommer att\nvidtas.\n\nDelegerade frågor\nMark- och miljödomstolen överlåter till tillsynsmyndigheten med stöd av 22 kap. 25\n§ tredje stycket miljöbalken att meddela de ytterligare skäliga villkor som kan erfordras angående\nA. Godkännande av anmälan om ändrat avfallsslag enligt villkor 17.\nB. Vilka åtgärder som har framtagits inom ramen för energihushållningsplanen som\nska genomföras och inom vilken tid (villkor 20).\nIgångsättningstid\nMark- och miljödomstolen bestämmer med stöd av 22 kap. 25 § 2 st miljöbalken\nden tid inom vilken den i denna dom tillståndsgivna verksamheten ska ha satts\nigång till två (2) år efter att domen vunnit laga kraft. Bolagen ska anmäla till\ntillsynsmyndigheten när tillståndet tas i anspråk.\nVerkställighetsförordnande\nMark- och miljödomstolen förordnar med stöd av 22 kap. 28 § miljöbalken att detta\ntillstånd får tas i anspråk även om det inte vunnit laga kraft.\n\nDOMSKÄL:\nMark- och miljödomstolen har med stöd av 22 kap. 16 § 2 st miljöbalken avgjort\nmålet utan huvudförhandling.\nMiljökonsekvensbeskrivning\nSökanden har bedömt att verksamheten kan betraktas som medförande betydande\nmiljöpåverkan. Därmed ska en specifik miljöbedömning genomföras. Mark- och\nmiljödomstolen bedömer att den miljökonsekvensbeskrivning som getts in i målet\nuppfyller kraven enligt 6 kap. miljöbalken så att det går att ta ställning till\nden sökta verksamhetens tillåtlighet och slutföra miljöbedömningen.\nTillåtlighet\nAv 16 kap. 2 a § miljöbalken framgår att vid ändring av en miljöfarlig verksamhet\nfår tillståndet begränsas till att enbart avse ändringen (ändringstillstånd). Mark- och\nmiljödomstolen konstaterar att det finns ett gällande, lagakraftvunnet och ianspråktaget grundtillstånd genom domstolens dom den 15 december 2015 i mål nr\n\nM 4170-13 (delvis ändrat genom Mark- och miljööverdomstolens dom den 13 oktober 2016 i mål M 316-16) för verksamheten i Höganäs. Det föreligger inte något\nhinder mot att enbart pröva ändringen.\nMark- och miljödomstolen konstaterar vidare att verksamheten med produktion av\njärn- och metallpulver har bedrivits på den aktuella platsen sedan lång tid tillbaka\nvarvid lokaliseringen befunnits lämplig och uppfylla miljöbalkens krav.\nDen nu sökta ändringen syftar till att ersätta en del av de fossila bränslen och insatsvaror i form av naturgas, koks och antracit som används i järn- och metallpulvertillverkningen genom tillverkning av syngas (syntesgas) och biokol genom termisk förgasning i en s.k. Probiostålanläggning. Anläggningen är uppförd och\ndriftsatt inom ramen för ett anmälningsförfarande om försöksverksamhet godkänd\nav Länsstyrelsen i Skåne län. Enligt mark- och miljödomstolens bedömning är det\nfråga om ett begränsat markområde inom Höganäsbolagens verksamhetsområde\nsom tas i anspråk och anläggningen behöver ligga i anslutning till den huvudsakliga\nverksamheten. Lokaliseringen är därför lämplig och möter inga hinder vid en prövning mot 2 kap. 6 § miljöbalken.\nMark- och miljödomstolen anser vidare att sökanden har visat att störningarna från\nden tillkommande verksamheten är begränsade och att det sökta ändringstillståndet,\nmed de skäliga försiktighetsmått som utöver vad som regleras i det gällande tillståndet kan föreskrivas med stöd av 2 kap. 3 och 7 §§ miljöbalken, inte kan befaras\nmedföra några olägenheter eller störningar av väsentlig betydelse enligt 2 kap. 9 §\nmiljöbalken. Verksamheten strider inte heller mot bestämmelserna om miljökvalitetsnormer i 5 kap. miljöbalken. Den sökta verksamheten ska därför bedömas tillåtlig och tillstånd kan följaktligen lämnas.\nVillkor\nFråga har uppkommit i målet om hur tillståndet att behandla olika typer av avfallsbränslen ska avgränsas och utformas i förhållande till bestämmelsen i 22 kap. 25 a §\nmiljöbalken. Som insatsvaror i processen avses användas biomassa och vedråvara\n\nsom faller under undantagen i 17 § förordningen om förbränning av avfall. Sökanden har angett vilka avfallsslag respektive avfallskoder som kan bli aktuella och att\ndessa bör regleras i villkor men att även andra avfallsslag med liknande egenskaper\nska få kunna användas efter godkännande av tillsynsmyndigheten.\nLänsstyrelsen anser att avgränsningen av avfallsslagen ska framgå av tillståndsmeningen med hänsyn till underrättsavgöranden.\nMark- och miljödomstolen konstaterar att MÖD:s praxis genom avgörandena i\nMÖD 2008:6, MÖD 2008:7, MÖD 2011:5 och i mål nr M 13522-22, trots vissa variationer och avvikelser i underrättsavgöranden i mellantiden, är tydlig. Det är således normalt sett tillräckligt för att uppfylla bestämmelserna i 22 kap. 25 a och b §§\nmiljöbalken att tillståndsgivna avfallsslag preciseras och avgränsas i villkor och att\ndet kan delegeras till tillsynsmyndigheten att efter anmälan godkänna andra avfallsslag med liknande egenskaper och miljöpåverkan. Mot bakgrund av de avfallsslag\nsom är möjliga att behandla i den aktuella anläggningen i detta fall saknas skäl att\ntillämpa en striktare reglering. Villkoret ska därför utformas med utgångspunkt från\nsökandens förslag på sätt som framgår av domslutet.\nSökanden och länsstyrelsen är vidare överens om ändrad lydelse av nu gällande villkor 2, 5 och 14 rörande utsläppen av stoft och kväveoxider samt energiledningssystem. Mark- och miljödomstolen finner inte skäl att frångå parternas gemensamma\nbedömning varför villkoren ska ändras i enlighet därmed.\nVad gäller frågan om nytt villkor rörande fackling av syngas i Probiostålanläggningen är sökanden och länsstyrelsen överens om lydelsen av länsstyrelsens villkorsförslag LST2. Mark- och miljödomstolen gör ingen annan bedömning.\nI fråga om ytterligare villkor rörande lagring av trädamm och aska är sökanden och\nlänsstyrelsen eniga om att lagring på sikt ska ske i silos eller i annan sluten hantering under tak. Sökanden har dock motsatt sig att lagring i silo ska ske inom två år\nfrån det att tillståndet vunnit laga kraft och i stället förordat att kravet ska gälla viss\n\ntid efter det att driften uppgått till 4000 timmar per kalenderår. Sökanden har bl.a.\nanfört att driften av anläggningen kommer att successivt ökas, att det idag saknas\navnämare för trädamm och aska varför uttransport för närvarande skulle kräva omlastning från silo till storsäck och att den hittillsvarande verksamheten inte har lett\ntill störningar och olägenheter samt att kostnaden för silohantering inte är motiverad\ninnan det är fråga om större mängder. Mark- och miljödomstolen anser att det i normalfallet ska föreskrivas sådana villkor som behövs för att begränsa störningarna\nfrån den tillståndsgivna maximala produktionen. Mot bakgrund av ovanstående bedömer emellertid domstolen att det i detta fall inte är förenat med rimliga kostnader\ni förhållande till miljönyttan att kräva silolagring utan att produktionen uppnått viss\nnivå. Samtidigt finns det inte skäl att avvika från normalkraven att avfall ska förvaras nederbördsskyddat och att detta bör kunna åstadkommas till rimliga kostnader\ngenom tillfällig täckning, lagringstält eller andra åtgärder. Villkoret ska därför utformas på sätt som framgår av domslutet.\nI fråga om ytterligare villkor för lukt och damning anser mark- och miljödomstolen\nfrågan såvitt gäller den befintliga verksamheten är rättskraftigt avgjord. Den nu\nsökta ändringen kan enligt domstolens uppfattning inte, ensamt eller tillsammans\nmed den befintliga verksamheten medföra sådana störningar att det kan motivera att\nförena tillståndet med ytterligare villkor. Sökanden har angett att störande lukt och\ndamning inte ska uppstå och att det finns åtgärder att vidta vid behov. Domstolen\nerinrar härvidlag om att sökanden är bunden av det allmänna villkoret och att tillsynsmyndigheten är oförhindrad att ingripa om störande lukt och damning skulle\nuppkomma. Ytterst finns också möjlighet till omprövning av villkor enligt 24 kap. 5\n§ miljöbalken.\nLänsstyrelsen har vidare yrkat att det ska föreskrivas ett villkor om släckvattenhantering. Såvitt det avser den befintliga verksamheten är frågan rättskraftigt avgjord.\nSökanden har i ansökan om ändringstillstånd redovisat sitt löpande arbete med\nsläckvattenplan och att den släckvattenvolym som kan uppstå vid Probiostålanläggningen är väsentligen mindre än den volym som är dimensionerande för sektionen\n\noch att släckvattnet kommer att kunna samlas upp och tas om hand. Mot denna bakgrund anser mark- och miljödomstolen att det saknas skäl att förena tillståndet med\nytterligare villkor rörande släckvattenhantering till följd av den nu tillståndsgivna\nändringen.\nI fråga om utsläpp av torkkondensat från Probiostålanläggningen framgår det av utredningen i målet att sökanden har tecknat avtal med VA-huvudmannen om att få\navleda kondensatet till det kommunala avloppsreningsverket. Länsstyrelsen har yrkat att frågan om intern rening ska sättas på prövotid. Volymen uppgår till ca\n15 000 m3 per år vid full produktion vilket enligt sökanden motsvarar knappt en\nhalv procent av det vatten som släpps ut från reningsverket år 2022. Sökanden har\nredovisat medelhalter av vissa föroreningar i kondensatet. De uppmätta medelhalterna av metaller ligger med god marginal under vad som föreskrivs i ABVA för\nspillvatten från 2019 som för närvarande tillämpas av NSVA i Höganäs kommun.\nÄven såvitt gäller andra parametrar ligger värdena i torkkondensatet i huvudsak under eller i nivå med vad som anges i ABVA. Mot denna bakgrund, flödets och recipientens storlek samt VA-huvudmannens medgivande anser mark- och miljödomstolen att frågan är tillräckligt utredd och att något särskilt villkor för utsläppet av\ntorkkondensat inte kan motiveras. Domstolen erinrar om att ett tillstånd enligt miljöbalken inte innebär en rättighet att släppa industriellt spillvatten till kommunalt\nspillvattennät utan VA-huvudmannens medgivande.\nLänsstyrelsen har vidare yrkat att frågan om utnyttjande av restvärme ska sättas på\nprövotid. Sökanden har motsatt sig detta och anför att huvuddelen av restvärmen\nsom uppstår från Probiostålanläggningen håller ca 55 - 60 grader vilket är en för låg\ntemperatur för att kunna nyttiggöras i fjärrvärmenätet. Verksamheten i stort har redan ett överskott av låggradig restvärme som inte kan utnyttjas. Det finns inte skäl\natt utreda denna värmeström särskilt utan den kommer att inkluderas i det övergripande arbetet med energieffektivisering. Mark- och miljödomstolen anser inte att\ndet finns skäl att i villkor särskilt reglera utnyttjandet av låggradig restvärme mot\nbakgrund av vad sökanden anfört varför ett prövotidsförordnande inte är aktuellt.\nDäremot kan konstateras att den samlade verksamheten i Höganäs kan betraktas\n\nsom energiintensiv och att det är angeläget att det bedrivs ett löpande, systematiskt\narbete med energieffektivisering. Det gällande tillståndet innehåller ett villkor om\natt det ska finnas ett energiledningssystem och sökanden anger att man bedriver ett\nenergieffektiviseringsarbete med stöd av det. Mot bakgrund av senare praxis anser\ndock mark- och miljödomstolen att det i likhet med vad som föreskrivs i tillstånd\nför andra stora energiintensiva verksamheter finns skäl att föreskriva ytterligare villkor om krav på löpande energikartläggning, effektiviseringsarbete och återkommande redovisning med delegation till tillsynsmyndigheten att besluta om skäliga\nåtgärder. Villkoret ska utformas på sätt som framgår av domslutet.\nIgångsättningstid\nAv 22 kap. 25 § 2 st miljöbalken framgår att det i fråga om tillstånd till miljöfarlig\nverksamhet ska anges den tid inom vilken den miljöfarliga verksamheten ska ha\nsatts i gång. Kravet är inte optionellt. Även om Probiostålanläggningen är byggd\noch drifttagen genom ett anmälningsförfarande och det saknas skäl att ifrågasätta\nsökandens intentioner samt verkställighet meddelas medför inte dessa omständigheter att det finns en skyldighet för sökanden att ta nu meddelat tillstånd med tillhörande villkor i anspråk. Igångsättningstid om två år bör därför föreskrivas samt en\nskyldighet att anmäla till tillsynsmyndigheten när ändringstillståndet tagits i anspråk.\nVerkställighet\nMark- och miljödomstolen anser inte att det föreligger några hinder att meddela\nverkställighetsförordnande i enlighet med sökandens yrkande.\n\nHUR MAN ÖVERKLAGAR, se bilaga (MMD-01)\nÖverklagande senast den 23 september 2024.\nMartin Linder Carl-Philip Jönsson\n\nI domstolens avgörande har deltagit tingsfiskalen Martin Linder, ordförande, och\ntekniska rådet Carl-Philip Jönsson samt de särskilda ledamöterna Bo Selmer och\nAnders Wetterling.\n\nBilaga 1\nHur man överklagar\nDom i mark- och miljödomstol som första instans MMD-01\nVill du att domen ska ändras i någon del kan du Vad händer sedan?\növerklaga. Här får du veta hur det går till.\nMark- och miljödomstolen kontrollerar att överklagandet kommit in i rätt tid. Har det kommit in för\nsent avvisar domstolen överklagandet. Det innebär\nÖverklaga skriftligt inom 3 veckor\natt domen gäller.\nDitt överklagande ska ha kommit in till domstolen\ninom 3 veckor från domens datum. Sista datum för\nOm överklagandet kommit in i tid, skickar marköverklagande finns på sista sidan i domen.\noch miljödomstolen överklagandet och alla handlingar i målet vidare till Mark- och miljööverdomstolen.\nÖverklaga efter att motparten överklagat\nHar du tidigare fått brev genom förenklad delgivOm ena parten har överklagat i rätt tid, har den\nning, kan även Mark- och miljööverdomstolen skicka\nandra parten också rätt att överklaga även om tiden\nbrev på detta sätt.\nhar gått ut. Det kallas att anslutningsöverklaga.\nEn part kan anslutningsöverklaga inom en extra Prövningstillstånd i Mark- och miljövecka från det att överklagandetiden har gått ut. Ett överdomstolen\nanslutningsöverklagande måste alltså komma in inom\nNär överklagandet kommer in till Mark- och miljö4 veckor från domens datum.\növerdomstolen tar domstolen först ställning till om\nmålet ska tas upp till prövning.\nEtt anslutningsöverklagande upphör att gälla om det\nförsta överklagandet dras tillbaka eller av något annat\n1 Mark- och miljööverdomstolen ger prövnings1\n- 1 8 skäl inte går vidare. tillstånd i fyra olika fall.\n0\n2\n•\ng\nvec\nkli n\nSå här gör du\n D\ntvi\no\nv\nm\nla\ns\np\nto\nå\nl e\na\nn\ntt\nb\nm\ne\na\nd\nr\nö\nk\nm\n- o\ner\nc h\na t\nm\nt d\nil\ne\njö\nt\nd\nfi\no\nn\nm\nns\ns t\na\no\nn\nle\nle\nn\nd n\nd\ni\nö\nn\nm\ng\nt\na\nr\ntt\nä tt.\nols ut 1. Skriv mark-och miljödomstolens namn och\nmst målnummer.  Domstolen anser att det inte går att bedöma om\no\nör\nd\n2. Förklara varför du tycker att domen ska ändras.\nmark- och miljödomstolen har dömt rätt utan att\nv\nd. f\nTala om vilken ändring du vill ha och varför du\nta upp målet.\nA\nket, tycker att Mark- och miljööverdomstolen ska ta  Domstolen behöver ta upp målet för att ge andra\nols\nver\nupp ditt överklagande (läs mer om prövnings- domstolar vägledning i rättstillämpningen.\nmst tillstånd längre ner).\no  Domstolen bedömer att det finns synnerliga skäl\nD\nd\nucerat\na v 3. T\nv\nsk\na\na\nr\nd\nl\ni\na\nf\nd\nt\no\nl\nu\ni\nm\ng\nv\na\ni\nv\nl\nb\nl\ni\ne\nl\nv\nk\nv\ni\na\ns\nis\na\nb\ns\nm\ne\no\nv\nm\ne\nis\nd\ni\nd\nn\nv\nu\na\nt e\nr\nv\nj e\nr\nil\ne\nl\nb\nd\nh\ne\na\nä\nv\nn\nn\ni s\nv\nf\n.\ni\ni\nn\nS\nsa\nn\nk\ns\ni\nt\nc\ni\ni\nl\nk\nl\nm\n.\na\nF\nm\nå\nö\nle\ne\nr\nt\nk\nd\n.\nl ara\nOm\na t\nd\nt\nu\nt a\ni n\nu\nte\np p\nfå r\nm\np\nå\nr\nl\nö\net\nv\na\nn\nv\nin\nn\ng\nå\ns\ng\nti\no\nll\nn\nst å\na\nn\nn\nd\nn a\ng\nn\nä l\na\nle\nn\nr\nl e\nd\nd\ne\nn\nn\ni n\nö\ng\nv\n.\nerklago\nPr\n•\nnst a\nns 4. L\ngi\nä\nf\nm\nter\nn a\no m\nna\nv\nm\na\nn\nr d\nsa\no\nm\nm\nt\ns t\na\no\nk\nl\nt\ne\nu\nn\ne l\nk\nla\na n\no c\nn\nh\nå\nf\nd\nu\ni\nl\ng\nls\n:\nt\np\nä\no\nn\ns\nd\nt\ni\na\ng\nd\na\nr e\nu\ns\np\ns\np\ne\n-\nr,\na\nta\nd e\nm\nd\ne\no\nd\nm\nal\ne\nlt\nn .\nd\nD\nu\nä\nv\nr\nil\nf\nl\nö\nf\nr\nö\nä\nr\nr\na\nd\nfr\ne\na\nt\nm\nv\n.\ni ktigt att i överklagandet\na\ni\ne-postadresser och telefonnummer.\nörst\nm\nf\nOm du har ett ombud, lämna också ombudets\nVill du veta mer?\no\nD kontaktuppgifter. Ta kontakt med mark- och miljödomstolen om du\n0\n-\n1 har frågor. Adress och telefonnummer finns på\n-D\n5. Skriv under överklagandet själv eller låt ditt\nM första sidan i domen.\nM ombud göra det.\nde\nga n 6. Skicka eller lämna in överklagandet till mark- och Mer information finns på www.domstol.se.\nkla\nver miljödomstolen. Du hittar adressen i domen.\nö\nör\ngar\nf\nn\nn\nvis ni Sida 1 av 1\nA",
-        "metadata": {
-          "filename": "Vaxjo_NV_2024-09-02.txt",
-          "case_number": "M 6587-23",
-          "date": "2024-09-02",
-          "court": "Växjö tingsrätt, MMD",
-          "court_level": "first_instance",
-          "subject": "Ansökan om ändringstillstånd enligt miljöbalken till viss ändrad verksamhet vid Höganäsbolagens anläggning i Höganäs kommun Anl.ID.: 31755 Avrinningsområde: 94/95 Mellan Rååån och Vegeån",
-          "parties": {
-            "klagande": [],
-            "motpart": []
-          },
-          "word_count": 12930,
-          "doc_type": "dom",
-          "originating_court": null,
-          "is_appeal": false,
-          "application_outcome": "granted",
-          "application_outcome_sv": "Tillstånd beviljas"
-        },
-        "scoring_details": {
-          "net_score": 1,
-          "outcome_type": "CONDITIONS_MODIFIED",
-          "outcome_desc": "Villkor/dom ändras",
-          "max_cost_sek": 2500000.0,
-          "measures": [
-            "kontrollprogram"
-          ],
-          "domslut_measures": [],
           "is_relevant": true,
           "override": false
         }
@@ -225,12 +187,12 @@
           "doc_type": "dom",
           "originating_court": null,
           "is_appeal": false,
-          "application_outcome": "conditions_changed",
-          "application_outcome_sv": "Villkor ändras"
+          "application_outcome": "granted",
+          "application_outcome_sv": "Tillstånd beviljas"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "GRANTED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 36800.0,
           "measures": [
@@ -270,12 +232,12 @@
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "appeal_denied",
-          "application_outcome_sv": "Överklagande avslås"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljat med ändringar"
         },
         "scoring_details": {
           "net_score": -2,
-          "outcome_type": "MINOR_CHANGE",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Ändrar dom i mindre delar",
           "max_cost_sek": 110400.0,
           "measures": [
@@ -363,12 +325,12 @@
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "dismissed",
+          "application_outcome_sv": "Avvisad"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "DISMISSED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 0,
           "measures": [
@@ -407,53 +369,13 @@
         },
         "scoring_details": {
           "net_score": -6,
-          "outcome_type": "OPERATOR_WINS",
+          "outcome_type": "OVERTURNED",
           "outcome_desc": "Upphäver myndighets beslut/föreläggande",
           "max_cost_sek": 100000.0,
           "measures": [
             "utrivning"
           ],
           "domslut_measures": [],
-          "is_relevant": true,
-          "override": false
-        }
-      },
-      {
-        "id": "m4965-23",
-        "filename": "Vaxjo_M4965-23_2024-09-02_Hoganas.txt",
-        "label": "HIGH_RISK",
-        "original_label": "HIGH_RISK",
-        "confidence": 0.7,
-        "key_text": "DOMSLUT:\nTillstånd\nMark- och miljödomstolen lämnar Höganäs kommun (kommunen) tillstånd enligt\n11 kap. miljöbalken att inom fastigheten Höganäs 36:50, i enlighet med ansökan\n- anlägga en brygga med därtill hörande anordningar, samt\n- utföra erforderliga anläggningsarbeten i berört område.\nVillkor\nMark- och miljödomstolen föreskriver följande villkor för verksamheten.\n1 Verksamheten ska bedrivas i huvudsaklig överensstämmelse med vad\nkommunen redovisat i ansökningshandlingarna och i övrigt åtagit sig i målet.\nMindre ändringar av verksamheten får vidtas efter godkännande av\n\nBox 81 Kungsgatan 8 0470-560 100 måndag – fredag\n\ntillsynsmyndigheten, under förutsättning att ändringen inte kan befaras medföra\nen ökad störning för motstående intressen.\n2 Grumlande arbeten ska utföras på sådant sätt att grumling i möjligaste mån\nbegränsas. Grumlande arbeten i vatten får endast utföras under tiden från och\nmed oktober till och med mars månad.\n3 Utrustning i form av länsar och saneringsutrustning ska finnas på plats\nvid arbete med arbetsmaskiner. Det ska även finnas rutiner för hantering av\ndenna utrustning. Hydraulvätskor i arbetsmaskiner ska uppfylla\nmiljöegenskaper enligt svensk standard SS 155434.\n4 Buller från verksamheten ska i möjligaste mån vid bostäder begränsas i\nenlighet med riktvärdena i Naturvårdsverkets allmänna råd om buller från\nbyggplatser (NFS 2004:15). Tillsynsmyndigheten får medge undantag från\novan nämnda riktvärden.\n5 Kontrollprogram för verksamheten ska upprättas i samråd med\ntillsynsmyndigheten och ges in till tillsynsmyndigheten senast fyra veckor\ninnan arbetena påbörjas.\nDelegation\nMark- och miljödomstolen överlåter med stöd av 22 kap. 25 § miljöbalken tredje\nstycket åt tillsynsmyndigheten att vid behov meddela de ytterligare villkor som kan\nbehövas avseende anpassningar för att minska belysningens ljuspåverkan till havet.\nArbetstid\nDen tid inom vilken de i denna dom tillståndsgivna arbetena ska vara utförda\nbestäms med stöd av 22 kap. 25 § andra stycket miljöbalken till fem (5) år från det\natt denna dom vunnit laga kraft.\n\nOförutsedd skada\nAnspråk enligt 24 kap. 18 § miljöbalken på grund av oförutsedd skada ska, för att få\ntas upp till prövning, framställas till mark- och miljödomstolen inom fem (5) år från\nutgången av ovan angivna arbetstid.\nVerkställighetsförordnande\nMark- och miljödomstolen avslår yrkandet om verkställighetsförordnande.\nPrövningsavgift\nMark- och miljödomstolen ändrar inte den i tidigare beslut fastställda\nprövningsavgiften.\nRättegångskostnader\nMark- och miljödomstolen förpliktar kommunen att till Länsstyrelsen i Skåne län\nbetala ersättning för rättegångskostnader med 4 800 kr. Mervärdesskatt utgår inte på\nbeloppet. På beloppet ska utgå ränta enligt 6 § räntelagen från dagen för denna dom\ntill dess betalning sker.\n\nDOMSKÄL:\nMark- och miljödomstolen har med stöd av 22 kap. 16 § andra stycket miljöbalken\navgjort målet utan huvudförhandling.\nRådighet\nKommunen har såsom ägare till fastigheten Höganäs 36:50 där vattenverksamheten\nska bedrivas sådan rådighet som krävs enligt 2 kap. lagen (1998:812) med särskilda\nbestämmelser om vattenverksamhet. Ansökan avsåg initialt att delar av bryggan\näven skulle vara placerad på samfällda fastigheter vilka i erforderliga delar har\növerförts till Höganäs 36:50.\nMiljökonsekvensbeskrivning\nVerksamheten kan inte anses medföra betydande miljöpåverkan varför en specifik\nmiljöbedömning inte behövs. Mark- och miljödomstolen bedömer att underlaget i\nansökan och miljökonsekvensbeskrivningen uppfyller kraven för en liten\nmiljökonsekvensbeskrivning enligt 6 kap. 47 § miljöbalken samt miljöbalkens\nbestämmelser i övrigt för att ansökan ska kunna tas upp till sakprövning. Något\nspecifikt godkännande krävs inte.\n\nTillåtlighet\nDen sökta vattenverksamheten syftar till att bibehålla och förbättra områdets\nkvaliteter för rekreation och bad. Verksamheten strider inte mot planer och bedöms\ninte påtagligt skada riksintresset för friluftsliv, trots att bryggan kommer att\ninnebära försämrade förutsättningar för rodd och kitesurfing m.m. i området.\nVerksamheten bedöms inte medföra oacceptabel negativ påverkan på ålgräs eller\nandra värdefulla miljöer eller arter i området. Platsen bedöms därför som lämplig\nenligt 2 kap. 6 § miljöbalken.\nEnligt 7 kap. 16 § punkt 2 miljöbalken fordras inte någon särskild strandskyddsdispens för verksamheter eller åtgärder som omfattas av ett tillstånd enligt\nmiljöbalken. Syftet med detta undantag är att undvika dubbelprövning. Någon\nstrandskyddsdispens erfordras därför inte för den sökta verksamheten med de\nåtgärder som planeras utföras. Domstolen ska likväl beakta att åtgärderna vidtas\ninom ett område som omfattas av strandskydd, varför domstolen ska pröva huruvida\nåtgärderna är tillåtliga med hänsyn till strandskyddet och dess syften. Domstolen\nbedömer i detta fall att sådana förutsättningar som gäller för dispens enligt\n7 kap. 18 c § miljöbalken är uppfyllda och att de planerade åtgärderna därmed inte\nstrider mot strandskyddsbestämmelserna.\nKommunen har redovisat skyddsåtgärder för att hålla störningar på en låg nivå,\nexempelvis kommer anläggningsarbeten utföras så att påverkan på tumlare\nminimeras, och de bottensediment som kortvarigt kan komma att spridas bedöms\ninte medföra sådan risk för föroreningsspridning eller annan miljöpåverkan så att\ndet finns skäl att ifrågasätta den ansökta åtgärden.\nEnligt mark- och miljödomstolens bedömning är det möjligt att föreskriva sådana\nskäliga försiktighetsmått att olägenhet av väsentlig betydelse inte riskerar att\nuppkomma. Därmed föreligger det inte heller i övrigt något hinder mot det sökta\ntillståndet enligt de allmänna hänsynsreglerna i 2 kap. eller hushållningsbestämmelserna i 3 och 4 kap. miljöbalken. Sökt verksamhet riskerar inte att\nförsämra någon miljökvalitetsnorm eller försvåra möjligheten att nå uppsatta\n\nnormer enligt 5 kap. miljöbalken. Verksamheten riskerar inte att medföra någon\noacceptabel negativ påverkan på områden eller arter som är skyddade med stöd av 7\noch 8 kap. miljöbalken, och det föreligger inte heller några andra hinder mot att ge\ntillstånd enligt balkens bestämmelser i övrigt. Verksamheten är således tillåtlig och\ntillstånd ska därför lämnas.\nTillståndets omfattning\nOmfattningen av den ansökta verksamheten inklusive läge för, samt utformning av,\nbryggan framgår av denna dom samt ansökan med därtill hörande handlingar.\nInitialt omfattade kommunens yrkanden även samfällt vatten vilket under\nhandläggningstiden hos mark- och miljödomstolen överförts till kommunens\nfastighet Höganäs 36:50. Av handlingarna i målet framgår att det endast är den\nsistnämnda fastigheten som omfattas, varför samfällt vatten inte omnämns i\ndomslutets tillståndsmening.\nVillkor\nMark- och miljödomstolen anser att det är lämpligt att villkor föreskrivs med\nutgångspunkt från vad kommunen föreslagit, och kommunens villkorsförslag har\ninte ifrågasatts av någon part.\nMot bakgrund av de relativt begränsade arbetena och att grumlande arbeten ska\nutföras på sådant sätt att grumling i möjligaste mån begränsas, anser domstolen att\ndet inte finns skäl att därutöver föreskriva ytterligare villkor om exempelvis\nanvändande av siltgardiner (även kallade miljögardiner).\nDomstolen har lagt till ett villkor om beredskap i form av länsar och saneringsutrustning för att kunna hantera eventuella läckage eller spill från arbetsmaskiner.\nMed saneringsutrustning avses Absol eller motsvarande. Villkoret föreskriver även\natt hydraulvätskor (hydraulolja) som används ska uppfylla miljökraven enligt\nsvensk standard SS 155434. Sveriges forskningsinstitut RISE redovisar och listar\nprodukter som uppfyller miljöegenskaper enligt SS 155434.\n\nSedvanligt villkor om kontroll bör föreskrivas. Domstolen anser att det är lämpligt\natt det utöver vad som framgår av kommunens villkorsförslag, även framgår att\nkontrollprogrammet ska ges in till tillsynsmyndigheten i god tid.\nDelegerade frågor\nLänsstyrelsen har yttrat att belysningen bör anpassas för att minska påverkan i\nhavet. Kommunen har i sitt bemötande uppgett att det kommer att väljas armaturer\nsom i möjligaste mån sprider ljuset endast över bryggdäcket, samt att det ska finnas\nmöjlighet att anpassa belysningens styrka under vissa tider av dygnet. Det\nkommunen härvid uppgett omfattas av det så kallade allmänna villkoret. För att\nytterligare säkerställa att den slutliga utformningen blir sådan att belysningen\nanpassas för att minska ljuspåverkan till havet, anser domstolen att det är lämpligt\natt tillsynsmyndigheten ges möjlighet att meddela de ytterligare villkor som kan\nbehövas avseende detta.\nArbetstid och tid för anmälan av oförutsedd skada\nMark- och miljödomstolen finner inte skäl att frångå kommunens yrkanden om fem\nårs arbetstid och tid för anmälan av oförutsedd skada om fem år räknat från\narbetstidens utgång.\nVerkställighetsförordnande\nEnligt 22 kap. 28 § miljöbalken får mark- och miljödomstolen, när det finns skäl för\ndet, förordna att tillståndet till en verksamhet får tas i anspråk även om domen inte\nhar vunnit laga kraft. Huvudregeln är dock att ett meddelat tillstånd inte får\nverkställas förrän domen i målet fått laga kraft. Kommunen har begärt\nverkställighetsförordnande med hänvisning till att bryggan är angelägen för att\nkomplettera befintlig mindre brygga vid Kvickbadet och minska trängseln vid den\nbefintliga mindre bryggan. Grumlande arbeten kan dock inte påbörjas förrän i\noktober i enlighet med villkor 2. Den planerade nya bryggan kan dessutom i olika\ngrad komma att skapa en barriär för de som använder vattnet vid Kvickbadet som\nen lokal för exempelvis rodd, paddling, SUP, vindsurfing och kitesurfing m.m. Av\n\nsamrådshandlingarna framgår också att synpunkter har framförts avseende påverkan\nfrån den planerade bryggan. Domstolen bedömer därför att det inte finns tillräckliga\nskäl för att meddela ett verkställighetsförordnande. Kommunens yrkande om\nverkställighetsförordnande avslås således.\nPrövningsavgift\nMark- och miljödomstolen finner inga skäl att ändra den tidigare beslutade avgiften\nom 35 000 kr för målets prövning.\nRättegångskostnader\nEnligt 25 kap. 2 § miljöbalken ska sökanden i ansökningsmål om vattenverksamhet\nsvara för sina egna och motpartens kostnader vid mark- och miljödomstolen.\nLänsstyrelsen har yrkat ersättning för rättegångskostnader med 4 800 kronor.\nKommunen har medgivit yrkandet och ska förpliktas att utge det yrkade beloppet.\nHUR MAN ÖVERKLAGAR, se bilaga (MMD-01)\nÖverklagande senast den 23 september 2024.\nAnnika Wahlfried Wikingsson Henrik Östman\n\nI domstolens avgörande har deltagit rådmannen Annika Wahlfried Wikingsson,\nordförande, och tekniska rådet Henrik Östman samt de särskilda ledamöterna AnnChristine Vösu och Bo Selmer.\n\nBilaga 1\nHur man överklagar\nDom i mark- och miljödomstol som första instans MMD-01\nVill du att domen ska ändras i någon del kan du Vad händer sedan?\növerklaga. Här får du veta hur det går till.\nMark- och miljödomstolen kontrollerar att överklagandet kommit in i rätt tid. Har det kommit in för\nsent avvisar domstolen överklagandet. Det innebär\nÖverklaga skriftligt inom 3 veckor\natt domen gäller.\nDitt överklagande ska ha kommit in till domstolen\ninom 3 veckor från domens datum. Sista datum för\nOm överklagandet kommit in i tid, skickar marköverklagande finns på sista sidan i domen.\noch miljödomstolen överklagandet och alla handlingar i målet vidare till Mark- och miljööverdomstolen.\nÖverklaga efter att motparten överklagat\nHar du tidigare fått brev genom förenklad delgivOm ena parten har överklagat i rätt tid, har den\nning, kan även Mark- och miljööverdomstolen skicka\nandra parten också rätt att överklaga även om tiden\nbrev på detta sätt.\nhar gått ut. Det kallas att anslutningsöverklaga.\nEn part kan anslutningsöverklaga inom en extra Prövningstillstånd i Mark- och miljövecka från det att överklagandetiden har gått ut. Ett överdomstolen\nanslutningsöverklagande måste alltså komma in inom\nNär överklagandet kommer in till Mark- och miljö4 veckor från domens datum.\növerdomstolen tar domstolen först ställning till om\nmålet ska tas upp till prövning.\nEtt anslutningsöverklagande upphör att gälla om det\nförsta överklagandet dras tillbaka eller av något annat\n1 Mark- och miljööverdomstolen ger prövnings1\n- 1 8 skäl inte går vidare. tillstånd i fyra olika fall.\n0\n2\n•\ng\nvec\nkli n\nSå här gör du\n D\ntvi\no\nv\nm\nla\ns\np\nto\nå\nl e\na\nn\ntt\nb\nm\ne\na\nd\nr\nö\nk\nm\n- o\ner\nc h\na t\nm\nt d\nil\ne\njö\nt\nd\nfi\no\nn\nm\nns\ns t\na\no\nn\nle\nle\nn\nd n\nd\ni\nö\nn\nm\ng\nt\na\nr\ntt\nä tt.\nols ut 1. Skriv mark-och miljödomstolens namn och\nmst målnummer.  Domstolen anser att det inte går att bedöma om\no\nör\nd\n2. Förklara varför du tycker att domen ska ändras.\nmark- och miljödomstolen har dömt rätt utan att\nv\nd. f\nTala om vilken ändring du vill ha och varför du\nta upp målet.\nA\nket, tycker att Mark- och miljööverdomstolen ska ta  Domstolen behöver ta upp målet för att ge andra\nols\nver\nupp ditt överklagande (läs mer om prövnings- domstolar vägledning i rättstillämpningen.\nmst tillstånd längre ner).\no  Domstolen bedömer att det finns synnerliga skäl\nD\nd\nucerat\na v 3. T\nv\nsk\na\na\nr\nd\nl\ni\na\nf\nd\nt\no\nl\nu\ni\nm\ng\nv\na\ni\nv\nl\nb\nl\ni\ne\nl\nv\nk\nv\ni\na\ns\nis\na\nb\ns\nm\ne\no\nv\nm\ne\nis\nd\ni\nd\nn\nv\nu\na\nt e\nr\nv\nj e\nr\nil\ne\nl\nb\nd\nh\ne\na\nä\nv\nn\nn\ni s\nv\nf\n.\ni\ni\nn\nS\nsa\nn\nk\ns\ni\nt\nc\ni\ni\nl\nk\nl\nm\n.\na\nF\nm\nå\nö\nle\ne\nr\nt\nk\nd\n.\nl ara\nOm\na t\nd\nt\nu\nt a\ni n\nu\nte\np p\nfå r\nm\np\nå\nr\nl\nö\net\nv\na\nn\nv\nin\nn\ng\nå\ns\ng\nti\no\nll\nn\nst å\na\nn\nn\nd\nn a\ng\nn\nä l\na\nle\nn\nr\nl e\nd\nd\ne\nn\nn\ni n\nö\ng\nv\n.\nerklago\nPr\n•\nnst a\nns 4. L\ngi\nä\nf\nm\nter\nn a\no m\nna\nv\nm\na\nn\nr d\nsa\no\nm\nm\nt\ns t\na\no\nk\nl\nt\ne\nu\nn\ne l\nk\nla\na n\no c\nn\nh\nå\nf\nd\nu\ni\nl\ng\nls\n:\nt\np\nä\no\nn\ns\nd\nt\ni\na\ng\nd\na\nr e\nu\ns\np\ns\np\ne\n-\nr,\na\nta\nd e\nm\nd\ne\no\nd\nm\nal\ne\nlt\nn .\nd\nD\nu\nä\nv\nr\nil\nf\nl\nö\nf\nr\nö\nä\nr\nr\na\nd\nfr\ne\na\nt\nm\nv\n.\ni ktigt att i överklagandet\na\ni\ne-postadresser och telefonnummer.\nörst\nm\nf\nOm du har ett ombud, lämna också ombudets\nVill du veta mer?\no\nD kontaktuppgifter. Ta kontakt med mark- och miljödomstolen om du\n0\n-\n1 har frågor. Adress och telefonnummer finns på\n-D\n5. Skriv under överklagandet själv eller låt ditt\nM första sidan i domen.\nM ombud göra det.\nde\nga n 6. Skicka eller lämna in överklagandet till mark- och Mer information finns på www.domstol.se.\nkla\nver miljödomstolen. Du hittar adressen i domen.\nö\nör\ngar\nf\nn\nn\nvis ni Sida 1 av 1\nA",
-        "metadata": {
-          "filename": "Vaxjo_M4965-23_2024-09-02_Hoganas.txt",
-          "case_number": "M 4965-23",
-          "date": "2024-09-02",
-          "court": "Växjö tingsrätt, MMD",
-          "court_level": "first_instance",
-          "subject": "Ansökan om tillstånd enligt miljöbalken till vattenverksamhet med uppförande av en badbrygga vid Kvickbadet i Höganäs, Höganäs kommun Avrinningsområde: 94/95 (mellan Råån och Vege å) Anläggnings-id: 76382",
-          "parties": {
-            "klagande": [],
-            "motpart": []
-          },
-          "word_count": 7473,
-          "doc_type": "dom",
-          "originating_court": null,
-          "is_appeal": false,
-          "application_outcome": "denied",
-          "application_outcome_sv": "Ansökan/yrkande avslås"
-        },
-        "scoring_details": {
-          "net_score": 3,
-          "outcome_type": "PERMIT_GRANTED",
-          "outcome_desc": "Tillstånd meddelas (med villkor)",
-          "max_cost_sek": 35000.0,
-          "measures": [
-            "kontrollprogram"
-          ],
-          "domslut_measures": [
-            "kontrollprogram"
-          ],
           "is_relevant": true,
           "override": false
         }
@@ -485,7 +407,7 @@
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "APPEAL_DENIED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 1500.0,
           "measures": [
@@ -535,7 +457,7 @@
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "MINOR_CHANGE",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Ändrar dom i mindre delar",
           "max_cost_sek": 469300000.0,
           "measures": [
@@ -577,54 +499,15 @@
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "dismissed",
+          "application_outcome_sv": "Ansökan avvisas"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "DISMISSED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 1500.0,
           "measures": [],
-          "domslut_measures": [],
-          "is_relevant": true,
-          "override": false
-        }
-      },
-      {
-        "id": "m503-22",
-        "filename": "m-503-22-dom-2023-02-22.txt",
-        "label": "LOW_RISK",
-        "original_label": "MEDIUM_RISK",
-        "confidence": 0.4,
-        "key_text": "DOMSLUT:\nMark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och\nåterförvisar målet dit för fortsatt handläggning. Frågan om rättegångskostnader i Markoch miljööverdomstolen ska prövas av mark- och miljödomstolen i samband med att\nmålet återupptas.\n\n1. Mark- och miljödomstolen avslår yrkandet om avvisning av ansökan.\n2. Mark- och miljödomstole n godkänner miljökonsekvensbeskrivningen.\n3. Mark- och miljödomstolen avslår ansökan.\nPrövningsavgift\nMark- och miljödomstolen ändrar inte den med stöd av 3 kap. förordningen\n(1998:940) om avgift för prövning och tillsyn enligt miljöbalken tidigare fastställda\navgiften för målets prövning.\nRättegångskostnader\nMark- och miljödomstolen avslår Harrviken Marina AB:s yrkande om att\nmotparterna 3-12 ska betala ersättning för bolagets rättegångskostnader.\nHarrvikens Marina AB ska utge ersättning för rättegångskostnader till motparterna\n3-12 med 485 681 kr, varav 350 000 kr avseende arvode, 33 670 kr utlägg, 4 875 kr\ntidsspillan samt 97 136 kr mervärdesskatt.\nHarrvikens Marina AB ska utge ersättning för rättegångskostnader till\n- K.S. med 1 000 kr -\n C.Å. med 1 000 kr -\n K.Å. med 5 580 kr\n- L.N. med 1 560 kr\n- K.E. med 4 572 kr -\n A.E. med 3 731 kr\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nPå samtliga belopp ska utgå ränta enligt 6 § räntelagen från dagen för denna dom\ntill dess betalning sker.\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nInnehåll\n\n............................................................................................................ 2\nPrövningsavgift ...................................................................................................... 2\nRättegångskostnader ............................................................................................... 2\n\nDOMSKÄL:\nUtgångspunkter för prövningen\nBestämmelser om planläggning av mark och vatten finns i plan- och bygglagen\n(2010:900). Planläggningen utgör en kommunal angelägenhet (se 1 kap. 2 §). Genom\nen detaljplan får kommunen reglera byggandet i och användningen av både mark- och\nvattenområden. Genom detaljplanen tar kommunen ställning till allmänna intressen\nenligt 2 kap. plan- och bygglagen – inte minst frågan om lokalisering – samt\nhushållningsbestämmelserna i 3 och 4 kap. miljöbalken. Planprocessen syftar till att ge\nbl.a. myndigheter och allmänheten inflytande i processen och den lägger grunden för\nen bedömning av markanvändningen i ett större sammanhang. Detaljplanen ger den\nenskilde markägaren rätt att bygga enligt planen och anger även ansvarsfördelningen\nmellan kommunen och den enskilde fastighetsägaren samtidigt som de grannerättsliga\nförhållandena klaras ut. (Se prop. 2009/10:170 s. 191 och 193 f.)\nFör verksamheter som utöver en prövning med detaljplan också kräver tillstånd enligt\nmiljöbalken har planprocessen redan innefattat bedömningar av många frågor som\ningår i den miljörättsliga prövningen. I de allra flesta fall torde verksamhetens\nlokalisering vara slutligt prövad genom detaljplanen. Det kan därför inte ställas krav på\natt sökanden i ett sådant läge ska redovisa alternativa placeringar för verksamheten.\nMed hänsyn till lagarnas olika syften innebär en antagen detaljplan emellertid inte att\ntillståndsprövningen blir en ren formalitet. Miljöbalken har som främsta syfte att långsiktigt trygga människors hälsa och miljö samt skydda värdefulla naturmiljöer. Den\ningående miljörättsliga prövning som krävs för att tillstånd ska kunna ges kan inte\ngenomföras inom ramen för en planprocess (jfr SOU 2005:77 s. 756 ff. och 792 ff.\nsamt a. prop. s. 364 ff.). Den som ansöker om tillstånd måste därför presentera ett\nunderlag som besvarar de specifika frågor som aktualiseras i tillståndsprocessen.\nBedömningen i detta fall\nHarrvikens Marina AB har ansökt om tillstånd att få anlägga en ny småbåtshamn i\nHarrviken i Luleå kommun. För det område som ansökan avser finns en detaljplan,\n\nHarrvikens Marina, A, vilken föreskriver att området ska användas för\nsmåbåtshamn. Detaljplanen har fåt t laga kraft.\nMot bakgrund av syftet med planläggningsinstitutet och därigenom regleringen av\nmarkanvändningen finns det anledning att kunna utgå från vad som har prövats i en\ndetaljplan. Det kan konstateras att lokaliseringen för småbåtshamnen redan har prövats\ngenom aktuell detaljplan. Mark- och miljööverdomstolen bedömer därför att det\nförslag på lokalisering som anges i ansökan inte kan anses vara olämpligt för en\nsmåbåtshamn och att det därigenom inte kan utgöra skäl för att avslå ansökan.\nEn process avseende tillstånd till en verksamhet innefattar, utöver lokaliseringen,\nockså ett flertal ytterligare frågor som är av sådan natur att de inte kan prövas enbart\ngenom planläggning. Det kan inte minst avse frågor om vilka villkor som tillståndet\nbör förenas med. Under målets gång kan klargöranden eller ytterligare utredning\nefterfrågas och det åligger den som ansöker om tillstånd att bistå med detta för att\ndomstolen ska kunna ta ställning till vilka skyddsåtgärder och försiktighetsmått som\nverksamheten ska förenas med.\nUtöver den bedömning som Mark- och miljööverdomstolen har gjort beträffande\nlokaliseringen finns det ett antal utestående frågor att ta ställning till för att kunna\npröva om tillstånd till den ansökta verksamheten kan ges eller inte. Mark- och\nmiljööverdomstolen bör emellertid inte som första instans pröva ansökan om tillstånd\nmed eventuella villkor. Målet ska därför återförvisas till mark- och miljödomstolen.\nMed denna utgång ska frågan om rättegångskostnader här prövas i samband med målet\nefter dess återupptagande av mark- och miljödomstolen.\n\nHUR MAN ÖVERKLAGAR, se bilaga B\nÖverklagande senast den 2023-03-22\nI avgörandet har deltagit hovrättsrådet Henrik Löv, tekniska rådet Claes Becker,\nhovrättsrådet Henrik Jonsson och tf. hovrättsassessorn Alexandra Tavaststjerna,\nreferent.\nFöredragande har varit Susanne Schultzberg.\n\nUMEÅ TINGSRÄTT\nMark - och miljödomstolen DOM\n2021 -12-17\nmeddelad i\nUmeå Mål nr M 3528 -19\n\n901 04 Umeå Nygatan 45 090-17 21 00 måndag – fredag\n08:00 –16:00 E-post: mmd.umea@dom.se\nwww.domstol.se, Info om vår\npersonuppgiftsbehandling:\nwww.umeatingsratt.domstol.se eller kontakta\noss\n\n.......................................................................................................... 73\nRådighet ........................................................................................................... 73\nUtgångspunkter ................................................................................................ 73\nNärmare bedömning av utredningen i målet och sökt verksamhets miljökonsekvenser .................................................................................................... 75\nFråga om ersättningsyrkanden och rättegångskostnader .................................... 78\nPrövningsavgift ................................................................................................ 82\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nRådighet\nDet krävs rådighe t enli gt 2 kap. 2 § lage n (1998:812) me d särskil da bestämmelser\nom vattenverksamhe t i for m av antinge n äganderät t, en upplåte n nyttjanderät t eller\nen tvångsrät t för att bolage t ska var a behöri g att ansö ka om tillstån d. Mark - och\nmiljödomstolen finner att det är visat i målet att bolaget har förvärvat ett\nmarkområde som numera utgör fastigheten Luleå Q. För rätt till övrig mark och\nvatten på fastigheten A som bolaget behöver för den sökta vattenverksamheten\nhar bolaget åberopat ett avtal tecknat med Luleå kommun. Domstolen finner att\navtalet är sådant att det i vart fall ger bolaget erforderlig rådighet för att få\nansökan prövad.\nUtgångspunkter\nEn förutsättning för att tillstånd för en verksamhet ska kunna beviljas enligt\nmiljöbalken är att ansökan innefattar en miljökonsekvensbeskrivning som till\nomfattning och innehåll uppfyller miljöbalkens krav. Miljökonsekvensbeskrivningen är en processförutsättning. Den första frågan domstolen har att\nbesvara är därmed om den miljökonsekvensbeskrivning som bolaget har ingett i\nmålet uppfyller miljöbalkens krav.\nDomstolen kan konstatera att det under målets handläggning har framkommit en rad\nmotstridiga eller felaktiga uppgifter i underlaget av beskrivna miljökonsekvenser.\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nVidare har uppgifter och underlag saknats i vissa avseenden. Bolaget har under\nhandläggningen i viss omfattning varit villig att komplettera ansökan med det som\nefterfrågats, men har ofta hänvisat till att redan ingivet material är tillräckligt. I\nvissa delar har rätt omfattande justeringar och kompletteringar skett, men först efter\npåtalade brister.\nNär frågor har ställts rörande miljökonsekvenserna av sökt verksamhet har bolaget\nvidare återkommande hänvisat till att miljökonsekvensbeskrivningen har godkänts\nav Mark- och miljööverdomstolen i samband med prövningen av ändrad detaljplan.\nEn miljöprövning är dock, enligt domstolens bedömning, djupare och mer omfattande när det gäller bedömningen av miljökonsekvenserna för en verksamhet än en\nprövning i fråga om detaljplan. Miljökonsekvensbeskrivningen i ett ansökningsmål\nska därmed ha ett delvis annat och mer detaljerat innehåll. Mark- och miljööverdomstolen har vidare vid prövningen av detaljplanen endast angett att miljökonsekvensbeskrivningen kunde godtas i den processen, vilket inte har direkt rättsverkan för miljöbedömningen i förevarande mål.\nNär de t gäller de brister som finns i underlaget så har domstolen ett utredningsansvar och domstolen har under handläggningen samt vi d huvudförhandlingen ställ t\nett antal frågor till bolaget och begärt klargörande n och förtydliganden i olika\navseenden. Mark- och miljödomstolen kan doc k trots detta konstatera att bolagets\nansökan om at t få anlägga en marina i Harrviken fortfarande är behäfta d med\nbesvärande brister va d gäller beskrivningen av verksamhetens miljökonsekvenser.\nBristerna är doc k inte så väsentliga at t miljökonsekvensbeskrivningen inte kan\nutgöra grun d för ett ställningstagande till verksamhetens eller åtgärdens troliga\ninverkan på miljön (jfr. rättsfallet NJA 2009 s. 321). Det saknas därmed skäl att\navvisa ansökan på grund av processhinder, varför K.E. m.fl. avvisnings-yrkande\nska lämnas utan bifall.\nMed ett formellt betraktelsesätt anser mark- och miljödomstolen således att miljökonsekvensbeskrivningen är av sådan omfattning och har ett sådant innehåll att den\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nkan läggas till grund för prövningen och kan godkännas. Mark- och miljödomstolen\nska därmed pröva ansökans hållbarhet i sak, dvs. pröva om ansökan ska bifallas\neller om den ska avslås.\nLänsstyrelsens och nämndens inställning är att ansökan ska avslås, vilket även\nK.E. m.fl. har yrkat i andra hand. Skälen för detta är sammantaget att\nmotparterna menar att det finns oklarheter rörande verksamheten och miljökonsekvenserna i olika hänseenden och att det även finns brister i lokaliseringsutredningen och val av plats.\nK.E. m.fl. har vidare gjort gällande att ansökan ska avslås eftersom bolaget redan\nhar utfört betydande arbeten i anslutning till planerad verksamhet, vilket de menar\nföregriper den vattenrättsliga prövningen och strider mot 11 kap. 10\n§ MB och 16 kap. 6 § MB. Mark- och miljödomstolen finner dock att de åtgärder\nsom bolaget redan har vidtagit på platsen inte är sådana att ansökan redan av det\nskälet bör avslås.\nNärmare bedömning av utredningen i målet och sökt verksamhets miljökonsekvenser\nI ansökan förekommer hänvisningar till utredningar som mer framstår som\ngenerella slutsatser eller allmän kunskap än specifika, platsgjorda undersökningar\nmed tillräcklig detaljeringsgrad. I vissa fall är gjorda undersökningar av äldre datum\neller framstår väl grunda för ändamålet. Domstolen går igenom underlaget närmare\ni det följande.\nDomstolen kan konstatera att de naturvärdesinventeringar som har skett är av äldre\ndatum och att de slutsatser som bolaget har dragit om artförekomst och påverkan\nhar ifrågasatts. Bolaget har t.ex. inledningsvis inte redovisat att det skulle finnas\nrovfåglar, häckande fåglar eller sikyngel på aktuell plats. Bolaget har senare\nmedgett att dessa arter förekommer och har föreslagit att hänsyn till dem ska tas.\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nVidare kan nämnas att bolaget endast har provtagit de översta lagren av sedimenten\ni viken, vilket innebär att bolaget – om tillstånd ges – avser schakta mer än två\nmeter ned i okänt underlag. Massorna avses även användas för anläggningsändamål\nutan närmare kunskap om bärighet eller beskaffenhet. Bolaget har fått frågor från\nsåväl rätten som motparterna rörande dessa förhållanden, men har vidhållit att de\nundersökningar som har skett är tillräckliga.\nI målet har vidare förekommit olika uppgifter om jordartsförhållandena på platsen.\nBolaget har hävdat att det är övervägande sandjord och motparter har hävdat att det\nkan vara inslag av lera inom delar av området. Någon klargörande utredning i denna\nfråga har inte presenterats, utan bolaget menar även i denna del att den utredning de\nhar gett in är tillräcklig. Domstolen finner dock att det alltjämt är osäkert hur det\nförhåller sig i denna fråga.\nBolaget har redogjort för att de har planerat att anlägga två trummor genom piren\nmed en meters diameter i syfte att få genomströmning av vatten innanför den\nplanerade piren. Vidare har bolaget under förhandlingen uppgett att de avser göra\nen åtta meter stor öppning mellan piren och in mot land. Enligt domstolens\nbedömning innebär öppningen mot land att åtkomst till piren för egenkontroll m.m.\navsevärt skulle försvåras. Vilken effekt trummorna och öppningen kan komma att\nha på vattengenomströmningen har bolaget, trots frågor, inte kunnat redogöra för på\nett tillfredställande sätt. Det har vidare påtalats att bolaget inte har visat någon\nritning eller karta där gränsen för högsta högvatten är markerad. Det berörda\nvattenområdets area har även felräknats med cirka 50 %, trots att bolaget\nkompletterat med en planritning över schakt och anläggningar.\nSom bolaget har påpekat när det gäller servitutsfrågan har landhöjningen medfört\natt stranden har flyttats cirka 50 –100 meter längre ut, bort från närliggande fastigheter. Landhöjningen torde i förlängningen medföra att en småbåtshamn i\nHarrviken i en framtid sannolikt till stor del skulle komma att ligga på land. För att\nunder sådana förhållanden kunna behålla ett vattendjup som möjliggör för fritidsbåtar att använda hamnen skulle schaktning, muddring och eventuellt andra åtgärder\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nbehöva ske framgent i vattenområdet. Bolaget har beskrivit detta på så sätt att\nunderhållsmuddring skulle behöva ske ungefär vart tjugonde år. Dessa förhållanden\nhar betydelse för prövningen.\nNär det gäller lokaliseringsfrågan så ska, enligt 2 kap. 6 § MB, det väljas en plats\nför en verksamhet som är lämplig med hänsyn till att ändamålet ska kunna uppnås\nmed minsta intrång och olägenhet för människors hälsa och miljön. Om det finns\nolika alternativ för att uppnå ändamålet med en verksamhet eller åtgärd ska man\nvälja den lokalisering som medför minsta intrång och olägenhet från miljösynpunkt.\nEnligt 3 kap. 1 § MB ska vidare mark- och vattenområden användas för det eller de\nändamål för vilka områdena är mest lämpade med hänsyn till beskaffenhet och läge\nsamt föreliggande behov. Företräde ska ges sådan användning som medför en från\nallmän synpunkt god hushållning.\nAv underlaget har framkommit att vald plats i Harrviken, och angränsande\nHarrbäcksviken, utgör den enda kvarvarande oexploaterade delen av Hertsölandets\nstrand. Oexploaterade långgrunda havsvikar har generellt ett högt naturvärde på\nlokal nivå och bidrar även till den regionala ekosystemkvalitéten i Bottenviken.\nHarrviken är långgrund med tydliga böljeslag i sanden. I de mer skyddade delarna\nväxer vassruggar och bl.a. barklös sträfse, vilket är en ovanlig kransalg som är nära\nhotad enligt rödlistan. Viken är även ett uppväxtområde för sikyngel. Havs- och\nfiskgjuse syns enligt uppgift regelbundet söka föda i viken.\nNär det gäller bolagets lokaliseringsutredning så har i målet endast presenterats ett\nfåtal alternativa lokaliseringar i viken eller dess omedelbara närhet. Även om\ndomstolen bedömer att utredningen är tillräcklig för att kunna pröva ansökan så\nkvarstår det faktum att beskrivningarna av de alternativa områdena inte är särskilt\ndjupgående, vilket har lyfts fram av motparterna under handläggningen och vid\nhuvudförhandlingen.\nVidare har bolagets påståenden kring efterfrågan på båtplatser ifrågasatts. Att\nHarrvikens Marina har en kö för sina planerade båtplatser innebär dock inte att\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nbåtägare står utan platser till sina båtar eller att det är visat i målet att det finns ett\nutbrett allmänintresse av att ha sin båt just i Harrviken. Mark- och miljödomstolen\nbedömer dock att eftersom det i dagsläget ostridigt finns lediga båtplatser på andra\nsmåbåtshamnar i Luleå så finns mycket som talar för att läget på den tilltänka\nmarinan i Harrviken skulle vara attraktivt, vilket ska ställas mot att en långgrund\nhavsvik med viktiga naturvärden skulle behöva exploateras för att tillgodose ett\nsådant behov. En större småbåtshamn jämfört med många små skulle också medföra\nfärre ingrepp i naturmiljön och mer koncentrerad påverkan, vilket kan tala för\nansökan .\nMot angiven bakgrund finner domstolen att miljökonsekvensbeskrivningen inte\nbara har brister i beskrivningen av alternativa lokaliseringar, men även i\navvägningen av vad som utgör god hushållning med vattenområden. Av 3 kap. 1 §\nMB följer att en anläggning av nu aktuellt slag ska placeras där det är lämpligt med\nhänsyn till en mängd faktorer, varav någorlunda tillräckligt vattendjup är en. Det är\ni detta sammanhang inte heller försvarligt att åberopa att alla hamnar i Luleå\nbehöver muddras eftersom det är långgrunt överallt och att man av den anledningen\nskulle bättre acceptera miljöpåverkan i Harrviken. De argument som bolaget har\nframfört rörande valet av plats bedöms inte heller tillräckliga för att tillstånd ska\nkunna ges att exploatera en av de sista grunda havsvikarna i Luleälvens norra\nmynning. Sammantaget finner mark- och miljödomstolen att det är olämpligt att\nanlägga en småbåtshamn, i en långgrund skyddad vik av betydelse för\nfiskreproduktion, av nu aktuellt slag, och som behöver muddras vid anläggandet\noch sedan underhållsmuddras så länge den är i bruk. Det finns härutöver även\nkvarvarande och i målet besvärande osäkerheter kring vilken betydelse den\nplanerade verksamheten vid Harrviken skulle få på vikens naturmiljövärden och\nhydrologiska förhållanden. Mot den bakgrunden och vid en samlad bedömning av\nutredningen i målet finner mark- och miljödomstolen att ansökan ska avslås.\nFråga om ersättningsyrkanden och rättegångskostnader\nEftersom ansökan om tillstånd avslås saknas skäl att pröva K.E. m.fl.\nersättningsyrkanden för intrån g av vattenverksamheten. Det saknas därför också\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nskäl att – kopplat till den rättsliga grunden för ersättningsyrkandena – pröva i målet\nuppkomna frågor rörande servitutens giltighet.\nK.E. m.fl. har dock även gjort gällande att de är sakägare i målet i den\nbemärkelse att de har rätt till ersättning för sina rättegångskostnader. Bolaget har\ni första hand invänt att K.E. m.fl. inte är att anse som sakägare och därmed inte\nhar rätt till någon sådan ersättning.\nMark- och miljödomstolen finner att det står klart i målet att K.E. m.fl. är\nsakägare i fråga om vattenverksamhet och därmed som huvudregel har rätt till\nersättning för sina rättegångskostnader. Utifrån beskrivningarna under förhören\ninför rätten och åberopat underlag i målet finner domstolen att omständigheterna\när sådana att de var och en skulle kunna tillfogas skada eller utsättas för annan\nolägenhet genom den planerade vattenverksamheten och att den risken inte kan\nanses vara enbart teoretisk eller helt obetydlig (jfr. rättsfallet NJA 2004 s. 590).\nBolaget har vidare yrkat ersättnin g för sina rättegångskostnader, för de t fall bolagets\nyrkande om avvisni ng av sakägarnas ersättningsyrkanden skulle vinna bifall.\nB\nolaget menar att de, i en sådan situation, är att anse som vinnande part i den frågan\noch har gjort gällande at t 25 kap. 5 § andra stycket MB ska tillämpas, varav följer\natt beträffande särskilda frågor i ansökningsmål om vattenverksamhet får efter vad\nsom är skäligt förordnas att vardera parten ska svara för sina kostnader eller att part\nsom förlorar skall ersätta annan parts kostnader. K.E. m.fl. har yrkat att bolagets\nyrkandet\nom ersättning för rättegångskostnader ska ogillas då utrymme att kräva\nsådan ersättning saknas.\nMark- och miljödomstolen finner att bolaget, mot bakgrund av utgången i målet,\nska stå för sina egna och motpartens rättegångskostnader enligt huvudregeln i 25\nkap. 2 § MB. Någon anledning att medge avsteg från huvudregeln föreligger inte\noch det saknas skäl att förordna om annan fördelning av rättegångskostnaderna eller\natt vardera parten ska stå sina kostnader. Domstolen har därmed att pröva om\nyrkade belopp är skäliga.\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nK.E. m.fl. har yrkat ersättning för rättegångskostnader avseende\nombudsarvode, egna utlägg och ersättning för förlorad arbetsinkomst enligt\nvad som framgår nedan.\nK.Å. har yrkat ersättning med 5 580 kr, varav 4 800 kr för förlorad arbetsinkomst,\n240 kr (180 + 60) för resekostnad med egen bil, 290 kr för parkering och 250 kr\nsom schablonbelopp. Bolaget har vitsordat yrkandet endast i fråga om\nparkeringskostna d och i övrigt överlämnat till rätten att pröva skäligheten.\nK.S. och C.Å. har yrkat ersättning med schablonbelopp om vardera 1 000 kr\nmotsvarande 250 kr per dag under fyra dagar. Bolaget har inte kunnat vitsorda\nbeloppet som skäligt i och för sig. L.N. har yrkat ersättning med 1 560 kr för\nförlorad\narbetsinkomst. Bolaget har vitsordat yrkad ersättning som skälig.\nK.E. har yrkat ersättning med 4 572 kr, varav 4 092 kr (3 720 + 372) för förlorad\narbetsinkomst, 180 kr för resekostnad samt 300 kr för parkering. Bolaget har\nvitsordat yrkandet endast i fråga om parkeringskostnad och i övrigt överlämnat till\nrätten att pröva skäligheten av yrkade belopp.\nA.E. har yrkat ersättning med 3 731 kr, varav 3 648 kr (3 192 kr + 456) för\nförlorad arbetsinkomst, 60 kr för resekostnad samt 23 kr för parkering. Bolaget\nhar vitsordat yrkandet endast i fråga om parkeringskostnad och i övrigt\növerlämnat till rätten att pröva skäligheten av yrkade belopp.\nNär det gäller ovan angivna ersättningsyrkanden för egna utlägg och förlorad\narbetsinkomst m.m. finner domstolen att yrkade ersättningar i alla delar är befogade\noch skäliga, varför ersättning ska utgå i alla delar.\nAvseende kostnader för ombud har K.E. m.fl. yrkat ersättning med 739 431\nkr, varav 33 670 kr för utlägg, 4 875 kr för tidsspillan, 553 000 kr för\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\narvode och 147 886 kr för mervärdesskatt. Bolaget har ifrågasat t skäligheten av\nsåväl yrkat antal timmar som yrka d timkostnad och har inte kunnat vitsorda något\nbelopp som skäligt i och för si g i den delen, utan har överlämnat till rätten att pröva\nfrågan. I särskilt yttrande har bolaget ifrågasatt behovet av utförda åtgärder och det\nyrkade beloppets skälighet. K.E. m.fl. har vidhållit yrkandet och gjort gällande att\nutförda åtgärder varit nödvändiga och beloppets skälighet i och för sig.\nI fråga om ersättning för ombudsarvode kan följande sägas. Av 25 kap. 2 § MB\nframgår att i ansökningsmål om vattenverksamhet är huvudregeln att bolaget ska\nsvara för sina egna och motpartens kostnader vid mark- och miljödomstolen. Enligt\n5 § samma kapitel, gäller bestämmelsen med de begränsningar som ställs upp i 18\nkap. 6 och 8 §§ rättegångsbalken. Av 18 kap. 8 § rättegångsbalken framgår att\nersättning för rättegångskostnad fullt ut ska motsvara kostnaden för rättegångens\nförberedande och talans utförande jämte arvode till ombud eller biträde såvitt\nkostnaden skäligen varit påkallad för tillvaratagande av partens rätt. En enskild part\nhar visserligen – utöver de enskilda intressen som är hänförliga till den enskilde\nsjälv i egenskap av t.ex. ägare till en fastighet – rätt att framföra argument även\navseende sådana allmänna intressen som huvudsakligen bevakas av företrädare för\nallmänna intressen och parten ifråga har därigenom i och för sig rätt att få ersättning\nför rättegångskostnader även i den del arbete lagts ner på frågor som rör allmänna\nintressen.\nMed hänsyn till den skyldighet som åligger domstolen och vissa myndigheter att\nbevaka de allmänna intressena, finns det dock en gräns för hur stor del av\nsakägarnas arbete med dessa frågor som det är rimligt att bolaget skall ersätta (jfr.\nrättsfallet MÖD 2003:101). Vad gäller kostnad för ombudsarvode skall beaktas att\nersättningen inte i första hand ska bestämmas efter faktisk nedlagd tid, utan med\nhänsyn till bland annat målets beskaffenhet och omfattning samt den omsorg och\nskicklighet med vilken arbetet utförts.\nMark- och miljödomstolen kan konstatera att den skriftväxling och utredning\nav fastighetsrelaterade frågor som K.E. m.fl. har gjort till stor del har\n\nUMEÅ TINGSRÄTT DOM\n2021 -12-17 M 3528 -19\n\nföranletts av bolagets ifrågasättande och bestridande av servitutens giltighet och\nifrågasättande av om frågan alls ska prövas i målet. Ombudets arbete med detta har\ndärmed haft relevans för målet. Även övriga åtgärder, såsom inhämtande av\nvärderingsintyg m.m., har enligt domstolens uppfattning varit befogade.\nMark- och miljödomstolen finner inte anledning att ifrågasätta yrkad ersättning för\nombudets utlägg (33 670 kr exkl. mervärdesskatt) och inte heller för tidsspillan\n(4 875 kr exkl. mervärdesskatt). Med beaktande av målets art och omfattning kan\ndock yrkad ersättning för arbete om 553 000 kr exkl. mervärdesskatt inte anses\nskäligt. Sammantaget anser domstolen att aktuella parter ska ersättas för kostnad för\nombudsarvode i målet med skäliga 350 000 kr exklusive mervärdesskatt. Ersättning\nska därför utgå med 388 545 kr (350 000 + 33 670 + 4 875 kr). På beloppe t\ntillkommer mervärdesskatt enligt domslutet, dvs. sammanlagt 485 681 kr (97 136 +\n388 545 kr).\nPrövningsavgift\nGenom ett beslut den 9 december 2019 beslutade mark- och miljödomstolen att\nbolaget skulle betala en prövningsavgift om 15 000 kr enligt förordningen om\navgifter för prövning och tillsyn enligt miljöbalken. Av 9 kap. 3 § samma\nförordning framgår att domstolen ska pröva avgiftens skälighet i samband med att\nhandläggningen av målet avslutas. Mark- och miljödomstolen bedömer att\nomfattningen av prövningen i målet inte avviker från vad som i liknande mål är\nbrukligt. Domstolen finner därför inte skäl att ändra den tidigare beslutade avgiften.\nHUR MAN ÖVERKLAGAR, se bilaga ( MMD -01)\nÖverklagande senast den 7 januari 2022.\nKatarina Brodin Anita Wennström\n\nI domstolens avgörande har deltagit chefsrådmannen Katarina Brodin och tekniska\nrådet Anita Wennström samt de särskilda ledamöterna Joakim Ahlgren och Stefan\nMarklund.\n\nSida 1 av 1\nwww.domstol.se Anvisningar för överklagande MMD -01 - Dom första instans • Producerat av Domstolsverket, Avd. för domstolsutveckling • 2018 -11 Hur man överklagar\nDom i mark- och miljödomstol som första instans MMD-01\nVill du att domen ska ändras i någon del kan du\növerklaga. Här får du veta hur det går till.\nÖverklaga skriftligt inom 3 veckor\nDitt överklagande ska ha kommit in till domstolen\ninom 3 veckor från domens datum . Sista datum för\növerklagande finns på sista sidan i domen.\nÖverklaga efter att motparten överklagat\nOm ena parten har överklagat i rätt tid, har den\nandra parten också rätt att överklaga även om tiden\nhar gått ut. Det kallas att anslutningsöverklaga.\nEn part kan anslutningsöverklaga inom en extra\nvecka från det att överklagandetiden har gått ut. Ett\nanslutningsöverklagande måste alltså komma in inom\n4 veckor från domens datum.\nEtt anslutningsöverklagande upphör att gälla om det\nförsta överklagandet dras tillbaka eller av något annat\nskäl inte går vidare.\nSå här gör du\n1.Skriv mark-och miljödomstolens namn och\nmålnummer.\n2.Förklara varför du tycker att domen ska ändras.\nTala om vilken ändring du vill ha och varför du\ntycker att Mark- och miljööverdomstolen ska ta\nupp ditt överklagande (läs mer om prövningstillstånd längre ner).\n3.Tala om vilka bevis du vill hänvisa till. Förklara\nvad du vill visa med varje bevis. Skicka med\nskriftliga bevis som inte redan finns i målet.\n4.Lämna namn samt aktuella och fullständiga uppgifter om var domstolen kan nå dig: postadresser,\ne-postadresser och telefonnummer.\nOm du har ett ombud, lämna också ombudets\nkontaktuppgifter.\n5.Skriv under överklagandet själv eller låt ditt\nombud göra det.\n6.Skicka eller lämna in överklagandet till mark- och\nmiljödomstolen. Du hittar adressen i domen.Vad händer sedan?\nMark- och miljödomstolen kontrollerar att överklagandet kommit in i rätt tid. Har det kommit in för\nsent avvisar domstolen överklagandet. Det innebär\natt domen gäller.\nOm överklagandet kommit in i tid, skickar markoch miljödomstolen överklagandet och alla handlingar i målet vidare till Mark- och miljööverdomstolen.\nHar du tidigare fått brev genom förenklad delgivning, kan även Mark- och miljööverdomstolen skicka\nbrev på detta sätt.\nPrövningstillstånd i Mark- och miljööverdomstolen\nNär överklagandet kommer in till Mark- och miljööverdomstolen tar domstolen först ställning till om\nmålet ska tas upp till prövning.\nMark- och miljööverdomstolen ger prövningstillstånd i fyra olika fall.\nDomstolen bedömer att det finns anledning att\ntvivla på att mark- och miljödomstolen dömt rätt.\nDomstolen anser att det inte går att bedöma om\nmark- och miljödomstolen har dömt rätt utan att\nta upp målet.\nDomstolen behöver ta upp målet för att ge andra\ndomstolar vägledning i rättstillämpningen.\nDomstolen bedömer att det finns synnerliga skäl\natt ta upp målet av någon annan anledning.\nOm du inte får prövningstillstånd gäller den överklagade domen. Därför är det viktigt att i överklagandet\nta med allt du vill föra fram.\nVill du veta mer?\nTa kontakt med mark- och miljödomstolen om du\nhar frågor. Adress och telefonnummer finns på\nförsta sidan i domen.\nMer information finns på www.domstol.se . Bilaga 1\n\nwww.domstol.se Anvisning för överklagande HR - MÖD , avgörande , med pt • Producerat av Domstolsverket • 201 7-07 Hur man överklagar Mark- och miljööverdomstolens avgörande\n\nDen som vill överklaga Mark- och\nmiljööverdomstolens avgörande ska göra\ndet genom att skriva till Högsta domstolen.\nÖverklagandet ska dock skickas eller lämnas\ntill Mark- och miljööverdomstolen.\nSenaste tid för att överklaga\nÖverklagandet ska ha kommit in till Markoch miljööverdomstolen senast den dag\nsom anges i slutet av Mark- och\nmiljööverdomstolens avgörande.\nBeslut om häktning, restriktioner enligt\n24 kap. 5 a § rättegångsbalken eller reseförbud får överklagas utan tidsbegränsning.\nOm överklagandet har kommit in i rätt tid,\nskickar Mark- och miljööverdomstolen\növerklagandet och alla handlingar i målet\nvidare till Högsta domstolen.\nPrövningstillstånd i Högsta domstolen\nDet krävs prövningstillstånd för att Högsta\ndomstolen ska pröva ett överklagande.\nHögsta domstolen får meddela prövningstillstånd endast om\n1.det är av vikt för ledning av rättstillämpningen att överklagandet prövas\nav Högsta domstolen eller om\n2.det finns synnerliga skäl till sådan\nprövning, så som att det finns grund för\nresning, att domvilla förekommit eller att\nmålets utgång i Mark- och miljööverdomstolen uppenbarligen beror på\ngrovt förbiseende eller grovt misstag.\nÖverklagandets innehåll\nÖverklagandet ska innehålla uppgifter om\n1.klagandens namn, adress och\ntelefonnummer,\n2.det avgörande som överklagas\n(domstolens namn och avdelning samt\ndag för avgörandet och målnummer),\n3.den ändring i avgörandet som klaganden\nbegär,\n4.de skäl som klaganden vill ange för att\navgörandet ska ändra s,\n5.de skäl som klaganden vill ange för att\nprövningstillstånd ska meddelas, samt\n6.de bevis som klaganden åberopar och\nvad som ska bevisas med varje bevis.\nFörenklad delgivning\nOm målet överklagas kan Högsta domstolen använda förenklad delgivning vid\nutskick av handlingar i målet, under\nförutsättning att mottagaren där eller i\nnågon tidigare instans har fått information\nom sådan delgivning.\nMer information\nFör information om rättegången i Högsta\ndomstolen, se www.hogstadomstolen.se Bilaga B",
-        "metadata": {
-          "filename": "m-503-22-dom-2023-02-22.txt",
-          "case_number": "M 503 -22",
-          "date": "2023-02-22",
-          "court": "Mark- och miljööverdomstolen (MÖD)",
-          "court_level": "appeal",
-          "subject": "Ansökan om tillstånd till vattenverksamhet m.m. för muddring, byggande i vattenområde samt uppläggning av muddermassor vid Harrviken, Luleå kommun",
-          "parties": {
-            "klagande": [],
-            "motpart": []
-          },
-          "word_count": 30417,
-          "doc_type": "dom",
-          "originating_court": "Umeå tingsrätt, MMD",
-          "is_appeal": true,
-          "application_outcome": "remanded",
-          "application_outcome_sv": "Återförvisat"
-        },
-        "scoring_details": {
-          "net_score": 0,
-          "outcome_type": "REMANDED",
-          "outcome_desc": "Målet återförvisas",
-          "max_cost_sek": 875000.0,
-          "measures": [
-            "fiskvandring",
-            "kontrollprogram"
-          ],
           "domslut_measures": [],
           "is_relevant": true,
           "override": false
@@ -652,12 +535,12 @@
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "overturned",
-          "application_outcome_sv": "Upphäver beslut"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljat med ändringar"
         },
         "scoring_details": {
           "net_score": -6,
-          "outcome_type": "OPERATOR_WINS",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Upphäver myndighets beslut/föreläggande",
           "max_cost_sek": 753396.0,
           "measures": [
@@ -704,12 +587,12 @@
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "remanded",
+          "application_outcome_sv": "återförvisas"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "REMANDED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 5000.0,
           "measures": [
@@ -750,7 +633,7 @@
         },
         "scoring_details": {
           "net_score": -2,
-          "outcome_type": "MINOR_CHANGE",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Ändrar dom i mindre delar",
           "max_cost_sek": 3000000.0,
           "measures": [
@@ -796,7 +679,7 @@
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 31000.0,
           "measures": [
@@ -845,7 +728,7 @@
         },
         "scoring_details": {
           "net_score": 3,
-          "outcome_type": "PERMIT_GRANTED",
+          "outcome_type": "GRANTED",
           "outcome_desc": "Tillstånd meddelas (med villkor)",
           "max_cost_sek": 240000.0,
           "measures": [
@@ -881,12 +764,12 @@
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "appeal_denied",
-          "application_outcome_sv": "Överklagande avslås"
+          "application_outcome": "overturned",
+          "application_outcome_sv": "Mark- och miljööverdomstolen upphäver länsstyrelsens beslut och avslår överklagandet."
         },
         "scoring_details": {
           "net_score": -3,
-          "outcome_type": "APPEAL_REJECTED",
+          "outcome_type": "OVERTURNED",
           "outcome_desc": "Överklagandet avslås",
           "max_cost_sek": 0,
           "measures": [
@@ -919,12 +802,12 @@
           "doc_type": "dom",
           "originating_court": null,
           "is_appeal": false,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "dismissed",
+          "application_outcome_sv": "Avvisad"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "DISMISSED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 0,
           "measures": [],
@@ -955,12 +838,12 @@
           "doc_type": "dom",
           "originating_court": null,
           "is_appeal": false,
-          "application_outcome": "overturned",
-          "application_outcome_sv": "Upphäver beslut"
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Moderna miljövillkor fastställs, befintliga villkor upphävs och ändras, samt nya villkor införs."
         },
         "scoring_details": {
           "net_score": 4,
-          "outcome_type": "CONDITIONS_MODIFIED",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Villkor/dom ändras",
           "max_cost_sek": 0,
           "measures": [
@@ -1005,12 +888,12 @@
           "doc_type": "beslut",
           "originating_court": "Umeå tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "dismissed",
+          "application_outcome_sv": "Överklagandet avvisas"
         },
         "scoring_details": {
           "net_score": 2,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "DISMISSED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 25000000.0,
           "measures": [
@@ -1046,12 +929,12 @@
           "doc_type": "beslut",
           "originating_court": "Växjö tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "granted_modified",
-          "application_outcome_sv": "Tillstånd med ändrade villkor"
+          "application_outcome": "granted",
+          "application_outcome_sv": "Tillstånd till utrivning av dammanläggning beviljas, regleringsrätt återkallas och regleringsföretag upphävs."
         },
         "scoring_details": {
           "net_score": 3,
-          "outcome_type": "PERMIT_GRANTED",
+          "outcome_type": "GRANTED",
           "outcome_desc": "Tillstånd meddelas (med villkor)",
           "max_cost_sek": 2080552.0,
           "measures": [
@@ -1094,12 +977,12 @@
           "doc_type": "dom",
           "originating_court": "Umeå tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "appeal_denied",
-          "application_outcome_sv": "Överklagande avslås"
+          "application_outcome": "conditions_changed",
+          "application_outcome_sv": "Villkor ändras och prövotidsförfaranden avslutas"
         },
         "scoring_details": {
           "net_score": 3,
-          "outcome_type": "CONDITIONS_MODIFIED",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Villkor/dom ändras",
           "max_cost_sek": 125153673.0,
           "measures": [
@@ -1235,7 +1118,7 @@
         },
         "scoring_details": {
           "net_score": 1,
-          "outcome_type": "CONDITIONS_MODIFIED",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Villkor/dom ändras",
           "max_cost_sek": 1500.0,
           "measures": [
@@ -1281,7 +1164,7 @@
         },
         "scoring_details": {
           "net_score": -2,
-          "outcome_type": "MINOR_CHANGE",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Ändrar dom i mindre delar",
           "max_cost_sek": 113906.0,
           "measures": [
@@ -1324,7 +1207,7 @@
         },
         "scoring_details": {
           "net_score": 3,
-          "outcome_type": "PERMIT_GRANTED",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Tillstånd meddelas (med villkor)",
           "max_cost_sek": 15300.0,
           "measures": [
@@ -1370,12 +1253,12 @@
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling."
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "REMANDED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 1500.0,
           "measures": [
@@ -1409,12 +1292,12 @@
           "doc_type": "dom",
           "originating_court": "Nacka tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "appeal_denied",
-          "application_outcome_sv": "Överklagande avslås"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljat med ändringar"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "DISMISSED",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Avvisning (processuellt)",
           "max_cost_sek": 4000000.0,
           "measures": [
@@ -1433,42 +1316,6 @@
             "kontrollprogram",
             "biotopvård"
           ],
-          "is_relevant": true,
-          "override": false
-        }
-      },
-      {
-        "id": "m4021-22",
-        "filename": "Vaxjo_NV_2023-04-03.txt",
-        "label": "LOW_RISK",
-        "original_label": "MEDIUM_RISK",
-        "confidence": 0.55,
-        "key_text": "DOMSLUT:\nÄndring av villkor i dom\nMed stöd av 24 kap. 13 § miljöbalken ändrar mark- och miljödomstolen det i dom\nfrån den 9 maj 2018 (mål nr M 1222-12) meddelade villkor 11 till följande lydelse:\n11. Utsläppet av nickel och zink från avloppsreningsverket till Ybbarpsån får inte\növerskrida följande värden, beräknade som flödesvägda årsmedelvärden och baserade på minst månatlig provtagning; nickel 130 g/dygn och zink 779 g/dygn.\nÄndring av begränsningsvärden i BAT-slutsatserna\nMed stöd av 21 kap. 3 § miljöbalken samt 1 kap. 15 § industriutsläppsförordningen\n(2013:250) beslutar vidare mark- och miljödomstolen att, i stället för de begränsningsvärden som avses i 1 kap. 8 § och som anges i 2 kap. 39 och 40 §§ samma förordning avseende utsläppsnivåer för direkta utsläpp till en vattenrecipient enligt\n\nBox 81 Kungsgatan 8 0470-560 100 måndag – fredag\n\nBAT 12, tabellerna 1-3, ska följande gälla som alternativvärden för nedanstående\nangivna parametrar, värden räknade som årsmedelvärden:\nTabell 1: Totalt organiskt kol (TOC) 260 kg/d\nTotalt suspenderat material (TSS) 91 kg/d\nTabell 2: Totalkväve (Tot-N) 104 kg/d\nTotalfosfor (Tot-P) 7,8 kg/d\nTabell 3: Adsorberbara organiskt bundna halogener (AOX) 2,6 kg/d\nKrom (uttryckt som Cr) 65 g/d\nKoppar (uttryckt som Cu) 130 g/d\nNickel (uttryckt som Ni) 130 g/d\nZink (uttryckt som Zn) 779 g/d\n\nDOMSKÄL:\nMålets handläggning\nSamtidigt med detta mål handlägger mark- och miljödomstolen ett ansökningsmål\nangående tillstånd till produktion av pentaerytritol (penta) vid Perstorps industripark\n(M 6159-18), vilken utgör en s.k. A-verksamhet miljöprövningsförordningen\n(2013:251). Mark- och miljödomstolen anser sig därför ha haft rätt att med stöd av\n21 kap. 3 §, första stycket, miljöbalken som första instans pröva ansökan i detta\nmål. Därutöver prövar mark- och miljödomstolen flertalet av de industrier som\nförsta instans, som avleder sitt avloppsvatten till Perstorps avloppsreningsverk, vilket påtalats av bolaget.\n\nMark- och miljödomstolen har vidare bedömt att målet är av sådan beskaffenhet att\ndet enligt 22 kap. 16 §, andra stycket, miljöbalken kunnat tas till avgörande utan huvudförhandling.\nTillämpliga lagrum\nAv 9 kap. 6 § miljöbalken framgår att regeringen får meddela föreskrifter om att det\nska vara förbjudet att utan tillstånd eller innan anmälan har gjorts\n1. anlägga eller driva vissa slag av fabriker, andra inrättningar eller annan miljöfarlig verksamhet,\n2. släppa ut avloppsvatten i mark, vattenområde eller grundvatten,\n3. släppa ut eller lägga upp fast avfall eller andra fasta ämnen, om detta kan leda\ntill att mark, vattenområde eller grundvatten kan förorenas, eller\n4. bedriva sådan miljöfarlig verksamhet som avses i 1-3, om den ändras med avseende på tillverkningsprocess, reningsförfarande eller på något annat sätt.\nAv 1 kap. 4 § miljöprövningsförordningen framgår att det för ändring av en tillståndspliktig verksamhet krävs tillstånd om\n1. ändringen i sig innebär en sådan verksamhet eller åtgärd som är tillståndspliktig\nenligt 2 – 32 kap., eller\n2. ändringen i sig eller tillsammans med tidigare ändringar innebär att en olägenhet\nav betydelse för människors hälsa eller miljön kan uppkomma.\nEnligt 24 kap. 13 § miljöbalken får tillståndsmyndigheten efter ansökan av tillståndshavaren ändra eller upphäva villkor i en tillståndsdom. Ett villkor får upphävas eller mildras endast om det är uppenbart att villkoret inte längre behövs eller är\nsträngare än nödvändigt eller ändringen påkallas av omständigheter som inte förutsågs när tillståndet meddelades.\nEnligt 1 kap. 15 § industriutsläppsförordningen (2013:250) får miljöprövningsdelegationen besluta att en industriutsläppsverksamhet i stället för att följa ett begränsningsvärde som avses i 8 § ska följa ett begränsningsvärde som bestäms med hänsyn till andra tidsperioder eller andra referensförhållanden (alternativvärde).\n\nBeslutet får inte innebära att verksamheten genom att följa ett alternativvärde medför högre utsläppsnivåer under normala driftsförhållanden än om verksamheten\nskulle ha följt det begränsningsvärde som avses i 8 §.\nMark- och miljödomstolens bedömning\nMark- och miljödomstolen har först att ta ställning till om bolagets planerade åtgärd\navseende installation av utrustning för vattenåtervinning kan hanteras som en anmälan till tillsynsmyndigheten eller om åtgärden i sig är tillståndspliktig enligt miljöbalken då länsstyrelsen yrkat att ansökan ska avvisas.\nMark- och miljödomstolen kan konstatera att bolaget givits tillstånd till ett ren- och\navloppsreningsverk av mark- och miljödomstolen 2013. I beskrivningen av den tillståndsgivna verksamheten framgår på vilket sätt verksamheten avses bedrivas. Reningen av såväl vatten som avloppsvatten sker genom bl.a. kemisk fällning, biologisk rening, mekanisk rening etc. Verksamheten är vidare klassad med verksamhetskoderna 90.15-i enligt 28 kap. i miljöprövningsförordningen.\nMark- och miljödomstolen gör bedömningen utifrån vad som har framkommit i bolagets aktuella ansökan och utifrån kriterierna i 1 kap. 4 § miljöprövningsförordningen att installationen av utrustning för vattenåtervinning kan hanteras genom en\nanmälan till tillsynsmyndigheten. Den redan tillståndsgivna verksamheten kommer\nvara densamma men viss teknik kan komma att bytas ut eller ändras, utan att det för\nden skull blir någon ökad belastning på recipienten. Domstolen instämmer därmed i\nbolagets uppfattning, att åtgärden att installera utrustning för vattenåtervinning är\nanmälningspliktigt, och därmed ska länsstyrelsens förstahandsyrkande om avvisning avslås.\nVidare anser mark- och miljödomstolen, utifrån de skäl som bolaget angett, att det\nkan finnas anledning att ändra villkor 11 i den dom som mark- och miljödomstolen\nmeddelade den 9 maj 2018 (M 1222-12). Ingen av remissinstanserna eller någon i\n\növrigt har inkommit med synpunkter som motsätter sig en sådan ändring. Domstolen bedömer att ändringen överensstämmer med bestämmelserna i 24 kap. 13 § miljöbalken. Länsstyrelsen har dock, i det fall domstolen avslår länsstyrelsens yrkande\ni första hand, yrkat på en viss justering av villkoret. Då villkor 11 har utformats som\nett årsmedelvärde redan 2018 ser domstolen ingen anledning till att ändra det med\ndet tillägg som länsstyrelsen förslagit. Utsläppet kommer storleksmässigt vara detsamma som under rådande förhållanden. Vidare kommer marginal finnas för att utsläppshalterna momentant inte ska kunna påverka växt- och djurliv i recipienten enligt den redovisning som bifogats ansökan. Villkoret ska därför ändras i enlighet\nmed vad sökanden yrkat och vad som framgår av domslutet.\nMark- och miljödomstolen kan också konstatera att ingen har motsatt sig ändring av\nyrkade BAT-AEL värden till alternativvärden. Domstolen ändrar därför dessa enligt\nbolagets förslag. Som bolaget redogjort för är flera av de villkor som meddelats bolaget i tillståndsdomen ändock begränsande för utsläpp till recipienten. Domstolen\nkan även där konstatera att flera villkor har mängdbegränsningar istället för haltbegränsningar.\nHUR MAN ÖVERKLAGAR, se bilaga (MMD-01)\nÖverklagande senast den 24 april 2023.\nMarie Gerrevall Viktor Forsell\n\nI domstolens avgörande har deltagit rådmannen Marie Gerrevall, ordförande, och\ntekniska rådet Viktor Forsell samt de särskilda ledamöterna Harald Arnell och\nTorbjörn Brorson.\n\nBilaga 1\nHur man överklagar\nDom i mark- och miljödomstol som första instans MMD-01\nVill du att domen ska ändras i någon del kan du Vad händer sedan?\növerklaga. Här får du veta hur det går till.\nMark- och miljödomstolen kontrollerar att överklagandet kommit in i rätt tid. Har det kommit in för\nsent avvisar domstolen överklagandet. Det innebär\nÖverklaga skriftligt inom 3 veckor\natt domen gäller.\nDitt överklagande ska ha kommit in till domstolen\ninom 3 veckor från domens datum. Sista datum för\nOm överklagandet kommit in i tid, skickar marköverklagande finns på sista sidan i domen.\noch miljödomstolen överklagandet och alla handlingar i målet vidare till Mark- och miljööverdomstolen.\nÖverklaga efter att motparten överklagat\nHar du tidigare fått brev genom förenklad delgivOm ena parten har överklagat i rätt tid, har den\nning, kan även Mark- och miljööverdomstolen skicka\nandra parten också rätt att överklaga även om tiden\nbrev på detta sätt.\nhar gått ut. Det kallas att anslutningsöverklaga.\nEn part kan anslutningsöverklaga inom en extra Prövningstillstånd i Mark- och miljövecka från det att överklagandetiden har gått ut. Ett överdomstolen\nanslutningsöverklagande måste alltså komma in inom\nNär överklagandet kommer in till Mark- och miljö4 veckor från domens datum.\növerdomstolen tar domstolen först ställning till om\nmålet ska tas upp till prövning.\nEtt anslutningsöverklagande upphör att gälla om det\nförsta överklagandet dras tillbaka eller av något annat\n1 Mark- och miljööverdomstolen ger prövnings1\n- 1 8 skäl inte går vidare. tillstånd i fyra olika fall.\n0\n2\n•\ng\nvec\nkli n\nSå här gör du\n D\ntvi\no\nv\nm\nla\ns\np\nto\nå\nl e\na\nn\ntt\nb\nm\ne\na\nd\nr\nö\nk\nm\n- o\ner\nc h\na t\nm\nt d\nil\ne\njö\nt\nd\nfi\no\nn\nm\nns\ns t\na\no\nn\nle\nle\nn\nd n\nd\ni\nö\nn\nm\ng\nt\na\nr\ntt\nä tt.\nols ut 1. Skriv mark-och miljödomstolens namn och\nmst målnummer.  Domstolen anser att det inte går att bedöma om\no\nör\nd\n2. Förklara varför du tycker att domen ska ändras.\nmark- och miljödomstolen har dömt rätt utan att\nv\nd. f\nTala om vilken ändring du vill ha och varför du\nta upp målet.\nA\nket, tycker att Mark- och miljööverdomstolen ska ta  Domstolen behöver ta upp målet för att ge andra\nols\nver\nupp ditt överklagande (läs mer om prövnings- domstolar vägledning i rättstillämpningen.\nmst tillstånd längre ner).\no  Domstolen bedömer att det finns synnerliga skäl\nD\nd\nucerat\na v 3. T\nv\nsk\na\na\nr\nd\nl\ni\na\nf\nd\nt\no\nl\nu\ni\nm\ng\nv\na\ni\nv\nl\nb\nl\ni\ne\nl\nv\nk\nv\ni\na\ns\nis\na\nb\ns\nm\ne\no\nv\nm\ne\nis\nd\ni\nd\nn\nv\nu\na\nt e\nr\nv\nj e\nr\nil\ne\nl\nb\nd\nh\ne\na\nä\nv\nn\nn\ni s\nv\nf\n.\ni\ni\nn\nS\nsa\nn\nk\ns\ni\nt\nc\ni\ni\nl\nk\nl\nm\n.\na\nF\nm\nå\nö\nle\ne\nr\nt\nk\nd\n.\nl ara\nOm\na t\nd\nt\nu\nt a\ni n\nu\nte\np p\nfå r\nm\np\nå\nr\nl\nö\net\nv\na\nn\nv\nin\nn\ng\nå\ns\ng\nti\no\nll\nn\nst å\na\nn\nn\nd\nn a\ng\nn\nä l\na\nle\nn\nr\nl e\nd\nd\ne\nn\nn\ni n\nö\ng\nv\n.\nerklago\nPr\n•\nnst a\nns 4. L\ngi\nä\nf\nm\nter\nn a\no m\nna\nv\nm\na\nn\nr d\nsa\no\nm\nm\nt\ns t\na\no\nk\nl\nt\ne\nu\nn\ne l\nk\nla\na n\no c\nn\nh\nå\nf\nd\nu\ni\nl\ng\nls\n:\nt\np\nä\no\nn\ns\nd\nt\ni\na\ng\nd\na\nr e\nu\ns\np\ns\np\ne\n-\nr,\na\nta\nd e\nm\nd\ne\no\nd\nm\nal\ne\nlt\nn .\nd\nD\nu\nä\nv\nr\nil\nf\nl\nö\nf\nr\nö\nä\nr\nr\na\nd\nfr\ne\na\nt\nm\nv\n.\ni ktigt att i överklagandet\na\ni\ne-postadresser och telefonnummer.\nörst\nm\nf\nOm du har ett ombud, lämna också ombudets\nVill du veta mer?\no\nD kontaktuppgifter. Ta kontakt med mark- och miljödomstolen om du\n0\n-\n1 har frågor. Adress och telefonnummer finns på\n-D\n5. Skriv under överklagandet själv eller låt ditt\nM första sidan i domen.\nM ombud göra det.\nde\nga n 6. Skicka eller lämna in överklagandet till mark- och Mer information finns på www.domstol.se.\nkla\nver miljödomstolen. Du hittar adressen i domen.\nö\nör\ngar\nf\nn\nn\nvis ni Sida 1 av 1\nA",
-        "metadata": {
-          "filename": "Vaxjo_NV_2023-04-03.txt",
-          "case_number": "M 4021-22",
-          "date": "2023-04-03",
-          "court": "Växjö tingsrätt, MMD",
-          "court_level": "first_instance",
-          "subject": "Ansökan enligt 24 kap. 13 § miljöbalken och 1 kap. 15 § industriutsläppsförord- ningen om ändring av villkor och andra begränsningsvärden för bolagets avloppsre- ningsverk i Perstorp, Perstorps kommun Avrinningsområde: 96 (Rönne å) N: 6220890 E: 399060 Anläggnings ID: 36695",
-          "parties": {
-            "klagande": [],
-            "motpart": []
-          },
-          "word_count": 5554,
-          "doc_type": "dom",
-          "originating_court": null,
-          "is_appeal": false,
-          "application_outcome": "granted_modified",
-          "application_outcome_sv": "Tillstånd med ändrade villkor"
-        },
-        "scoring_details": {
-          "net_score": 1,
-          "outcome_type": "CONDITIONS_MODIFIED",
-          "outcome_desc": "Villkor/dom ändras",
-          "max_cost_sek": 0,
-          "measures": [],
-          "domslut_measures": [],
           "is_relevant": true,
           "override": false
         }
@@ -1495,12 +1342,12 @@
           "doc_type": "beslut",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "remanded",
+          "application_outcome_sv": "återförvisas till lägre instans"
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "REMANDED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 0,
           "measures": [],
@@ -1533,12 +1380,12 @@
           "doc_type": "beslut",
           "originating_court": "Växjö tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens beslut och återförvisar målet till mark- och miljödomstolen för fortsatt behandling."
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "REMANDED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 0,
           "measures": [
@@ -1578,7 +1425,7 @@
         },
         "scoring_details": {
           "net_score": 1,
-          "outcome_type": "REJECTED",
+          "outcome_type": "CONDITIONS_CHANGED",
           "outcome_desc": "Ansökan/yrkande avslås",
           "max_cost_sek": 200000.0,
           "measures": [
@@ -1621,12 +1468,12 @@
           "doc_type": "dom",
           "originating_court": "Växjö tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "remanded",
-          "application_outcome_sv": "Återförvisat"
+          "application_outcome": "overturned",
+          "application_outcome_sv": "Mark- och miljööverdomstolen fastställer Länsstyrelsen i Kalmar läns beslut att anläggningen Hällefors med tillhörande kraftverk inte ska omfattas av den nationella planen för moderna miljövillkor."
         },
         "scoring_details": {
           "net_score": -6,
-          "outcome_type": "OPERATOR_WINS",
+          "outcome_type": "OVERTURNED",
           "outcome_desc": "Upphäver myndighets beslut/föreläggande",
           "max_cost_sek": 0,
           "measures": [
@@ -1665,7 +1512,7 @@
         },
         "scoring_details": {
           "net_score": -6,
-          "outcome_type": "OPERATOR_WINS",
+          "outcome_type": "APPEAL_DENIED",
           "outcome_desc": "Upphäver myndighets beslut/föreläggande",
           "max_cost_sek": 0,
           "measures": [
@@ -1698,12 +1545,12 @@
           "doc_type": "dom",
           "originating_court": "Östersunds tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "conditions_changed",
-          "application_outcome_sv": "Villkor ändras"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljat med ändringar"
         },
         "scoring_details": {
           "net_score": -1,
-          "outcome_type": "MINOR_CHANGE",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Ändrar dom i mindre delar",
           "max_cost_sek": 9000000.0,
           "measures": [
@@ -1749,12 +1596,12 @@
           "doc_type": "beslut",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "unclear",
-          "application_outcome_sv": "Oklart"
+          "application_outcome": "remanded",
+          "application_outcome_sv": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling."
         },
         "scoring_details": {
           "net_score": 0,
-          "outcome_type": "UNCLEAR",
+          "outcome_type": "REMANDED",
           "outcome_desc": "Kan ej avgöras automatiskt",
           "max_cost_sek": 15550.0,
           "measures": [
@@ -1796,7 +1643,7 @@
         },
         "scoring_details": {
           "net_score": 4,
-          "outcome_type": "APPEAL_REJECTED",
+          "outcome_type": "APPEAL_DENIED",
           "outcome_desc": "Överklagandet avslås",
           "max_cost_sek": 10200.0,
           "measures": [
@@ -1843,7 +1690,7 @@
         },
         "scoring_details": {
           "net_score": -6,
-          "outcome_type": "OPERATOR_WINS",
+          "outcome_type": "OVERTURNED",
           "outcome_desc": "Upphäver myndighets beslut/föreläggande",
           "max_cost_sek": 0,
           "measures": [
@@ -1878,12 +1725,12 @@
           "doc_type": "dom",
           "originating_court": "Vänersborgs tingsrätt, MMD",
           "is_appeal": true,
-          "application_outcome": "conditions_changed",
-          "application_outcome_sv": "Villkor ändras"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom"
         },
         "scoring_details": {
           "net_score": 3,
-          "outcome_type": "PERMIT_GRANTED",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Tillstånd meddelas (med villkor)",
           "max_cost_sek": 35000.0,
           "measures": [
@@ -1924,12 +1771,12 @@
           "doc_type": "dom",
           "originating_court": null,
           "is_appeal": false,
-          "application_outcome": "granted",
-          "application_outcome_sv": "Tillstånd beviljas"
+          "application_outcome": "granted_modified",
+          "application_outcome_sv": "Tillstånd beviljas i efterhand för att bibehålla befintlig vattenkraftsanläggning och bedriva vattenverksamhet, med nya moderna miljövillkor och återkallande av delar av äldre tillstånd."
         },
         "scoring_details": {
           "net_score": 3,
-          "outcome_type": "PERMIT_GRANTED",
+          "outcome_type": "GRANTED_MODIFIED",
           "outcome_desc": "Tillstånd meddelas (med villkor)",
           "max_cost_sek": 57600.0,
           "measures": [

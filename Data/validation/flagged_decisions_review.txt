@@ -1,0 +1,2793 @@
+NAP Legal AI Advisor — Data Validation Review
+Generated: 2026-02-20 10:00:05
+Strömmen source: 2025-07-02
+Total decisions: 50
+Flagged for review: 47
+══════════════════════════════════════════════════════════════════
+
+══════════════════════════════════════════════════════════════════
+[1/47]  M 2024-01  |  FLAGS: cost_over_5M, no_measures, no_plant_name, no_operator, no_processing_time, unlabeled
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: overturned
+  Outcome (sv): Upphäver beslut
+  Cost: 214000000
+  Cost source: d ca 4 300 fordon per dygn och
+beräknades kosta ca 214 miljoner kronor. Detta kan då jämföras med alternativet
+Klippanvä
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: —
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljödomstolen avslår begäran om syn.
+Mark- och miljödomstolen bifaller överklagandena och upphäver det överklagade
+beslutet.
+
+VÄXJÖ TINGSRÄTT DOM P 3853-22
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[2/47]  M 13999 - 24  |  FLAGS: outcome_unclear, no_measures, no_cost, no_plant_name, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[3/47]  M 7708 -22  |  FLAGS: no_measures, no_cost, no_plant_name, no_processing_time, unlabeled
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: —
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljööverdomstolen avslår yrkandet om att inhämta förhandsavgörande
+från EU-domstolen.
+2. Mark- och miljööverdomstolen avslår överklagandet.
+
+Mark- och miljödomstolen avslår överklagandet.
+_____________ Bilaga A
+
+ Sid 2
+NACKA TINGSRÄTT DOM
+ M 5394 -21
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[4/47]  M 2693-22  |  FLAGS: outcome_unclear, no_cost, no_operator, no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: —
+  Cost source: —
+  Plant: moderna miljövillkor avseende Strömsbro
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, utskov
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Strömsbro kraftverk
+  Beslut: Avvisning
+  Court: Östersund
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Testeboån
+  Län: Gävleborgs län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[5/47]  M 396-22  |  FLAGS: outcome_unclear, no_measures, no_operator, no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: 1500
+  Cost source: ned den tidigare beslutade prövningsavgiften till
+1 500 kr.
+
+Box 1070 Hamngatan 6 0521-27 02 00 finns ej mån
+  Plant: moderna miljövillkor avseende Stigen Östra
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Östra Stigen
+  Beslut: Avvisning
+  Court: Vänersborg
+  Size: Okänd effekt
+  Prövningsgrupp: Örekilsälven
+  Län: Västra Götalands län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[6/47]  M 506-22  |  FLAGS: outcome_unclear, no_cost, no_operator, no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: —
+  Cost source: —
+  Plant: moderna miljövillkor avseende Skaftarp
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: minimitappning, utskov, utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Skaftarp (vattenkraftverk)
+  Beslut: Avvisning
+  Court: Växjö
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Rönne å
+  Län: Skåne län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[7/47]  M 391-99  |  FLAGS: outcome_unclear, no_measures, no_cost, no_plant_name, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: LOW_RISK
+  Court: Umeå tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[8/47]  M 4021-22  |  FLAGS: no_measures, no_cost, no_plant_name, no_operator, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted_modified
+  Outcome (sv): Tillstånd med ändrade villkor
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: LOW_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Ändring av villkor i dom
+Med stöd av 24 kap. 13 § miljöbalken ändrar mark- och miljödomstolen det i dom
+från den 9 maj 2018 (mål nr M 1222-12) meddelade villkor 11 till följande lydelse:
+11. Utsläppet av nickel och zink från avloppsreningsverket till Ybbarpsån får inte
+överskrida följande värden, beräknade som flödesvägda årsmedelvärden och baserade på minst månatlig provtagning; nickel 130 g/dygn och zink 779 g/dygn.
+Ändring av begränsningsvärden i BAT-slutsatserna
+Med stöd av 21 kap. 3 § miljöbalken samt 1 kap. 15 § industriutsläppsförordningen
+(2013:250) beslutar vidare mark- och miljödomstolen att, i stället för de begränsningsvärden som avses i 1 kap. 8 § och som anges i 2 kap. 39 och 40 §§ samma förordning avseende utsläppsnivåer för direkta utsläpp till en vattenrecipient enligt
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+BAT 12, tabellerna 1-3, ska följande gälla som alternativvärden för nedanstående
+angivna parametrar, värden räknade som årsmedelvärden:
+Tabell 1: Totalt organiskt kol (TOC) 260 kg/d
+Totalt suspenderat material (TSS) 91 kg/d
+Tabell 2: Totalkväve (Tot-N) 104 kg/d
+Totalfosfor (Tot-P) 7,8 kg/d
+Tabell 3: Adsorberbara organiskt bundna halogener (AOX) 2,6 kg/d
+Krom (uttryckt som Cr) 65 g/d
+Koppar (uttryckt som Cu) 130 g/d
+Nickel (uttryckt som Ni) 130 g/d
+Zink (uttryckt som Zn) 779 g/d
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[9/47]  M 8024-05  |  FLAGS: no_measures, no_plant_name, no_operator, unlabeled
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: 32000
+  Cost source: har
+begärt ersättning för rättegångskostnader med 32 000 kronor, allt avseende
+ombudsarvode.
+P S – en av de två ä
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: —
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen avslår överklagandet.
+
+SVEA HOVRÄTT DOM F 14649-21
+
+1. Mark- och miljödomstolen upphäver fastighetsbildningsbeslutet och övriga beslut
+i förrättningen, utom beslutet om fördelning av förrättningskostnaden, och beslutar
+att ställa in förrättningen.
+2. Mark- och miljödomstolen avslår Gustavianska stiftelsens yrkande om ersättning
+för dess rättegångskostnad.
+___________ Bilaga A
+
+NACKA TINGSRÄTT DOM F 4455-21
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[10/47]  M 2479-22  |  FLAGS: no_measures, no_cost, no_plant_name, unlabeled
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: —
+  Risk label: —
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Med ändring av mark- och miljödomstolens dom fastställer Mark- och
+miljööverdomstolen Länsstyrelsen i Skåne läns beslut den 26 april 2022, dnr
+525-25741-2020, att förbjuda nyanläggning av solceller på fastigheten X i
+Helsingborgs kommun.
+
+Box 2290 Birger Jarls Torg 16 08-561 670 00 måndag – fredag
+103 17 Stockholm 08-561 675 50 08:00–16:30
+
+Mark- och miljödomstolen ändrar länsstyrelsens beslut på följande sätt,
+A. Förbudet att anlägga solcellsanläggningen upphävs,
+B. Svedberga PV AB föreläggs, med stöd av 12 kap 6 § miljöbalken att vidta
+följande försiktighetsåtgärder till skydd för naturmiljön i samband med
+nyanläggning av solcellsanläggning på fastigheten X i Helsingborgs kommun.
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+VÄXJÖ TINGSRÄTT DOM M 2479–22
+
+1. Verksamheten – inklusive skyddsåtgärder och begränsningar - ska utföras i
+huvudsaklig enlighet med vad bolaget uppgivit i anmälan med
+kompletteringar.
+Solceller, stängsel, transformatorkiosker, anläggningsvägar och övriga
+anordningar får endast anläggas och bibehållas inom ytan som är markerad
+på ritning, se bilaga 2.
+2. När anläggningen inte längre används ska den tas bort i sin helhet senast året
+efter den tagits ur bruk. Detta gäller även avhållande stängsel. Marken ska så
+långt som möjligt återställas så att den kan nyttjas för jordbruk. Bolaget ska
+senast två år före avvecklingen ge in en återställningsplan till
+tillsynsmyndigheten.
+3. Skötseln av marken i anläggningen ska vara jordbruksliknande, med
+undantag för ytor som avsätts för biologisk mångfald, där passande
+blommande växter sin t.ex. baljväxter och/eller ängsfröblandning ska sås in
+senast året efter att anläggningen tas i drift.
+4. För skötseln av jordbruksmarken och de övriga ytorna inom fastigheten ska
+det finnas en bruknings- och skötselplan som tas fram i samråd med expertis
+inom jordbruk och naturvård.
+
+VÄXJÖ TINGSRÄTT DOM M 2479–22
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[11/47]  M 305-99  |  FLAGS: cost_over_5M, outcome_unclear, no_plant_name, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: 25000000
+  Cost source: kte att det hela skulle göras upp
+snabbt. Beloppet 25 miljoner kronor var parterna överens om sedan tidigare. Det var i
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, fiskvandring, minimitappning, utskov
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[12/47]  M 1533 -20  |  FLAGS: no_cost, no_plant_name, no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: remanded
+  Outcome (sv): Återförvisat
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, fiskvandring, utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1.Mark- och miljööverdomstolen avslår A.L.s yrkande att Älvräddarnas
+Samorganisations överklagande ska avvisas.
+2. Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom oc h
+återförvisar målet till mark- och miljödomstolen för fortsatt handläggning.
+
+Mark- och miljödomstolen undanröjer Länsstyrelsen i Skåne läns beslut den 19 juni
+2018, ärende nr 535-845-2018 .
+_____________ Bilaga A
+
+VÄXJÖ TINGSRÄTT DOM M 5509 -18
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[13/47]  M 4232-23  |  FLAGS: no_operator, no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 3000000
+  Cost source: .
+Kostnaden för en ventil exklusive montage är c:a 3 miljoner kronor vilket
+innebär att återbetalningstiden är flera h
+  Plant: moderna miljövillkor för Uddby
+  Measures ordered: kontrollprogram
+  Domslut measures: kontrollprogram
+  Extracted measures: fiskväg, fiskvandring, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Uddby kraftverk
+  Beslut: Moderna miljövillkor
+  Court: Nacka
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Tyresån
+  Län: Stockholms län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+sätt att Stockholms tingsrätts, vattendomstolen, dom den 1 juni 1990 i mål VA 69/87
+-under rubriken Vattenhushållning och kontroll
+oi villkor A2 ska ha följande lydelse:
+Genom Fatbursdammen ska tappningen vara lägst 300 l/s under 60 dagar
+från det att den påbörjas på hösten när tillrinningen tillåter det, dock senast
+den 1 november, och under övrig tid 150 l /s. Vid lägre tillrinningar ska
+dessa framsläppas.
+
+oi villkor 3, hädanefter benämnt A3, ska ha följande lydelse:
+På Thomsonöverfallet vid Fatbursdammen ska det finnas tydliga märken
+som visar överfallshöjden vid tappning av 300 l/s och 150 l/s.
+och
+-under rubriken Tid för omprövning ska kompletteras med ett nytt andra stycke
+av följande lydelse:
+Ansökan om översyn av villkoren och andra bestämmelser för att de ska hållas
+moderna ska i enlighet med 22 kap. 29 § miljöbalken ges in inom sådan tid att
+dom eller beslut i saken finns senast 40 år efter att denna dom har vunnit laga
+kraft.
+
+Villkor och bestämmelser
+Mark- och miljödomstolen ändrar och gör tillägg till villkor och bestämmelser
+i Stockholms tingsrätts, vattendomstolen, dom den 1 juni 1990 i mål VA 69/87,
+DVA 59, enligt följande.
+A. Villkor nr 2 ska ha följande lydelse:
+Vattenhushållning
+2. Genom Fatbursdammen ska tappning under oktober och november vara
+lägst 200 l/s och under övrig tid 150 l/s om tillrinningen uppgår till nämnda
+värden. Vi lägre tillrinningar ska dessa framsläppas.
+B. För tillståndet ska, utöver vad som framgår av vattendomstolens dom, gälla
+ytterligare villkor enligt följande.
+Moderna miljövillkor
+1. Tillståndshavaren ska senast fem år från det att denna dom vinner laga kraft
+på fastigheten A och inom markerad ellips på karta (se bilaga 4 , Figur 1)
+anlägga och bibehålla en passagelösning för ål i Follbrinksströmmen.Bilaga A
+
+2.Tillståndshavaren ska senast fem år från det att denna dom vinner laga kraft
+på fastigheten D och inom servitutsområde x1 (se bilaga
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[14/47]  M 5221 -21  |  FLAGS: no_plant_name, no_operator, outcome_mismatch
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: remanded
+  Outcome (sv): Återförvisat
+  Cost: 56800
+  Cost source: kostnader till Länsstyrelsen i Kronobergs lä n med 56 800 kr inklusive moms
+avseende arbete.
+
+VÄXJÖ TINGSRÄTT
+  Plant: —
+  Measures ordered: fiskväg, omlöp, minimitappning, utskov, biotopvård, faunapassage, utrivning, intagsgaller, kontrollprogram
+  Domslut measures: fiskväg, faunapassage, omlöp, minimitappning, utskov, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Gäddeviksås kvarn
+  Beslut: Avvisning
+  Court: Växjö
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Mieån
+  Län: Kronobergs län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljööverdomstolen avslår yrkandet om att domstolen ska inhämta
+yttrande från vattenmyndigheten.
+2. Mark- och miljööverdomstolen avslår yrkandet om syn.
+3. Mark- och miljööverdomstolen undanröjer den överklagade domen, med undantag
+för beslutet om prövningsavgift, samt återförvisar målet till mark- och miljödomstolen
+för fortsatt behandling.
+
+Gällande tillstånd
+Befintlig verksamhet vid vattenkraftverken på X och Y omfattas av urminnes
+hävd.
+Villkor
+1. Verksamheten ska bedrivas i huvudsaklig överensstämmelse med vad som
+angetts i ansökan samt med vad sökandena i övrigt uppgett eller åtagit sig i
+målet, om inte annat framgår av villkor nedan.
+2. En anordning för nedströms vandring (flyktväg) ska installeras i anslutning
+till turbinintagen. Den ska utformas med en spaltbredd av minst 80 mm och
+medge en avledning av ca 20 l/s . Detaljprojektering ska ske efter samråd
+med tillsynsmyndigheten.Bilaga A
+
+VÄXJÖ TINGSRÄTT DOM M 3583 -19
+
+3. Fingaller med lutningen 30-35 grader mot horisontalplanet och med
+spaltvidden maximalt 18 mm ska installeras framför turbinintagen.
+4. Vid insteget till den västra fåran ska anordningar iordningsställas för att
+styra uppströms fiskvandring till faunapassagen.
+5. De under villkorspunkterna 2-4 redovisade åtgärderna ska om möjligt
+utföras samordnat med att anläggningar i mål M 2627-19 rivs ut och nya
+dammbyggnader m.m. uppförs. Villkorspunkt 2-4 ska vara utförda senast
+fem år från lagakraftvunnen dom i målet.
+6. Om faunapassagen som beslutats i mål M 2627-19 inte kommer till stånd
+eller underhållet av den inte sköts ska innehavaren av nu aktuella kraftverk
+bibehålla/anlägga och underhålla faunapassage med miljömässigt
+motsvarande funktioner. Alternativt får innehavaren riva ut kraftverken.
+7. Uppställning av arbetsfordon eller behållare med drivmedel får inte ske
+inom vattenskyddsområde. Fordon och arbetsmaskiner som nyttjas inom
+arbetsområdet ska använda hydrauloljor, smörjfetter etc. som är miljöanpassade enligt svensk standar
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[15/47]  M 899-23  |  FLAGS: cost_over_5M, no_plant_name, unlabeled
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: 10500000
+  Cost source: ställa ekonomisk säkerhet för
+efterbehandling med 10,5 miljoner kronor.
+24.Förslag till kontrollprogram med angivande av
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: kontrollprogram
+  Risk label: —
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen avslår överklagandet.
+
+Miljökonsekvensbeskrivning
+Mark- och miljödomstolen godkänner den i målet ingivna miljökonsekvensbeskrivningen.
+Ansökan om tillstånd
+Mark- och miljödomstolen avslår ansökan om tillstånd. Bilaga A
+
+Prövningsavgift
+Mark- och miljödomstolen ändrar inte den i beslut den 25 november 2019
+fastställda prövningsavgiften.
+Rättegångskostnader
+NCC Industry AB ska ersätta Länsstyrelsen i Skåne län för rättegångskostnader
+med totalt 86 000 kronor. På beloppet utgår ränta enligt 6 § räntelagen från denna
+dag till dess betalning sker.
+Övriga yrkanden
+Mark- och miljödomstolen avslår övriga yrkanden som inte framgår av domslutet.
+
+Innehåll
+
+............................................................................................................ 1
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[16/47]  M 3273-22  |  FLAGS: no_plant_name, no_operator, unlabeled
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 2410000
+  Cost source: te tas i anspråk förrän bolaget ställt säkerhet om 2 410 000 kronor för kostnader för avstädning och efterbehandling
+  Plant: —
+  Measures ordered: kontrollprogram
+  Domslut measures: —
+  Extracted measures: kontrollprogram
+  Risk label: —
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljödomstolen avvisar länsstyrelsens yrkande, hänförligt till
+tillståndspunkt 1 a, om att täkt av morän och andra jordarter ska begränsas eller
+förbjudas.
+2. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens deldom endast
+på så sätt att tillståndspunkt 1 c och villkor 14 ska ha följande lydelser.
+Tillståndspunkt 1 c
+c) införsel och återvinning av maximalt 50 000 ton jord- och schaktmassor för
+anläggningsändamål.
+Villkor 14
+14. Externa massor som tas in i täkten får inte innehålla föroreningar överstigande
+vad som framgår av nedanstående tabell. Om massorna kan antas innehålla
+andra föroreningar än de i tabellen angivna ämnena får de hanteras först efter
+riskutredning och tillsynsmyndighetens godkännande.
+
+Box 2290 Birger Jarls Torg 16 08-561 670 00 måndag – fredag
+103 17 Stockholm 08-561 675 50 08:00–16:30
+
+Ämne Halter i Utlakning C LS Utlakning l/s = 10 l/kg
+0
+mg/kg TS 0,1 l/kg (mg/l) (mg/kg)
+Arsenik 10 0,01 0,09
+Bly 20 0,05 0,2
+Kadmium 0,2 0,01 0,02
+Koppar 40 0,2 0,8
+Krom tot 40 0,2 1
+Kvicksilver 0,1 0,001 0,01
+Nickel 35 0,1 0,4
+Zink 120 1 4
+Klorid - 80 130
+Sulfat - 70 200
+PAH-L 0,6 - -
+PAH-M 2 - -
+PAH-H 0,5 - -
+3. Mark- och miljööverdomstolen beslutar att domstolens förordnande den
+16 februari 2024 om delvis ianspråktagande av tillståndet, utan hinder av att markoch miljödomstolens dom inte fått laga kraft, ska fortsätta gälla till dess denna dom
+har vunnit laga kraft eller annat beslutas avseende ianspråktagandet av tillståndet.
+
+Miljökonsekvensbedömning
+Mark- och miljödomstolen godkänner den i målet ingivna miljökonsekvensbeskrivningen.
+Tillstånd
+1. Mark- och miljödomstolen lämnar Berg Grus Sand Småland AB (bolaget) tillstånd enligt miljöbalken till miljöfarlig verksamhet att på fastigheten A i
+Vimmerby kommun, inom det verksamhetsområde som markerats på rit-ning
+Bilaga A1 till den tekniska beskrivningen, domsbilaga 1, bedriva
+
+Box 81 Kungsgatan 8 0470-560 100 måndag (cid:127) fredag
+
+a) täkt av berg av totalt upp till 3 miljoner ton b
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[17/47]  M 3412-22  |  FLAGS: outcome_unclear, no_operator, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: 1500
+  Cost source: ned den tidigare beslutade prövningsavgiften till
+1 500 kr.
+SKÄL FÖR BESLUT
+Det åligger verksamhetsutövaren
+  Plant: kvarn som
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, minimitappning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[18/47]  M 391-22  |  FLAGS: outcome_unclear, no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: 15550
+  Cost source: miljödomstolen fastställer prövningsavgiften till 15 550 kr. Avgiften är
+betald.
+
+VÄNERSBORGS TINGSRÄTT SLUTL
+  Plant: moderna miljövillkor avseende Näsböle
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, faunapassage, minimitappning, utskov, kontrollprogram
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Näsböle Kraftstation
+  Beslut: Avvisning
+  Court: Vänersborg
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Örekilsälven
+  Län: Västra Götalands län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[19/47]  M 2065-22  |  FLAGS: no_plant_name, no_operator, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted
+  Outcome (sv): Tillstånd beviljas
+  Cost: 240000
+  Cost source: ån den 6 maj 2022 fastställda
+prövningsavgiften om 240 000 kronor.
+Rättegångskostnader
+Trafikverket förpliktigas at
+  Plant: —
+  Measures ordered: kontrollprogram
+  Domslut measures: kontrollprogram
+  Extracted measures: utskov, kontrollprogram
+  Risk label: HIGH_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Tillstånd
+Mark- och miljödomstolen lämnar Trafikverket tillstånd till vattenverksamhet enligt
+11 kap. miljöbalken att inom vattenområde för Storån vid fastigheterna Ällerstad
+1:48, Kolstad 1:1 samt Hammarspången 2:1, Söderköpings kommun:
+1. uppföra två brostöd tillhörande ny bro.
+2. utföra erforderliga schaktnings-, pålnings-, spontnings- och grundläggningsarbeten.
+3. uppföra en tillfällig arbetsväg med pålbrygga över Storån.
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+Villkor för tillståndet
+1. Verksamheten – inbegripet åtgärder för att begränsa skador eller olägenheter för
+människors hälsa eller miljön – ska bedrivas i huvudsak på det sätt som Trafikverket angett eller åtagit sig i målet, om inte annat framgår av denna dom.
+2. Buller från byggarbetsplatsen ska begränsas så att den ekvivalenta ljudnivån inomhus inte överstiger följande värden.
+45 dB (A) i bostäder, vårdlokaler och arbetslokaler för tyst verksamhet,
+helgfri måndag-fredag kl. 07-19
+35 dB (A) i bostäder och vårdlokaler, helgfri måndag-fredag k1.19-22
+35 dB (A) i bostäder och vårdlokaler lör- sön- och helgdag kl. 07-19
+30 dB (A) i bostäder och vårdlokaler lör- sön- och helgdag kl. 19-22
+30 dB (A) i bostäder och vårdlokaler samtliga dagar kl. 22-07
+Ovanstående begränsningsvärden ska utgöra riktvärden. Det innebär att, om ett
+värde överskrids, är Trafikverket skyldigt att vidta åtgärder så att värdet därefter
+kan hållas.
+Begränsningsvärdena får under helgfri måndag – fredag kl. 07.00-19.00 överskridas tillfälligt under högst fem minuter per timme.
+Arbetsmoment som typiskt sett kan ge upphov till momentana ljudnivåer över
+45 dB (A) i bostäder och vårdlokaler får inte utföras nattetid (kl. 22-07).
+Avvikelser får, om det finns särskilda skäl, ske efter tillsynsmyndighetens godkännande.
+Buller ska kontrolleras genom immissionsmätningar eller genom närfältsmätningar och beräkningar. Om bullret är intermittent eller föränderligt ska den ekvivalenta ljudnivån beräknas för varje tidsperiod under vilken st
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[20/47]  M 2614-23  |  FLAGS: no_plant_name, no_operator, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 36800
+  Cost source: egångskostnader till
+Länsstyrelsen i Skåne län med 36 800 kr. På beloppet utgår ränta enligt 6 §
+räntelagen fr
+  Plant: —
+  Measures ordered: biotopvård, utrivning, kontrollprogram
+  Domslut measures: kontrollprogram, biotopvård
+  Extracted measures: minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Tillstånd
+Mark- och miljödomstolen beviljar tillstånd enligt 11 kap. 19 § miljöbalken (MB)
+till följande vattenverksamheter.
+a. I sin helhet riva ut den på fastigheten Tormestorp 5:31 belägna dammanläggningen (Hammarmölledammen).
+b. fylla igen den övre stenskodda delen av utloppskanalen från själva
+kraftverket i syfte att minimera miljöpåverkan på den naturliga åfåran.
+Dispens enligt artskyddsförordningen
+Mark- och miljödomstolen meddelar dispens enligt 15 § artskyddsförordningen för
+flytt av trollsländelarver.
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+Villkor
+För tillståndet gäller följande villkor.
+Allmänt villkor
+1. Arbetena ska utföras i huvudsaklig överensstämmelse med vad sökanden
+angivit i ansökan eller i övrigt åtagit sig i målet.
+Arbetstider
+2. Utrivningen ska ske under perioder med låg vattenföring. Utrivningsarbetena får endast utföras under dagtid mellan kl 07.00 och 18.00.
+3. I syfte att minimera risken för sedimentspridning ska dammen avsänkas i
+god tid innan utrivningsarbetena påbörjas. Avsänkningen av magasinet ska
+ske under perioden 1 mars – 14 maj.
+4. Utrivningen ska ske under perioder med lågvattenföring under perioden 15
+juni - 31 oktober.
+5. Avverkning. Under fladdermössens yngelperiod, den 15 maj - 15 september,
+får hålträd inte avverkas.
+Läckage och spill
+6. Fordon och maskiner som används i eller i anslutning till vattendraget ska
+vara hela och rentvättade och uppställning av arbetsfordon ska ske på land
+med ett avstånd om minst 25 meter från vattendraget.
+7. Miljövänliga hydraulvätskor, godkända enligt svensk standard SS155434,
+ska användas i de maskiner som nyttjas. Material för omhändertagande av
+läckage och spill från maskiner ska finnas tillgängligt på arbetsområdet och
+kemiska produkter ska vid behov förvaras på därtill iordningställd yta.
+Grumling nedströms
+8. Arbeten i vattenområdet ska bedrivas så att grumling och sedimentspridning
+minimeras.
+9. Avsänkningen ska ske med max 30 cm per tillfälle. Minst ett dygn ska
+förflyta me
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[21/47]  M 605-24  |  FLAGS: no_plant_name, no_operator, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 1500
+  Cost source: igare preliminärt fastställda
+prövningsavgiften om 1 500 kr är skälig med hänsyn till prövningens omfattning.
+  Plant: —
+  Measures ordered: faunapassage
+  Domslut measures: faunapassage, skyddsgaller
+  Extracted measures: faunapassage, fiskvandring, omlöp, utskov, skyddsgaller, utrivning
+  Risk label: HIGH_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljödomstolen ändrar villkor A3, B6 och B7 i gällande tillstånd,
+meddelat i dom den 28 december 2020, mål M 73-19. Villkoren får istället följande
+lydelser:
+A3. Sökandena ska senast den 12 maj 2026 ha anlagt en faunapassage.
+B6. I kraftverkets intagskanal ska, senast den 12 maj 2027, finnas ett skyddsgaller
+för avledning av nedvandrande fisk. Gallret ska ha en lutning mot horisontalplanet
+på 30-35 grader och en största spaltvidd vid 14 mm.
+B7. I kraftverkets intagskanal ska, senast den 12 maj 2027, ha anlagts en flyktväg
+för fisk. När kraftverket är i drift ska minst 0,02 m3/s släppas till flyktvägen.
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+Med ändring av vad som bestämts i mark- och miljödomstolens dom den 28
+december 2020 i mål M 73-19 förlänger mark- och miljödomstolen den för
+vattenverksamheten föreskrivna arbetstiden till och med den 12 maj 2026.
+Mark- och miljödomstolen fastställer den med stöd av förordningen (1998:940) om
+avgifter för prövning och tillsyn enligt miljöbalken tidigare preliminärt fastställda
+avgiften för målets prövning.
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[22/47]  M 2796-24  |  FLAGS: no_cost, no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: overturned
+  Outcome (sv): Upphäver beslut
+  Cost: —
+  Cost source: —
+  Plant: moderna miljövillkor vid Björnamåla
+  Measures ordered: fiskväg, minimitappning, utskov, biotopvård, kontrollprogram
+  Domslut measures: fiskväg, minimitappning, utskov, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård
+  Risk label: HIGH_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Björnamåla
+  Beslut: Ej Beslut
+  Court: Växjö
+  Size: Storskaliga >10 MW
+  Prövningsgrupp: Hällarydsån
+  Län: Blekinge län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Moderna miljövillkor
+Mark- och miljödomstolen fastställer moderna miljövillkor, enligt nedan, för den
+vattenverksamhet som Gösta Johanssons Bilverkstad HB, Gösta Johansson och
+Inger Johansson med stöd av ovan angiven vattendom bedriver på fastigheten
+Karlshamn, Björnamåla 1:5.
+
+
+
+
+
+
+
+Upphävande av befintliga villkor
+Fiskeavgiften
+Med ändring av Söderbygdens vattendomstols dom den 23 maj 1938, AD 35/37 befrias Sökandena från skyldigheten att betala fiskeavgift (äldre villkor 2 enligt Sökandens numrering).
+Fiskeförbud
+Mark- och miljödomstolen upphäver befintligt villkor i vattendomstolens dom den
+23 maj 1938, AD 35/37 gällande fiskeförbud i dess helhet (äldre villkor 3 enligt Sökandens numrering).
+
+Ändring av befintliga villkor
+Mark- och miljödomstolen ändrar befintligt villkor i vattendomstolens dom den 23
+maj 1938, AD 35/37 gällande gallerspalt (äldre villkor 4 enligt Sökandens numrering) till nytt villkor 9 enligt nedan.
+
+Mark- och miljödomstolen ändrar befintligt villkor i vattendomstolens dom den 23
+maj 1938, AD 35/37 gällande hushållningsbestämmelser (äldre villkor 5 enligt Sökandens numrering) till nya villkor 2, 4, 5, 7, 8, 10 och 11 enligt nedan.
+
+För tillståndet ska följande nya villkor gälla
+I målet förekommer benämningen sågdammen och hålldammen för samma anläggning. Domstolen använder genomgående begreppet hålldammen i denna doms domslut och domskäl.
+
+Nya villkor
+1. Arbetena ska utföras och verksamheten bedrivas i huvudsaklig överensstämmelse med vad Sökanden angett i ansökningshandlingarna och i övrigt uppgett och åtagit sig i målet.
+2. Dämningsgränsen vid hålldammen (vid den övre dammanläggningen), i vad
+på anläggningens drift beror, ska vara +57,53.
+
+
+
+3. En fiskväg särskilt anpassad för uppströms och nedströms vandring av ål ska
+anläggas vid hålldammen på skibordets högra sida (sett i förhållande till
+strömriktningen) i huvudsaklig överensstämmelse med vad som anges i den
+till ansökan fogade tekniska beskrivningen.
+4. Fiskvägen vid hålldammen ska avbö
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[23/47]  M 4324 -21  |  FLAGS: no_plant_name, no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: 4000000
+  Cost source: ion från solceller kräver en investerin g på minst 4 000 000 kr.
+Solceller håller kanske 30- 35 år. En vattenkraf
+  Plant: —
+  Measures ordered: utskov, biotopvård, utrivning, kontrollprogram
+  Domslut measures: utskov, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1.Mark- och miljööverdomstolen avvisar Naturvårdsverkets yrkande om förlängd
+arbetstid.
+2.Mark- och miljööverdomstolen avslår överklagandena.
+3.Mark- och miljööverdomstolen avslår Nora kommuns, MA:s, LK:s , PK:s, UL:s ,
+JL:s, JO:s och UR:s yrkande om ersättning för rättegångskostnader i Mark- och
+miljööverdomstolen. ___________________
+
+Tillstånd
+1.Mark- och miljödomstolen, som godkänner miljökonsekvensbeskrivningen, ger
+Naturvårdsverket tillstånd enligt miljöbalken att inom A, B och C, i huvudsaklig
+överensstämmelse med vad som anges i den tekniska beskrivningen,
+a)riva ut luckor, gåtbalkar och utskovströsklar,
+b)utföra terrängjustering och biotopvårdande åtgärder upp- och nedströms
+befintligt dammläge,
+c)anlägga nya och förstärka befintliga erosionsskydd vid kvarnbyggnaden,
+dammpelaren i huvudfåran och slänten mot befintliga byggnader på norra
+sidan av ån, uppströms dammen samt
+d)uppföra och riva ut erforderliga fångdammar för arbetena under a-c .Bilaga A
+
+NAC KA TINGSRÄTT DOM M 1785 -20
+
+2.Naturvårdsverket ges vidare med stöd av 7 kap. 7 § andra stycket miljöbalken
+dispens från reservatsföreskrifterna för Naturreservatet Järleån för de åtgärder i
+vatten och på land som behövs för att utföra åtgärderna under punkt 1.
+3.Naturvårdsverket ges vidare rätt att med stöd av 28 kap. 10 § miljöbalken
+(tvångsrätt) ta i anspråk gemensamhetsanläggningen D för byte av trädäck i
+samband
+med utrivningen av dämmande anläggningsdelar samt i erforderlig
+utsträckning
+även de delar av B och C som berörs av åtgärderna.
+4.Samtliga återstående yrkanden om avvisning av ansökan samt syn avslås.
+Villkor
+1. Arbetena ska utföras i huvudsaklig överensstämmelse med vad
+Naturvårdsverket angivit i ansökan eller i övrigt åtagit sig i målet.
+2. Arbeten i vatten ska utföras så att störande grumling begränsas i möjligaste
+mån. Arbeten i vatten ska ske under perioder med låga flöden och erforderlig
+beredskap ska finnas för at t undvika utsläpp av förorenande ämnen.
+3. Naturvårdsverket ska vid utföran
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[24/47]  M 516 -21  |  FLAGS: no_cost, no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: remanded
+  Outcome (sv): Återförvisat
+  Cost: —
+  Cost source: —
+  Plant: Hällefors
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: utskov, utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Med ändring av mark- och miljödomstolens dom fastställer Mark- och
+miljööverdomstolen Länsstyrelsen i Kalmar läns beslut den 26 juli 2019, dnr 5315801-2019, att anläggningen Hällefors med tillhörande kraftverk inte ska omfattas av
+den nationella planen för moderna miljövillkor.
+
+1. Mark- och miljödomstolen upphäver Länsstyrelsen i Kalmar läns beslut den
+26 juli 2019, i ärende nr 531-5801-2019, och beslutar att anläggningen
+Hällefors/Silverdalens Bruk omfattas av den nationella planen för moderna
+miljövillkor enligt 36 § förordningen (1998:1388) om vattenverksamheter.
+Mark- och miljödomstolen återförvisar målet i denna del till Länsstyrelsen i
+Kalmar län för fortsatt handläggning.
+2. Mark- och miljödomstolen ogillar övriga framställda yrkanden.
+_____________ Bilaga A
+
+VÄXJÖ TINGSRÄTT DOM M 3979 -19
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[25/47]  M 5295 -23  |  FLAGS: no_cost, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: —
+  Cost source: —
+  Plant: Tillsyn avseende
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Med ändring av mark- och miljödomstolens dom upphäver Mark- och
+miljööverdomstolen Länsstyrelsen i Värmlands beslut den 19 januari 2023 i
+ärende nr
+535-8178-2022.
+
+Mark- och miljödomstolen avslår överklagandet.
+_____________ Bilaga A
+
+VÄNERSBORGS TINGSRÄTT DOM M 491 -23
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[26/47]  M 5937-23  |  FLAGS: no_cost, no_plant_name
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: —
+  Cost source: —
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: minimitappning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen avslår överklagandet.
+
+Mark- och miljödomstolen upphäver Länsstyrelse n i V ästmanlands läns beslut.
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[27/47]  M 2474-06  |  FLAGS: cost_over_5M, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: 125153673
+  Cost source: tolen ska tillerkänna samebyn ett engångsbelopp om 125 153 673 kr eller annat
+belopp som domstolen anser skäligt at
+  Plant: anläggande av
+  Measures ordered: utskov, kontrollprogram
+  Domslut measures: utskov, kontrollprogram
+  Extracted measures: faunapassage, utskov, kontrollprogram
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens deldomar på
+följande sätt.
+a. Mark- och miljööverdomstolen avslutar prövotidsförfarandet avseende
+verksamheternas inverkan på renskötseln och förordnar att villkoren i
+punkten 3 i domsluten ska ha följande lydelse.
+
+SVEA HOVRÄTT DOM M 693-22, M 1094-22
+
+- Det ska finnas ett stängsel längs utskovskanalens båda sidor. Stängslet
+ska sträcka sig så långt ut i Bleriken att det fungerar som flödesstängsel
+och att renarna vid lågvatten inte kan ta sig innanför detta. Grindarna i
+stängslet ska vara stängda och försedda med lås.
+- Schaktning ska ske på båda sidor om viltbron i syfte att underlätta
+renarnas passage över bron.
+- Stängslet över viltbron och i dess anslutning ska förstärkas. Höjden på
+stängslet ska vara minst tre meter över barmarksnivån.
+- Röjning och glesning av skog ska ske med start år 2025 och därefter i
+vart fall vartannat år, på båda sidor av viltbron.
+- Flyttväg med en bredd på minst 40 meter ska under år 2025 röjas i
+riktning mot nordnordväst från viltbrons nordvästligaste brofäste.
+Röjning ska därefter ske i vart fall vartannat år.
+- Kontroll av stängsel och grindar samt röjd flyttväg ska ske genom
+regelbunden tillsyn. Senast två månader efter det att åtgärderna
+genomförts ska Vattenfall Vattenkraft AB tillsammans med Umeälvens
+Vattenregleringsföretag till tillsynsmyndigheten inlämna ett förslag till
+kontrollprogram som i vart fall ska innehålla uppgifter om hur tillsynen
+ska ske, hur ofta den ska ske och hur den ska dokumenteras.
+Med stöd av 22 kap. 25 § tredje stycket miljöbalken delegeras till
+tillsynsmyndigheten att besluta om de ytterligare villkor som kan behövas
+med anledning av genomförd tillsyn enligt kontrollprogrammet.
+Schaktning och åtgärder avseende stängslet över viltbron ska vara
+genomförda senast den 31 december 2025.
+b. Med ändring av punkten 4 i domsluten avslutar Mark- och miljööverdomstolen prövotidsförfarandet avseende verksamheternas inverkan på fisket
+i sjön Blerike
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[28/47]  M 3463-22  |  FLAGS: no_plant_name, no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted
+  Outcome (sv): Tillstånd beviljas
+  Cost: 16000
+  Cost source: ader
+till Länsstyrelsen i Västra Götalands län med 16 000 kr. På beloppet skall
+ränta utgå enligt lag.
+J. Pröv
+  Plant: —
+  Measures ordered: fiskväg, omlöp, minimitappning, utskov, intagsgaller, kontrollprogram
+  Domslut measures: fiskväg, omlöp, minimitappning, utskov, kontrollprogram
+  Extracted measures: fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Strömma Kvarn
+  Beslut: Moderna miljövillkor
+  Court: Vänersborg
+  Size: Okänd effekt
+  Prövningsgrupp: Rolfsån
+  Län: Västra Götalands län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+A. Mark- och miljödomstolen, som finner att till ansökan fogad miljökonsekvensbeskrivning uppfyller kraven i 6 kap. miljöbalken, slutför den specifika
+miljöbedömningen och meddelar Hushållningssällskapet Sjuhärad tillstånd till
+att på fastigheterna och , Marks kommun, från Gärån(Ulån) avleda vatten
+om maximalt 0,8 m3/s och bedriva vattenverksamhet förproduktion av
+vattenkraftsel vid befintlig vattenkraftsanläggning bestående avföljande delar:
+En dammbyggnad med en total längd om 22 meter med krön på nivå
++ 40,20 m.
+En 30 m lång och 1,5 m bred intagskanal, försedd med ett grovgaller med
+spaltvidd om 40 mm och en lutning med 48°, som leder vatten från dammen in till kraftverket.
+En 6,5 m lång tub som i slutet av intagskanalen förbinder kanalen med
+kraftverksbyggnaden.
+
+Box 1070 Hamngatan 6 0521-27 02 00 måndag fredag
+
+En kraftstation i vilken installerats turbin av Francismodell med slukförmågan 0,8 m3/s.
+En utloppskanal där vatten släpps ut från kraftverket.
+Ett intagsgaller placerat vid dammen framför intagskanalen. Gallret ska ha
+en spaltvidd på 15 mm och en lutning på 40°.
+En fiskväg i form av ett omlöp med en längd på ca 70 meter som startar vid
+dammen och mynnar ut ca 20 meter nedströms.
+Rätten att till tillgodogörande av vattenkraften vid Strömma kvarns vattenkraftverk ska vara förenad med fastigheten Mark somströmfallsfastighet.
+Tidigare tillståndsgiven vattenverksamhet på platsen får bedrivas under sedan
+tidigare gällande villkor intill dess denna dom vunnit laga kraft.
+Med ändring av vad som tidigare gällt för vattenverksamheten förordnar
+Mark- och miljödomstolen att följande villkor i fortsättningen ska gälla för
+vattenverksamheten.
+Arbetena skall utföras i huvudsaklig överensstämmelse med vad sökanden uppgett och åtagit sig i målet om inte annat följer av domslutet nedan.
+Vattennivån uppströms kraftverksdammen får inte såvitt beror på anläggningens drift och skötsel överstiga dämningsgränsen + 39,79 m
+(RH2000). Dämningsgränsen ska markeras på pegel upprätt
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[29/47]  M 4962-23  |  FLAGS: no_cost, no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: overturned
+  Outcome (sv): Upphäver beslut
+  Cost: —
+  Cost source: —
+  Plant: Karsbol
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: minimitappning, utskov, utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom och upphäver
+Länsstyrelsen i Värmlands läns beslut den 27 september 2023 i ärende nr 535-32142023.
+
+Box 2290 Birger Jarls Torg 16 08-561 670 00 måndag – fredag
+103 17 Stockholm 08-561 675 50 08:00–16:30
+
+Mark- och miljödomstolen ändrar länsstyrelsens beslut endast på så sätt att föreläggandet ska ha efterföljts senast arton månader efter det att detsamma vunnit laga
+kraft.
+
+Box 1070 Hamngatan 6 0521-27 02 00 måndag – fredag
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[30/47]  M 2703-22  |  FLAGS: no_plant_name, no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: 1500
+  Cost source: miljödomstolen fastställer prövningsavgiften till 1 500 kronor. Avgiften
+är betald.
+
+Mark- och miljödomstolen 20
+  Plant: —
+  Measures ordered: utskov, biotopvård, utrivning, kontrollprogram
+  Domslut measures: utskov, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Bresiljedammen
+  Beslut: Återkallande (utrivning)
+  Court: Östersund
+  Size: Okänd effekt
+  Prövningsgrupp: Testeboån
+  Län: Gävleborg
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen avslår överklagandena.
+
+1. Mark- och miljödomstolen återkallar tillståndet lämnat genom dåvarande
+Österbygdens vattendomstols dom den 4 augusti 1948 i mål AD 36/1948 och
+
+Box 708 Storgatan 6 063-15 06 00 måndag – fredag
+
+www.ostersundstingsratt.domstol.se 13:00–15:00
+
+Mark- och miljödomstolen 2024-06-19
+Miljödomstolens vid Östersunds tingsrätts dom den 8 december 2010 i mål
+M 2332-09, för vattenverksamhet vid Bresiljorna.
+2. Efter omprövning av en vattenverksamhet för sådana miljövillkor som avses
+i 11 kap. 27 § miljöbalken ålägger mark- och miljödomstolen Nilsson Kraft
+AB att riva ut samtliga anlagda dämmande delar samt vidtagande av de
+åtgärder som behövs för att förbygga eller minska skador genom utrivningen.
+3. Övriga i målet framställda yrkanden lämnas utan bifall.
+Villkor
+1. Arbetena och verksamheten ska bedrivas i huvudsaklig överenstämmelse
+med vad Sökanden angett i ansökningshandlingarna och i övrigt uppgett och
+åtagit sig i målet.
+2. Utrivningen av Bresiljedammen ska omfatta borttagandet av samtliga till
+dammen hörande delar som är dämmande och som går att koppla till
+pågående vattenverksamhet.
+3. I syfte att återställa strömfåran i aktuell del av Bresiljeån ska biotopvårdande
+åtgärder utföras i den omfattning som i huvudsak framgår av den till
+ansökan bifogad teknisk beskrivning samt i samråd med Länsstyrelsen i
+Gävleborg.
+4. Grumlande arbeten får endast utföras under perioden 15 juni till 15
+september.
+5. Vid lagring av drivmedel eller oljor i samband med arbeten ska cisterner,
+bränsletankar eller motsvarande vara invallade eller utrustade med
+miljölåda.
+6. Vid behov, för utförande av de åtgärder som omfattas av ansökan om
+återkallande av tillstånd samt utrivning, får vattennivån vid dammen tillfälligt
+avsänkas lägre än den i tillståndet angivna sänkningsgränsen. Tre veckor
+innan avsänkning får ske ska detta anmälas till tillsynsmyndigheten.
+
+Mark- och miljödomstolen 2024-06-19
+7. Under arbetet med utrivning av dammen m.m. sk
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[31/47]  M 530-22  |  FLAGS: outcome_unclear, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: unclear
+  Outcome (sv): Oklart
+  Cost: 5000
+  Cost source: miljödomstolen fastställer prövningsavgiften till 5 000 kronor.
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – freda
+  Plant: moderna miljövillkor avseende Snällerödskvarns
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskvandring, omlöp, utskov, utrivning
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Snälleröds kvarn
+  Beslut: Avvisning
+  Court: Växjö
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Rönne å
+  Län: Skåne län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Section not available
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[32/47]  M 4965-23  |  FLAGS: no_plant_name, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: denied
+  Outcome (sv): Ansökan/yrkande avslås
+  Cost: 35000
+  Cost source: skäl att ändra den tidigare beslutade avgiften
+om 35 000 kr för målets prövning.
+Rättegångskostnader
+Enligt 2
+  Plant: —
+  Measures ordered: kontrollprogram
+  Domslut measures: kontrollprogram
+  Extracted measures: kontrollprogram
+  Risk label: HIGH_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Tillstånd
+Mark- och miljödomstolen lämnar Höganäs kommun (kommunen) tillstånd enligt
+11 kap. miljöbalken att inom fastigheten Höganäs 36:50, i enlighet med ansökan
+- anlägga en brygga med därtill hörande anordningar, samt
+- utföra erforderliga anläggningsarbeten i berört område.
+Villkor
+Mark- och miljödomstolen föreskriver följande villkor för verksamheten.
+1 Verksamheten ska bedrivas i huvudsaklig överensstämmelse med vad
+kommunen redovisat i ansökningshandlingarna och i övrigt åtagit sig i målet.
+Mindre ändringar av verksamheten får vidtas efter godkännande av
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+tillsynsmyndigheten, under förutsättning att ändringen inte kan befaras medföra
+en ökad störning för motstående intressen.
+2 Grumlande arbeten ska utföras på sådant sätt att grumling i möjligaste mån
+begränsas. Grumlande arbeten i vatten får endast utföras under tiden från och
+med oktober till och med mars månad.
+3 Utrustning i form av länsar och saneringsutrustning ska finnas på plats
+vid arbete med arbetsmaskiner. Det ska även finnas rutiner för hantering av
+denna utrustning. Hydraulvätskor i arbetsmaskiner ska uppfylla
+miljöegenskaper enligt svensk standard SS 155434.
+4 Buller från verksamheten ska i möjligaste mån vid bostäder begränsas i
+enlighet med riktvärdena i Naturvårdsverkets allmänna råd om buller från
+byggplatser (NFS 2004:15). Tillsynsmyndigheten får medge undantag från
+ovan nämnda riktvärden.
+5 Kontrollprogram för verksamheten ska upprättas i samråd med
+tillsynsmyndigheten och ges in till tillsynsmyndigheten senast fyra veckor
+innan arbetena påbörjas.
+Delegation
+Mark- och miljödomstolen överlåter med stöd av 22 kap. 25 § miljöbalken tredje
+stycket åt tillsynsmyndigheten att vid behov meddela de ytterligare villkor som kan
+behövas avseende anpassningar för att minska belysningens ljuspåverkan till havet.
+Arbetstid
+Den tid inom vilken de i denna dom tillståndsgivna arbetena ska vara utförda
+bestäms med stöd av 22 kap. 25 § andra stycket miljöbal
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[33/47]  M 6587-23  |  FLAGS: no_plant_name, no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted
+  Outcome (sv): Tillstånd beviljas
+  Cost: 2500000
+  Cost source: oxidativ behandling bedöms uppgå till omkring 1,5–2,5 miljoner kronor och därtill kommer
+driftskostnader. Med hänsyn ti
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: kontrollprogram
+  Risk label: HIGH_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Miljökonsekvensbeskrivning
+Mark- och miljödomstolen godkänner den i målet ingivna miljökonsekvensbeskrivningen.
+
+Box 81 Kungsgatan 8 0470-560 100 måndag – fredag
+
+Tillstånd
+Mark- och miljödomstolen lämnar, med stöd av 16 kap. 2 a § miljöbalken och med
+ändring av vad som tillståndsgivits genom mark- och miljödomstolens dom den 15
+december 2015 i mål M 4170-13 (delvis ändrad genom Mark- och miljööverdomstolens dom den 13 oktober 2016 i mål M 316-16), Höganäs AB, Höganäs Sweden
+AB och Höganäs Hamnbyggnads AB för bolagens verksamhet i Höganäs kommun,
+tillstånd enligt 9 kap. miljöbalken till:
+(a) drift av en anläggning för termisk förgasning av biomassa, för tillverkning av
+högst 60 GWh syngas per år och högst 8 200 ton biokol per år innefattande
+förbränning av icke-farligt avfall med en installerad tillförd effekt om 10 MW
+samt kringanläggningar i form av lager,
+(b) försöks- och pilotverksamhet inom anläggningen för termisk förgasning samt
+(c) de ytterligare anpassningar och mindre ändringar som föranleds av ändringarna i (a) ovan och som redovisas i ansökan jämte bilagor.
+Villkor
+Mark- och miljödomstolen ändrar villkoren angående utsläppen av stoft och kväveoxider samt energiledningssystem i tillståndsbeslutet i deldom daterad den 15 december 2015 i mål nr M 4170-13 till följande lydelse.
+2. Det totala utsläppet av stoft från fasta utsläppspunkter för tillverkning av metallpulver samt rökgaser från Probiostålanläggningen får som begränsningsvärde inte överstiga 15 ton per år.
+5. Utsläpp av kväveoxider - angivet som NO - från tunnelugnarnas rökgaser i
+2
+Svampverket och från Probiostålanläggningens rökgaser får sammantaget inte
+överstiga 100 ton per år.
+
+14. Verksamheten ska styras av ett certifierat energiledningssystem enligt standarden ISO 50001 eller standarder som kan komma att ersätta denna. Ledningssystemet ska innehålla rutiner för inköp och projektering av energikrävande utrustning baserat på livscykelkostnad, LCC (Life Cycle Cost). Probiostålanläggningen får ex
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[34/47]  M 2694-22  |  FLAGS: no_processing_time, plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 200000
+  Cost source: g, vilket är FVO:s huvudinkomst, uppgår till
+cirka 200 000 kr per år, kan den ersättningsgilla skadan vid tekni
+  Plant: moderna miljövillkor avseende Oslättfors
+  Measures ordered: fiskväg, intagsgaller, kontrollprogram
+  Domslut measures: fiskväg, kontrollprogram
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  Risk label: HIGH_RISK
+  Court: Östersunds tingsrätt, MMD
+  Is appeal: False
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Oslättfors Kraftverk
+  Beslut: Ej Beslut
+  Court: Östersund
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Testeboån
+  Län: Gävleborgs län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljödomstolen avvisar Testeboåns Fiskevårdsområdesförenings
+ersättningsyrkande och avslår samtliga yrkanden om avvisning av ansökan.
+
+Förutom vad som hittills gällt som villkor för Oslättfors kraftverk enligt
+Österbygdens vattendomstols dom den 15 september 1956 (Ans. D. 40/1956) och
+
+
+
+ÖSTERSUNDS TINGSRÄTT
+DOM
+2025-12-18
+M 2694-22
+
+dom den 21 juni 1960 (Ans. D. 42/1960) samt mark- och miljödomstolens dom den
+5 juni 2019 i mål nr M 39-19 ska fortsättningsvis även följande villkor gälla.
+
+Miljödomstolen vid Östersunds tingsrätts dom den 29 augusti 2005 i mål nr
+M 3144-04 ersätts av denna dom.
+
+Villkor
+Generella villkor
+1. Arbeten och verksamheten ska bedrivas i huvudsaklig överensstämmelse
+med vad Nilsson Kraft AB angett i ansökningshandlingarna och i övrigt
+uppgett och åtagit sig i målet.
+
+Vattenhushållning
+2. Regleringen vid Bruksdammen i Oslättfors samt vid Nyhammardammen i
+Nyhammar ska, såvitt beror på dammarnas skötsel, utföras så att
+vattennivån i Lundbosjön inte överstiger dämningsgräns +70,98 m
+RH 2000 eller understiger sänkningsgräns +70,53 m RH 2000.
+
+3. En minsta tappning om totalt 2,8 m3/s, eller den naturliga tillrinningen om
+denna är lägre, ska alltid tappas ur Lundbosjön genom dammarna i
+Oslättfors och Nyhammar.
+
+4. När tillrinningen så medger och det varken föreligger risk för överskridande
+av dämningsgräns eller för dammsäkerheten i övrigt, ska tappningen ur
+Lundbosjön följa nedan angiven prioritetsordning och vattenföring.
+1. Fiskväg (slitsränna) vid Bruksdammen i Oslättfors, minst 0,8 m3/s
+2. Nyhammardammen, minst 0,6 m3/s
+3. Flyktväg vid Oslättfors kraftverk, minst 0,15 m3/s
+4. Oslättfors kraftverk
+6. Övriga avbördningsanordningar
+
+
+
+
+
+ÖSTERSUNDS TINGSRÄTT
+DOM
+2025-12-18
+M 2694-22
+
+5. Oslättfors kraftverk ska vara tekniskt anpassat för tappning som
+underskrider kraftverkets lägsta drivvattenföring.
+
+6. Oslättfors kraftverk får avleda högst 13 m3/s.
+
+7. Korttidsreglering av kraftverket får inte förekomma.
+
+Fiskpassage
+8. En fiskpassage f
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[35/47]  M 3753-22  |  FLAGS: no_plant_name
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: overturned
+  Outcome (sv): Upphäver beslut
+  Cost: 753396
+  Cost source: laget yrkar ersättning för rättegångskostnader med 753 396 kr.
+SMHI (aktbil. 79)
+SMHI lämnar inte synpunkter på
+  Plant: —
+  Measures ordered: fiskväg, minimitappning, utskov, biotopvård, utrivning, kontrollprogram
+  Domslut measures: fiskväg, minimitappning, utskov, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljööverdomstolen avslår Länsstyrelsen i Kronobergs läns yrkande om
+att målet ska återförvisas till mark- och miljödomstolen för fortsatt handläggning.
+2. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom på följande
+sätt.
+a) Villkor 5 ska ha följande lydelse:
+En fiskväg ska anläggas i den västra fåran och dimensioneras för en
+vattenföring mellan 0,1 och 0,6 m3/s. Fiskvägens utsteg i
+Änghultasjön ska utformas i huvudsaklig överensstämmelse med
+vad som redovisas i domsbilagorna 1 och 2. Den närmare
+utformningen av fiskvägen samt fårans in- och utsteg ska ske i
+samråd med fiskesakkunnig och tillsynsmyndigheten. Sökanden ska
+under en kontrollperiod om två år efter utförande av fiskvägen i
+samråd med fiskesakkunnig övervaka, analysera och detektera
+eventuella justeringsbehov och utföra sådana justeringar. Vidtagna
+åtgärder ska rapporteras till tillsynsmyndigheten.
+b) Villkor 7 e ska ha följande lydelse:
+Tillförda massor som används för anläggningsändamål ska uppfylla
+nivåerna för totalhalter och utlakade halter avseende mindre än
+ringa risk i Naturvårdsverkets handbok 2010:1 för återvinning av
+avfall för anläggningsändamål.
+c) Mark- och miljööverdomstolen upphäver beslutet om delegation.
+d) Mark- och miljööverdomstolen upphäver vad som föreskrivs i andra stycket
+under rubriken Prövotidsutredning, samt ändrar tredje stycket under samma
+rubrik till följande lydelse:
+Allt i enlighet med vad som framgår av utredningsvillkoret U1
+nedan åligger det sökanden att utföra de utredningar m.m. som
+anges där. Sökanden ska under prövotiden samråda med
+tillsynsmyndigheten.
+e) De provisoriska föreskrifterna i P1 ska ha följande lydelse:
+
+Vattenhushållningen i Änghultasjön ska följa nedanstående
+regleringsbestämmelser a–c:
+a) För avledning av vatten till fiskvägen i västra fåran ska gälla:
+1. Från den 1 juni till och med den 15 september, ska en
+minimitappning med ett flöde kring 200 l/s
+eftersträvas.
+2. Förändrad tappning ska ske med mjuka övergångar.
+b) F
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[36/47]  M 10202-23  |  FLAGS: no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 35000
+  Cost source: Prövningsavgift
+Prövningsavgiften fastställs till 35 000 kr. Avgiften är betald.
+Rättegångskostnad
+Arvika Kra
+  Plant: Järpforsens
+  Measures ordered: utskov, utrivning, kontrollprogram
+  Domslut measures: utskov, kontrollprogram
+  Extracted measures: fiskväg, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom på
+följande sätt.
+a) Punkten 1 under rubriken Tillstånd i domslutet ska ha följande lydelse.
+1. Mark- och miljödomstolen lämnar Arvika Kraft AB tillstånd enligt
+11 kap. 9 § och 16 kap. 2 b § miljöbalken till följande dammsäkerhetshöjande åtgärder vid Järpforsens vattenkraftverk
+- ändring av befintlig utskovsdamm, innebärande rivning samt återuppförande av utskovsdamm med erosionsskydd inom det område
+som framgår av figur 2 i bilaga 1 till mark- och miljödomstolens
+aktbilaga 40,
+- ändring av befintlig intagsdamm, innebärande påbyggnad och
+förstärkning,
+
+- i samband med genomförandet av byggnadsåtgärderna anlägga
+tillfälliga fångdammar.
+Om utskovdammen inte uppförs i samma läge som den befintliga ges
+Arvika Kraft AB rätt , enligt 28 kap. 10 § första stycket 4 miljöbalken,
+att utföra anläggningen och därme d sammanhängande åtgärder samt ta
+mark eller annat utrymme i ansprå k inom det samfällda vattenområde
+som ingår i Järperudsälven i dess sträckning från sydspetsen av fastigheten till en punkt belägen ca 50 m nordost om norra spetsen av
+denna fastighet (se karta i bilaga 5:1 till ansökan, mark- och
+miljödomstolens aktbilaga 1).
+b) Villkor 7 i domslutet upphävs.
+2. Mark- och miljööverdomstolen avslår Länsstyrelsen i Värmlands läns yrkande
+om ersättning för rättegångskostnader i Mark- och miljööverdomstolen.
+
+Tillstånd
+1. Mark och miljödomstolen lämnar Arvika Kraft AB tillstån d enligt 11 kap.
+9 § och 16 kap. 2 b § miljöbalken till följande dammsäkerhetshöjande åtgärder vid
+Järpforsens vattenkraftverk
+-ändring av befintlig utskovsdamm, innebärande rivning samt återuppförande i
+samma läge av utskovsdamm med erosionsskydd,
+-ändring av befintlig intagsdamm, innebärande påbyggnad och förstärkning,
+-i samband med genomförandet av byggnadsåtgärderna anlägga tillfälliga fångdammar.
+2. Mark och miljödomstolen lämnar Arvika Kraft AB tillstånd enligt 11 kap. 9 §
+miljöbalken till
+-utrivning av befintlig bro över 
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[37/47]  M 1458 -20  |  FLAGS: cost_over_5M
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 9000000
+  Cost source: åde anläggningstillgångar och skulder
+2014 är över 9 000 000 kr.
+Skäl varför Bolaget till mark- och miljödomstole
+  Plant: Lobonäs
+  Measures ordered: fiskväg, utskov, kontrollprogram
+  Domslut measures: fiskväg, utskov, kontrollprogram
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1.Mark- och miljööverdomstolen avvisar A.F.s och A.F.s yrkande
+om ersättning med 1 000 kr.
+2. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+sätt att villkor 10 och 12 samt punkten 3 under rubriken Övriga frågor ska ha följande
+lydelse:
+Villkor för tillståndet
+10. Fingallret får efter samråd med tillsynsmyndigheten tillfälligt tas bort (lyftas
+upp eller fällas) i samband med problem med iskravning som sätter igen gallret .
+12. Sökanden ska senast 3 månader efter lagakraftvunnen dom inge ett kontrollprogram till tillsynsmyndigheten avseende arbetenas utförande inklusive fiskvägens
+funktion.
+Övriga frågor
+3. I denna dom tillståndsgivna arbeten ska vara utförda inom tre år från det att
+domen vunnit laga kraft.
+3. Mark- och miljööverdomstolen avslår övriga i målet framställda yrkanden.
+4. Mark- och miljööverdomstolen avslår Kammarkollegiets yrkande om ersättning för
+rättegångskostnader i Mark- och miljööverdomstolen.
+
+Tillstånd
+Mark- och miljödomstolen lämnar Lobonäs Kraft AB tillstånd enligt 11 kap. 9 §
+miljöbalken
+1. till utförda arbeten i vattenområde i samband med renovering av Lobonäs
+kraftverk och justering av in- och utloppskanal,
+2. att anlägga en fiskväg i form av ett inlöp förbi Sågströmsdammen,
+3. att anlägga en fiskavledare i början av intagskanalen,
+4. att bibehålla befintlig maskinutrustning och genom turbinen avleda ett
+vattenflöde om maximalt 6,0 m3/s, samt
+
+ÖSTERSUNDS TINGSRÄTT DOM
+2020 -01-07 M 2740 -17
+
+5. att med Sågströmsdammen få dämma till +212,66 m eller den nivå som uppstår
+vid fullt öppet luckutskov och avsänka dammen för kraftverkets praktiska drift
+till +212,40 m.
+6. Domstolen avslår övriga framställda yrkanden.
+Villkor för tillståndet
+1. Arbetena ska bedrivas i huvudsaklig överenstämmelse med vad Bolaget angett i
+ansökningshandlingarna och i övrigt uppgett och åtagit sig i målet.
+2. Arbetena ska så långt möjligt utföras i torrhet och i övrigt så att grumling
+minimeras.
+3. Grumlande arbeten utförs i huvudsak un
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[38/47]  M 1849 -22  |  FLAGS: no_operator
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: remanded
+  Outcome (sv): Återförvisat
+  Cost: 5000000
+  Cost source: e n för en helt ny slitsränn a skull e uppgå ti ll 5 000 000 kr, vilke t är en hög
+kostna d för ett mindr e kraft
+  Plant: Södra Svensbo
+  Measures ordered: fiskväg, omlöp, minimitappning, utskov, faunapassage, utrivning, kontrollprogram
+  Domslut measures: fiskväg, faunapassage, omlöp, minimitappning, utskov, kontrollprogram
+  Extracted measures: fiskväg, faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen upphäver tillståndspunkt 5 och villkor 5 i mark- och
+miljödomstolens dom samt återförvisar målet till mark- och miljödomstolen för
+fortsatt
+behandling i fråga om fiskväg och tappning av vatten.
+
+Lagligförklaring
+Mark- och miljödomstolen förklarar, med stöd av 17 och 18 § lagen (1998:811) om
+införande av miljöbalken, Södra Svensbo kraftverk med tillhörande anläggningsdelar, bl.a. regleringsdamm, kraftverksintag, maskinstation och utloppskanal, vara
+av laglig beskaffenhet.
+Tillstånd m.m.
+Mark- och miljödomstolen lämnar Kraftbolaget i Svensbo AB tillstånd enligt
+11 kap. 9 § miljöbalken att
+1. bibehålla befintlig maskinutrustning och genom turbinerna leda en vattenmängd
+om totalt 5,0 m3/s,
+2. med Södra Svensbo kraftverk dämma vattennivån till +205,20 m och avsänka
+vattennivån för kraftverkets praktiska drift till +205,00 m (höjdsystem RH 00),
+3. byta eller förlänga befintliga sugrör,Bilaga A
+
+ÖSTERSUNDS TING SRÄTT DOM
+2022 -01-25 M 3227 -18
+
+4. laga läckage i dammens tätspont invid befintlig fisktrappa, samt
+5. laga befintlig fisktrappa och bygga om den till en denilränna.
+Villkor för tillståndet
+1. Arbetena ska bedrivas i enlighet med vad sökanden angett i ansökningshandlingarna och i övrigt uppgivit och åtagit sig i målet.
+2. Arbetena ska så långt det är möjligt utföras i torrhet och på sådant sätt att
+grumling i vattnet minimeras.
+3. Fingaller med en lutning av maximalt 35 grader från horisontalplanet och ett
+avstånd av 18 mm mellan gallerstavarna ska installeras i intagsöppningen till
+turbinkammaren. Gallret ska förses med flyktöppning och avledare (flyktväg).
+4. En vattenståndskala ska uppsättas vid vägbrofästets vänstra nedströms hörn,
+ca 45 meter uppströms kraftverket och dammen, med markering för
+dämningsgräns (Dgr) +205,20 m och sänkningsgräns (Sgr) +205,00 (RH 00).
+5. Under vegetationsperioden (1 april – 15 oktober) ska kraftverket alltid tappa
+minst 0,6 m3/s vatten genom fisktrappan, eller tillrinningen om den är lägre.
+6. En mini
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[39/47]  M 2165 - 24  |  FLAGS: no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: appeal_denied
+  Outcome (sv): Överklagande avslås
+  Cost: 10200
+  Cost source: er prövningsavgiften, som är betald, slutligt till
+10 200 kr.
+
+
+Verkställighet
+
+Befintlig vattenverksamhet f
+ö
+  Plant: moderna villkor avseende Stigen Västra
+  Measures ordered: utskov, kontrollprogram
+  Domslut measures: utskov, kontrollprogram
+  Extracted measures: fiskväg, faunapassage, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark - och miljööverdomstolen avslår överklagandet.
+
+1. Mark
+-
+
+och miljööverdomstolen avslår Kammarko
+llegiets yrkande om avvisning
+av ansökan.
+
+
+2.
+Vid omprövning enligt 24 kap. 10 §
+
+miljöbalken
+
+fastställer
+
+mark
+-
+
+och
+miljödomstolen följande
+bestämmelser och
+villkor för den verksamhet som bedrivs
+vid Stigen
+
+Västra
+
+vattenkraftverk med stöd av Valbo häradsrät
+ts dom den 15
+november 1909
+, No 78
+, att gälla istället för vad som bestämdes vid
+tillståndsprövningen
+.
+
+
+
+
+ Bilaga A
+
+ Sid 2
+VÄNERSBORGS TINGSRÄTT DOM
+ M 395 -22
+
+Villkor
+Generella villkor
+1. Verksamheten samt de arbeten som föranleds av denna omprövning ska bedrivas
+och utföras i huvudsaklig överenstämmelse med vad sökandena angett i
+ansökningshandlingarna och i övrigt uppgett och åtagit sig i målet.
+2. En fiskavledare ska installeras i form av fingaller med spaltvidden 18 mm
+uppställt i betavinkel med 30 graders vinkel i förhållande till inströmningen.
+Intag ströskel vid gallret ska vara kring nivån +91,90.
+3. Invid fiskavledaren ska installeras flyktöppning/flyktränna som leds in i
+utskovskanalen för ordinarie utskovslucka. Flyktrännan ska förses med en tröskel
+på nivån +93,60. Öppningen ska förses med falsar för att kunna stängas och regleras
+med sättvirke.
+4. En vattenmängd om minst 0,1 m3/s, eller tillrinningen vid lägre vattenmängder,
+ska avledas via flyktöppningen.
+5. Vid de tillfällen då överskottstappning aktualiseras ska denna så långt som
+möjligt fra msläppas i flyktöppningen.
+6. Anordning för uppvandrande ål ska anläggas. Den ska anpassas för ål i storlek
+från 10 cm till 40 cm samt vara i drift och förses med vatten under ålens
+vandringsperiod, minst från den 1 maj – den 15 oktober. Botten ska förses med
+lämpligt vandringssubstrat avsett för angivet storleksintervall. Den slutliga
+utformningen och placeringen av anordning för uppvandrande ål ska utföras i
+samråd med fiskesakkunnig och ska godkännas av tillsynsmyndigheten.
+Länsstyrelsen får vid behov b esluta om justerad tid för när anordni
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[40/47]  M 3473 -24  |  FLAGS: no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted_modified
+  Outcome (sv): Tillstånd med ändrade villkor
+  Cost: 15300
+  Cost source: prövningsavgiften till tidigare beslutat belopp
+om 15 300 kr. Avgiften är betald.
+
+VÄXJÖ T
+INGSRÄTT
+
+DOM
+
+
+
+M
+  Plant: vi d Långarekull
+  Measures ordered: fiskväg, omlöp, minimitappning, biotopvård, intagsgaller, kontrollprogram
+  Domslut measures: fiskväg, omlöp, minimitappning, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen ändrar mark- och miljödomstolens domslut under
+rubriken ”Omprövni ng för moderna miljövillkor och tillstånd” på följande s ätt.
+1. Punkten 1 ska ha följande lydelse:
+Den rättighet att ha befintlig anläggning och bedriva befintlig vattenverksamhet
+vid Långarekull vattenkraftverk, som grundar sig på urminnes hävd, förenas
+med de villkor som framgår nedan.
+
+ Sid 2
+
+2. Punkten 2 d) ska ha följande lydelse:
+att från tidpunkten för anläggandet och för framtiden avbörda vatten via damm
+och fiskvägar enligt upprättat förslag till vattenhushållningsregler, se villkor 2,
+4, 5 och 7 nedan.
+
+Omprövnin g för modern a miljövillkor och tillstånd
+1. Mark- och miljödomstolen lämnar, efter omprövning med hänvisning till
+urminnes hävd och 24 kap. 10 § miljöbalken, fortsatt tillstånd till drift av
+vattenkraftsanläggningen vid Långarekull i Västerån med de villkor som
+framgår nedan.
+2. Mark- och miljödomstolen lämnar även tillstånd enligt 11 kap. 9 § miljöbalken
+a)att utföra biotopvårdande åtgärder i naturfåran på en sträcka om ca 160
+meter nedströms det övre omlöpet.Bilaga A
+
+ Sid 2
+VÄXJÖ T INGSRÄTT DOM
+ M 1142 -23
+
+b) att renovera befintlig damm med ett 58 m långt överfall med krönnivån på
++121,2 m samt övriga dammdelar, enligt dammbeskrivningen i teknisk
+beskrivning punkt 3 – 6 (domsbilaga 1) .
+c) till de övriga ändringar av dammen som är nödvändiga för miljöanpass -
+ninge n av anläggningen, i huvudsak enligt teknisk beskrivning, se doms -
+bilaga 1.
+d) att från tidpunkten för anläggandet och för framtiden avbörda vatten via
+damm och fiskvägar enligt upprättat förslag till vattenhushållningsregler , se
+villkor 3, 4 och 6 nedan .
+e) till anläggande och borttagande av temporära fångdammar i samband med
+miljöanpassningen av anläggningen i huvudsak enligt domsbilaga 1 .
+
+Villkor
+Mark - och miljödomstolen föreskriver följande villkor för den verksamhet som
+enligt ovan får bedrivas med stöd av omprövning enligt 24 kap. 10 § miljöbalken
+och tillstånd enligt 11 ka
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[41/47]  M 4650 -22  |  FLAGS: cost_over_5M
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 469300000
+  Cost source: pris- och inkomstförändringar motsvarar 202,6 och 469,3 MSEK. Detta skall
+vägas gentemot de argument som framf
+  Plant: Gran ö
+  Measures ordered: minimitappning
+  Domslut measures: minimitappning
+  Extracted measures: fiskväg, faunapassage, fiskvandring, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så
+sätt att villkore t för det tillstån d enligt äldre vattenlagen till driften av Granö kraftverk
+som dåvarande Söderbygdens vattendomstol lämnade genom deldom den 26 maj 1956,
+A 33/1956 i mål A D 42/1949 ska ha följande lydelse.
+
+- En minimitappning om minst 7 m3/s ska släppas genom regleringsdammens luckor
+under perioden 15 mars –15 november. Under övrig tid av året ska minst 5 m3/s
+släppas. Om tillrinningen är mindre än angivna flöden, ska hela tillrinningen
+släppas.
+2. Mark- och miljööverdomstolen avslår Kammarkollegiets och Länsstyrelsen i
+Kronobergs läns yrkande om ersättning för rättegångskostnader i Mark- och
+miljööverdomstolen.
+
+Mark- och miljödomstolen avslutar prövotiden och fastställer följande ytterligare villkor för det tillstån d enligt äldre vattenlagen till driften av Granö kraftverk som dåvarande Söderbygdens vattendomstol lämnade genom deldom
+den 26 maj 1956, A 33/1956 i mål AD 42/1949.
+- En minimitappning om minst 2,3 m3/s ska släppas genom regleringsdammens luckor året runt, med undantag för perioden den 15 september till 31
+oktober då minst 4,0 m3/s ska släppas. Om tillrinningen är mindre än angivna flöden, ska tillrinningen släppas.
+Mark- och miljödomstolen avvisar Sydkrafts yrkande om godkännande av genomförda biotopförbättrande åtgärder. Bilaga A
+
+VÄXJÖ TINGSRÄTT DOM M 1069 -12
+
+Rättegångskostnader
+Sydkraft ska ersätta Länsstyrelsen i Kronobergs län med 30 400 kronor , Kammarkollegiet med 14 400 kronor och Tingsryds kommun med 25 000 kronor, för rättegångskostnader, allt jämte ränta enligt 6 § räntelagen från dagen för denna dom till
+dess betalning sker.
+Ogillade yrkanden
+Mark- och miljödomstolen avslår samtliga övriga yrkanden som framställts i målet
+och som inte särskilt angivits ovan.
+
+VÄXJÖ TINGSRÄTT DOM M 1069 -12
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[42/47]  M 503 -22  |  FLAGS: no_plant_name
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: remanded
+  Outcome (sv): Återförvisat
+  Cost: 875000
+  Cost source: laget.
+- Krister och A.E. har yrkat ersättning med 875 000 kr (B).
+- G.L. har yrkat ersättning med 812 500 kr (
+  Plant: —
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskvandring, kontrollprogram
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och
+återförvisar målet dit för fortsatt handläggning. Frågan om rättegångskostnader i Markoch miljööverdomstolen ska prövas av mark- och miljödomstolen i samband med att
+målet återupptas.
+
+1. Mark- och miljödomstolen avslår yrkandet om avvisning av ansökan.
+2. Mark- och miljödomstole n godkänner miljökonsekvensbeskrivningen.
+3. Mark- och miljödomstolen avslår ansökan.
+Prövningsavgift
+Mark- och miljödomstolen ändrar inte den med stöd av 3 kap. förordningen
+(1998:940) om avgift för prövning och tillsyn enligt miljöbalken tidigare fastställda
+avgiften för målets prövning.
+Rättegångskostnader
+Mark- och miljödomstolen avslår Harrviken Marina AB:s yrkande om att
+motparterna 3-12 ska betala ersättning för bolagets rättegångskostnader.
+Harrvikens Marina AB ska utge ersättning för rättegångskostnader till motparterna
+3-12 med 485 681 kr, varav 350 000 kr avseende arvode, 33 670 kr utlägg, 4 875 kr
+tidsspillan samt 97 136 kr mervärdesskatt.
+Harrvikens Marina AB ska utge ersättning för rättegångskostnader till
+- K.S. med 1 000 kr -
+ C.Å. med 1 000 kr -
+ K.Å. med 5 580 kr
+- L.N. med 1 560 kr
+- K.E. med 4 572 kr -
+ A.E. med 3 731 kr
+
+UMEÅ TINGSRÄTT DOM
+2021 -12-17 M 3528 -19
+
+På samtliga belopp ska utgå ränta enligt 6 § räntelagen från dagen för denna dom
+till dess betalning sker.
+
+UMEÅ TINGSRÄTT DOM
+2021 -12-17 M 3528 -19
+
+Innehåll
+
+............................................................................................................ 2
+Prövningsavgift ...................................................................................................... 2
+Rättegångskostnader ............................................................................................... 2
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[43/47]  M 6225 -20  |  FLAGS: no_cost
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: denied
+  Outcome (sv): Ansökan/yrkande avslås
+  Cost: —
+  Cost source: —
+  Plant: Reinholdsfors
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, fiskvandring, omlöp, kontrollprogram
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Med ändring av mark- och miljödomstolens dom förlänger Mark- och miljööverdomstolen den arbetstid som bestämts i punkten 4 i Vänersborgs tingsrätts, miljödomstolen, dom den 19 maj 2009 i mål nr M 1109-08 (och som genom samma
+tingsrätts, mark- och miljödomstolen, dom den 8 april 2015 i mål nr M 879-14
+tidigare förlängts) till två (2) år efter det att Mark- och miljööverdomstolens dom i
+detta mål fått laga kraft, dock längst till och med den 26 april 2024.
+2. Mark- och miljööverdomstolen avslår Länsstyrelsens i Värmlands län och
+Kammarkollegiets yrkanden om ersättning för rättegångskostnader i Mark- och
+miljööverdomstolen.
+
+Mark- och miljödomstolen avslår ansökan.
+_____________ Bilaga A
+
+ 2
+VÄNERSBORGS TINGSRÄTT DOM M 5066 -18
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[44/47]  M 7988 -22  |  FLAGS: no_plant_name
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted_modified
+  Outcome (sv): Tillstånd med ändrade villkor
+  Cost: 2080552
+  Cost source: ing till följd av utrivningen av
+dammen med totalt 2 080 552 kr.
+HP har yrkat att Mark- och miljööverdomstolen me
+  Plant: —
+  Measures ordered: biotopvård, utrivning, kontrollprogram
+  Domslut measures: kontrollprogram, biotopvård
+  Extracted measures: fiskväg, faunapassage, fiskvandring, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+Not found in Strömmen (likely MÖD appeal or historical case)
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Tillstånd till utrivning
+Mark- och miljödomstolen lämnar tillstånd enligt miljöbalken
+a)till utrivning av befintlig dammanläggning vid sjön Yxerns utlopp, inom
+fastigheten Västervik XXX och i samband därmed vidta biotopvårdande
+åtgärder, samt
+b)för genomförandet av planerade arbeten anlägga tillfällig fångdamm samt
+sänka av sjöns vattennivå.
+Allt i enlighet med vad som anges i den tekniska beskrivningen och ansökningshandlingarna i övrigt. Bilaga A
+
+VÄXJÖ TINGSRÄTT DOM M 3563 -21
+
+Avslutande av prövotid
+Mark- och miljödomstolen avslutar prövotidsförordnandet enligt U1 i mål nr
+M 2860-17 och M 5783-20.
+Återkallelse av gällande tillstånd och upphävande av Yxerns regleringsföretag
+Mark- och miljödomstolen återkallar rätten till reglering av Yxern enligt
+Söderbygdens vattendomstol i dom den 18 maj 1938 i mål AD 32/1933 samt markoch miljödomstolens deldom den 2021-03-23 i mål M 5783-20 i samband med att
+tillstånd till utrivning meddelas och tas i anspråk.
+Mark- och miljödomstolen upphäver Yxerns regleringsföretag med stöd av 7 kap 17
+§ lag (1998:812) med särskilda bestämmelser om vattenverksamhet.
+Villkor
+1. Arbetena ska utföras i huvudsaklig överensstämmelse med vad kommunerna
+angivit i ansökan eller i övrigt åtagit sig i målet.
+2. Arbeten i vatten ska ske under perioder med låga flöden och erforderlig
+beredskap ska finnas för att undvika utsläpp av förorenande ämnen och en
+handlingsplan för läckage av petroleumprodukter ska upprättas. Vid och i
+vatten förekommande arbeten får endast miljöanpassade hydrauloljor
+användas.
+3. Biotopvårdande åtgärder ska utföras i åfåran efter samråd med fiskesakkunnig.
+4. Det översta materialet till fångdamm ska utföras av naturmaterial som
+möjligt för att inte skada vattenmiljön.
+5. Kommunerna ska senast tre månader innan de tillståndsgivna åtgärderna
+påbörjas ge in förslag till kontrollprogram till tillsynsmyndigheten.
+6. Kommunerna ska under en kontrollperiod om minst tre år efter utförandet
+övervaka, analysera och detektera eventuella
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[45/47]  M 3415-22  |  FLAGS: plant_name_prefix
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: remanded
+  Outcome (sv): Återförvisat
+  Cost: 16300
+  Cost source: r den prövningsavgift som sökanden ska
+betala till 16 300 kr. Avgiften är betald.
+
+Box 1070 Hamngatan 6 0521-2
+  Plant: moderna miljövillkor avseende Marbäcks
+  Measures ordered: —
+  Domslut measures: —
+  Extracted measures: fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram
+  Risk label: LOW_RISK
+  Court: Mark- och miljööverdomstolen (MÖD)
+  Is appeal: True
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Marbäck
+  Beslut: Ej Beslut
+  Court: Vänersborg
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Fylleån
+  Län: Hallands län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och
+återförvisar målet till mark- och miljödomstolen för fortsatt behandling.
+
+Avgörandet är elektroniskt undertecknat
+
+Box 2290 Birger Jarls Torg 16 08-561 670 00 måndag – fredag
+103 17 Stockholm 08-561 675 50 08:00–16:30
+
+1. Mark- och miljödomstolen avslår ansökan.
+2. Mark- och miljödomstolen fastställer den prövningsavgift som sökanden ska
+betala till 16 300 kr. Avgiften är betald.
+
+Box 1070 Hamngatan 6 0521-27 02 00 måndag – fredag
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[46/47]  M 483-22  |  FLAGS: no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: granted
+  Outcome (sv): Tillstånd beviljas
+  Cost: 57600
+  Cost source: län
+betala ersättning för rättegångskostnader med 57 600 kr. Mervärdesskatt utgår inte
+på beloppet. På belopp
+  Plant: Stora Mölla
+  Measures ordered: omlöp, minimitappning, intagsgaller, kontrollprogram, ålpassage
+  Domslut measures: omlöp, minimitappning, kontrollprogram
+  Extracted measures: faunapassage, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, utrivning
+  Risk label: LOW_RISK
+  Court: Växjö tingsrätt, MMD
+  Is appeal: False
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Stora Mölla kraftverk
+  Beslut: Ej Beslut
+  Court: Växjö
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Rönne å
+  Län: Skåne län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Mark- och miljödomstolen avslår sökandens förstahandsyrkande.
+2. Mark- och miljödomstolen godkänner den i målet ingivna
+miljökonsekvensbeskrivningen.
+3. Mark- och miljödomstolen lämnar tillstånd i efterhand för att vid
+anläggningen Stora Mölla vattenkraftverk inom fastigheterna Öjamölla 1:3,
+Klippans kommun, och Össjö 26:134, Ängelholms kommun, bibehålla
+befintlig vattenkraftsanläggning bestående av samtliga anläggningsdelar,
+som består av:
+-
+Intagskanal till turbinerna G2 och G3.
+-
+En ca 125 m lång intagstub förlagd under mark.
+-
+Nytt turbinhus med två francisturbiner, benämnda G2 och G3, med en total
+slukförmåga om ca 4,1 m3/s.
+-
+Rensningar i utloppskanal till nivån +7,26 med en bottenbredd av ca 2,5 m.
+Avgörandet är elektroniskt undertecknat
+
+
+
+Vidare lämnas tillstånd till:
+-
+Att få bedriva vattenverksamhet i form av vattenbortledning för produktion
+av vattenkraftsel samt utföra de miljöanpassningsåtgärder som följer av
+villkoren nedan avseende förbättrad konnektivitet förbi befintlig
+dammanläggning.
+-
+Att få bedriva vattenverksamhet vid kraftverksanläggningen för att via
+turbinerna, benämnda G1-G3, utvinna kraft för produktion av vattenkraftsel.
+-
+Att till turbinerna G1-G3 få avleda en sammanlagd vattenmängd om högst
+3,5 m3/s, varav högst 1 m3/s genom turbinen G1 och sammanlagt högst 2,5
+m3/s genom turbinerna G2-G3.
+
+Mark- och miljödomstolen återkallar följande delar av tillståndet meddelat av
+Söderbygdens vattendomstol genom dom den 27 juni 1958 i mål AD 67/1957:
+-
+Rätt att bibehålla och använda ett turbinaggregat om 30 hästkrafter.
+-
+Rätt till korttidsreglering.
+
+Villkor
+
+Mark- och miljödomstolen fastställer att följande villkor (moderna miljövillkor) ska
+gälla för hela verksamheten vid Stora Mölla vattenkraftverk.
+
+1. Arbetena och verksamheten ska bedrivas i huvudsaklig överenstämmelse
+med vad sökanden angett i ansökningshandlingarna och i övrigt uppgett och
+åtagit sig i målet.
+
+2. Vid kraftverkets befintliga intag ska installeras flyktvägar för att leda
+n
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________
+
+══════════════════════════════════════════════════════════════════
+[47/47]  M 2695-22  |  FLAGS: no_processing_time
+══════════════════════════════════════════════════════════════════
+
+CURRENT EXTRACTION:
+  Outcome: conditions_changed
+  Outcome (sv): Villkor ändras
+  Cost: 31000
+  Cost source: sen
+Västernorrland, för dess kostnader i målet med 31 000 kr jämte ränta på beloppet
+enligt 6 § räntelagen (19
+  Plant: Åmots Bruks
+  Measures ordered: fiskväg, biotopvård, intagsgaller, kontrollprogram
+  Domslut measures: fiskväg, kontrollprogram, biotopvård
+  Extracted measures: fiskväg, fiskvandring, omlöp, minimitappning, utskov, kontrollprogram, biotopvård, utrivning
+  Risk label: HIGH_RISK
+  Court: Östersunds tingsrätt, MMD
+  Is appeal: False
+
+STRÖMMEN CROSS-REFERENCE:
+  ✓ Matched in Strömmen
+  Plant: Åmots Bruks Kraftverk
+  Beslut: Ej Beslut
+  Court: Östersund
+  Size: Småskaliga < 1,5 MW
+  Prövningsgrupp: Testeboån
+  Län: Gävleborgs län
+
+DOMSLUT (first 2000 chars):
+───────────────────────────────────
+1. Efter omprövning enligt 24 kap. 10 § miljöbalken beslutar mark- och
+miljödomstolen om nya och ändrade villkor för den verksamhet som bedrivs vid
+Åmots Bruks vattenkraftverk med stöd av utslaget i Österbygdens
+vattendomstol den 19 november 1932 (Ans. D. 13/1931), Österbygdens
+vattendomstol den 16 maj 1956, (Ans. D. 99/1955), och genom utslaget i
+Stockholms tingsrätt, vattendomstolen, den 16 mars 1987 i mål VA 58/85.
+
+ÖSTERSUNDS TINGSRÄTT
+DOM
+2025-08-15
+M 2695-22
+
+Mark- och miljödomstolen föreskriver följande Villkor
+Allmänt villkor som gäller för både drift och anläggandet av nya delar
+Arbetet och verksamheten ska bedrivas i huvudsaklig överenstämmelse med vad
+Nilsson Kraft AB angett i ansökningshandlingarna och i övrigt uppgett och åtagit
+sig i målet.
+Villkor kopplade till anläggande av nya delar inom ramen för miljöanpassningen
+1. I området mellan Hammardammen och Testeboån ska anläggas en slitsränna
+som ska dimensioneras och anpassas efter vid anläggningen rådande dämningsoch sänkningsgräns.
+2. Slitsrännan ska dimensioneras för ett flöde om minst 0,50 m3/s vid
+dämningsgränsen och om minst 0,40 m3/s vid sänkningsgränsen.
+3. På samma plats som befintligt intagsgaller ska ett nytt intagsgaller anläggas.
+Detta intagsgaller ska ha en lutning om maximalt 30° i förhållande till
+horisontalplanet och med en spaltvidd av maximalt 13 mm.
+4. I det nya intagsgallrets övre vänstra hörn ska finnas en flyktöppning. Till denna
+flyktöppning ska finnas en avledningsränna om minst 30 cm i diameter, som
+löper genom den befintliga intagskanalsmuren och mynnar ut nedströms
+slitsrännans utlopp.
+5. Flyktöppningen och avledningsrännan ska anpassas efter vid anläggningen
+rådande dämnings- och sänkningsgräns och för att avbörda 0,2 m3/s.
+6. I avledningsrännan ska finnas en klafflucka i syfte att kontrollera flödet i
+rännan.
+7. Ett erosionsskydd ska anläggas längs med slitsrännans ytterkant ned mot och ut
+i vattendraget längs vattenlinjen.
+8. I fordon och maskiner som används i anläggnings
+───────────────────────────────────
+
+CORRECTIONS (fill in):
+  [ ] Outcome → ___________
+  [ ] Cost → ___________
+  [ ] Plant name → ___________
+  [ ] Measures → ___________
+  [ ] Risk label OK? Y/N → ___
+  [ ] Notes: ___________

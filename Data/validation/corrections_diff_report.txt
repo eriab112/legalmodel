@@ -1,0 +1,24 @@
+NAP Legal AI Advisor — Corrections Applied
+Generated: 2026-03-03 09:27:24
+============================================================
+
+DECISIONS REMOVED (non-NAP): 0
+
+DECISIONS REMAINING: 40
+
+============================================================
+FIELD CORRECTIONS APPLIED:
+============================================================
+
+  (no field corrections applied)
+============================================================
+SUMMARY:
+  Decisions before: 40
+  Decisions after: 40
+  Outcomes corrected: 0
+  Costs corrected: 0
+  Plant names corrected: 0
+  Operators added: 0
+  Watercourses added: 0
+  Measures merged: 0
+============================================================

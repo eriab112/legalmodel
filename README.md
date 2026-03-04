@@ -68,9 +68,9 @@ Användare kan beskriva sitt kraftverk och få en individuell riskbedömning:
 
 ### Kunskapsbas
 
-113 dokument totalt:
+103 dokument totalt:
 
-- 50 domstolsbeslut (44 etiketterade: 21 HIGH_RISK, 23 LOW_RISK)
+- 40 domstolsbeslut (alla etiketterade: 19 HIGH_RISK, 21 LOW_RISK)
 - 37 lagstiftningsdokument (svensk lagstiftning + EU-direktiv)
 - 26 ansökningar
 
@@ -84,8 +84,8 @@ MLM-förträning på 96 juridiska dokument (domar, lagstiftning, ansökningar). 
 
 ### Binär klassificering
 
-- **Dataset:** 44 märkta beslut (21 HIGH_RISK, 23 LOW_RISK), omklassificerade från ursprunglig 3-klass (HIGH/MEDIUM/LOW)
-- **Split:** Train 30, Val 7, Test 7
+- **Dataset:** 40 märkta beslut (19 HIGH_RISK, 21 LOW_RISK), omklassificerade från ursprunglig 3-klass (HIGH/MEDIUM/LOW)
+- **Split:** Train 30, Val 5, Test 5
 - **Träning:** Inverse-frequency class weights, gradient checkpointing (4 GB VRAM)
 
 ### Utvärdering
@@ -154,11 +154,13 @@ legalmodel/
 ├── nap-legal-ai-advisor/       # Streamlit-dashboard
 │   ├── backend/                # agents, rag_system, search_engine, risk_predictor, llm_engine
 │   ├── integration/            # chat_handler, search_handler, shared_context
+│   ├── scripts/                # Validering och datakorrektion
 │   ├── ui/                     # overview, explorer, chat, search interfaces
 │   └── utils/                  # data_loader, ssl_fix, timing
 ├── scripts/                    # Datapipeline-script
 ├── tests/                      # Pytest-testsvit
 ├── Data/processed/             # Bearbetade JSON-dataset
+├── Data/validation/            # Valideringsrapporter och Gemini-korrektioner
 ├── models/                     # Tränade modeller (ej i git)
 ├── evaluation_reports/         # Modellutvärderingsresultat
 ├── run_dapt.py                 # DAPT-förträning
@@ -178,21 +180,25 @@ legalmodel/
 
 | Datamängd | Antal | Detaljer |
 |-----------|-------|----------|
-| Domstolsbeslut | 50 totalt | 44 etiketterade: 21 HIGH_RISK, 23 LOW_RISK |
+| Domstolsbeslut | 40 | 19 HIGH_RISK, 21 LOW_RISK |
 | Lagstiftning | 37 | Svensk lagstiftning + EU-direktiv |
 | Ansökningar | 26 | Verksamhetsutövares ansökningar |
 
-### Domstolsfördelning
+10 beslut som inte rörde NAP-vattenkraft (strandskydd, muddring, bergtäkt m.fl.) har avlägsnats efter Gemini-baserad omvalidering. Metadata har korrigerats med hjälp av Gemini re-extraktion och manuell granskning — se `Data/validation/corrections_diff_report.txt`.
 
-| Domstol | Antal |
-|---------|-------|
-| Växjö | 22 |
-| Vänersborg | 12 |
-| Östersund | 7 |
-| Nacka | 5 |
-| Umeå | 4 |
+32 av 40 beslut är MÖD-överklaganden med `originating_court`-metadata.
 
-38 beslut är MÖD-överklaganden med `originating_court`-metadata.
+### Utfallsfördelning
+
+| Utfall | Antal |
+|--------|-------|
+| granted_modified | 10 |
+| remanded | 9 |
+| conditions_changed | 7 |
+| overturned | 4 |
+| dismissed | 4 |
+| appeal_denied | 3 |
+| granted | 3 |
 
 ---
 
@@ -225,7 +231,7 @@ python -m pytest tests/ --cov=backend --cov=integration --cov=utils
 
 ## Kända begränsningar
 
-- **Data:** 44 märkta beslut är litet för deep learning — generalisering osäker
+- **Data:** 40 märkta beslut är litet för deep learning — generalisering osäker
 - **SSL:** Workaround i `utils/ssl_fix.py` för företagsmiljöer med SSL-proxy — inte lämpligt för produktion utan korrekt CA-certifikat
 - **Säkerhet:** Ingen autentisering eller rate limiting
 - **Router:** Nyckelordsbaserad routing med advisory/assessment-förfiltrering — fångar de flesta frågetyper men kan missa nyanser i komplexa tvärgående frågor

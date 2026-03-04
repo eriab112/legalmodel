@@ -1,0 +1,2787 @@
+{
+  "generated": "2026-03-03T08:08:33.987474+00:00",
+  "model": "gemini-2.5-flash, gemini-2.5-flash-lite, gemini-2.0-flash, gemini-2.0-flash-lite",
+  "total_decisions_processed": 50,
+  "total_corrections": 50,
+  "corrections": [
+    {
+      "id": "m3753-22",
+      "case_number": "M 3753-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Kvarndammen",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Vattudalens Fisk AB",
+          "new": "Uppvidinge kommun",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Änghultasjön",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "overturned",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Upphäver beslut",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 753396,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Kvarndammen",
+        "operator_name": "Uppvidinge kommun",
+        "watercourse": "Änghultasjön",
+        "municipality": "Uppvidinge kommun",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrade mark- och miljödomstolens dom genom att justera villkor för fiskväg, vattenhushållning och andra föreskrifter, samt upphävde delegation och delegation av beslut.",
+        "measures_ordered": [
+          "En fiskväg ska anläggas i den västra fåran och dimensioneras för en vattenföring mellan 0,1 och 0,6 m3/s.",
+          "Fiskvägens utsteg i Änghultasjön ska utformas i huvudsaklig överensstämmelse med vad som redovisas i domsbilagorna 1 och 2.",
+          "Den närmare utformningen av fiskvägen samt fårans in- och utsteg ska ske i samråd med fiskesakkunnig och tillsynsmyndigheten.",
+          "Sökanden ska under en kontrollperiod om två år efter utförande av fiskvägen i samråd med fiskesakkunnig övervaka, analysera och detektera eventuella justeringsbehov och utföra sådana justeringar.",
+          "Vattenhushållningen i Änghultasjön ska följa nedanstående regleringsbestämmelser a–c.",
+          "För avledning av vatten till fiskvägen i västra fåran ska gälla: 1. Från den 1 juni till och med den 15 september, ska en minimitappning med ett flöde kring 200 l/s eftersträvas. 2. Förändrad tappning ska ske med mjuka övergångar.",
+          "För avledning av vatten till den mittersta fåran ska gälla: 1. Ventilen i intagsröret ska hållas fullt öppen när Änghultasjön ligger på dämningsgränsen. 2. När Änghultasjöns nivå ligger mellan dämningsgränsen och +208,7 ska en tappning på 30 l/s eftersträvas. 3. Därefter ska en tappning om 15 l/s eftersträvas ner till vattennivån +208,6, då tappningen ska vara noll.",
+          "För avledning av vatten vid Kvarndammen ska gälla: 1. När Änghultasjöns vattennivå når eller överstiger +208,92 (dämningsgräns, DG, minus 5 cm) ska resterande tillrinning utöver tappningen i västra utloppet och mittersta utloppet, i vad anläggningens skötsel beror, avbördas via Kvarndammen för att undvika att sjön överstiger dämningsgränsen. 2. När vattennivån ligger mellan +208,92 och +208,7 ska en tappning på 100 l/s eftersträvas. 3. När vattennivån ligger mellan +208,7 och +208,6 ska en tappning på 50 l/s eftersträvas. 4. När vattennivå når eller understiger + 208,6 ska avbördningen av vatten upphöra.",
+          "Tillförda massor som används för anläggningsändamål ska uppfylla nivåerna för totalhalter och utlakade halter avseende mindre än ringa risk i Naturvårdsverkets handbok 2010:1 för återvinning av avfall för anläggningsändamål.",
+          "Allt i enlighet med vad som framgår av utredningsvillkoret U1 nedan åligger det sökanden att utföra de utredningar m.m. som anges där.",
+          "Sökanden ska under prövotiden samråda med tillsynsmyndigheten.",
+          "Kommunen ska till mark- och miljödomstolen lämna förslag på tappnings- och flödesregimer samt redovisa sin bedömning av om den provisoriska vattenhushållningen behöver revideras och därtill förslag till slutliga villkor senast två år efter arbetstidens utgång."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg",
+          "minimitappning",
+          "vattenhushållning"
+        ]
+      }
+    },
+    {
+      "id": "m8024-05",
+      "case_number": "M 8024-05",
+      "fields_changed": {
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Överklagandet avslås",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 32000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet handlar om fastighetsreglering och strandskydd, inte vattenkraft.",
+        "power_plant_name": null,
+        "operator_name": null,
+        "watercourse": null,
+        "municipality": "Uppsala kommun",
+        "application_outcome": "appeal_denied",
+        "application_outcome_sv": "Överklagandet avslås",
+        "outcome_reasoning": "Mark- och miljööverdomstolen instämmer i mark- och miljödomstolens bedömning att fastighetsbildningen inte är tillåtlig med hänsyn till strandskyddet.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m10202-23",
+      "case_number": "M 10202-23",
+      "fields_changed": {
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande och motpart Arvika Kraft AB",
+          "new": "Arvika Kraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "små",
+          "new": "Järperudsälven",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "conditions_changed",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 35000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Järpforsens",
+        "operator_name": "Arvika Kraft AB",
+        "watercourse": "Järperudsälven",
+        "municipality": "Arvika",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom genom att tillåta dammsäkerhetshöjande åtgärder vid Järpforsens vattenkraftverk och avslår yrkandet om ersättning för rättegångskostnader.",
+        "measures_ordered": [
+          "ändring av befintlig utskovsdamm, innebärande rivning samt återuppförande av utskovsdamm med erosionsskydd",
+          "ändring av befintlig intagsdamm, innebärande påbyggnad och förstärkning",
+          "i samband med genomförandet av byggnadsåtgärderna anlägga tillfälliga fångdammar",
+          "utrivning av befintlig bro över tilloppskanalen",
+          "uppförande av ny rörbro eller vägbank med trummor över tilloppskanalen",
+          "Villkor 7 i domslutet upphävs",
+          "avslår Länsstyrelsen i Värmlands läns yrkande om ersättning för rättegångskostnader"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "begränsa störande grumling",
+          "använda siltgardiner/geotextil eller motsvarande",
+          "arbeten som kan medföra grumling får inte ske under perioden 1 september till 15 februari",
+          "massor ska uppfylla kriterierna för mindre än ringa risk",
+          "rutiner för att förebygga och motverka spridning av invasiva arter",
+          "nya bron ska utformas så att ingen barriäreffekt för vattenlevande organismer uppstår",
+          "inventera intagskanalen med avseende på flodpärlmussla och flytta eventuella exemplar",
+          "kontrollera intagskanalen med avseende på förekomst av fisk och flodkräftor och flytta eventuell fisk och flodkräftor"
+        ]
+      }
+    },
+    {
+      "id": "m1275-22",
+      "case_number": "M 1275 -22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Sunnerstaholms",
+          "new": "Sunnerstaholms kraftverk",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd med ändrade villkor",
+          "new": "ändrar mark- och miljödomstolens dom endast på så sätt att Fortum Sverige AB ska ersätta",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 113906,
+          "new": 154706,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Sunnerstaholms kraftverk",
+        "operator_name": "Fortum Sverige AB",
+        "watercourse": "Voxnan",
+        "municipality": "Bollnäs kommun",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "ändrar mark- och miljödomstolens dom endast på så sätt att Fortum Sverige AB ska ersätta",
+        "outcome_reasoning": "Domstolen ändrar den tidigare domen genom att ålägga Fortum Sverige AB att ersätta Kammarkollegiet och Bollnäs kommun för deras rättegångskostnader.",
+        "measures_ordered": [],
+        "operator_cost_sek": 154706,
+        "cost_description": "Rättegångskostnader vid mark- och miljödomstolen",
+        "environmental_measures": [
+          "laxtrappa",
+          "tillsläppa erforderlig vattenmängd"
+        ]
+      }
+    },
+    {
+      "id": "m12894-23",
+      "case_number": "M 12894 - 23",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "tillstånd för",
+          "new": "Dömle",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande Fröling Förvaltning AB",
+          "new": "Fröling Förvaltning AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Visten",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Upphäver beslut",
+          "new": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom och upphäver länsstyrelsens beslut",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 100000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Dömle",
+        "operator_name": "Fröling Förvaltning AB",
+        "watercourse": "Visten",
+        "municipality": "Forshaga",
+        "application_outcome": "overturned",
+        "application_outcome_sv": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom och upphäver länsstyrelsens beslut",
+        "outcome_reasoning": "Mark- och miljööverdomstolen fann att länsstyrelsen inte hade fog för att förelägga bolaget att ansöka om tillstånd.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m13999-24",
+      "case_number": "M 13999 - 24",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Mostorps kvarn",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "remanded",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "återförvisas till lägre instans",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Mostorps kvarn",
+        "operator_name": "Mostorps Gård AB",
+        "watercourse": "Suseån",
+        "municipality": null,
+        "application_outcome": "remanded",
+        "application_outcome_sv": "återförvisas till lägre instans",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjer tingsrättens dom och återförvisar målet på grund av ett rättegångsfel där parterna inte fått möjlighet att slutföra sin talan.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m1458-20",
+      "case_number": "M 1458 -20",
+      "fields_changed": {
+        "operator_name": {
+          "old": "Motpart Lobonäs Kraft AB",
+          "new": "Lobonäs Kraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Ljusnan",
+          "new": "Loån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "conditions_changed",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 9000000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Lobonäs",
+        "operator_name": "Lobonäs Kraft AB",
+        "watercourse": "Loån",
+        "municipality": "Ovanåker",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrade mark- och miljödomstolens dom genom att justera vissa villkor för tillståndet.",
+        "measures_ordered": [
+          "Fingallret får efter samråd med tillsynsmyndigheten tillfälligt tas bort i samband med problem med iskravning som sätter igen gallret.",
+          "Sökanden ska senast 3 månader efter lagakraftvunnen dom inge ett kontrollprogram till tillsynsmyndigheten avseende arbetenas utförande inklusive fiskvägens funktion.",
+          "I denna dom tillståndsgivna arbeten ska vara utförda inom tre år från det att domen vunnit laga kraft."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg",
+          "fiskavledare",
+          "minimitappning",
+          "årstidsanpassad minimivattenföring",
+          "fingaller"
+        ]
+      }
+    },
+    {
+      "id": "m1533-20",
+      "case_number": "M 1533 -20",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "vattenkraftsanläggning",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "A.L.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Tormestorpsån",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Återförvisat",
+          "new": "återförvisas målet till mark- och miljödomstolen för fortsatt handläggning",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "vattenkraftsanläggning",
+        "operator_name": "A.L.",
+        "watercourse": null,
+        "municipality": "Hässleholms kommun",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "återförvisas målet till mark- och miljödomstolen för fortsatt handläggning",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och återförvisar målet till mark- och miljödomstolen för fortsatt handläggning.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fisktrappa",
+          "ålyngelledare"
+        ]
+      }
+    },
+    {
+      "id": "m1849-22",
+      "case_number": "M 1849 -22",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Kraftbolaget i Svensbo AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Ljusnan",
+          "new": "Gryckån",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Återförvisat",
+          "new": "återförvisas till mark- och miljödomstolen för fortsatt behandling",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 5000000,
+          "new": 10000,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Södra Svensbo",
+        "operator_name": "Kraftbolaget i Svensbo AB",
+        "watercourse": "Gryckån",
+        "municipality": "Ovanåker",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "återförvisas till mark- och miljödomstolen för fortsatt behandling",
+        "outcome_reasoning": "Mark- och miljööverdomstolen upphäver tillståndspunkt 5 och villkor 5 i mark- och miljödomstolens dom samt återförvisar målet till mark- och miljödomstolen för fortsatt behandling i fråga om fiskväg och tappning av vatten.",
+        "measures_ordered": [
+          "fortsatt behandling i fråga om fiskväg och tappning av vatten"
+        ],
+        "operator_cost_sek": 10000,
+        "cost_description": "särskild fiskeavgift i form av en engångsavgift till Havs- och vattenmyndigheten",
+        "environmental_measures": [
+          "fiskväg",
+          "minimitappning",
+          "denilränna",
+          "flyktväg"
+        ]
+      }
+    },
+    {
+      "id": "m2165-24",
+      "case_number": "M 2165 - 24",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna villkor avseende Stigen Västra",
+          "new": "Stigen Västra",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Advokatbolaget sjutton34 Karlstad AB",
+          "new": "T.B.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Örekilsälven",
+          "new": "Lillån (del av Örekilsälven)",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "överklagandet avslås",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 10200,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Stigen Västra",
+        "operator_name": "T.B.",
+        "watercourse": "Lillån (del av Örekilsälven)",
+        "municipality": null,
+        "application_outcome": "appeal_denied",
+        "application_outcome_sv": "överklagandet avslås",
+        "outcome_reasoning": "Mark- och miljööverdomstolen avslår överklagandet då det inte finns skäl att ifrågasätta att det finns ett tillstånd som kan omprövas.",
+        "measures_ordered": [
+          "En fiskavledare ska installeras i form av fingaller med spaltvidden 18 mm uppställt i betavinkel med 30 graders vinkel i förhållande till inströmningen.",
+          "Intag ströskel vid gallret ska vara kring nivån +91,90.",
+          "Invid fiskavledaren ska installeras flyktöppning/flyktränna som leds in i utskovskanalen för ordinarie utskovslucka.",
+          "Flyktrännan ska förses med en tröskel på nivån +93,60.",
+          "Öppningen ska förses med falsar för att kunna stängas och regleras med sättvirke.",
+          "En vattenmängd om minst 0,1 m3/s, eller tillrinningen vid lägre vattenmängder, ska avledas via flyktöppningen.",
+          "Vid de tillfällen då överskottstappning aktualiseras ska denna så långt som möjligt framsläppas i flyktöppningen.",
+          "Anordning för uppvandrande ål ska anläggas.",
+          "Drift av kraftverket och dammreglering ska övervakas enligt följande: En vattenståndsskala ska uppsättas och bibehållas med dämningsgränsen tydligt angiven utmärkt.",
+          "Nivån på vattenytan uppströms och nedströms vattenkraftverket ska mätas var 15:e minut.",
+          "Flödet genom turbinen, samt genom flyktöppning för fisk, ska mätas var 15:e minut.",
+          "Flöde genom ålyngelledare ska dokumenteras genom journalföring av pumpens drifttid.",
+          "Ålyngelledarens funktion ska kontrolleras under ålens vandringsperiod.",
+          "De uppgifter som behövs för att visa att föreskrivna villkor efterlevs ska arkiveras i minst 12 år.",
+          "Korttidsreglering får inte förekomma.",
+          "Vattenkraftverket ska drivas som ett strömkraftverk där tillrinnande vatten ständigt framsläpps.",
+          "Förändringar i avledning via turbiner eller via regleringsanordningar ska ske genom tillämpning av mjuka övergångar.",
+          "Vid tillfälliga reparations- och underhållsåtgärder ska tillsynsmyndigheten informeras i god tid innan avsänkning sker.",
+          "Återstart av anläggningen med återgång till höjd vattenyta i dammen ska alltid ske på sätt som säkerställer varaktiga flöden nedströms.",
+          "Minst hälften av tillrinningen ska ledas förbi anläggningen intill fylld damm.",
+          "Arbeten ska i största möjliga mån ske i torrhet i syfte att begränsa risk för grumling och spridning av sedimentburna föroreningar.",
+          "Arbeten som orsakar grumling får inte genomföras under perioden den 1 april till den 15 juli och ska under övrig tid begränsas till perioder med lågvattenföring.",
+          "Vid behov ska siltgardiner användas som skydd mot grumling av vattendraget.",
+          "Eventuella tillfälliga upplag ska ske inom särskilt markerad area."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskavledare",
+          "fingaller",
+          "flyktöppning/flyktränna",
+          "anordning för uppvandrande ål",
+          "begränsa grumling",
+          "siltgardiner"
+        ]
+      }
+    },
+    {
+      "id": "m3473-24",
+      "case_number": "M 3473 -24",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "vi d Långarekull",
+          "new": "Långarekull",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Jönköpings Fiskeribiologi AB",
+          "new": "A.O. och R.O.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Nissan",
+          "new": "Västerån",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd med ändrade villkor",
+          "new": "tillstånd beviljat med ändringar",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 15300,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Långarekull",
+        "operator_name": "A.O. och R.O.",
+        "watercourse": "Västerån",
+        "municipality": null,
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens domslut genom att förena den befintliga vattenverksamheten vid Långarekull med moderna miljövillkor.",
+        "measures_ordered": [
+          "anläggas och bibehållas två fiskvägar",
+          "släppas en minimitappning om 600 l/s till naturfåran genom den övre fiskvägen",
+          "avledas 300 l/s från naturfåran till utloppskanalen vid drift av kraftverket genom den nedre fiskvägen",
+          "installeras ett minst 10 m2 stort intagsgaller med en maximal lutning på 30 grader från markplanet och en spaltvidd om maximalt 15 mm",
+          "finnas en flyktväg i nedströms riktning vid gallret",
+          "tappas upp till 100 l/s genom flyktvägen vid gallret, då kraftverket är i drift",
+          "samråd ska ske med tillsynsmyndigheten kring den slutliga utformningen av fiskvägarna i naturfåran samt flyktvägen vid gallret i intagskanalen",
+          "upprättas en vattenståndsskala (pegel) i RH2000 i intagskanalen",
+          "sänkningsgräns vid intaget ansätts till nivå +121,0 m (RH2000)",
+          "ingen korttidsreglering får förekomma",
+          "arbetena i vattenområdet och dess närområde ska bedrivas på sådant sätt att föroreningar inte kommer ut i vattendraget och så att grumling i görligaste mån undviks",
+          "utrustning för omhändertagande av läckage och spill från maskiner ska finnas tillgängligt på plats",
+          "ett kontrollprogram ska tas fram i samråd med tillsynsmyndigheten och ges in till tillsynsmyndigheten senast en månad innan arbetena påbörjas"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskvägar",
+          "minimitappning",
+          "biotopvårdande åtgärder",
+          "renovera befintlig damm",
+          "miljöanpassning av anläggningen",
+          "intagsgaller med flyktväg",
+          "kontrollprogram"
+        ]
+      }
+    },
+    {
+      "id": "m4232-23",
+      "case_number": "M 4232-23",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor för Uddby",
+          "new": "Uddby kraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "Uddby Kraft AB",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "villkor ändras/uppdateras",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 3000000,
+          "new": 1060,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Uddby kraftverk",
+        "operator_name": "Uddby Kraft AB",
+        "watercourse": "Tyresån",
+        "municipality": "Tyresö",
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "villkor ändras/uppdateras",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrar villkoren för tappning och inför nya miljöskyddsåtgärder för att förbättra förutsättningarna för havsöringens lek och ålens passage.",
+        "measures_ordered": [
+          "Genom Fatbursdammen ska tappningen vara lägst 300 l/s under 60 dagar från det att den påbörjas på hösten när tillrinningen tillåter det, dock senast den 1 november, och under övrig tid 150 l /s. Vid lägre tillrinningar ska dessa framsläppas.",
+          "På Thomsonöverfallet vid Fatbursdammen ska det finnas tydliga märken som visar överfallshöjden vid tappning av 300 l/s och 150 l/s.",
+          "Ansökan om översyn av villkoren och andra bestämmelser för att de ska hållas moderna ska i enlighet med 22 kap. 29 § miljöbalken ges in inom sådan tid att dom eller beslut i saken finns senast 40 år efter att denna dom har vunnit laga kraft.",
+          "Vattenhushållning: Genom Fatbursdammen ska tappning under oktober och november vara lägst 200 l/s och under övrig tid 150 l/s om tillrinningen uppgår till nämnda värden. Vi lägre tillrinningar ska dessa framsläppas.",
+          "Moderna miljövillkor: Tillståndshavaren ska senast fem år från det att denna dom vinner laga kraft på fastigheten A och inom markerad ellips på karta anlägga och bibehålla en passagelösning för ål i Follbrinksströmmen.",
+          "Tillståndshavaren ska senast fem år från det att denna dom vinner laga kraft på fastigheten D och inom servitutsområde x1 anlägga ett fingaller med en lutning av maximalt 35 grader och ett avstånd av 18 mm mellan gallerstavarna. Gallret ska förses med flyktöppning och avledare.",
+          "Utformningen av passagelösningen för ål samt flyktöppning och avledare ska tas fram i samråd med länsstyrelsen.",
+          "Ett kontrollprogram för drift och skötsel av passagelösningen för ål, flyktöppningen och avledaren ska tas fram i samråd med länsstyrelsen senast tre månader efter det att åtgärderna installerats.",
+          "Vid arbeten i och vid vattnet ska biologiskt nedbrytbara hydrauloljor användas. Arbetsmaskiner ska vara utrustade med absorberande material.",
+          "Arbeten i vatten får inte förekomma under fiskarnas lektider och fåglarnas häckningsperioder vilka är mellan 1 maj - 31 augusti."
+        ],
+        "operator_cost_sek": 1060,
+        "cost_description": "Ersättning för intrång till Tyresö kommun för upplåtelse av tvångsrätt för ålpassagelösning.",
+        "environmental_measures": [
+          "minimitappning",
+          "passagelösning för ål",
+          "fingaller",
+          "flyktöppning",
+          "avledare",
+          "biologiskt nedbrytbara hydrauloljor",
+          "begränsning av arbeten i vatten under lektider/häckningsperioder"
+        ]
+      }
+    },
+    {
+      "id": "m4324-21",
+      "case_number": "M 4324 -21",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Järle kvarn",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "Naturvårdsverket",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "appeal_denied",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 4000000,
+          "new": 101013,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Järle kvarn",
+        "operator_name": "Naturvårdsverket",
+        "watercourse": "Järleån",
+        "municipality": "Nora",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen beviljade tillstånd till utrivning av del av vattenanläggning med vissa villkor och åtgärder, trots invändningar om kulturmiljöpåverkan.",
+        "measures_ordered": [
+          "riva ut luckor, gåtbalkar och utskovströsklar",
+          "utföra terrängjustering och biotopvårdande åtgärder upp- och nedströms befintligt dammläge",
+          "anlägga nya och förstärka befintliga erosionsskydd vid kvarnbyggnaden, dammpelaren i huvudfåran och slänten mot befintliga byggnader på norra sidan av ån, uppströms dammen",
+          "uppföra och riva ut erforderliga fångdammar för arbetena",
+          "ta i anspråk gemensamhetsanläggningen D för byte av trädäck i samband med utrivningen av dämmande anläggningsdelar samt i erforderlig utsträckning även de delar av B och C som berörs av åtgärderna",
+          "anlägga en träränna som ersättning för befintlig intagsränna i trä",
+          "flytta fiskar och musslor som uppehåller sig i arbetsområden innan torrläggning sker"
+        ],
+        "operator_cost_sek": 101013,
+        "cost_description": "Ersättning för rättegångskostnader till Nora kommun och J.O.",
+        "environmental_measures": [
+          "biotopvårdande åtgärder",
+          "begränsa störande grumling vid arbeten i vatten",
+          "arbeten i vatten ska ske under perioder med låga flöden",
+          "beredskap för att undvika utsläpp av förorenande ämnen",
+          "provtagning av schaktmassor för att säkerställa särskilt omhändertagande av förorenade massor",
+          "minimera skador på kulturhistoriskt viktiga anläggningar och konstruktioner",
+          "anlägga en träränna som ersättning för befintlig intagsränna i trä",
+          "flytta fiskar och musslor"
+        ]
+      }
+    },
+    {
+      "id": "m4650-22",
+      "case_number": "M 4650 -22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Gran ö",
+          "new": "Granö",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Sydkraft Hydropower AB",
+          "new": "Sydkraft",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Mörrumsån",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "villkor ändras/uppdateras",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 469300000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Granö",
+        "operator_name": "Sydkraft",
+        "watercourse": null,
+        "municipality": "Tingsryd",
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "villkor ändras/uppdateras",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens dom endast på så sätt att villkoret för tillståndet till driften av Granö kraftverk ska ha en annan lydelse gällande minimitappning.",
+        "measures_ordered": [
+          "En minimitappning om minst 7 m3/s ska släppas genom regleringsdammens luckor under perioden 15 mars –15 november. Under övrig tid av året ska minst 5 m3/s släppas. Om tillrinningen är mindre än angivna flöden, ska hela tillrinningen släppas."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "minimitappning"
+        ]
+      }
+    },
+    {
+      "id": "m503-22",
+      "case_number": "M 503 -22",
+      "fields_changed": {
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande Harrvikens Marina AB",
+          "new": "Harrviken Marina AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Harrviken",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Återförvisat",
+          "new": "återförvisas till lägre instans",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 875000,
+          "new": 485681,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "The case concerns the establishment of a new marina, including dredging, excavation, and pier construction in a water area, which falls under planning and building law and environmental law but not specifically hydropower or water regulation in the context of NAP.",
+        "power_plant_name": null,
+        "operator_name": "Harrviken Marina AB",
+        "watercourse": "Harrviken",
+        "municipality": "Luleå",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "återförvisas till lägre instans",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens dom och återförvisar målet dit för fortsatt handläggning.",
+        "measures_ordered": [],
+        "operator_cost_sek": 485681,
+        "cost_description": "Ersättning för rättegångskostnader till motparterna 3-12",
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m516-21",
+      "case_number": "M 516 -21",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Hällefors",
+          "new": "Hällefors/Silverdalens Bruk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "Silverdalens Bruk AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "remanded",
+          "new": "overturned",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Återförvisat",
+          "new": "Mark- och miljööverdomstolen fastställer Länsstyrelsen i Kalmar läns beslut att anläggningen Hällefors med tillhörande kraftverk inte ska omfattas av den nationella planen för moderna miljövillkor.",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Hällefors/Silverdalens Bruk",
+        "operator_name": "Silverdalens Bruk AB",
+        "watercourse": null,
+        "municipality": null,
+        "application_outcome": "overturned",
+        "application_outcome_sv": "Mark- och miljööverdomstolen fastställer Länsstyrelsen i Kalmar läns beslut att anläggningen Hällefors med tillhörande kraftverk inte ska omfattas av den nationella planen för moderna miljövillkor.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrade mark- och miljödomstolens dom och fastställde länsstyrelsens beslut att anläggningen inte ska omfattas av den nationella planen för moderna miljövillkor.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m5221-21",
+      "case_number": "M 5221 -21",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "X och Y",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "R. N.",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Återförvisat",
+          "new": "återförvisas till mark- och miljödomstolen för fortsatt behandling",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 56800,
+          "new": 71800,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "X och Y",
+        "operator_name": "R. N.",
+        "watercourse": "Mieån",
+        "municipality": "Tingsryds kommun",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "återförvisas till mark- och miljödomstolen för fortsatt behandling",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjer den överklagade domen och återförvisar målet till mark- och miljödomstolen för fortsatt behandling.",
+        "measures_ordered": [
+          "en anordning för nedströms vandring (flyktväg) ska installeras i anslutning till turbinintagen",
+          "detaljprojektering ska ske efter samråd med tillsynsmyndigheten",
+          "fingaller med lutningen 30-35 grader mot horisontalplanet och med spaltvidden maximalt 18 mm ska installeras framför turbinintagen",
+          "vid insteget till den västra fåran ska anordningar iordningsställas för att styra uppströms fiskvandring till faunapassagen",
+          "de under villkorspunkterna 2-4 redovisade åtgärderna ska om möjligt utföras samordnat med att anläggningar i mål M 2627-19 rivs ut och nya dammbyggnader m.m. uppförs",
+          "villkorspunkt 2-4 ska vara utförda senast fem år från lagakraftvunnen dom i målet",
+          "om faunapassagen som beslutats i mål M 2627-19 inte kommer till stånd eller underhållet av den inte sköts ska innehavaren av nu aktuella kraftverk bibehålla/anlägga och underhålla faunapassage med miljömässigt motsvarande funktioner",
+          "alternativt får innehavaren riva ut kraftverken",
+          "uppställning av arbetsfordon eller behållare med drivmedel får inte ske inom vattenskyddsområde",
+          "fordon och arbetsmaskiner som nyttjas inom arbetsområdet ska använda hydrauloljor, smörjfetter etc. som är miljöanpassade enligt svensk standard SS 15 54 34 respektive 15 54 70 samt av RISE har bedömts uppfylla kraven i respektive standard",
+          "arbetsmaskiner som används i eller i närheten av vattenområde ska vara försedda med slangbrottsventiler",
+          "eventuella tillfälliga upplag ska ske inom särskilt markerad area, dock minst 10 m från vattenområde",
+          "området ska avstädas efter användning",
+          "ett kontrollprogram ska upprättas och ges in till tillsynsmyndigheten senast två månader efter laga kraftvunnen dom",
+          "kontrollprogrammet ska godkännas av Länsstyrelsen i Kronobergs län",
+          "ansökan för översyn av villkoren och andra bestämmelser ska lämnas in till mark- och miljödomstolen senast den 31 december 2041",
+          "tillstånd att tillfälligt lägga upp avfall från rivningsarbeten etc inom den sekundära zonen av vattenskyddsområdet Mien-Långasjön",
+          "rätten till tillgodogörande av vattenkraften ska för framtiden vara förenad med fastigheten Y, Tingsryds kommun, såsom strömfallsfastighet",
+          "befintlig vattenverksamhet för produktion av vattenkraftsel får bedrivas till dess denna prövning är klar",
+          "ändrar inte den tidigare beslutade prövningsavgiften om 1 650 kr"
+        ],
+        "operator_cost_sek": 71800,
+        "cost_description": "ersättning för rättegångskostnader till Länsstyrelsen i Kronobergs län och Tingsryds kommun",
+        "environmental_measures": [
+          "nedströms vandring (flyktväg)",
+          "fingaller",
+          "uppströms fiskvandring till faunapassagen",
+          "faunapassage"
+        ]
+      }
+    },
+    {
+      "id": "m5224-21",
+      "case_number": "M 5224 -21",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Mien",
+          "new": "Gäddeviksås kvarn",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Karlshamn Energi Vatten AB",
+          "new": "Karlshamn Energi och Vatten AB samt Mieåns vattenregleringsförening upa",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "appeal_denied",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 110400,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Gäddeviksås kvarn",
+        "operator_name": "Karlshamn Energi och Vatten AB samt Mieåns vattenregleringsförening upa",
+        "watercourse": "Mieån",
+        "municipality": "Tingsryds kommun",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrar den överklagade deldomen endast på så sätt att villkor 6 ska ha följande lydelse, och avslår överklagandena i övrigt.",
+        "measures_ordered": [
+          "anpassa den västra fåran inklusive insteget så att den är förenlig med bästa möjliga teknik för faunapassager för både upp- och nedströmsvandrande fiskar av de i vattenförekomsten befintliga arterna"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "faunapassage",
+          "biotopvårdande åtgärder",
+          "upptröskling",
+          "slitstrappa",
+          "rör som förbinder sjön Mien med den östra fåran"
+        ]
+      }
+    },
+    {
+      "id": "m5295-23",
+      "case_number": "M 5295 -23",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Tillsyn avseende",
+          "new": "Blombacka Övre vattenkraftverk och damm och Blombacka Nedre vattenkraftverk och damm",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Advokatbolaget sjutton34 Karlstad AB",
+          "new": "U.L.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "appeal_denied",
+          "new": "overturned",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Mark- och miljööverdomstolen upphäver länsstyrelsens beslut och avslår överklagandet.",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Blombacka Övre vattenkraftverk och damm och Blombacka Nedre vattenkraftverk och damm",
+        "operator_name": "U.L.",
+        "watercourse": null,
+        "municipality": "Karlstads kommun",
+        "application_outcome": "overturned",
+        "application_outcome_sv": "Mark- och miljööverdomstolen upphäver länsstyrelsens beslut och avslår överklagandet.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen upphäver länsstyrelsens beslut eftersom föreläggandet strider mot rättsordningen.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m5937-23",
+      "case_number": "M 5937-23",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Hällby, Vallby och Kvarnfallet",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Bergström AB",
+          "new": "Säterbo Kraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Eskilstunaån",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "överklagandet avslås",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Hällby, Vallby och Kvarnfallet",
+        "operator_name": "Säterbo Kraft AB",
+        "watercourse": "Eskilstunaån",
+        "municipality": "Arboga kommun",
+        "application_outcome": "appeal_denied",
+        "application_outcome_sv": "överklagandet avslås",
+        "outcome_reasoning": "Mark- och miljööverdomstolen avslår överklagandet och upphäver länsstyrelsens beslut.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m6225-20",
+      "case_number": "M 6225 -20",
+      "fields_changed": {
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande Hela Kraft AB",
+          "new": "HELA Kraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "denied",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Ansökan/yrkande avslås",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Reinholdsfors",
+        "operator_name": "HELA Kraft AB",
+        "watercourse": null,
+        "municipality": null,
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen förlänger arbetstiden för inrättande av fiskväg då Hela Kraft haft giltigt skäl för dröjsmålet.",
+        "measures_ordered": [
+          "förlänga arbetstiden för inrättande av fiskväg till två (2) år efter det att Mark- och miljööverdomstolens dom i detta mål fått laga kraft, dock längst till och med den 26 april 2024"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg"
+        ]
+      }
+    },
+    {
+      "id": "m7708-22",
+      "case_number": "M 7708 -22",
+      "fields_changed": {
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande Sala-Heby Energi AB",
+          "new": "Sala-Heby Energi AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Överklagandet avslås",
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör tilldelning av utsläppsrätter för en anläggning som enbart använder biomassa och därmed inte omfattas av EU:s utsläppshandelssystem.",
+        "power_plant_name": null,
+        "operator_name": "Sala-Heby Energi AB",
+        "watercourse": null,
+        "municipality": "Sala",
+        "application_outcome": "appeal_denied",
+        "application_outcome_sv": "Överklagandet avslås",
+        "outcome_reasoning": "Mark- och miljööverdomstolen avslår överklagandet då bolaget inte har väckt talan om ogiltigförklaring av EU-kommissionens beslut inom föreskriven tid.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m7988-22",
+      "case_number": "M 7988 -22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Yxern",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Hellström Advokatbyrå KB",
+          "new": "Vimmerby och Västerviks kommuner",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Yxeredsån",
+          "new": "Yxern",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "granted_modified",
+          "new": "granted",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd med ändrade villkor",
+          "new": "Tillstånd till utrivning av dammanläggning beviljas, regleringsrätt återkallas och regleringsföretag upphävs.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 2080552,
+          "new": 10000,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Yxern",
+        "operator_name": "Vimmerby och Västerviks kommuner",
+        "watercourse": "Yxern",
+        "municipality": "Vimmerby och Västervik",
+        "application_outcome": "granted",
+        "application_outcome_sv": "Tillstånd till utrivning av dammanläggning beviljas, regleringsrätt återkallas och regleringsföretag upphävs.",
+        "outcome_reasoning": "Domstolen beviljade tillstånd för utrivning av dammanläggningen vid sjön Yxerns utlopp, återkallade tidigare regleringsrätt och upphävde regleringsföretaget för att åtgärda problem med stora nivåvariationer i sjön.",
+        "measures_ordered": [
+          "Tillstånd till utrivning av befintlig dammanläggning vid sjön Yxerns utlopp",
+          "Tillstånd att vidta biotopvårdande åtgärder i samband med utrivning",
+          "Tillstånd att anlägga tillfällig fångdamm",
+          "Tillstånd att sänka sjöns vattennivå",
+          "Återkallelse av rätten till reglering av Yxern",
+          "Upphävande av Yxerns regleringsföretag",
+          "Arbeten i vatten ska ske under perioder med låga flöden",
+          "Beredskap ska finnas för att undvika utsläpp av förorenande ämnen",
+          "Handlingsplan för läckage av petroleumprodukter ska upprättas",
+          "Endast miljöanpassade hydrauloljor får användas vid arbeten i vatten",
+          "Biotopvårdande åtgärder ska utföras i åfåran efter samråd med fiskesakkunnig",
+          "Översta materialet till fångdamm ska utföras av naturmaterial",
+          "Förslag till kontrollprogram ska ges in till tillsynsmyndigheten",
+          "Övervakning, analys och detektering av justeringsbehov i utloppet ska ske under minst tre år",
+          "Resultat av övervakning ska sammanställas och rapporteras till tillsynsmyndigheten",
+          "Tid för röjning och förberedande avverkning ska begränsas till vintertid",
+          "Schaktningsarbeten och bullrande verksamheter får inte utföras under perioden 1 februari – 30 juni",
+          "Betala ersättning för tillfälligt markintrång",
+          "Tillfällig tvångsrätt för arbetsområde och tillfartsväg lämnas"
+        ],
+        "operator_cost_sek": 10000,
+        "cost_description": "Ersättning för tillfälligt markintrång och tillfartsväg.",
+        "environmental_measures": [
+          "biotopvårdande åtgärder",
+          "arbeten i vatten under låga flöden",
+          "beredskap för att undvika utsläpp av förorenande ämnen",
+          "handlingsplan för läckage av petroleumprodukter",
+          "användning av miljöanpassade hydrauloljor",
+          "fångdamm av naturmaterial",
+          "kontrollprogram",
+          "övervakning av utloppet",
+          "begränsning av röjning/avverkning till vintertid",
+          "förbud mot bullrande verksamhet under utterns parnings- och dräktighetstid"
+        ]
+      }
+    },
+    {
+      "id": "m899-23",
+      "case_number": "M 899-23",
+      "fields_changed": {
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande NCC Industry AB",
+          "new": "NCC Industry AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Överklagandet avslås, vilket innebär att ansökan om tillstånd avslås.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 10500000,
+          "new": 86000,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör en allmän ansökan om miljötillstånd, troligen för en industriell verksamhet (NCC Industry AB), med fokus på påverkan på Natura 2000-områden, inte vattenkraft eller vattenverksamhet.",
+        "power_plant_name": null,
+        "operator_name": "NCC Industry AB",
+        "watercourse": null,
+        "municipality": null,
+        "application_outcome": "appeal_denied",
+        "application_outcome_sv": "Överklagandet avslås, vilket innebär att ansökan om tillstånd avslås.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen avslår överklagandet och därmed ansökan om tillstånd, då verksamheten inte uppfyller kraven för tillstånd enligt miljöbalken gällande Natura 2000-områden.",
+        "measures_ordered": [
+          "Ersätta Länsstyrelsen i Skåne län för rättegångskostnader"
+        ],
+        "operator_cost_sek": 86000,
+        "cost_description": "Rättegångskostnader",
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m3273-22",
+      "case_number": "M 3273-22",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Berg Grus Sand Småland AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "conditions_changed",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 2410000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör tillstånd för bergtäkt och återvinningsverksamhet, inte vattenkraft.",
+        "power_plant_name": null,
+        "operator_name": "Berg Grus Sand Småland AB",
+        "watercourse": null,
+        "municipality": "Vimmerby",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrade mark- och miljödomstolens deldom genom att justera tillståndspunkt 1 c och villkor 14 för verksamheten.",
+        "measures_ordered": [
+          "Tillstånd till täkt av berg av totalt upp till 3 miljoner ton berg, morän och andra jordarter varav ett maximalt årligt uttag om 200 000 ton inklusive krossning och sortering.",
+          "Tillstånd till årlig införsel, lagring, krossning, sortering och återvinning av avfall om maximalt 10 000 ton icke-farligt avfall per år varav maximalt 8 000 ton utgör jord- och schaktmassor och maximalt 8 000 ton utgör betong, samt att sammanlagd momentan lagring av ovanstående avfallstyper uppgår till maximalt 30 000 ton.",
+          "Tillstånd till införsel och återvinning av maximalt 50 000 ton jord- och schaktmassor för anläggningsändamål.",
+          "Tillstånd till bortledning av i täkten inläckande yt- och grundvatten som lägst ned till +132,5 m.ö.h. (RH 2000).",
+          "Tillstånd till uppförande och bibehållande av de anläggningar, dammar, brunnar och ledningar m.m. som erfordras för vattenverksamhetens bedrivande.",
+          "Tillstånd till utförande av de arbeten som krävs för omledning av befintligt dike som i huvudsak öppet dike i den sträckning som framgår av domsbilaga 1.",
+          "Tillstånd till anläggande jämte nyttjande av brunn för hushållsbehov.",
+          "Externa massor som tas in i täkten får inte innehålla föroreningar överstigande angivna halter i tabell.",
+          "Uttag av berg får ske lägst till + 133 m.ö.h. (RH 2000) inom brytningsområde, undantaget pumpgropen där uttag av berg får ske till lägst + 132,5 m.ö.h. (RH 2000).",
+          "Brytningsområdet, verksamhetsområdet och eventuella fixpunkter ska utmärkas i terrängen på väl synligt sätt och markeringen får inte under exploateringstiden rubbas eller döljas."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "föroreningskontroll av externa massor",
+          "begränsning av införsel av jord- och schaktmassor",
+          "bortledning av yt- och grundvatten",
+          "omledning av dike",
+          "djupbegränsning för bergtäkt",
+          "begränsning av årligt uttag av berg och jordarter",
+          "begränsning av hantering av icke-farligt avfall"
+        ]
+      }
+    },
+    {
+      "id": "m2479-22",
+      "case_number": "M 2479-22",
+      "fields_changed": {
+        "operator_name": {
+          "old": "o B H Motpart Svedberga PV AB",
+          "new": "Svedberga PV AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Skån",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "conditions_changed",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Tillstånd beviljat med ändringar",
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet handlar om nyanläggning av solceller, inte vattenkraft.",
+        "power_plant_name": null,
+        "operator_name": "Svedberga PV AB",
+        "watercourse": null,
+        "municipality": "Helsingborg",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar",
+        "outcome_reasoning": "Mark- och miljööverdomstolen upphävde förbudet att anlägga solcellsanläggningen och fastställde istället villkor för dess genomförande.",
+        "measures_ordered": [
+          "Verksamheten – inklusive skyddsåtgärder och begränsningar - ska utföras i huvudsaklig enlighet med vad bolaget uppgivit i anmälan med kompletteringar.",
+          "Solceller, stängsel, transformatorkiosker, anläggningsvägar och övriga anordningar får endast anläggas och bibehållas inom ytan som är markerad på ritning, se bilaga 2.",
+          "När anläggningen inte längre används ska den tas bort i sin helhet senast året efter den tagits ur bruk. Detta gäller även avhållande stängsel. Marken ska så långt som möjligt återställas så att den kan nyttjas för jordbruk. Bolaget ska senast två år före avvecklingen ge in en återställningsplan till tillsynsmyndigheten.",
+          "Skötseln av marken i anläggningen ska vara jordbruksliknande, med undantag för ytor som avsätts för biologisk mångfald, där passande blommande växter sin t.ex. baljväxter och/eller ängsfröblandning ska sås in senast året efter att anläggningen tas i drift.",
+          "För skötseln av jordbruksmarken och de övriga ytorna inom fastigheten ska det finnas en bruknings- och skötselplan som tas fram i samråd med expertis inom jordbruk och naturvård."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "återställning av mark för jordbruk",
+          "biologisk mångfald",
+          "jordbruksliknande skötsel"
+        ]
+      }
+    },
+    {
+      "id": "m2474-06",
+      "case_number": "M 2474-06",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "anläggande av",
+          "new": "Abelvattnet",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Hope Advokater AB",
+          "new": "Vattenfall Vattenkraft AB och Umeälvens Vattenregleringsföretag",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Gejmån",
+          "new": "Abelvattnet, Gejmån, Bleriken",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "appeal_denied",
+          "new": "conditions_changed",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Villkor ändras och prövotidsförfaranden avslutas",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 125153673,
+          "new": 2262601,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Abelvattnet",
+        "operator_name": "Vattenfall Vattenkraft AB och Umeälvens Vattenregleringsföretag",
+        "watercourse": "Abelvattnet, Gejmån, Bleriken",
+        "municipality": null,
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "Villkor ändras och prövotidsförfaranden avslutas",
+        "outcome_reasoning": "Mark- och miljööverdomstolen ändrar mark- och miljödomstolens deldomar genom att avsluta prövotidsförfaranden för renskötsel och fiske, fastställa nya villkor samt besluta om fiskeavgift och rättegångskostnader.",
+        "measures_ordered": [
+          "Stängsel längs utskovskanalens båda sidor",
+          "Schaktning på båda sidor om viltbron",
+          "Förstärkning av stängslet över viltbron",
+          "Röjning och glesning av skog på båda sidor av viltbron",
+          "Röjning av flyttväg med en bredd på minst 40 meter",
+          "Regelbunden tillsyn och kontrollprogram för stängsel, grindar och flyttväg",
+          "Betalning av särskild fiskeavgift om 25 000 kr",
+          "Betalning av rättegångskostnader till Vapstens sameby med 1 500 000 kr",
+          "Betalning av rättegångskostnader i Mark- och miljööverdomstolen till Vapstens sameby med 737 601 kr"
+        ],
+        "operator_cost_sek": 2262601,
+        "cost_description": "Särskild fiskeavgift och rättegångskostnader till Vapstens sameby.",
+        "environmental_measures": [
+          "stängsel",
+          "schaktning",
+          "röjning av skog",
+          "flyttväg",
+          "fiskefrämjande åtgärder"
+        ]
+      }
+    },
+    {
+      "id": "m3415-22",
+      "case_number": "M 3415-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Marbäcks",
+          "new": "Marbäcks kraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Sperlingsholms Gods AB",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Återförvisat",
+          "new": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 16300,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Marbäcks kraftverk",
+        "operator_name": null,
+        "watercourse": "Fylleån",
+        "municipality": "Halmstad",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjde mark- och miljödomstolens dom och återförvisade målet för fortsatt behandling av ansökan om moderna miljövillkor.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m2693-22",
+      "case_number": "M 2693-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Strömsbro",
+          "new": "Strömsbro",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "Testebo Kraft AB",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Strömsbro",
+        "operator_name": "Testebo Kraft AB",
+        "watercourse": "Testeboån",
+        "municipality": null,
+        "application_outcome": null,
+        "application_outcome_sv": null,
+        "outcome_reasoning": null,
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m3463-22",
+      "case_number": "M 3463-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Strömma Kvarn",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "Hushållningssällskapet Sjuhärad",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Gärån",
+          "new": "Gärån (Ulån)",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "granted",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd beviljas",
+          "new": "Tillstånd beviljat med ändrade villkor",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 16000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Strömma Kvarn",
+        "operator_name": "Hushållningssällskapet Sjuhärad",
+        "watercourse": "Gärån (Ulån)",
+        "municipality": "Marks kommun",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändrade villkor",
+        "outcome_reasoning": "Mark- och miljödomstolen beviljar tillstånd för vattenverksamhet vid befintlig vattenkraftsanläggning med nya, moderna miljövillkor.",
+        "measures_ordered": [
+          "Utföra arbeten i huvudsaklig överensstämmelse med sökandens uppgifter och åtaganden",
+          "Vattennivån uppströms kraftverksdammen får inte överstiga dämningsgränsen + 39,79 m (RH2000)",
+          "Dämningsgränsen ska markeras på pegel",
+          "Kraftverket ska drivas som ett strömkraftverk utan korttidsreglering",
+          "Installera fingaller med max 15 mm spaltvidd och maximal lutning om 40° framför kraftverksintaget vid dammen",
+          "Säkerställa att befintligt omlöp är i funktion året runt",
+          "Släppa fram minst 500 l/s (eller tillrinningen) i omlöpet under 1 september till 30 november",
+          "Släppa fram minst 300 l/s (eller tillrinningen) i omlöpet under 1 mars till 31 maj",
+          "Släppa fram minst 80 l/s (eller tillrinningen) i omlöpet under övriga delar av året",
+          "Spillvatten ska i första hand spillas i befintligt omlöp",
+          "Anmäla reparations- och underhållsåtgärder som innebär avvikelser från vattenhushållningsbestämmelserna till tillsynsmyndigheten",
+          "Upprätta och uppdatera ett kontrollprogram för driften av kraftverket",
+          "Upprätta ett kontrollprogram för arbetstiden"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg (omlöp)",
+          "minimitappning",
+          "fingaller vid intag",
+          "strömkraftverksdrift",
+          "dämningsgräns",
+          "kontrollprogram för fiskvägens funktion"
+        ]
+      }
+    },
+    {
+      "id": "m396-22",
+      "case_number": "M 396-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Stigen Östra",
+          "new": "Stigen Östra",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "T.B.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Örekilsälven",
+          "new": "Lillån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "dismissed",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "Ansökan avvisas",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 1500,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Stigen Östra",
+        "operator_name": "T.B.",
+        "watercourse": "Lillån",
+        "municipality": "Färgelanda kommun",
+        "application_outcome": "dismissed",
+        "application_outcome_sv": "Ansökan avvisas",
+        "outcome_reasoning": "Ansökan avvisades då det inte visats att det fanns ett tillstånd eller en särskild rättighet som kunde ligga till grund för en omprövning för moderna miljövillkor.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m3412-22",
+      "case_number": "M 3412-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "kvarn som",
+          "new": "Bölarps kvarn",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "F.A. och E.Z.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Genevadsån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "remanded",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 1500,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Bölarps kvarn",
+        "operator_name": "F.A. och E.Z.",
+        "watercourse": "Genevadsån",
+        "municipality": "Laholm",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjde mark- och miljödomstolens avvisningsbeslut och återförvisade målet för prövning i sak, då det inte var uppenbart att tillstånd saknades för vattenverksamheten.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m4962-23",
+      "case_number": "M 4962-23",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Karsbol Kraftverk AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Upphäver beslut",
+          "new": "Länsstyrelsens föreläggande upphävs",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Karsbol",
+        "operator_name": "Karsbol Kraftverk AB",
+        "watercourse": null,
+        "municipality": "Sunne kommun",
+        "application_outcome": "overturned",
+        "application_outcome_sv": "Länsstyrelsens föreläggande upphävs",
+        "outcome_reasoning": "Mark- och miljööverdomstolen upphäver Länsstyrelsens föreläggande att ansöka om tillstånd eller riva ut vattenkraftverket.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m2703-22",
+      "case_number": "M 2703-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Bresiljedammen",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "Nilsson Kraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Testeboån",
+          "new": "Bresiljeån",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Överklagande avslås",
+          "new": "Överklaganden avslås",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Bresiljedammen",
+        "operator_name": "Nilsson Kraft AB",
+        "watercourse": "Bresiljeån",
+        "municipality": "Ockelbo kommun",
+        "application_outcome": "appeal_denied",
+        "application_outcome_sv": "Överklaganden avslås",
+        "outcome_reasoning": "Mark- och miljööverdomstolen avslår överklagandena, vilket innebär att Mark- och miljödomstolens beslut att återkalla tillståndet för Bresiljedammen och ålägga utrivning står fast.",
+        "measures_ordered": [
+          "Återkallande av tillstånd för vattenverksamhet vid Bresiljorna.",
+          "Utrivning av samtliga dämmande delar av Bresiljedammen.",
+          "Vidtagande av åtgärder för att förebygga eller minska skador genom utrivningen.",
+          "Utförande av biotopvårdande åtgärder i Bresiljeån.",
+          "Begränsning av grumlande arbeten till perioden 15 juni – 15 september.",
+          "Invallning av cisterner eller utrustning med miljölåda vid lagring av drivmedel/oljor.",
+          "Anmälan till tillsynsmyndigheten tre veckor innan tillfällig avsänkning av vattennivån.",
+          "Säkerställande av kontinuerlig tillrinning till ån nedströms dammläget under arbeten.",
+          "Minimering av grumling och utsläpp till vatten under arbeten.",
+          "Tillfälliga upplag inom markerad area, minst 10 meter från vattenområde, med efterföljande avstädning.",
+          "Upprättande och inlämning av kontrollprogram till tillsynsmyndigheten senast tre månader efter laga kraftvunnen dom.",
+          "Godkännande av kontrollprogrammet av Länsstyrelsen i Gävleborgs län.",
+          "Kvarlämnande av landfästen i huggen sten som inte dämmer, med hänsyn till kulturmiljön.",
+          "Användning av maskiner med slangbrottsventiler och hydraulvätskor enligt Svensk standard 15 54 34 i och vid vatten.",
+          "Desinfektion eller fullständig torkning av maskindelar som når vattnet vid flytt från annan sjö/vattendrag.",
+          "Granskning av sträckan ett år efter arbetenas utförande och vid behov justeringar i samråd med Länsstyrelsen.",
+          "Fastställande av arbetstid till tre år.",
+          "Fastställande av tid för framställande av oförutsedd skada till fem år efter arbetstidens utgång."
+        ],
+        "operator_cost_sek": 1500,
+        "cost_description": "Prövningsavgift",
+        "environmental_measures": [
+          "Utrivning av damm",
+          "Biotopvård",
+          "Återställande av strömfåra",
+          "Säsongsbegränsning för grumlande arbeten",
+          "Förebyggande av föroreningar från drivmedel och oljor",
+          "Säkerställande av vattenflöde",
+          "Minimering av grumling och utsläpp",
+          "Miljökrav för maskiner (hydraulvätskor, slangbrottsventiler)",
+          "Desinfektion av maskiner",
+          "Efterkontroll och justering av åtgärder"
+        ]
+      }
+    },
+    {
+      "id": "m391-22",
+      "case_number": "M 391-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Näsböle",
+          "new": "Näsböle kraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande Antonsson Kraft AB",
+          "new": "Antonsson Kraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Valboån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "remanded",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 15550,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Näsböle kraftverk",
+        "operator_name": "Antonsson Kraft AB",
+        "watercourse": "Valboån",
+        "municipality": "Färgelanda",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjde mark- och miljödomstolens beslut att avvisa ansökan och återförvisade målet för fortsatt handläggning.",
+        "measures_ordered": [
+          "Målet återförvisas till mark- och miljödomstolen för fortsatt behandling"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m305-99",
+      "case_number": "M 305-99",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Stornorrfors kraftstation",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "se bilaga A PARTER Klagande Vattenfall Vattenkraft AB",
+          "new": "Vattenfall Vattenkraft AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Vindelälven",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "dismissed",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "Överklagandet avvisas",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 25000000,
+          "new": 30400,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Stornorrfors kraftstation",
+        "operator_name": "Vattenfall Vattenkraft AB",
+        "watercourse": "Vindelälven",
+        "municipality": "Umeå kommun",
+        "application_outcome": "dismissed",
+        "application_outcome_sv": "Överklagandet avvisas",
+        "outcome_reasoning": "Mark- och miljööverdomstolen avvisar Vattenfall Vattenkraft AB:s överklagande.",
+        "measures_ordered": [
+          "Vattenfall Vattenkraft AB ska betala ersättning för Vännäs kommuns, Vindelns kommuns, Arjeplogs kommuns, Sorsele kommuns och Lycksele kommuns rättegångskostnader",
+          "Vattenfall Vattenkraft AB ska betala ersättning för Kammarkollegiets rättegångskostnader"
+        ],
+        "operator_cost_sek": 30400,
+        "cost_description": "Ersättning för rättegångskostnader (ombudsarvode)",
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m506-22",
+      "case_number": "M 506-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Skaftarp",
+          "new": "Skaftarp",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "ELHE och BEOL",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Kägleån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "remanded",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens beslut och återförvisar målet till mark- och miljödomstolen för fortsatt behandling.",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Skaftarp",
+        "operator_name": "ELHE och BEOL",
+        "watercourse": "Kägleån",
+        "municipality": "Ängelholms kommun",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens beslut och återförvisar målet till mark- och miljödomstolen för fortsatt behandling.",
+        "outcome_reasoning": "Mark- och miljööverdomstolen fann att mark- och miljödomstolen felaktigt avvisat ansökan genom att inte godta sökandenas påstående om en äldre rättighet som processförutsättning, i strid med nya uttalanden om hur sådana frågor ska prövas.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m391-99",
+      "case_number": "M 391-99",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Östra Spöland invallningsföretag 2021",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Vattenfall Vattenkraft AB",
+          "new": "Vattenfall Vattenkraft AB, Vännäs kommun",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": null,
+          "new": "Vindelälven",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Östra Spöland invallningsföretag 2021",
+        "operator_name": "Vattenfall Vattenkraft AB, Vännäs kommun",
+        "watercourse": "Vindelälven",
+        "municipality": "Vännäs kommun",
+        "application_outcome": null,
+        "application_outcome_sv": null,
+        "outcome_reasoning": null,
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m2065-22",
+      "case_number": "M 2065-22",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Trafikverket",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": "Storån",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd beviljas",
+          "new": "Tillstånd beviljat",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 240000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": null,
+        "operator_name": "Trafikverket",
+        "watercourse": "Storån",
+        "municipality": "Söderköpings kommun",
+        "application_outcome": "granted",
+        "application_outcome_sv": "Tillstånd beviljat",
+        "outcome_reasoning": "Mark- och miljödomstolen lämnar Trafikverket tillstånd till vattenverksamhet för att uppföra en ny bro över Storån.",
+        "measures_ordered": [
+          "uppföra två brostöd tillhörande ny bro",
+          "utföra erforderliga schaktnings-, pålnings-, spontnings- och grundläggningsarbeten",
+          "uppföra en tillfällig arbetsväg med pålbrygga över Storån",
+          "verksamheten ska bedrivas i huvudsak på det sätt som Trafikverket angett eller åtagit sig",
+          "buller från byggarbetsplatsen ska begränsas enligt angivna riktvärden",
+          "länshållningsvatten ska samlas upp, kontrolleras och vid behov genomgå avskiljning av partiklar och olja innan utsläpp till Storån",
+          "alla arbeten som typiskt sett kan innebära risk för grumling ska utföras med grumlingsskydd, såsom siltgardin",
+          "återställning av åbotten inom spontområden eller där utgrävning skett ska utföras med naturgrus eller sand",
+          "arbetsmaskiner som används i eller i närheten av vattenområde ska vara försedda med slangbrottsventiler",
+          "fordon och arbetsmaskiner som nyttjas inom arbetsområdet ska använda hydrauloljor, smörjfetter etc. som är miljöanpassade",
+          "för verksamheten ska finnas ett aktuellt kontrollprogram"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "bullerbegränsning",
+          "avskiljning av partiklar och olja från länshållningsvatten",
+          "grumlingsskydd (siltgardin)",
+          "grumlande arbeten får inte utföras under perioden 1 april till 30 september",
+          "återställning av åbotten med naturgrus eller sand",
+          "slangbrottsventiler på arbetsmaskiner",
+          "användning av miljöanpassade hydrauloljor och smörjfetter",
+          "kontrollprogram"
+        ]
+      }
+    },
+    {
+      "id": "m530-22",
+      "case_number": "M 530-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Snällerödskvarns",
+          "new": "Snällerödskvarns kraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Advokatbolaget sjutton34 Karlstad AB",
+          "new": "P.R.",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Rönne å",
+          "new": "Snällerödsån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "unclear",
+          "new": "remanded",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Oklart",
+          "new": "återförvisas",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 5000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Snällerödskvarns kraftverk",
+        "operator_name": "P.R.",
+        "watercourse": "Snällerödsån",
+        "municipality": "Klippan",
+        "application_outcome": "remanded",
+        "application_outcome_sv": "återförvisas",
+        "outcome_reasoning": "Mark- och miljööverdomstolen undanröjer mark- och miljödomstolens beslut och återförvisar målet för fortsatt behandling då det inte är uppenbart att ansökan inte kan leda till bifall.",
+        "measures_ordered": [],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m2614-23",
+      "case_number": "M 2614-23",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Hammarmölledammen",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": null,
+          "new": "HIBAB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Helge å",
+          "new": "Hovdalaån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "conditions_changed",
+          "new": "granted",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Tillstånd beviljas",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 36800,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Hammarmölledammen",
+        "operator_name": "HIBAB",
+        "watercourse": "Hovdalaån",
+        "municipality": "Hässleholm",
+        "application_outcome": "granted",
+        "application_outcome_sv": "Tillstånd beviljas",
+        "outcome_reasoning": "Domstolen beviljar tillstånd för utrivning av dammanläggningen och igenfyllning av utloppskanalen för att förbättra miljökvalitetsnormerna.",
+        "measures_ordered": [
+          "Riva ut dammanläggningen Hammarmölledammen",
+          "Fylla igen övre stenskodda delen av utloppskanalen",
+          "Flytta trollsländelarver",
+          "Avsänka magasinet",
+          "Lämna kvar död ved i närområdet",
+          "Förbiledning av vatten förbi arbetsplatsen"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "minimera sedimentspridning",
+          "kontroll av turbiditet",
+          "avsänkning av magasin",
+          "kvarlämnande av död ved",
+          "vattenförbiledning",
+          "flytt av trollsländelarver"
+        ]
+      }
+    },
+    {
+      "id": "m4965-23",
+      "case_number": "M 4965-23",
+      "fields_changed": {
+        "operator_name": {
+          "old": "Wennerqvist AB",
+          "new": "Höganäs kommun",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "tillstån",
+          "new": "Havet",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "denied",
+          "new": "granted",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Ansökan/yrkande avslås",
+          "new": "Tillstånd beviljas för anläggande av badbrygga.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 35000,
+          "new": 4800,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör anläggande av en badbrygga, inte vattenkraft, dammar eller vattenreglering.",
+        "power_plant_name": null,
+        "operator_name": "Höganäs kommun",
+        "watercourse": "Havet",
+        "municipality": "Höganäs",
+        "application_outcome": "granted",
+        "application_outcome_sv": "Tillstånd beviljas för anläggande av badbrygga.",
+        "outcome_reasoning": "Domstolen beviljar tillstånd för anläggande av en badbrygga då verksamheten bedöms vara tillåtlig och inte medföra oacceptabel negativ påverkan på miljön.",
+        "measures_ordered": [
+          "Verksamheten ska bedrivas i huvudsaklig överensstämmelse med ansökningshandlingarna.",
+          "Grumlande arbeten ska begränsas och utföras under tiden oktober till mars.",
+          "Utrustning i form av länsar och saneringsutrustning ska finnas på plats vid arbete med arbetsmaskiner.",
+          "Hydraulvätskor i arbetsmaskiner ska uppfylla miljöegenskaper enligt svensk standard SS 155434.",
+          "Buller från verksamheten ska i möjligaste mån begränsas vid bostäder.",
+          "Kontrollprogram för verksamheten ska upprättas i samråd med tillsynsmyndigheten och ges in senast fyra veckor innan arbetena påbörjas."
+        ],
+        "operator_cost_sek": 4800,
+        "cost_description": "Ersättning för rättegångskostnader till Länsstyrelsen i Skåne län.",
+        "environmental_measures": [
+          "begränsning av grumling",
+          "tidsbegränsning för vattenarbeten",
+          "beredskap för utsläpp",
+          "miljövänliga hydraulvätskor",
+          "bullerbegränsning",
+          "minskad ljuspåverkan"
+        ]
+      }
+    },
+    {
+      "id": "m605-24",
+      "case_number": "M 605-24",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Stefan Svedbom och Vaggeryds kommun",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Villkor ändras och arbetstid förlängs",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 1500,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": null,
+        "operator_name": "Stefan Svedbom och Vaggeryds kommun",
+        "watercourse": "Lagan",
+        "municipality": "Vaggeryd",
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "Villkor ändras och arbetstid förlängs",
+        "outcome_reasoning": "Domstolen ändrar villkor och förlänger arbetstiden då oförutsedda omständigheter och synnerliga olägenheter motiverar detta.",
+        "measures_ordered": [
+          "anlägga en faunapassage",
+          "installera ett skyddsgaller för avledning av nedvandrande fisk i intagskanalen",
+          "anlägga en flyktväg för fisk i intagskanalen",
+          "förlänga arbetstiden för vattenverksamheten"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg",
+          "skyddsgaller",
+          "flyktväg",
+          "minimitappning"
+        ]
+      }
+    },
+    {
+      "id": "m4021-22",
+      "case_number": "M 4021-22",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Perstorp Specialty Chemicals AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Rönne å",
+          "new": "Ybbarpsån",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "granted_modified",
+          "new": "conditions_changed",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd med ändrade villkor",
+          "new": "Villkor ändras",
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör ett avloppsreningsverk och industriutsläpp, inte vattenkraft.",
+        "power_plant_name": null,
+        "operator_name": "Perstorp Specialty Chemicals AB",
+        "watercourse": "Ybbarpsån",
+        "municipality": "Perstorp",
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "Villkor ändras",
+        "outcome_reasoning": "Domstolen ändrar befintliga villkor och fastställer alternativa begränsningsvärden för utsläpp från avloppsreningsverket för att möjliggöra återanvändning av renat avloppsvatten.",
+        "measures_ordered": [
+          "Ändring av villkor 11 avseende utsläpp av nickel och zink till Ybbarpsån",
+          "Fastställande av alternativa begränsningsvärden för utsläpp av TOC, TSS, Tot-N, Tot-P, AOX, Krom, Koppar, Nickel och Zink"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "Utsläppsbegränsningar för nickel",
+          "Utsläppsbegränsningar för zink",
+          "Utsläppsbegränsningar för totalt organiskt kol (TOC)",
+          "Utsläppsbegränsningar för totalt suspenderat material (TSS)",
+          "Utsläppsbegränsningar för totalkväve (Tot-N)",
+          "Utsläppsbegränsningar för totalfosfor (Tot-P)",
+          "Utsläppsbegränsningar för adsorberbara organiskt bundna halogener (AOX)",
+          "Utsläppsbegränsningar för krom",
+          "Utsläppsbegränsningar för koppar"
+        ]
+      }
+    },
+    {
+      "id": "m6587-23",
+      "case_number": "M 6587-23",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": null,
+          "new": "Probiostålanläggningen",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Höganäs AB",
+          "new": "Höganäs AB, Höganäs Sweden AB och Höganäs Hamnbyggnads AB",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Lagan",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "granted",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd beviljas",
+          "new": "Tillstånd beviljat med ändringar och nya villkor för termisk förgasning av biomassa.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 2500000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör tillstånd för termisk förgasning av biomassa och tillverkning av järn- och metallpulver, inte vattenkraft eller vattenverksamhet.",
+        "power_plant_name": "Probiostålanläggningen",
+        "operator_name": "Höganäs AB, Höganäs Sweden AB och Höganäs Hamnbyggnads AB",
+        "watercourse": null,
+        "municipality": "Höganäs",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljat med ändringar och nya villkor för termisk förgasning av biomassa.",
+        "outcome_reasoning": "Domstolen godkände miljökonsekvensbeskrivningen och fann lokaliseringen lämplig, varpå tillstånd beviljades för den nya anläggningen för termisk förgasning av biomassa och befintliga villkor ändrades för att möjliggöra övergång från fossila bränslen.",
+        "measures_ordered": [
+          "Totala utsläppet av stoft från fasta utsläppspunkter för tillverkning av metallpulver samt rökgaser från Probiostålanläggningen får inte överstiga 15 ton per år.",
+          "Utsläpp av kväveoxider från tunnelugnarnas rökgaser i Svampverket och från Probiostålanläggningens rökgaser får sammantaget inte överstiga 100 ton per år.",
+          "Verksamheten ska styras av ett certifierat energiledningssystem enligt standarden ISO 50001.",
+          "Trädamm och aska ska lagras i silos eller i annan sluten hantering under tak senast den 31 december året efter det första kalenderår då Probiostålanläggningen har varit i drift i minst 4 000 timmar.",
+          "Facklan i Probiostålanläggningen ska ha robusthet att fungera även vid ogynnsamt väder.",
+          "Åtgärder ska i skälig utsträckning successivt vidtas för att effektivisera energianvändningen i all verksamhet som omfattas av tillståndet.",
+          "En energihushållningsplan ska tas fram och ges in till tillsynsmyndigheten vart fjärde år."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "utsläppsgräns för stoft",
+          "utsläppsgräns för kväveoxider",
+          "certifierat energiledningssystem",
+          "sluten hantering av trädamm och aska",
+          "energieffektivisering",
+          "energihushållningsplan"
+        ]
+      }
+    },
+    {
+      "id": "m2024-01",
+      "case_number": "M 2024-01",
+      "fields_changed": {
+        "operator_name": {
+          "old": null,
+          "new": "Ängelholms kommun",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Skån",
+          "new": null,
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Upphäver beslut",
+          "new": "Lägre instans beslut upphävs",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 214000000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": false,
+      "gemini_full_response": {
+        "is_nap_hydropower": false,
+        "is_nap_reason": "Beslutet rör en detaljplan för vägbyggnad, inte vattenkraft.",
+        "power_plant_name": null,
+        "operator_name": "Ängelholms kommun",
+        "watercourse": null,
+        "municipality": "Ängelholm",
+        "application_outcome": "overturned",
+        "application_outcome_sv": "Lägre instans beslut upphävs",
+        "outcome_reasoning": "Mark- och miljödomstolen bifaller överklagandena och upphäver det överklagade beslutet om detaljplan.",
+        "measures_ordered": [
+          "upphäver detaljplanen"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": []
+      }
+    },
+    {
+      "id": "m2796-24",
+      "case_number": "M 2796-24",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor vid Björnamåla",
+          "new": "Björnamåla kraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Gösta Johanssons Bilverkstad HB",
+          "new": "Gösta Johanssons Bilverkstad HB, Gösta Johansson och Inger Johansson",
+          "source": "gemini"
+        },
+        "watercourse": {
+          "old": "Mörrumsån",
+          "new": "Valbäcken",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "overturned",
+          "new": "conditions_changed",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Upphäver beslut",
+          "new": "Moderna miljövillkor fastställs, befintliga villkor upphävs och ändras, samt nya villkor införs.",
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Björnamåla kraftverk",
+        "operator_name": "Gösta Johanssons Bilverkstad HB, Gösta Johansson och Inger Johansson",
+        "watercourse": "Valbäcken",
+        "municipality": "Karlshamn",
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "Moderna miljövillkor fastställs, befintliga villkor upphävs och ändras, samt nya villkor införs.",
+        "outcome_reasoning": "Domstolen fastställer moderna miljövillkor för vattenverksamheten genom att upphäva, ändra och införa nya villkor för att uppdatera en äldre vattendom.",
+        "measures_ordered": [
+          "Befrielse från fiskeavgift",
+          "Upphävande av fiskeförbud",
+          "Ändring av villkor för gallerspalt",
+          "Ändring av hushållningsbestämmelser",
+          "Fastställa dämningsgräns till +57,53",
+          "Anlägga fiskväg för ål",
+          "Säkerställa fiskvägens avbördning på minst 10 l/s",
+          "Säkerställa minimitappning på minst 2 l/s",
+          "Installera flyktväg vid turbinintaget",
+          "Säkerställa flyktvägens drift och tappning på minst 20 l/s",
+          "Bibehålla galler med maximal spaltvidd om 13 mm",
+          "Förbjuda kraftverksdrift 1 juni-30 september",
+          "Ta bort flodutskovets sättar 1 juni-30 september",
+          "Installera pegel vid utskovet",
+          "Utföra biotopvårdsåtgärder för ål",
+          "Driva kraftverket som strömkraftverk utan korttidsreglering",
+          "Upprätta och ge in kontrollprogram"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg",
+          "minimitappning",
+          "flyktväg",
+          "galler med 13 mm spaltvidd",
+          "driftförbud under 1 juni-30 september",
+          "borttagande av flodutskovets sättar",
+          "biotopvårdsåtgärder för ål"
+        ]
+      }
+    },
+    {
+      "id": "m483-22",
+      "case_number": "M 483-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Stora Mölla",
+          "new": "Stora Mölla vattenkraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "Advokat Viktor Falkenström Advokatbolaget sjutton34 Karlstad AB",
+          "new": "Jan Eklund",
+          "source": "gemini"
+        },
+        "application_outcome": {
+          "old": "granted",
+          "new": "granted_modified",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Tillstånd beviljas",
+          "new": "Tillstånd beviljas i efterhand för att bibehålla befintlig vattenkraftsanläggning och bedriva vattenverksamhet, med nya moderna miljövillkor och återkallande av delar av äldre tillstånd.",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 57600,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Stora Mölla vattenkraftverk",
+        "operator_name": "Jan Eklund",
+        "watercourse": "Pinnån",
+        "municipality": "Ängelholm, Klippan",
+        "application_outcome": "granted_modified",
+        "application_outcome_sv": "Tillstånd beviljas i efterhand för att bibehålla befintlig vattenkraftsanläggning och bedriva vattenverksamhet, med nya moderna miljövillkor och återkallande av delar av äldre tillstånd.",
+        "outcome_reasoning": "Domstolen beviljade tillstånd att bibehålla och bedriva vattenkraftsverksamhet vid anläggningen under nya moderna miljövillkor, samtidigt som sökandens förstahandsyrkande avslogs och delar av ett äldre tillstånd återkallades.",
+        "measures_ordered": [
+          "Godkännande av miljökonsekvensbeskrivning",
+          "Tillstånd att bibehålla befintlig vattenkraftsanläggning",
+          "Tillstånd att bedriva vattenverksamhet för produktion av vattenkraftsel",
+          "Tillstånd att avleda högst 3,5 m3/s vatten till turbinerna G1-G3",
+          "Återkallande av rätt att bibehålla turbinaggregat om 30 hästkrafter från 1958 års dom",
+          "Återkallande av rätt till korttidsreglering från 1958 års dom",
+          "Fastställande av moderna miljövillkor för hela verksamheten",
+          "Installation av flyktvägar för nedströmsvandrande fisk vid kraftverkets intag",
+          "Anläggande av flyktöppningar ytligt och i botten av intagskanalerna med specificerade tappningsmängder",
+          "Utformning av flyktvägar som slutna rör till naturfåran nedströms regleringsdammen",
+          "Byte av befintliga intagsgaller mot nya med maximal spaltvidd om 15 mm",
+          "Anläggande av krypsubstrat med svagt lutande botten vid regleringsdammen för ålyngels vandring",
+          "Utförande av övertäckning för att minska predation vid ålpassagerna",
+          "Löpande kontroll av att ålpassagerna är fullt fungerande",
+          "Rivning av befintlig betongklack uppströms vattenfallet till naturlig botten i högra delen",
+          "Anläggande av en naturliknande uppvandringsväg för ålyngel (ålomlöp) från utloppskanalen till kraftverksdammen",
+          "Genomförande av arbeten i största möjliga mån i torrhet för att begränsa grumling och spridning av sedimentburna föroreningar",
+          "Begränsning av grumlande arbeten till perioder med lågvattenföring och utanför 1 oktober till 31 maj",
+          "Användning av siltgardiner som skydd mot grumling vid behov",
+          "Stopp av arbeten i vatten om grumlingen överstiger 30 FNU"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg",
+          "minimitappning",
+          "gallerspaltvidd",
+          "krypsubstrat",
+          "predationsskydd",
+          "rivning av betongklack",
+          "ålomlöp",
+          "grumlingsbegränsning"
+        ]
+      }
+    },
+    {
+      "id": "m2694-22",
+      "case_number": "M 2694-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "moderna miljövillkor avseende Oslättfors",
+          "new": "Oslättfors kraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "se SÖKANDE Nilsson Kraft AB",
+          "new": "Nilsson Kraft AB",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Villkor ändras och nya villkor beslutas",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 200000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Oslättfors kraftverk",
+        "operator_name": "Nilsson Kraft AB",
+        "watercourse": "Testeboån",
+        "municipality": "Gävle kommun",
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "Villkor ändras och nya villkor beslutas",
+        "outcome_reasoning": "Domstolen har beslutat om nya och uppdaterade miljövillkor för Oslättfors kraftverk och ersätter en tidigare dom.",
+        "measures_ordered": [
+          "Verksamheten ska bedrivas i enlighet med ansökan",
+          "Vattennivån i Lundbosjön ska regleras inom angivna gränser",
+          "Minsta tappning om 2,8 m3/s ska alltid ske ur Lundbosjön",
+          "Tappning ur Lundbosjön ska följa angiven prioritetsordning",
+          "Oslättfors kraftverk ska anpassas för låg tappning",
+          "Oslättfors kraftverk får avleda högst 13 m3/s",
+          "Korttidsreglering får inte förekomma",
+          "Fiskpassage för uppströmsvandring (slitsränna) ska anläggas vid Oslättfors kraftverk",
+          "Intagsgaller med maximalt 12 mm spaltvidd och 30 graders lutning ska finnas vid Oslättfors kraftverk",
+          "Intagsgallret ska ha två flyktöppningar med avledningsränna för nedströmsvandring",
+          "Fiskpassage för nedströmsvandring ska vara i drift och avleda minst 0,15 m3/s",
+          "Tillfällig avsänkning av Lundbosjön för arbeten är tillåten efter anmälan",
+          "Tillfälliga upplag ska ske minst 10 m från vattenområde",
+          "Miljöanpassade smörjfetter och hydrauloljor ska användas i fordon och maskiner"
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "minimitappning",
+          "fiskväg",
+          "slitsränna",
+          "intagsgaller",
+          "spaltvidd",
+          "flyktöppningar",
+          "avledningsränna",
+          "fiskpassage nedströms",
+          "förbud mot korttidsreglering",
+          "vattennivåreglering"
+        ]
+      }
+    },
+    {
+      "id": "m2695-22",
+      "case_number": "M 2695-22",
+      "fields_changed": {
+        "power_plant_name": {
+          "old": "Åmots Bruks",
+          "new": "Åmots Bruks vattenkraftverk",
+          "source": "gemini"
+        },
+        "operator_name": {
+          "old": "se PARTER Sökande Nilsson Kraft AB",
+          "new": "Nilsson Kraft AB",
+          "source": "gemini"
+        },
+        "application_outcome_sv": {
+          "old": "Villkor ändras",
+          "new": "Villkor ändras/uppdateras",
+          "source": "gemini"
+        },
+        "total_cost_sek": {
+          "old": 31000,
+          "new": null,
+          "source": "gemini"
+        }
+      },
+      "is_nap": true,
+      "gemini_full_response": {
+        "is_nap_hydropower": true,
+        "is_nap_reason": null,
+        "power_plant_name": "Åmots Bruks vattenkraftverk",
+        "operator_name": "Nilsson Kraft AB",
+        "watercourse": "Testeboån",
+        "municipality": null,
+        "application_outcome": "conditions_changed",
+        "application_outcome_sv": "Villkor ändras/uppdateras",
+        "outcome_reasoning": "Mark- och miljödomstolen beslutar om nya och ändrade villkor för verksamheten vid Åmots Bruks vattenkraftverk efter omprövning.",
+        "measures_ordered": [
+          "Anläggande av slitsränna mellan Hammardammen och Testeboån, dimensionerad efter dämningsoch sänkningsgräns.",
+          "Slitsrännan ska dimensioneras för ett flöde om minst 0,50 m3/s vid dämningsgränsen och om minst 0,40 m3/s vid sänkningsgränsen.",
+          "Anläggande av nytt intagsgaller med maximal lutning om 30° och spaltvidd av maximalt 13 mm.",
+          "Anläggande av flyktöppning och avledningsränna (minst 30 cm i diameter) i intagsgallrets övre vänstra hörn, mynnande nedströms slitsrännans utlopp.",
+          "Flyktöppningen och avledningsrännan ska anpassas för att avbörda 0,2 m3/s.",
+          "Installation av klafflucka i avledningsrännan för att kontrollera flödet.",
+          "Anläggande av erosionsskydd längs slitsrännans ytterkant ned mot och ut i vattendraget.",
+          "Användning av miljöanpassade smörjfetter och hydrauloljor samt desinficering av arbetsmaskiner för att förhindra spridning av kräftpestsmitta.",
+          "Utrustning av fordon och arbetsmaskiner med slangbrottsventiler, omedelbar tillgång till saneringsutrustning, säker förvaring och tankning av petroleumprodukter.",
+          "Bedrivande av arbeten på ett sådant sätt att grumling och utsläpp till vatten hålls så låga som möjligt.",
+          "Tillfälliga upplag ska ske inom särskilt markerad area, dock minst 10 meter från vattenområde, och avstädas efter användning.",
+          "Uppförande och utrivning av fångdamm får ske vid behov för utförande av miljöanpassningsåtgärder.",
+          "Upprättande av kontrollprogram som ska ges in till och godkännas av Länsstyrelsen i Gävleborgs län senast tre månader före arbetena påbörjas.",
+          "Begränsning av buller från bygg- och anläggningsarbetet till specificerade ljudnivåer (60 dB(A) dagtid, 45 dB(A) natt/helg, 70 dB(A) momentant nattetid)."
+        ],
+        "operator_cost_sek": null,
+        "cost_description": null,
+        "environmental_measures": [
+          "fiskväg",
+          "minimitappning",
+          "intagsgaller med liten spaltvidd",
+          "erosionsskydd",
+          "miljöanpassade smörjmedel",
+          "desinficering av arbetsmaskiner",
+          "begränsning av grumling och utsläpp",
+          "kontrollprogram",
+          "bullerbegränsning"
+        ]
+      }
+    }
+  ]
+}

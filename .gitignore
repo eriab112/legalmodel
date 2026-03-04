@@ -6,11 +6,18 @@ swedish-bert-models/
 Data/Domar/
 Data/Ansökningar/
 Data/Lagstiftningdiverse/
+Data/Strommen/
 
 # Processed binary datasets (too large; JSON files are tracked)
 Data/processed/*.pt
 Data/processed/dapt_train/
 Data/processed/dapt_val/
+
+# Backup files (originals preserved before corrections)
+Data/processed/*_backup_*.json
+
+# Gemini API cache (auto-generated, not data)
+Data/validation/_gemini_cache.json
 
 # Separate project data
 nap_model-main/
