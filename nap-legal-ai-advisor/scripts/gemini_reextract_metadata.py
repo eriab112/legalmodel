@@ -9,7 +9,7 @@ and produces:
   - Data/validation/gemini_corrections.json          (diffs only)
 
 Usage:
-    export GEMINI_API_KEY=AIzaSyAm3RYdgNW-OEQXDNSYN7t4GGuC06_8MzQ
+    export GEMINI_API_KEY="your-api-key-here"
     cd nap-legal-ai-advisor
     python scripts/gemini_reextract_metadata.py --data-root ../Data
 """
